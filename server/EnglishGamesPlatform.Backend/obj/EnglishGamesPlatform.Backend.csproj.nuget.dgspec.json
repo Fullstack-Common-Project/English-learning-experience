@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\This User\\Music\\Experis\\.Net Core\\EnglishGamesPlatform\\EnglishGamesPlatform\\EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj": {}
+    "C:\\Users\\This User\\Music\\Experis\\.Net Core\\EnglishGamesPlatform\\server\\EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj": {}
   },
   "projects": {
-    "C:\\Users\\This User\\Music\\Experis\\.Net Core\\EnglishGamesPlatform\\EnglishGamesPlatform\\EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj": {
+    "C:\\Users\\This User\\Music\\Experis\\.Net Core\\EnglishGamesPlatform\\server\\EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\This User\\Music\\Experis\\.Net Core\\EnglishGamesPlatform\\EnglishGamesPlatform\\EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj",
+        "projectUniqueName": "C:\\Users\\This User\\Music\\Experis\\.Net Core\\EnglishGamesPlatform\\server\\EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj",
         "projectName": "EnglishGamesPlatform.Backend",
-        "projectPath": "C:\\Users\\This User\\Music\\Experis\\.Net Core\\EnglishGamesPlatform\\EnglishGamesPlatform\\EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj",
+        "projectPath": "C:\\Users\\This User\\Music\\Experis\\.Net Core\\EnglishGamesPlatform\\server\\EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj",
         "packagesPath": "C:\\Users\\This User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\This User\\Music\\Experis\\.Net Core\\EnglishGamesPlatform\\EnglishGamesPlatform\\EnglishGamesPlatform.Backend\\obj\\",
+        "outputPath": "C:\\Users\\This User\\Music\\Experis\\.Net Core\\EnglishGamesPlatform\\server\\EnglishGamesPlatform.Backend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
