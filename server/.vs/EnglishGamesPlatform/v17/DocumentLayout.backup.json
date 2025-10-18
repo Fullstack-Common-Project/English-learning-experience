@@ -1,12 +1,200 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\This User\\Music\\Experis\\.Net Core\\EnglishGamesPlatform\\EnglishGamesPlatform\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\This User\\Music\\Experis\\.Net Core\\EnglishGamesPlatform\\server\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\this user\\music\\experis\\.net core\\englishgamesplatform\\server\\englishgamesplatform.backend\\controllers\\gamecontrollerbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\controllers\\gamecontrollerbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\this user\\music\\experis\\.net core\\englishgamesplatform\\server\\englishgamesplatform.backend\\controllers\\games\\picturehangmancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\controllers\\games\\picturehangmancontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\this user\\music\\experis\\.net core\\englishgamesplatform\\server\\englishgamesplatform.backend\\repositories\\interfaces\\ipicturehangmanrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\repositories\\interfaces\\ipicturehangmanrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\this user\\music\\experis\\.net core\\englishgamesplatform\\server\\englishgamesplatform.backend\\services\\igameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\services\\igameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\this user\\music\\experis\\.net core\\englishgamesplatform\\server\\englishgamesplatform.backend\\models\\gamedatas\\picturehangmandata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\models\\gamedatas\\picturehangmandata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\this user\\music\\experis\\.net core\\englishgamesplatform\\server\\englishgamesplatform.backend\\models\\gamedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\models\\gamedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\this user\\music\\experis\\.net core\\englishgamesplatform\\server\\englishgamesplatform.backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\this user\\music\\experis\\.net core\\englishgamesplatform\\server\\englishgamesplatform.backend\\services\\classes\\picturehangmanservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\services\\classes\\picturehangmanservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\this user\\music\\experis\\.net core\\englishgamesplatform\\server\\englishgamesplatform.backend\\models\\response.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\models\\response.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\this user\\music\\experis\\.net core\\englishgamesplatform\\server\\englishgamesplatform.backend\\repositories\\classes\\picturehangmanrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\repositories\\classes\\picturehangmanrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Response.cs",
+              "DocumentMoniker": "C:\\Users\\This User\\Music\\Experis\\.Net Core\\EnglishGamesPlatform\\server\\EnglishGamesPlatform.Backend\\Models\\Response.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Models\\Response.cs",
+              "ToolTip": "C:\\Users\\This User\\Music\\Experis\\.Net Core\\EnglishGamesPlatform\\server\\EnglishGamesPlatform.Backend\\Models\\Response.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\Response.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T10:58:21.003Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GameData.cs",
+              "DocumentMoniker": "C:\\Users\\This User\\Music\\Experis\\.Net Core\\EnglishGamesPlatform\\server\\EnglishGamesPlatform.Backend\\Models\\GameData.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Models\\GameData.cs",
+              "ToolTip": "C:\\Users\\This User\\Music\\Experis\\.Net Core\\EnglishGamesPlatform\\server\\EnglishGamesPlatform.Backend\\Models\\GameData.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\GameData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T11:32:42.039Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PictureHangmanData.cs",
+              "DocumentMoniker": "C:\\Users\\This User\\Music\\Experis\\.Net Core\\EnglishGamesPlatform\\server\\EnglishGamesPlatform.Backend\\Models\\GameDatas\\PictureHangmanData.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Models\\GameDatas\\PictureHangmanData.cs",
+              "ToolTip": "C:\\Users\\This User\\Music\\Experis\\.Net Core\\EnglishGamesPlatform\\server\\EnglishGamesPlatform.Backend\\Models\\GameDatas\\PictureHangmanData.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\GameDatas\\PictureHangmanData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T11:48:53.814Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IGameService.cs",
+              "DocumentMoniker": "C:\\Users\\This User\\Music\\Experis\\.Net Core\\EnglishGamesPlatform\\server\\EnglishGamesPlatform.Backend\\Services\\IGameService.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Services\\IGameService.cs",
+              "ToolTip": "C:\\Users\\This User\\Music\\Experis\\.Net Core\\EnglishGamesPlatform\\server\\EnglishGamesPlatform.Backend\\Services\\IGameService.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Services\\IGameService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T12:37:30.159Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "GameControllerBase.cs",
+              "DocumentMoniker": "C:\\Users\\This User\\Music\\Experis\\.Net Core\\EnglishGamesPlatform\\server\\EnglishGamesPlatform.Backend\\Controllers\\GameControllerBase.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Controllers\\GameControllerBase.cs",
+              "ToolTip": "C:\\Users\\This User\\Music\\Experis\\.Net Core\\EnglishGamesPlatform\\server\\EnglishGamesPlatform.Backend\\Controllers\\GameControllerBase.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Controllers\\GameControllerBase.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAYwAcAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T12:10:48.103Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "IPictureHangmanRepository.cs",
+              "DocumentMoniker": "C:\\Users\\This User\\Music\\Experis\\.Net Core\\EnglishGamesPlatform\\server\\EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IPictureHangmanRepository.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IPictureHangmanRepository.cs",
+              "ToolTip": "C:\\Users\\This User\\Music\\Experis\\.Net Core\\EnglishGamesPlatform\\server\\EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IPictureHangmanRepository.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IPictureHangmanRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T17:05:07.789Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "PictureHangmanRepository.cs",
+              "DocumentMoniker": "C:\\Users\\This User\\Music\\Experis\\.Net Core\\EnglishGamesPlatform\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\PictureHangmanRepository.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\PictureHangmanRepository.cs",
+              "ToolTip": "C:\\Users\\This User\\Music\\Experis\\.Net Core\\EnglishGamesPlatform\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\PictureHangmanRepository.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\PictureHangmanRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T13:04:32.573Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\This User\\Music\\Experis\\.Net Core\\EnglishGamesPlatform\\server\\EnglishGamesPlatform.Backend\\Program.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Program.cs",
+              "ToolTip": "C:\\Users\\This User\\Music\\Experis\\.Net Core\\EnglishGamesPlatform\\server\\EnglishGamesPlatform.Backend\\Program.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Program.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAowBkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T17:14:34.357Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "PictureHangmanService.cs",
+              "DocumentMoniker": "C:\\Users\\This User\\Music\\Experis\\.Net Core\\EnglishGamesPlatform\\server\\EnglishGamesPlatform.Backend\\Services\\Classes\\PictureHangmanService.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Services\\Classes\\PictureHangmanService.cs",
+              "ToolTip": "C:\\Users\\This User\\Music\\Experis\\.Net Core\\EnglishGamesPlatform\\server\\EnglishGamesPlatform.Backend\\Services\\Classes\\PictureHangmanService.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Services\\Classes\\PictureHangmanService.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwB4AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T17:19:40.31Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PictureHangmanController.cs",
+              "DocumentMoniker": "C:\\Users\\This User\\Music\\Experis\\.Net Core\\EnglishGamesPlatform\\server\\EnglishGamesPlatform.Backend\\Controllers\\Games\\PictureHangmanController.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Controllers\\Games\\PictureHangmanController.cs",
+              "ToolTip": "C:\\Users\\This User\\Music\\Experis\\.Net Core\\EnglishGamesPlatform\\server\\EnglishGamesPlatform.Backend\\Controllers\\Games\\PictureHangmanController.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Controllers\\Games\\PictureHangmanController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-16T17:45:42.341Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
