@@ -23,6 +23,9 @@
   /* עטיפת עמודים */
   .page-container { @apply container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-10; }
 
+/*   רקע ל - header*/
+  .header-bg { @apply fixed top-0 left-0 right-0 z-40 transition-shadow bg-slate-900/40 backdrop-blur-md;}
+
   /* כותרת עמוד */
   .section-title { @apply text-center text-4xl md:text-5xl leading-tight mb-8 md:mb-10; }
 
