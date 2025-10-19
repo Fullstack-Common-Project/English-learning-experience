@@ -1,7 +1,7 @@
 # Created by https://www.toptal.com/developers/gitignore/api/node,visualstudiocode,visualstudio,dotnet
 # Edit at https://www.toptal.com/developers/gitignore?templates=node,visualstudiocode,visualstudio,dotnet
 
-#!! ERROR: dotnet is undefined. Use list command to see defined gitignore types !!#
+
 
 ### Node ###
 # Logs
@@ -555,4 +555,4 @@ FodyWeavers.xsd
 ### VisualStudio Patch ###
 # Additional files built by Visual Studio
 
-# End of https://www.toptal.com/developers/gitignore/api/node,visualstudiocode,visualstudio,dotnet
+

@@ -1,7 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
-using server.models;
+﻿using EnglishGamesPlatform.Backend.Models.Entities;
+using Microsoft.EntityFrameworkCore;
 
-namespace server.data
+namespace EnglishGamesPlatform.Backend.Data
 {
     public class AppDbContext : DbContext
     {

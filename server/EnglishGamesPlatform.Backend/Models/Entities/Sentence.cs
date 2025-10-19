@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace server.models
+namespace EnglishGamesPlatform.Backend.Models.Entities
 {
     public class Sentence
     {
