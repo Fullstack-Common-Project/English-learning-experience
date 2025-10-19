@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System;
 
-namespace server.models
+namespace EnglishGamesPlatform.Backend.Models.Entities
 {
     public class User
     {
