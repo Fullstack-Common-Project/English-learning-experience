@@ -1,4 +1,4 @@
-﻿using EnglishGamesPlatform.Backend.Models.DTOs;
+﻿using EnglishGamesPlatform.Backend.Models;
 
 namespace EnglishGamesPlatform.Backend.Services.Interfaces
 {
