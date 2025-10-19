@@ -2,6 +2,7 @@ using EnglishGamesPlatform.Backend.Data;
 using EnglishGamesPlatform.Backend.Models.Entities;
 using EnglishGamesPlatform.Backend.Models.GameDatas;
 using EnglishGamesPlatform.Backend.Repositories.Classes;
+using EnglishGamesPlatform.Backend.Repositories.Classes.Games;
 using EnglishGamesPlatform.Backend.Repositories.Interfaces;
 using EnglishGamesPlatform.Backend.Services;
 using EnglishGamesPlatform.Backend.Services.Classes;
@@ -35,10 +36,12 @@ builder.Services.AddScoped<IGenericService<User>, UserService>();
 
 #region PictureHangman
 
-builder.Services.AddScoped<IPictureHangmanRepository, PictureHangmanRepository>();
-builder.Services.AddScoped<IGenericGameService<PictureHangmanData>, PictureHangmanService>();
+builder.Services.AddScoped<IGeneralGameRepository, PictureHangmanRepository>();
+builder.Services.AddScoped<IGeneralGameRepository, PictureHangmanRepositoryFake>();
 
 #endregion
+
+builder.Services.AddScoped<IGeneralGameService, GeneralGameService>();
 
 #endregion
 
