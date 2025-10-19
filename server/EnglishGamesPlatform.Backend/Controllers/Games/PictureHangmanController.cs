@@ -8,9 +8,9 @@ namespace EnglishGamesPlatform.Backend.Controllers.Games
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PictureHangmanController : GameControllerBase<PictureHangmanData, IGameService<PictureHangmanData>>
+    public class PictureHangmanController : GameControllerBase<PictureHangmanData, IGenericGameService<PictureHangmanData>>
     {
-        public PictureHangmanController(IGameService<PictureHangmanData> gameService) : base(gameService)
+        public PictureHangmanController(IGenericGameService<PictureHangmanData> gameService) : base(gameService)
         {
         }
     }
