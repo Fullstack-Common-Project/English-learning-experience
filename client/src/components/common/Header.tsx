@@ -25,19 +25,15 @@ export default function Header() {
   ];
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-40 transition-shadow bg-opacity-80 backdrop-blur-sm ${
-        scrolled ? "shadow-md" : ""
-      }`}
-      aria-label="Main site header"
-    >
+    <header className={`header-bg ${scrolled ? "shadow-md" : ""}`} aria-label="Main site header">
+
       <div className="max-w-screen-xl mx-auto px-4 md:px-6">
         <div className="h-16 flex items-center justify-between">
         
           <div className="flex items-center gap-4">
             <Link
               href="/about"
-              className="flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 rounded"
+              className="nav-link"
             >
               <svg
                 width="36"
@@ -65,7 +61,7 @@ export default function Header() {
                 <Link
                   key={n.href}
                   href={n.href}
-                  className="px-3 py-2 rounded-md text-sm hover:bg-gray-100 focus:outline-none focus-visible:ring-2"
+                  className="nav-link"
                 >
                   {n.label}
                 </Link>
@@ -114,11 +110,8 @@ export default function Header() {
               <button
                 title="Toggle theme"
                 aria-label="Toggle theme"
-                className="p-2 rounded-md focus:outline-none focus-visible:ring-2"
+                className="btn-primary"
               >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden>
-                  <circle cx="12" cy="12" r="4" stroke="currentColor" strokeWidth="1.4" />
-                </svg>
               </button>
             </div>
           </div>
@@ -142,7 +135,7 @@ export default function Header() {
                   key={n.href}
                   href={n.href}
                   onClick={() => setMobileOpen(false)}
-                  className="block px-3 py-2 rounded-md text-base hover:bg-gray-100 focus:outline-none"
+                  className="nav-link"
                 >
                   {n.label}
                 </Link>
