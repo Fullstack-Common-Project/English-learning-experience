@@ -1,13 +1,18 @@
 ﻿namespace EnglishGamesPlatform.Backend.Models
 {
-    public class Response<T>
+    public class Response
     {
         public bool IsSuccess { get; set; }
 
         public int StatusCode { get; set; }
 
         public string Message { get; set; } = string.Empty;
+    }
 
+    public class Response<T> : Response
+    {
         public T? Data { get; set; }
     }
+
+
 }
