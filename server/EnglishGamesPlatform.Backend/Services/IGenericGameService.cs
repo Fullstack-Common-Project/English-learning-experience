@@ -2,10 +2,11 @@
 
 namespace EnglishGamesPlatform.Backend.Services
 {
-    public interface IGameService<T>
+    public interface IGenericGameService<T>
     {
         Task<Response<GameData<T>>> GetGameDataAsync();
-        
+
+        Task<Response<GameData<List<LeaderboardEntry>>>> GetLeaderboardAsync();
 
     }
 }

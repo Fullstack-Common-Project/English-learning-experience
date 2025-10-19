@@ -1,10 +1,12 @@
+using EnglishGamesPlatform.Backend.Data;
+using EnglishGamesPlatform.Backend.Models.Entities;
 using EnglishGamesPlatform.Backend.Models.GameDatas;
 using EnglishGamesPlatform.Backend.Repositories.Classes;
 using EnglishGamesPlatform.Backend.Repositories.Interfaces;
 using EnglishGamesPlatform.Backend.Services;
 using EnglishGamesPlatform.Backend.Services.Classes;
+using EnglishGamesPlatform.Backend.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using server.data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,10 +26,17 @@ builder.Services.AddSwaggerGen();
 
 #region Dependency Injection
 
+#region User
+
+builder.Services.AddScoped<IGenericRepository<User>, UserRepository>();
+builder.Services.AddScoped<IGenericService<User>, UserService>();
+
+#endregion
+
 #region PictureHangman
 
 builder.Services.AddScoped<IPictureHangmanRepository, PictureHangmanRepository>();
-builder.Services.AddScoped<IGameService<PictureHangmanData>, PictureHangmanService>();
+builder.Services.AddScoped<IGenericGameService<PictureHangmanData>, PictureHangmanService>();
 
 #endregion
 

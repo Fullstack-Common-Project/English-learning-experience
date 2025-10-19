@@ -4,7 +4,7 @@ using EnglishGamesPlatform.Backend.Repositories.Interfaces;
 
 namespace EnglishGamesPlatform.Backend.Services.Classes
 {
-    public class PictureHangmanService : IGameService<PictureHangmanData>
+    public class PictureHangmanService : IGenericGameService<PictureHangmanData>
     {
         private readonly IPictureHangmanRepository _pictureHangmanRepository;
         public PictureHangmanService(IPictureHangmanRepository pictureHangmanRepository)
@@ -28,7 +28,22 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
                         PictureUrls = pictureUrls.ToList(),
                     }
                 },
-                Message = "Get Data Succesfully"
+                Message = "Get Initial Data Successfully."
+            };
+        }
+
+        public async Task<Response<GameData<List<LeaderboardEntry>>>> GetLeaderboardAsync()
+        {
+            return new Response<GameData<List<LeaderboardEntry>>>
+            {
+                IsSuccess = true,
+                StatusCode = StatusCodes.Status200OK,
+                Data = new GameData<List<LeaderboardEntry>>
+                {
+                    GameId = 1,
+                    Data = new ()
+                },
+                Message = "Get Leaderboard Succesfully."
             };
         }
     }

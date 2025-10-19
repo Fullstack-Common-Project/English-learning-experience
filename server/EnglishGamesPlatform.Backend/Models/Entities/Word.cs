@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
-namespace server.models
+namespace EnglishGamesPlatform.Backend.Models.Entities
 {
     public class Word
     {
