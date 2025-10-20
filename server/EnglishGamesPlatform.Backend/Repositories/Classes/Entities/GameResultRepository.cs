@@ -1,11 +1,11 @@
 ﻿using EnglishGamesPlatform.Backend.Data;
 using EnglishGamesPlatform.Backend.Models;
-using EnglishGamesPlatform.Backend.Models.Entities;
+using EnglishGamesPlatform.Backend.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace EnglishGamesPlatform.Backend.Repositories.Classes.Entities
 {
-    public class GameResultRepository
+    public class GameResultRepository: IGameResultRepository
     {
         private readonly AppDbContext _appDbContext;
 

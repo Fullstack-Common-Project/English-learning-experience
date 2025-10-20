@@ -9,19 +9,26 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes.Games
 {
     public class PictureHangmanRepositoryFake : IGeneralGameRepository
     {
-        public int GameID => 2;
+        private readonly IImageRepository _imageRepository;
 
+        public PictureHangmanRepositoryFake(IImageRepository imageRepository)
+        {
+            _imageRepository = imageRepository;
+        }
+
+        public int GameID => 2;
         public GameInitialData GetData()
         {
             return new PictureHangmanData
             {
-                Image = new Image()
-                {
-                    ImageId = 1,
-                    ImageUrl = "Images/Image_2.jpg",
-                    Word = new Word(),
-                    WordId = 1
-                }
+                
+                //Image = new Image()
+                //{
+                //    ImageId = 1,
+                //    ImageUrl = "Images/Image_2.jpg",
+                //    Word = new Word(),
+                //    WordId = 1
+                //}
             };
         }
     }
