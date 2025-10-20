@@ -26,3 +26,4 @@ export default function useGameTimer(startMs: number = 0) {
 
   return { time, start, stop, reset, running };
 }
+
