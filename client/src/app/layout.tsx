@@ -4,6 +4,8 @@ import "./globals.css";
 import { Provider, useDispatch, useSelector } from "react-redux";
 import Header from "@/components/common/Header";
 import { store } from "../store/gameStore";
+import Footer from "@/components/common/Footer";
+import { body } from "framer-motion/client";
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 interface User {
   name: string;
@@ -12,12 +14,13 @@ interface User {
   
   return (
     <html lang="en">
-      <body className={`antialiased`}>
+      <body className="antialiased">
         <Provider store={store}>
           <Header />
           <main className="pt-20">
             {children}
           </main>
+          <Footer />
         </Provider>
       </body>
     </html>

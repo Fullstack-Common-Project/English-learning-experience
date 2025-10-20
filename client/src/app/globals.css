@@ -8,7 +8,7 @@
 @layer base {
   html { direction: rtl; }
   body {
-    @apply min-h-screen bg-slate-950 text-white font-sans antialiased;
+    @apply min-h-screen flex flex-col bg-slate-950 text-white font-sans antialiased;
     background-image:
       radial-gradient(1200px 600px at 80% -20%, rgba(99,102,241,.18), transparent 60%),
       radial-gradient(800px 400px at -10% 0%, rgba(14,165,233,.16), transparent 60%),
@@ -16,7 +16,11 @@
     background-blend-mode: overlay;
   }
   h1,h2,h3 { @apply font-semibold text-slate-100; }
+  main {
+    @apply flex-grow;
+  }
 }
+
 
 /* ===== מחלקות משותפות בלבד ===== */
 @layer components {
@@ -76,4 +80,31 @@
   .nav-brand { @apply text-xl font-extrabold tracking-tight; }
   .nav-list { @apply hidden md:flex items-center gap-2; }
   .nav-link { @apply text-slate-300 hover:text-white px-3 py-2 rounded-lg transition; }
+
+    /* פוטר */
+  @layer components {
+    .footer {
+      @apply bg-gray-900 text-gray-300 py-4 w-full flex flex-col items-center relative;
+    }
+  
+    .footer__container {
+      @apply container mx-auto px-6 text-center relative;
+    }
+  
+    .footer__title {
+      @apply text-lg font-semibold text-white mb-2 flex items-center justify-center gap-2;
+    }
+  
+    .footer__github {
+      @apply absolute left-0 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white text-2xl;
+    }
+  
+    .footer__developers {
+      @apply grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-y-1 gap-x-2 text-sm;
+    }
+  
+    .footer__developers a {
+      @apply hover:text-white transition;
+    }
+  }
 }
