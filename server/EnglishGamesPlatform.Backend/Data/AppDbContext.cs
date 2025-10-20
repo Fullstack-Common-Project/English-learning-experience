@@ -71,7 +71,20 @@ namespace EnglishGamesPlatform.Backend.Data
                .HasForeignKey<MemoryMatchSynonymsPair>(p => p.WordId)
                .OnDelete(DeleteBehavior.Cascade);
 
+            modelBuilder.Entity<TwinWord>()
+               .HasOne(t => t.BaseWord)
+               .WithMany()
+               .HasForeignKey(t => t.BaseWordId)
+               .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<TwinWord>()
+                .HasOne(t => t.SynonymWord)
+                .WithMany()
+                .HasForeignKey(t => t.SynonymWordId)
+                .OnDelete(DeleteBehavior.Restrict);
+
             base.OnModelCreating(modelBuilder);
+
         }
     }
 }
