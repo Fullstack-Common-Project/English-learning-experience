@@ -15,9 +15,9 @@ export default function GameOverModal({ score, time, onRestart }: GameOverModalP
     return (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
             <div className="bg-white rounded-2xl p-8 w-96 text-center shadow-xl">
-                <h2 className="text-3xl font-bold mb-4">🎉 The game end!</h2>
-                <p className="text-xl mb-2">Last score: {score}</p>
-                <p className="text-lg mb-6">
+                <h2 className="text-3xl font-bold mb-4 text-gray-400">🎉 The game end!</h2>
+                <p className="text-xl mb-2 text-gray-400">Last score: {score}</p>
+                <p className="text-lg mb-6 text-gray-400">
                     Finish time: {minutes}:{seconds}
                 </p>
                 <button

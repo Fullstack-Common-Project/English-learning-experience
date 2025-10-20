@@ -62,8 +62,8 @@ export default function SentenceShuffleGame({ onScoreChange, onGameOver, paused 
 
   return (
     <div className="text-center">
-      <h3 className="text-xl font-semibold mb-4">
-        משפט {currentIndex + 1} מתוך {demoSentences.length}
+      <h3 className="text-xl font-semibold mb-4 text-blue-400">
+        Sentence {currentIndex + 1} from {demoSentences.length}
       </h3>
 
       <div className="mb-4 flex flex-wrap justify-center gap-2">
@@ -73,7 +73,7 @@ export default function SentenceShuffleGame({ onScoreChange, onGameOver, paused 
             onClick={() => handleSelectWord(word)}
             disabled={paused} // כפתורים לא פעילים בזמן Pause
             className={`px-3 py-1 rounded-lg text-white transition-all ${
-              paused ? "bg-gray-400 cursor-not-allowed" : "bg-blue-500 hover:bg-blue-600"
+              paused ? "bg-gray-700 cursor-not-allowed" : "bg-blue-500 hover:bg-blue-600"
             }`}
           >
             {word}
@@ -81,15 +81,15 @@ export default function SentenceShuffleGame({ onScoreChange, onGameOver, paused 
         ))}
       </div>
 
-      <div className="mb-4">
-        <p>סדר נבחר: {selectedOrder.join(" ")}</p>
+      <div className="mb-4 text-green-400">
+        <p>The correct sentence: {selectedOrder.join(" ")}</p>
       </div>
 
       <button
         onClick={handleSubmit}
         disabled={paused}
         className={`px-6 py-3 rounded-xl shadow text-white transition-all ${
-          paused ? "bg-gray-400 cursor-not-allowed" : "bg-green-500 hover:bg-green-600"
+          paused ? "bg-gray-700 cursor-not-allowed" : "bg-green-500 hover:bg-green-600"
         }`}
       >
         Submit
