@@ -68,18 +68,21 @@ if (app.Environment.IsDevelopment())
 
 
 //����� ������ �� ����� ��������
-app.MapGet("/login-google", async (HttpContext context) =>
-{
-    await context.ChallengeAsync(GoogleDefaults.AuthenticationScheme,
-        new AuthenticationProperties { RedirectUri = "/" });
-});
+//app.MapGet("/login-google", async (HttpContext context) =>
+//{
+//    await context.ChallengeAsync(GoogleDefaults.AuthenticationScheme,
+//        new AuthenticationProperties { RedirectUri = "/" });
+//});
 
 app.UseCustomExceptionHandler();
 
 app.UseHttpsRedirection();
+app.UseCors("AllowAll");
 
 app.UseAuthorization();
 app.UseAuthentication();
+
+
 
 //app.MapGet("/me", (ClaimsPrincipal user) =>
 //{
