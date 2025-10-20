@@ -1,17 +1,17 @@
 using EnglishGamesPlatform.Backend.Data;
 using EnglishGamesPlatform.Backend.Extensions;
-using EnglishGamesPlatform.Backend.Models.Entities;
-using EnglishGamesPlatform.Backend.Models.GameDatas;
-using EnglishGamesPlatform.Backend.Repositories.Classes;
+using EnglishGamesPlatform.Backend.Repositories.Classes.Entities;
 using EnglishGamesPlatform.Backend.Repositories.Classes.Games;
 using EnglishGamesPlatform.Backend.Repositories.Interfaces;
 using EnglishGamesPlatform.Backend.Services.Classes;
-using EnglishGamesPlatform.Backend.Services.Implementations;
 using EnglishGamesPlatform.Backend.Services.Interfaces;
+
 using EnglishGamesPlatform.Backend.Utils;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.Google;
+
+
 using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 
@@ -32,11 +32,16 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+#region GameResult
+builder.Services.AddScoped<GameResultRepository>();
+
+#endregion
+
 builder.Services.AddCustomServices();
 
 
 
-// äåñôú àéîåú
+// ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
@@ -51,8 +56,7 @@ builder.Services.AddAuthentication(options =>
 });
 
 
-
-
+builder.Services.AddScoped<IGeneralGameService, GeneralGameService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -63,7 +67,7 @@ if (app.Environment.IsDevelopment())
 }
 
 
-//÷éùåø ùîúçéì àú úäìéê ääúçáøåú
+//ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 app.MapGet("/login-google", async (HttpContext context) =>
 {
     await context.ChallengeAsync(GoogleDefaults.AuthenticationScheme,
