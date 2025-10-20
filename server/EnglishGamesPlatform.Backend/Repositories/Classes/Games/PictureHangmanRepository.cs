@@ -13,21 +13,24 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes.Games
 
         private readonly ImageRepository _imageRepository;
 
-        public GameInitialData GetData()
+        public  Task<GameInitialData> GetData()
         {
-            return new PictureHangmanData
-            {
+            throw new NotImplementedException();
+            //return new PictureHangmanData
+            //{
 
 
-                //Image = new Image()
-                //{
-                //    ImageId = 1,
-                //    ImageUrl = "Images/Image_1.jpg",
-                //    Word = new Word(),
-                //    WordId = 1
-                //}
+            //Image = new Image()
+            //{
+            //    ImageId = 1,
+            //    ImageUrl = "Images/Image_1.jpg",
+            //    Word = new Word(),
+            //    WordId = 1
+            //}
 
-            };
+            //};
         }
+
+       
     }
 }
