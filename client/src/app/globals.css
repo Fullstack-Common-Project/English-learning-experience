@@ -74,3 +74,5 @@
   .nav-list { @apply hidden md:flex items-center gap-2; }
   .nav-link { @apply text-slate-300 hover:text-white px-3 py-2 rounded-lg transition; }
 }
+
+
