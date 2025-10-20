@@ -10,9 +10,9 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
     {
         private readonly Dictionary<int, IGeneralGameRepository> _repositories;
 
-        private readonly GameResultRepository _gameResultRepository;
+        private readonly IGameResultRepository _gameResultRepository;
 
-        public GeneralGameService(IEnumerable<IGeneralGameRepository> repositories,GameResultRepository gameResultRepository)
+        public GeneralGameService(IEnumerable<IGeneralGameRepository> repositories,IGameResultRepository gameResultRepository)
         {
             _repositories = repositories.ToDictionary(r => r.GameID);
             _gameResultRepository = gameResultRepository;
