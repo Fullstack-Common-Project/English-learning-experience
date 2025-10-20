@@ -21,7 +21,7 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
 
                 return new()
                 {
-                    StatusCode = StatusCodes.Status200OK,
+                    StatusCode = System.Net.HttpStatusCode.OK,
                     IsSuccess = true,
                     Message = $"Get Initial Data For Game ID: {gameId} Successfully,",
                     Data = new GameData()
@@ -35,7 +35,7 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
             {
                 return new()
                 {
-                    StatusCode = StatusCodes.Status500InternalServerError,
+                    StatusCode = System.Net.HttpStatusCode.InternalServerError,
                     IsSuccess = false,
                     Message = $"Error Dependencies Injection - Repository",
                 };
