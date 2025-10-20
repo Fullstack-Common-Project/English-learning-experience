@@ -1,5 +1,6 @@
 using EnglishGamesPlatform.Backend.Data;
 using EnglishGamesPlatform.Backend.Extensions;
+using EnglishGamesPlatform.Backend.Repositories.Classes;
 using EnglishGamesPlatform.Backend.Repositories.Classes.Entities;
 using EnglishGamesPlatform.Backend.Repositories.Classes.Games;
 using EnglishGamesPlatform.Backend.Repositories.Interfaces;
@@ -57,6 +58,12 @@ builder.Services.AddAuthentication(options =>
 
 
 builder.Services.AddScoped<IGeneralGameService, GeneralGameService>();
+builder.Services.AddScoped<IGameResultRepository, GameResultRepository>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<IImageRepository, ImageRepository>();
+builder.Services.AddScoped<ISentenceRepository, SentenceRepository>();
+builder.Services.AddScoped<IWordRepository, WordRepository>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
