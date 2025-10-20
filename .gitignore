@@ -548,6 +548,8 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+server/EnglishGamesPlatform.Backend/secrets.json
+
 
 # JetBrains Rider
 *.sln.iml
