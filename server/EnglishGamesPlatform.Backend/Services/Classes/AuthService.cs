@@ -55,7 +55,7 @@ namespace EnglishGamesPlatform.Backend.Services.Implementations
 
         public async Task<Response<UserResponse>> Register(RegisterDTO user)
         {
-            var (username, password, email) = (user.UserName!, user.Password, user.Email);
+            var (username, password, email) = (user.FullName!, user.Password, user.Email);
 
             if (!username.IsValidUsername())
                 return new Response<UserResponse> { IsSuccess = false, StatusCode = System.Net.HttpStatusCode.BadRequest, Message = "UserName is not valid" };
@@ -67,19 +67,15 @@ namespace EnglishGamesPlatform.Backend.Services.Implementations
             if (result != null)
                 return new Response<UserResponse> { IsSuccess = false, StatusCode = System.Net.HttpStatusCode.Conflict, Message = "User already exists" };
 
-            await _authRepository.Register(new RegisterDTO { UserName = username, Password = BCrypt.Net.BCrypt.HashPassword(password), Email = email });
+            var res = await _authRepository.Register(new RegisterDTO { FullName = username, Password = BCrypt.Net.BCrypt.HashPassword(password), Email = email });
 
             var token = _tokenService.GenerateToken(email);
             return new Response<UserResponse>
             {
-                IsSuccess = true,
-                StatusCode = System.Net.HttpStatusCode.Created,
-                Message = "Registration successful",
-                Data = new UserResponse
-                {
-                    Token = token,
-                    User = new User { UserId = result!.UserId, FullName = result.FullName }
-                }
+                Token = token,
+                User = new User { UserId=res.UserId, FullName = res.FullName }
+            }
+
             };
         }
 

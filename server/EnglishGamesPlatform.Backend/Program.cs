@@ -94,7 +94,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-
 app.MapGet("/login-google", async (HttpContext context) =>
 {
     await context.ChallengeAsync(GoogleDefaults.AuthenticationScheme,
@@ -104,8 +103,10 @@ app.MapGet("/login-google", async (HttpContext context) =>
 app.UseCustomExceptionHandler();
 
 app.UseHttpsRedirection();
+app.UseCors("AllowAll");
 
 app.UseAuthorization();
+
 app.UseAuthentication();
 
 app.MapControllers();

@@ -19,10 +19,11 @@ namespace EnglishGamesPlatform.Backend.Repositories.Implementations
 
   
 
-        public async Task Register(RegisterDTO newUser)
+        public async Task<User> Register(RegisterDTO newUser)
         {
-            await _context.Users.AddAsync(new User {FullName=newUser.UserName!,Password=newUser.Password,Email=newUser.Email });
+            await _context.Users.AddAsync(new User {FullName =newUser.FullName!,Password=newUser.Password,Email=newUser.Email });
              _context.SaveChanges();
+            return await _context.Users.FirstAsync(u => u.Email == newUser.Email);
         }
         public async Task<User?> IsExistingUser(string email)
         {
