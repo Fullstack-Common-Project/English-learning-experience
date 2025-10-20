@@ -1,4 +1,5 @@
 ﻿using EnglishGamesPlatform.Backend.Models;
+using EnglishGamesPlatform.Backend.Repositories.Classes.Entities;
 using EnglishGamesPlatform.Backend.Repositories.Interfaces;
 using EnglishGamesPlatform.Backend.Services.Interfaces;
 
@@ -8,9 +9,12 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
     {
         private readonly Dictionary<int, IGeneralGameRepository> _repositories;
 
-        public GeneralGameService(IEnumerable<IGeneralGameRepository> repositories)
+        private readonly GameResultRepository _gameResultRepository;
+
+        public GeneralGameService(IEnumerable<IGeneralGameRepository> repositories,GameResultRepository gameResultRepository)
         {
             _repositories = repositories.ToDictionary(r => r.GameID);
+            _gameResultRepository = gameResultRepository;
         }
 
         public async Task<Response<GameData>> GetGameDataAsync(int gameId)
@@ -44,7 +48,15 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
 
         public async Task<Response<LeaderboardData>> GetLeaderboardAsync(int gameId)
         {
-            throw new NotImplementedException();
+            var topResults = await _gameResultRepository.GetTop10ByGameAsync(gameId);
+
+            return new()
+            {
+                StatusCode = StatusCodes.Status200OK,
+                IsSuccess = true,
+                Message = $"Successfully retrieved the list of the 10 top players for game {gameId}.",
+                Data = topResults
+            };
         }
     }
 }
