@@ -31,7 +31,7 @@ namespace EnglishGamesPlatform.Backend.Controllers
                 return StatusCode((int)res.StatusCode,res.Message);
             else
             {
-                return Ok(new {Token=res.Data,res.Message});    
+                return Ok(new {res.Data!.Token,res.Data.User,res.Message});    
             }
         }
 
@@ -43,7 +43,7 @@ namespace EnglishGamesPlatform.Backend.Controllers
                 return StatusCode((int)res.StatusCode, res.Message);
             else
             {
-                return Ok(new { Token = res.Data, res.Message });
+                return Ok(new { res.Data!.Token, res.Data.User, res.Message });
             }
         }
 
