@@ -13,6 +13,8 @@ namespace EnglishGamesPlatform.Backend.Models.Entities
         [Required, MaxLength(100)]
         public string FullName { get; set; } = null!;
         [Required, EmailAddress]
+
+        [JsonIgnore]
         public string Email { get; set; } = null!;
 
         [Required, MaxLength(100)]

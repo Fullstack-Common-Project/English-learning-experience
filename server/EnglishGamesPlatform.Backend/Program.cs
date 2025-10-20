@@ -36,19 +36,19 @@ builder.Services.AddCustomServices();
 
 
 
-//// הוספת אימות
-//builder.Services.AddAuthentication(options =>
-//{
-//    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-//    options.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;
-//})
-//.AddCookie()
-//.AddGoogle(options =>
-//{
-//    options.ClientId = builder.Configuration["Authentication:Google:ClientId"];
-//    options.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"];
-//    options.CallbackPath = "/signin-google"; 
-//});
+// הוספת אימות
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;
+})
+.AddCookie()
+.AddGoogle(options =>
+{
+    options.ClientId = builder.Configuration["Authentication:Google:ClientId"]!;
+    options.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"]!;
+    options.CallbackPath = "/signin-google";
+});
 
 
 
@@ -63,12 +63,12 @@ if (app.Environment.IsDevelopment())
 }
 
 
-// קישור שמתחיל את תהליך ההתחברות
-//app.MapGet("/login-google", async (HttpContext context) =>
-//{
-//    await context.ChallengeAsync(GoogleDefaults.AuthenticationScheme,
-//        new AuthenticationProperties { RedirectUri = "/" });
-//});
+//קישור שמתחיל את תהליך ההתחברות
+app.MapGet("/login-google", async (HttpContext context) =>
+{
+    await context.ChallengeAsync(GoogleDefaults.AuthenticationScheme,
+        new AuthenticationProperties { RedirectUri = "/" });
+});
 
 app.UseCustomExceptionHandler();
 
@@ -76,13 +76,13 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 app.UseAuthentication();
-//app.UseAuthorization();
-//app.MapGet("/me", (ClaimsPrincipal user) =>
-//{
-//    if (user.Identity?.IsAuthenticated ?? false)
-//        return Results.Ok(new { Name = user.Identity.Name });
-//    return Results.Unauthorized();
-//});
+app.UseAuthorization();
+app.MapGet("/me", (ClaimsPrincipal user) =>
+{
+    if (user.Identity?.IsAuthenticated ?? false)
+        return Results.Ok(new { Name = user.Identity.Name });
+    return Results.Unauthorized();
+});
 
 
 app.MapControllers();
