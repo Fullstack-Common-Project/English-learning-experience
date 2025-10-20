@@ -5,6 +5,8 @@ import ScoreDisplay from "../leaderboard/ScoreDisplay";
 import GameOverModal from "../leaderboard/GameOverModal";
 import HelpScreen from "../leaderboard/HelpScreen";
 import useGameTimer from "@/hooks/useGameTimer";
+import Countdown3_2_1 from "../hud/countdown3_2_1";
+import AudioToggle from "../hud/audioToggle";
 
 export type GameProps = {
   onScoreChange?: (value: number | ((prev: number) => number)) => void;
@@ -30,12 +32,17 @@ export default function GameLayout({ children, gameTitle }: GameLayoutProps) {
   const { time, start, stop, reset, running } = useGameTimer(0);
   const [paused, setPaused] = React.useState(false);
   const [finalTime, setFinalTime] = useState(0);
+  const [countdownActive, setCountdownActive] = React.useState(false);
+
+  const handleResume = () => {
+    setCountdownActive(true); // מתחיל את הספירה 3-2-1
+  };
 
 
-  // useEffect(() => {
-  //   const savedTotal = localStorage.getItem("totalScore");
-  //   if (savedTotal) setTotalScore(Number(savedTotal));
-  // }, []);
+  useEffect(() => {
+    const savedTotal = localStorage.getItem("totalScore");
+    if (savedTotal) setTotalScore(Number(savedTotal));
+  }, []);
 
   React.useEffect(() => {
     if (stage === "game" && !gameOver && !paused) start();
@@ -60,17 +67,17 @@ export default function GameLayout({ children, gameTitle }: GameLayoutProps) {
     setScore(score + 10);
   }
 
-  // const handleScoreChange = (value: number | ((prev: number) => number)) => {
-  //   setScore(prev => {
-  //     const newScore = typeof value === "function" ? value(prev) : value;
-  //     setTotalScore(prevTotal => {
-  //       const newTotal = prevTotal + (newScore - prev);
-  //       localStorage.setItem("totalScore", String(newTotal));
-  //       return newTotal;
-  //     });
-  //     return newScore;
-  //   });
-  // };
+  const handleScoreChange = (value: number | ((prev: number) => number)) => {
+    setScore(prev => {
+      const newScore = typeof value === "function" ? value(prev) : value;
+      setTotalScore(prevTotal => {
+        const newTotal = prevTotal + (newScore - prev);
+        localStorage.setItem("totalScore", String(newTotal));
+        return newTotal;
+      });
+      return newScore;
+    });
+  };
 
   console.log("time" + time);
   console.log("final" + finalTime);
@@ -104,10 +111,25 @@ export default function GameLayout({ children, gameTitle }: GameLayoutProps) {
       {stage === "game" && (
         <div className=" w-full max-w-3xl">
           {/* Pause Overlay */}
-          {paused && (
-            <div className="absolute inset-0 bg-black/50 rounded-2xl z-10"></div>
-          )}
+          {paused && !countdownActive && (
+            <div className="fixed inset-0 bg-gray-500 bg-opacity-60 flex items-center justify-center z-40">
+              <button
+                onClick={handleResume}
+                className="px-6 py-3 bg-yellow-500 text-white rounded-xl shadow hover:bg-yellow-600 transition-all"
+              >
+                ▶ Resume
+              </button>
+            </div>)}
 
+          {/*Countdown3_2_1*/}
+          {countdownActive && (
+            <Countdown3_2_1
+              onFinish={() => {
+                setPaused(false);          // מחזיר את המשחק לפעולה
+                setCountdownActive(false); // סוגר את הספירה
+              }}
+            />
+          )}
           <div className="flex justify-between items-center mb-6 relative z-20">
             {/* הזמן */}
             <div className="font-mono text-lg font-semibold px-4 py-2 bg-blue-600 text-white rounded-xl shadow hover:scale-105 transition-transform">
@@ -116,6 +138,9 @@ export default function GameLayout({ children, gameTitle }: GameLayoutProps) {
 
             {/* Score */}
             <ScoreDisplay score={score} />
+
+            {/* AudioToggle */}
+            <AudioToggle />
 
             {/* כפתור Pause / Resume */}
             <button
@@ -130,7 +155,7 @@ export default function GameLayout({ children, gameTitle }: GameLayoutProps) {
           <div className="bg-white rounded-2xl shadow p-6">
             {React.isValidElement(children) &&
               React.cloneElement(children as React.ReactElement<GameProps>, {
-                onScoreChange: addScore,
+                onScoreChange: handleScoreChange,
                 onGameOver: handleGameOver,
                 paused: paused
               })}
