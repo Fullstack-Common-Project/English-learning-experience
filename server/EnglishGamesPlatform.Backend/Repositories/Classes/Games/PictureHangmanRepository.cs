@@ -10,17 +10,23 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes.Games
     {
         public string GameName => "Picture Hangman";
 
+
+        private readonly ImageRepository _imageRepository;
+
         public GameInitialData GetData()
         {
             return new PictureHangmanData
             {
-                Image = new Image()
-                {
-                    ImageId = 1,
-                    ImageUrl = "Images/Image_1.jpg",
-                    Word = new Word(),
-                    WordId = 1
-                }
+
+
+                //Image = new Image()
+                //{
+                //    ImageId = 1,
+                //    ImageUrl = "Images/Image_1.jpg",
+                //    Word = new Word(),
+                //    WordId = 1
+                //}
+
             };
         }
     }

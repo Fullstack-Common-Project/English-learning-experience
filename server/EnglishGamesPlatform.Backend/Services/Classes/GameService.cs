@@ -4,6 +4,7 @@ using EnglishGamesPlatform.Backend.Models.DTOs.Entities_DTOs;
 using EnglishGamesPlatform.Backend.Models.Entities;
 using EnglishGamesPlatform.Backend.Repositories.Interfaces;
 using EnglishGamesPlatform.Backend.Services.Interfaces;
+using System.Net;
 
 namespace EnglishGamesPlatform.Backend.Services.Classes
 {
@@ -28,7 +29,7 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
                 {
                     return new Response<IEnumerable<GameDTO>>
                     {
-                        StatusCode = StatusCodes.Status200OK,
+                        StatusCode = HttpStatusCode.OK,
                         IsSuccess = true,
                         Message = "Games retrieved successfully.",
                         Data = gameDTOs
@@ -38,7 +39,7 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
                 {
                     return new Response<IEnumerable<GameDTO>>
                     {
-                        StatusCode = StatusCodes.Status404NotFound,
+                        StatusCode = HttpStatusCode.NotFound,
                         IsSuccess = false,
                         Message = "No games found.",
                         Data = null
@@ -49,7 +50,7 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
             {
                 return new Response<IEnumerable<GameDTO>>
                 {
-                    StatusCode = StatusCodes.Status500InternalServerError,
+                    StatusCode = HttpStatusCode.InternalServerError,
                     IsSuccess = false,
                     Message = $"An error occurred while retrieving games: {ex.Message}",
                     Data = null

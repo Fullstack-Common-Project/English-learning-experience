@@ -1,15 +1,15 @@
 using EnglishGamesPlatform.Backend.Data;
-using EnglishGamesPlatform.Backend.Mapping;
-using EnglishGamesPlatform.Backend.Models.Entities;
-using EnglishGamesPlatform.Backend.Models.GameDatas;
+using EnglishGamesPlatform.Backend.Extensions;
 using EnglishGamesPlatform.Backend.Repositories.Classes;
 using EnglishGamesPlatform.Backend.Repositories.Classes.Entities;
 using EnglishGamesPlatform.Backend.Repositories.Classes.Games;
 using EnglishGamesPlatform.Backend.Repositories.Interfaces;
 using EnglishGamesPlatform.Backend.Services.Classes;
 using EnglishGamesPlatform.Backend.Services.Interfaces;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -38,13 +38,6 @@ builder.Services.AddAutoMapper(typeof(Program));
 
 #region Dependency Injection
 
-#region User
-
-//builder.Services.AddScoped<IUs, UserRepository>();
-builder.Services.AddScoped<IGenericService<User>, UserService>();
-
-#endregion
-
 #region Game
 
 builder.Services.AddScoped<IGameRepository, GameRepository>();
@@ -52,17 +45,45 @@ builder.Services.AddScoped<IGameService, GameService>();
 
 #endregion
 
+#region GameResult
+
+builder.Services.AddScoped<IGameResultRepository, GameResultRepository>();
+
+#endregion
+
+#region General Game
+
 #region PictureHangman
 
 builder.Services.AddScoped<IGeneralGameRepository, PictureHangmanRepository>();
-builder.Services.AddScoped<IGeneralGameRepository, PictureHangmanRepositoryFake>();
 
 #endregion
 
 builder.Services.AddScoped<IGeneralGameService, GeneralGameService>();
 
+#endregion 
+
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<IImageRepository, ImageRepository>();
+builder.Services.AddScoped<ISentenceRepository, SentenceRepository>();
+builder.Services.AddScoped<IWordRepository, WordRepository>();
+
 #endregion
 
+builder.Services.AddCustomServices();
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;
+})
+.AddCookie()
+.AddGoogle(options =>
+{
+    options.ClientId = builder.Configuration["Authentication:Google:ClientId"]!;
+    options.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"]!;
+    options.CallbackPath = "/signin-google";
+});
 
 var app = builder.Build();
 
@@ -73,9 +94,19 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+
+app.MapGet("/login-google", async (HttpContext context) =>
+{
+    await context.ChallengeAsync(GoogleDefaults.AuthenticationScheme,
+        new AuthenticationProperties { RedirectUri = "/" });
+});
+
+app.UseCustomExceptionHandler();
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+app.UseAuthentication();
 
 app.MapControllers();
 

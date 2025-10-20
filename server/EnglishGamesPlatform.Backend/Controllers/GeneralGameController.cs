@@ -23,7 +23,7 @@ namespace EnglishGamesPlatform.Backend.Controllers
             if (response.IsSuccess)
                 return Ok(response);
             else
-                return StatusCode(response.StatusCode, response);
+                return StatusCode((int)response.StatusCode, response);
         }
 
         [HttpGet("{gameId}/leaderboard")]
@@ -33,7 +33,7 @@ namespace EnglishGamesPlatform.Backend.Controllers
             if (response.IsSuccess)
                 return Ok(response);
             else
-                return StatusCode(response.StatusCode, response);
+                return StatusCode((int)response.StatusCode, response);
         }
 
         [HttpPost("{gameId}/progress")]
@@ -43,7 +43,7 @@ namespace EnglishGamesPlatform.Backend.Controllers
             if (response.IsSuccess)
                 return Ok(response);
             else
-                return StatusCode(response.StatusCode, response);
+                return StatusCode((int)response.StatusCode, response);
         }
 
     }
