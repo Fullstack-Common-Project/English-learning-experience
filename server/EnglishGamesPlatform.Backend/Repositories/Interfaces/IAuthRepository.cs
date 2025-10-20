@@ -6,7 +6,7 @@ namespace EnglishGamesPlatform.Backend.Repositories.Interfaces
     public interface IAuthRepository
     {
         //public Task<User?> Login(string email);
-        public Task Register(RegisterDTO newUser);
+        public Task<User> Register(RegisterDTO newUser);
         public Task<User?> IsExistingUser(string email);
     }
 }
