@@ -6,7 +6,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap');
 
 @layer base {
-  html { direction: rtl; }
   body {
     @apply min-h-screen bg-slate-950 text-white font-sans antialiased;
     background-image:
@@ -22,6 +21,9 @@
 @layer components {
   /* עטיפת עמודים */
   .page-container { @apply container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-10; }
+
+/*   רקע ל - header*/
+  .header-bg { @apply fixed top-0 left-0 right-0 z-40 transition-shadow bg-slate-900/40 backdrop-blur-md;}
 
   /* כותרת עמוד */
   .section-title { @apply text-center text-4xl md:text-5xl leading-tight mb-8 md:mb-10; }
@@ -74,3 +76,5 @@
   .nav-list { @apply hidden md:flex items-center gap-2; }
   .nav-link { @apply text-slate-300 hover:text-white px-3 py-2 rounded-lg transition; }
 }
+
+
