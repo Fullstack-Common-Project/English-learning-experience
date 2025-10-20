@@ -1,34 +1,85 @@
-// 'use client';
-// import React, { useState } from 'react';
-// import  Timer  from '../components/leaderboard/Timer'
 
-// export default function SentenceShuffleGame() {
-//  const [running, setRunning] = useState(false);
-//   const [gameOver, setGameOver] = useState(false);
-//   const [finalTime, setFinalTime] = useState<number | null>(null);
+// "use client";
+// import { useState, useEffect } from "react";
+// import { GameProps } from "@/components/common/GameLayout";
 
-//   const handleGameEnd = (time: number) => {
-//     setFinalTime(time);
-//     console.log('Game ended at:', time / 1000, 'seconds');
+// type Sentence = {
+//   id: number;
+//   text: string;
+// };
+
+// const demoSentences: Sentence[] = [
+//   { id: 1, text: "The quick brown fox" },
+//   { id: 2, text: "jumps over the lazy dog" },
+//   { id: 3, text: "Hello world!" },
+// ];
+
+// export default function SentenceShuffleGame({ onScoreChange, onGameOver }: GameProps) {
+//   const [currentIndex, setCurrentIndex] = useState(0);
+//   const [shuffledWords, setShuffledWords] = useState<string[]>([]);
+//   const [selectedOrder, setSelectedOrder] = useState<string[]>([]);
+//   const [completed, setCompleted] = useState(false);
+
+//   useEffect(() => {
+//     if (demoSentences[currentIndex]) {
+//       const words = demoSentences[currentIndex].text.split(" ");
+//       setShuffledWords(shuffleArray(words));
+//       setSelectedOrder([]);
+//     }
+//   }, [currentIndex]);
+
+//   const shuffleArray = (arr: string[]) => {
+//     return [...arr].sort(() => Math.random() - 0.5);
 //   };
 
+//   const handleSelectWord = (word: string) => {
+//     setSelectedOrder(prev => [...prev, word]);
+//   };
+
+//   const handleSubmit = () => {
+//     const original = demoSentences[currentIndex].text.split(" ");
+//     if (selectedOrder.join(" ") === original.join(" ")) {
+//       onScoreChange?.((prev) => prev + 10); // ניקוד +10
+//     }
+
+//     if (currentIndex + 1 < demoSentences.length) {
+//       setCurrentIndex(currentIndex + 1);
+//     } else {
+//       setCompleted(true);
+//       onGameOver?.(); // הזמן יגיע מה־Timer שמנהל ה-GameLayout
+//     }
+//   };
+
+//   if (completed) return <p className="text-xl font-semibold">משפטים הושלמו!</p>;
+
 //   return (
-//     <div style={{ padding: '24px', backgroundColor: '#0f1320', minHeight: '100vh', color: '#e9edf5' }}>
-//       <h1>Sentence Shuffle Demo</h1>
+//     <div className="text-center">
+//       <h3 className="text-xl font-semibold mb-4">
+//         משפט {currentIndex + 1} מתוך {demoSentences.length}
+//       </h3>
 
-//       {/* {!running && !gameOver && (
-//         <button onClick={() => setRunning(true)}>Start Game</button>
-//       )}
+//       <div className="mb-4 flex flex-wrap justify-center gap-2">
+//         {shuffledWords.map(word => (
+//           <button
+//             key={word + Math.random()}
+//             onClick={() => handleSelectWord(word)}
+//             className="px-3 py-1 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all"
+//           >
+//             {word}
+//           </button>
+//         ))}
+//       </div>
 
-//       {running && !gameOver && (
-//         <button onClick={() => setGameOver(true)}>End Game</button>
-//       )}
+//       <div className="mb-4">
+//         <p>סדר נבחר: {selectedOrder.join(" ")}</p>
+//       </div>
 
-//       <Timer running={running} gameOver={gameOver} onFinish={handleGameEnd} /> */}
-
-//       {finalTime !== null && (
-//         <p>⏱ Final time: {(finalTime / 1000).toFixed(1)} seconds</p>
-//       )}
+//       <button
+//         onClick={handleSubmit}
+//         className="px-6 py-3 bg-green-500 text-white rounded-xl shadow hover:bg-green-600 transition-all"
+//       >
+//         Submit
+//       </button>
 //     </div>
 //   );
 // }
@@ -49,12 +100,13 @@ const demoSentences: Sentence[] = [
   { id: 3, text: "Hello world!" },
 ];
 
-export default function SentenceShuffleGame({ onAddScore, onGameOver }: GameProps) {
+export default function SentenceShuffleGame({ onScoreChange, onGameOver, paused }: GameProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [shuffledWords, setShuffledWords] = useState<string[]>([]);
   const [selectedOrder, setSelectedOrder] = useState<string[]>([]);
   const [completed, setCompleted] = useState(false);
 
+  // Shuffle words for the current sentence
   useEffect(() => {
     if (demoSentences[currentIndex]) {
       const words = demoSentences[currentIndex].text.split(" ");
@@ -63,51 +115,69 @@ export default function SentenceShuffleGame({ onAddScore, onGameOver }: GameProp
     }
   }, [currentIndex]);
 
-  const shuffleArray = (arr: string[]) => {
-    return [...arr].sort(() => Math.random() - 0.5);
-  };
+  const shuffleArray = (arr: string[]) => [...arr].sort(() => Math.random() - 0.5);
 
   const handleSelectWord = (word: string) => {
+    if (paused || completed) return; // לא מאפשר לבחור בזמן הפסקה או לאחר סיום
     setSelectedOrder(prev => [...prev, word]);
   };
 
   const handleSubmit = () => {
+    if (paused || completed) return;
+
     const original = demoSentences[currentIndex].text.split(" ");
     if (selectedOrder.join(" ") === original.join(" ")) {
-      onAddScore?.(10); // ניקוד +10
+      // הוספת ניקוד דרך onScoreChange מ-GameLayout
+      onScoreChange?.((prev) => prev + 10);
     }
+
     if (currentIndex + 1 < demoSentences.length) {
       setCurrentIndex(currentIndex + 1);
     } else {
       setCompleted(true);
-      onGameOver?.(0); // הזמן יגיע מה־Timer
+      onGameOver?.(); // GameLayout ינהל את הזמן והסיום
     }
   };
 
-  if (completed) return <p className="text-xl font-semibold">משפטים הושלמו!</p>;
+  if (completed) {
+    return (
+      <p className="text-xl font-semibold text-green-600">
+        כל המשפטים הושלמו! 👏
+      </p>
+    );
+  }
 
   return (
     <div className="text-center">
       <h3 className="text-xl font-semibold mb-4">
         משפט {currentIndex + 1} מתוך {demoSentences.length}
       </h3>
+
       <div className="mb-4 flex flex-wrap justify-center gap-2">
         {shuffledWords.map(word => (
           <button
             key={word + Math.random()}
             onClick={() => handleSelectWord(word)}
-            className="px-3 py-1 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-all"
+            disabled={paused} // כפתורים לא פעילים בזמן Pause
+            className={`px-3 py-1 rounded-lg text-white transition-all ${
+              paused ? "bg-gray-400 cursor-not-allowed" : "bg-blue-500 hover:bg-blue-600"
+            }`}
           >
             {word}
           </button>
         ))}
       </div>
+
       <div className="mb-4">
         <p>סדר נבחר: {selectedOrder.join(" ")}</p>
       </div>
+
       <button
         onClick={handleSubmit}
-        className="px-6 py-3 bg-green-500 text-white rounded-xl shadow hover:bg-green-600 transition-all"
+        disabled={paused}
+        className={`px-6 py-3 rounded-xl shadow text-white transition-all ${
+          paused ? "bg-gray-400 cursor-not-allowed" : "bg-green-500 hover:bg-green-600"
+        }`}
       >
         Submit
       </button>

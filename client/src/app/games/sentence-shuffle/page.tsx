@@ -11,10 +11,8 @@ export default function SentenceShufflePage() {
   };
 
   return (
-    <GameLayout
-      gameComponent={<SentenceShuffleGame />}
-      helpComponent={<HelpScreen />}
-      onGameOver={handleGameOver}
-    />
+    <GameLayout gameTitle="🧩 Sentence Shuffle">
+      <SentenceShuffleGame />
+    </GameLayout>
   );
 }
