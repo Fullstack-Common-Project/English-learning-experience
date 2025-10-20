@@ -5,22 +5,22 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EnglishGamesPlatform.Backend.Repositories.Classes
 {
-    public class ImageRepository :IImageRepository
+    public class CategoryRepository :ICategoryRepository
     {
         private readonly AppDbContext _appDbContext;
 
-        public ImageRepository(AppDbContext appDbContext)
+        public CategoryRepository(AppDbContext appDbContext)
         {
             _appDbContext = appDbContext;
         }
-        public async Task<Image?> GetByIdAsync(int id)
+        public async Task<Category?> GetByIdAsync(int id)
         {
-            return await _appDbContext.Images.FindAsync(id);
+            return await _appDbContext.Categories.FindAsync(id);
         }
 
-        public async Task<List<Image>> GetRandomImagesAsync(int count)
+        public async Task<List<Category>> GetRandomCategoriesAsync(int count)
         {
-            return await _appDbContext.Images
+            return await _appDbContext.Categories
                 .OrderBy(i => Guid.NewGuid())
                 .Take(count)
                 .ToListAsync();

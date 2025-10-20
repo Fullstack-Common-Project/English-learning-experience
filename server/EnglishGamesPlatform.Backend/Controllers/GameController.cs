@@ -1,8 +1,6 @@
 ﻿using EnglishGamesPlatform.Backend.Models.DTOs;
 using EnglishGamesPlatform.Backend.Models.DTOs.Entities_DTOs;
-using EnglishGamesPlatform.Backend.Models.Entities;
 using EnglishGamesPlatform.Backend.Services.Interfaces;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EnglishGamesPlatform.Backend.Controllers
@@ -25,7 +23,7 @@ namespace EnglishGamesPlatform.Backend.Controllers
             if (response.IsSuccess)
                 return Ok(response);
             else
-                return StatusCode(response.StatusCode, response);
+                return StatusCode((int)response.StatusCode, response);
         }
     }
 }
