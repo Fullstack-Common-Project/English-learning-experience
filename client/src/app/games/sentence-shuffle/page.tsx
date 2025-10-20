@@ -2,11 +2,6 @@
 import React, { useState } from 'react';
 import GameLayout from '@/components/common/GameLayout';
 import SentenceShuffleGame from '@/games/SentenceShuffleGame';
-import ScoreDisplay from '@/components/leaderboard/ScoreDisplay';
-import GameOverModal from '@/components/leaderboard/GameOverModal';
-import PauseOverlay from '@/components/hud/pauseOverlay';
-import ProgressBar from '@/components/hud/progressBar';
-import Timer from '@/components/leaderboard/Timer';
 
 export default function SentenceShufflePage() {
 
