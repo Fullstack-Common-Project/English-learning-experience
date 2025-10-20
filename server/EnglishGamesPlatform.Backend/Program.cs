@@ -9,7 +9,11 @@ using EnglishGamesPlatform.Backend.Services.Classes;
 using EnglishGamesPlatform.Backend.Services.Implementations;
 using EnglishGamesPlatform.Backend.Services.Interfaces;
 using EnglishGamesPlatform.Backend.Utils;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -29,12 +33,23 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddCustomServices();
-#region PictureHangman
 
-builder.Services.AddScoped<IGeneralGameRepository, PictureHangmanRepository>();
-builder.Services.AddScoped<IGeneralGameRepository, PictureHangmanRepositoryFake>();
 
-#endregion
+
+// הוספת אימות
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;
+})
+.AddCookie()
+.AddGoogle(options =>
+{
+    options.ClientId = builder.Configuration["Authentication:Google:ClientId"];
+    options.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"];
+    options.CallbackPath = "/signin-google"; 
+});
+
 
 
 
@@ -47,11 +62,28 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+
+// קישור שמתחיל את תהליך ההתחברות
+app.MapGet("/login-google", async (HttpContext context) =>
+{
+    await context.ChallengeAsync(GoogleDefaults.AuthenticationScheme,
+        new AuthenticationProperties { RedirectUri = "/" });
+});
+
 app.UseCustomExceptionHandler();
 
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+app.UseAuthentication();
+//app.UseAuthorization();
+//app.MapGet("/me", (ClaimsPrincipal user) =>
+//{
+//    if (user.Identity?.IsAuthenticated ?? false)
+//        return Results.Ok(new { Name = user.Identity.Name });
+//    return Results.Unauthorized();
+//});
+
 
 app.MapControllers();
 
