@@ -1,12 +1,12 @@
 using EnglishGamesPlatform.Backend.Data;
-using EnglishGamesPlatform.Backend.Models.Entities;
-using EnglishGamesPlatform.Backend.Models.GameDatas;
-using EnglishGamesPlatform.Backend.Repositories.Classes;
+using EnglishGamesPlatform.Backend.Extensions;
+using EnglishGamesPlatform.Backend.Repositories.Implementations;
 using EnglishGamesPlatform.Backend.Repositories.Interfaces;
-using EnglishGamesPlatform.Backend.Services;
-using EnglishGamesPlatform.Backend.Services.Classes;
+using EnglishGamesPlatform.Backend.Services.Implementations;
 using EnglishGamesPlatform.Backend.Services.Interfaces;
+using EnglishGamesPlatform.Backend.Utils;
 using Microsoft.EntityFrameworkCore;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,24 +24,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-#region Dependency Injection
-
-#region User
-
-builder.Services.AddScoped<IGenericRepository<User>, UserRepository>();
-builder.Services.AddScoped<IGenericService<User>, UserService>();
-
-#endregion
-
-#region PictureHangman
-
-builder.Services.AddScoped<IPictureHangmanRepository, PictureHangmanRepository>();
-builder.Services.AddScoped<IGenericGameService<PictureHangmanData>, PictureHangmanService>();
-
-#endregion
-
-#endregion
-
+builder.Services.AddCustomServices();
 
 var app = builder.Build();
 
@@ -51,6 +34,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCustomExceptionHandler();
 
 app.UseHttpsRedirection();
 
