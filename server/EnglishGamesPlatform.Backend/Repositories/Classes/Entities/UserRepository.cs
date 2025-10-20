@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EnglishGamesPlatform.Backend.Repositories.Classes
 {
-    public class UserRepository : IGenericRepository<User>
+    public class UserRepository 
     {
         private readonly AppDbContext _appDbContext;
 
@@ -18,5 +18,6 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes
         {
             return await _appDbContext.Users.ToListAsync();
         }
+
     }
 }

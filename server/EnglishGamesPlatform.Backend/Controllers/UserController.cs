@@ -1,4 +1,5 @@
-﻿using EnglishGamesPlatform.Backend.Models.DTOs;
+﻿using EnglishGamesPlatform.Backend.Models;
+using EnglishGamesPlatform.Backend.Models.DTOs;
 using EnglishGamesPlatform.Backend.Models.Entities;
 using EnglishGamesPlatform.Backend.Services.Interfaces;
 using Microsoft.AspNetCore.Http;

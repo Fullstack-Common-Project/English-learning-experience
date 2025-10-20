@@ -4,6 +4,7 @@ using EnglishGamesPlatform.Backend.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EnglishGamesPlatform.Backend.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251020101927_addImageUrlToGameTable")]
+    partial class addImageUrlToGameTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -59,9 +62,6 @@ namespace EnglishGamesPlatform.Backend.Migrations
                     b.Property<string>("ImageUrl")
                         .HasColumnType("longtext");
 
-                    b.Property<string>("Instructions")
-                        .HasColumnType("longtext");
-
                     b.HasKey("GameId");
 
                     b.ToTable("Games");
@@ -76,9 +76,6 @@ namespace EnglishGamesPlatform.Backend.Migrations
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("GameResultId"));
 
                     b.Property<int>("GameId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Rounds")
                         .HasColumnType("int");
 
                     b.Property<int>("Score")
