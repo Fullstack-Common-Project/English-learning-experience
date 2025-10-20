@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using EnglishGamesPlatform.Backend.Models;
+using System.Net;
 
 namespace EnglishGamesPlatform.Backend.Models
 {
@@ -11,11 +12,9 @@ namespace EnglishGamesPlatform.Backend.Models
         public string Message { get; set; } = string.Empty;
     }
 
-    }
-
     public class Response<T> : Response
     {
         public T? Data { get; set; }
     }
-
 }
+
