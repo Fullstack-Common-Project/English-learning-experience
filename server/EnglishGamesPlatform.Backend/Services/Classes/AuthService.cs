@@ -43,7 +43,7 @@ namespace EnglishGamesPlatform.Backend.Services.Implementations
                     Data = new UserResponse
                     {
                         Token = token,
-                        User = new User { UserId = result.UserId, FullName = result.FullName, Email = result.Email }
+                        User = new User { UserId = result.UserId, FullName = result.FullName }
                     }
                 };
             }
@@ -72,7 +72,7 @@ namespace EnglishGamesPlatform.Backend.Services.Implementations
             return new Response<UserResponse> { IsSuccess = true, StatusCode = System.Net.HttpStatusCode.Created, Message = "Registration successful", Data= new UserResponse
             {
                 Token = token,
-                User = new User { UserId = result!.UserId, FullName = result.FullName, Email = result.Email }
+                User = new User { UserId = result!.UserId, FullName = result.FullName }
             }
             };
         }
