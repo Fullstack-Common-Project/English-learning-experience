@@ -1,10 +1,11 @@
 ﻿using EnglishGamesPlatform.Backend.Models;
+using EnglishGamesPlatform.Backend.Models.DTOs;
 
 namespace EnglishGamesPlatform.Backend.Repositories.Interfaces
 {
     public interface IGeneralGameRepository
     {
-        int GameID { get; }
+        string GameName { get; }
         GameInitialData GetData();
     }
 }

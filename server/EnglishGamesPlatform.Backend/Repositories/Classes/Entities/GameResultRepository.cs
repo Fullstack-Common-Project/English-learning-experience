@@ -1,5 +1,5 @@
 ﻿using EnglishGamesPlatform.Backend.Data;
-using EnglishGamesPlatform.Backend.Models;
+using EnglishGamesPlatform.Backend.Models.DTOs;
 using EnglishGamesPlatform.Backend.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
@@ -40,5 +40,6 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes.Entities
                 Leaderboards = leaderboardEntries
             };
         }
+
     }
 }

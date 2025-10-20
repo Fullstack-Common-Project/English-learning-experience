@@ -5,6 +5,7 @@ using EnglishGamesPlatform.Backend.Repositories.Interfaces;
 using EnglishGamesPlatform.Backend.Services.Interfaces;
 using EnglishGamesPlatform.Backend.Utils;
 using EnglishGamesPlatform.Backend.Validation;
+using Org.BouncyCastle.Crypto.Generators;
 using System.Diagnostics.Eventing.Reader;
 
 namespace EnglishGamesPlatform.Backend.Services.Implementations
@@ -69,11 +70,12 @@ namespace EnglishGamesPlatform.Backend.Services.Implementations
             var res = await _authRepository.Register(new RegisterDTO { FullName = username, Password = BCrypt.Net.BCrypt.HashPassword(password), Email = email });
 
             var token = _tokenService.GenerateToken(email);
-            return new Response<UserResponse> { IsSuccess = true, StatusCode = System.Net.HttpStatusCode.Created, Message = "Registration successful", Data= new UserResponse
+            return new Response<UserResponse>
             {
                 Token = token,
                 User = new User { UserId=res.UserId, FullName = res.FullName }
             }
+
             };
         }
 

@@ -4,6 +4,7 @@ using EnglishGamesPlatform.Backend.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EnglishGamesPlatform.Backend.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251020122325_addInstructionsToGameTable")]
+    partial class addInstructionsToGameTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -119,29 +122,6 @@ namespace EnglishGamesPlatform.Backend.Migrations
                     b.HasIndex("WordId");
 
                     b.ToTable("Images");
-                });
-
-            modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.OppositeWord", b =>
-                {
-                    b.Property<int>("OppositeWordId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("OppositeWordId"));
-
-                    b.Property<int>("FirstWordId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SecondWordId")
-                        .HasColumnType("int");
-
-                    b.HasKey("OppositeWordId");
-
-                    b.HasIndex("FirstWordId");
-
-                    b.HasIndex("SecondWordId");
-
-                    b.ToTable("OppositeWords");
                 });
 
             modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.Progress", b =>
@@ -276,28 +256,8 @@ namespace EnglishGamesPlatform.Backend.Migrations
                     b.Navigation("Word");
                 });
 
-            modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.OppositeWord", b =>
-                {
-                    b.HasOne("EnglishGamesPlatform.Backend.Models.Entities.Word", "FirstWord")
-                        .WithMany()
-                        .HasForeignKey("FirstWordId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("EnglishGamesPlatform.Backend.Models.Entities.Word", "SecondWord")
-                        .WithMany()
-                        .HasForeignKey("SecondWordId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("FirstWord");
-
-                    b.Navigation("SecondWord");
-                });
-
             modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.Progress", b =>
                 {
-
                     b.HasOne("EnglishGamesPlatform.Backend.Models.Entities.Game", "Game")
                         .WithMany("Progress")
                         .HasForeignKey("GameId")
@@ -339,11 +299,11 @@ namespace EnglishGamesPlatform.Backend.Migrations
                 });
 
             modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.User", b =>
-                        {
-                            b.Navigation("GameResults");
+                {
+                    b.Navigation("GameResults");
 
-                            b.Navigation("Progress");
-                        });
+                    b.Navigation("Progress");
+                });
 
             modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.Word", b =>
                 {
