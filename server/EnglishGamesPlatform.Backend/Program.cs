@@ -1,6 +1,8 @@
 using EnglishGamesPlatform.Backend.Data;
-using EnglishGamesPlatform.Backend.Extensions;
-using EnglishGamesPlatform.Backend.Repositories.Implementations;
+using EnglishGamesPlatform.Backend.Models.Entities;
+using EnglishGamesPlatform.Backend.Models.GameDatas;
+using EnglishGamesPlatform.Backend.Repositories.Classes;
+using EnglishGamesPlatform.Backend.Repositories.Classes.Games;
 using EnglishGamesPlatform.Backend.Repositories.Interfaces;
 using EnglishGamesPlatform.Backend.Services.Implementations;
 using EnglishGamesPlatform.Backend.Services.Interfaces;
@@ -25,6 +27,23 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddCustomServices();
+
+builder.Services.AddScoped<IGenericRepository<User>, UserRepository>();
+builder.Services.AddScoped<IGenericService<User>, UserService>();
+
+#endregion
+
+#region PictureHangman
+
+builder.Services.AddScoped<IGeneralGameRepository, PictureHangmanRepository>();
+builder.Services.AddScoped<IGeneralGameRepository, PictureHangmanRepositoryFake>();
+
+#endregion
+
+builder.Services.AddScoped<IGeneralGameService, GeneralGameService>();
+
+#endregion
+
 
 var app = builder.Build();
 
