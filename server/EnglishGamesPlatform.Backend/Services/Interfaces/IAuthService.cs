@@ -6,8 +6,8 @@ namespace EnglishGamesPlatform.Backend.Services.Interfaces
 {
     public interface IAuthService
     {
-        Task<Response<string>> Login(LoginDto user);
-        Task<Response<string>> Register(RegisterDTO user);
+        Task<Response<UserResponse>> Login(LoginDto user);
+        Task<Response<UserResponse>> Register(RegisterDTO user);
     }
 
 }
