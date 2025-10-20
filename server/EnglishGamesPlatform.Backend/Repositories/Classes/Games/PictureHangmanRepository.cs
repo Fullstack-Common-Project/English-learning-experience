@@ -1,4 +1,5 @@
 ﻿using EnglishGamesPlatform.Backend.Models;
+using EnglishGamesPlatform.Backend.Models.DTOs;
 using EnglishGamesPlatform.Backend.Models.Entities;
 using EnglishGamesPlatform.Backend.Models.GameDatas;
 using EnglishGamesPlatform.Backend.Repositories.Interfaces;
@@ -7,7 +8,7 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes.Games
 {
     public class PictureHangmanRepository : IGeneralGameRepository
     {
-        public int GameID => 1;
+        public string GameName => "Picture Hangman";
 
         public GameInitialData GetData()
         {
