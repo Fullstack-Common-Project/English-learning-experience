@@ -1,10 +1,13 @@
-﻿namespace EnglishGamesPlatform.Backend.Models
+﻿using EnglishGamesPlatform.Backend.Models;
+using System.Net;
+
+namespace EnglishGamesPlatform.Backend.Models
 {
     public class Response
     {
         public bool IsSuccess { get; set; }
 
-        public int StatusCode { get; set; }
+        public HttpStatusCode StatusCode { get; set; }
 
         public string Message { get; set; } = string.Empty;
     }
@@ -13,6 +16,5 @@
     {
         public T? Data { get; set; }
     }
-
-
 }
+
