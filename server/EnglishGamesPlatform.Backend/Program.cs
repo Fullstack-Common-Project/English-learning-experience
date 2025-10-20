@@ -76,13 +76,13 @@ app.UseHttpsRedirection();
 
 app.UseAuthorization();
 app.UseAuthentication();
-app.UseAuthorization();
-app.MapGet("/me", (ClaimsPrincipal user) =>
-{
-    if (user.Identity?.IsAuthenticated ?? false)
-        return Results.Ok(new { Name = user.Identity.Name });
-    return Results.Unauthorized();
-});
+
+//app.MapGet("/me", (ClaimsPrincipal user) =>
+//{
+//    if (user.Identity?.IsAuthenticated ?? false)
+//        return Results.Ok(new { Name = user.Identity.Name });
+//    return Results.Unauthorized();
+//});
 
 
 app.MapControllers();
