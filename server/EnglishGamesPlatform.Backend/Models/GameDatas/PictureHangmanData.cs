@@ -2,6 +2,6 @@
 {
     public class PictureHangmanData
     {
-        public List<string> PictureUrls { get; set; }
+        public List<string> PictureUrls { get; set; }= new List<string>();
     }
 }
