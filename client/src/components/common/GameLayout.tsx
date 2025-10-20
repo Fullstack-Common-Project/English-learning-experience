@@ -38,7 +38,6 @@ export default function GameLayout({ children, gameTitle }: GameLayoutProps) {
     setCountdownActive(true); // מתחיל את הספירה 3-2-1
   };
 
-
   useEffect(() => {
     const savedTotal = localStorage.getItem("totalScore");
     if (savedTotal) setTotalScore(Number(savedTotal));
@@ -51,7 +50,7 @@ export default function GameLayout({ children, gameTitle }: GameLayoutProps) {
 
   const handleGameOver = () => {
     stop();
-    // setFinalTime(time); // תופס את הזמן ברגע הסיום
+    //setFinalTime(time); // תופס את הזמן ברגע הסיום
     setGameOver(true);
     goToStage("end");
   };
@@ -82,22 +81,19 @@ export default function GameLayout({ children, gameTitle }: GameLayoutProps) {
   console.log("time" + time);
   console.log("final" + finalTime);
 
-
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-blue-100 to-blue-200 p-8">
-      <h1 className="text-4xl font-bold text-blue-700 mb-8 drop-shadow">
-        {gameTitle}
-      </h1>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gradient-to-b from-blue-100 to-blue-200 p-8 relative">
+
+      <h1 className="text-4xl font-bold text-blue-700 mb-8 drop-shadow">{gameTitle}</h1>
 
       {/* Welcome */}
       {stage === "welcome" && (
         <div className="text-center">
-          <p className="text-lg mb-6">ברוכים הבאים למשחק {gameTitle}!</p>
           <button
             onClick={nextStage}
             className="px-6 py-3 bg-blue-600 text-white rounded-xl shadow hover:bg-blue-700 transition-all"
           >
-            התחל ▶
+            Start ▶
           </button>
         </div>
       )}
@@ -109,58 +105,62 @@ export default function GameLayout({ children, gameTitle }: GameLayoutProps) {
 
       {/* Game */}
       {stage === "game" && (
-        <div className=" w-full max-w-3xl">
-          {/* Pause Overlay */}
-          {paused && !countdownActive && (
-            <div className="fixed inset-0 bg-gray-500 bg-opacity-60 flex items-center justify-center z-40">
-              <button
-                onClick={handleResume}
-                className="px-6 py-3 bg-yellow-500 text-white rounded-xl shadow hover:bg-yellow-600 transition-all"
-              >
-                ▶ Resume
-              </button>
-            </div>)}
+        <div className="w-full max-w-3xl relative z-0">
 
-          {/*Countdown3_2_1*/}
-          {countdownActive && (
-            <Countdown3_2_1
-              onFinish={() => {
-                setPaused(false);          // מחזיר את המשחק לפעולה
-                setCountdownActive(false); // סוגר את הספירה
-              }}
-            />
+          {/* Overlay אפור שקוף שחוסם הכל */}
+          {(paused || countdownActive) && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center"
+              style={{
+                backgroundColor: "rgba(255, 255, 255, 0.0)", // כמעט שקוף
+                pointerEvents: "auto", // חוסם לחיצות על הכפתורים שמתחת
+              }}>
+              {paused && !countdownActive && (
+                <button
+                  onClick={handleResume}
+                  className="px-6 py-3 bg-yellow-500 text-white rounded-xl shadow hover:bg-yellow-600 transition-all"
+                >
+                  ▶ Resume
+                </button>
+              )}
+              {countdownActive && (
+                <Countdown3_2_1
+                  onFinish={() => {
+                    setCountdownActive(false);
+                    setPaused(false);
+                  }}
+                />
+              )}
+            </div>
           )}
-          <div className="flex justify-between items-center mb-6 relative z-20">
-            {/* הזמן */}
-            <div className="font-mono text-lg font-semibold px-4 py-2 bg-blue-600 text-white rounded-xl shadow hover:scale-105 transition-transform">
+
+          {/* HUD */}
+          <div className={`flex justify-between items-center mb-6 relative z-20 ${paused || countdownActive ? 'pointer-events-none opacity-60' : ''}`}>
+            <div className="font-mono text-lg font-semibold px-4 py-2 bg-blue-600 text-white rounded-xl shadow">
               {Math.floor(time / 60)}:{time % 60 < 10 ? "0" + (time % 60) : time % 60}
             </div>
 
-            {/* Score */}
             <ScoreDisplay score={score} />
 
-            {/* AudioToggle */}
             <AudioToggle />
 
-            {/* כפתור Pause / Resume */}
             <button
-              onClick={() => setPaused(!paused)}
-              className="px-4 py-2 bg-yellow-500 text-white rounded-xl shadow hover:bg-yellow-600 transition-all relative z-30"
+              onClick={() => setPaused(true)}
+              className="px-4 py-2 bg-yellow-500 text-white rounded-xl shadow hover:bg-yellow-600 transition-all"
+              disabled={paused || countdownActive}
             >
-              {paused ? "▶ Resume" : "⏸ Pause"}
+              ⏸ Pause
             </button>
           </div>
 
-
-          <div className="bg-white rounded-2xl shadow p-6">
+          {/* תוכן המשחק */}
+          <div className={`bg-white rounded-2xl shadow p-6 ${paused || countdownActive ? 'pointer-events-none opacity-60' : ''}`}>
             {React.isValidElement(children) &&
               React.cloneElement(children as React.ReactElement<GameProps>, {
                 onScoreChange: handleScoreChange,
                 onGameOver: handleGameOver,
-                paused: paused
+                paused: paused || countdownActive
               })}
           </div>
-
         </div>
       )}
 
@@ -168,7 +168,7 @@ export default function GameLayout({ children, gameTitle }: GameLayoutProps) {
       {stage === "end" && gameOver && (
         <GameOverModal
           score={score}
-          time={time} // זמן ישר מה-Timer, בלי finalTime
+          time={time}
           onRestart={handleRestart}
         />
       )}
