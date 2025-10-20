@@ -6,26 +6,23 @@ using EnglishGamesPlatform.Backend.Repositories.Classes.Games;
 using EnglishGamesPlatform.Backend.Repositories.Interfaces;
 using EnglishGamesPlatform.Backend.Services.Classes;
 using EnglishGamesPlatform.Backend.Services.Interfaces;
-
-using EnglishGamesPlatform.Backend.Utils;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.Google;
-
-
 using Microsoft.EntityFrameworkCore;
-using System.Security.Claims;
-
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
-// Connect to MySQL database
+# region Connect to MySQL DB
+
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString))
 );
+
+#endregion
 
 
 builder.Services.AddControllers();
@@ -33,16 +30,48 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+#region AutoMapper
+
+builder.Services.AddAutoMapper(typeof(Program));
+
+#endregion
+
+#region Dependency Injection
+
+#region Game
+
+builder.Services.AddScoped<IGameRepository, GameRepository>();
+builder.Services.AddScoped<IGameService, GameService>();
+
+#endregion
+
 #region GameResult
-builder.Services.AddScoped<GameResultRepository>();
+
+builder.Services.AddScoped<IGameResultRepository, GameResultRepository>();
+
+#endregion
+
+#region General Game
+
+#region PictureHangman
+
+builder.Services.AddScoped<IGeneralGameRepository, PictureHangmanRepository>();
+
+#endregion
+
+builder.Services.AddScoped<IGeneralGameService, GeneralGameService>();
+
+#endregion 
+
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<IImageRepository, ImageRepository>();
+builder.Services.AddScoped<ISentenceRepository, SentenceRepository>();
+builder.Services.AddScoped<IWordRepository, WordRepository>();
 
 #endregion
 
 builder.Services.AddCustomServices();
 
-
-
-// ����� �����
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
@@ -56,14 +85,6 @@ builder.Services.AddAuthentication(options =>
     options.CallbackPath = "/signin-google";
 });
 
-
-builder.Services.AddScoped<IGeneralGameService, GeneralGameService>();
-builder.Services.AddScoped<IGameResultRepository, GameResultRepository>();
-builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
-builder.Services.AddScoped<IImageRepository, ImageRepository>();
-builder.Services.AddScoped<ISentenceRepository, SentenceRepository>();
-builder.Services.AddScoped<IWordRepository, WordRepository>();
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -73,13 +94,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-
-//����� ������ �� ����� ��������
-//app.MapGet("/login-google", async (HttpContext context) =>
-//{
-//    await context.ChallengeAsync(GoogleDefaults.AuthenticationScheme,
-//        new AuthenticationProperties { RedirectUri = "/" });
-//});
+app.MapGet("/login-google", async (HttpContext context) =>
+{
+    await context.ChallengeAsync(GoogleDefaults.AuthenticationScheme,
+        new AuthenticationProperties { RedirectUri = "/" });
+});
 
 app.UseCustomExceptionHandler();
 
@@ -87,17 +106,8 @@ app.UseHttpsRedirection();
 app.UseCors("AllowAll");
 
 app.UseAuthorization();
+
 app.UseAuthentication();
-
-
-
-//app.MapGet("/me", (ClaimsPrincipal user) =>
-//{
-//    if (user.Identity?.IsAuthenticated ?? false)
-//        return Results.Ok(new { Name = user.Identity.Name });
-//    return Results.Unauthorized();
-//});
-
 
 app.MapControllers();
 

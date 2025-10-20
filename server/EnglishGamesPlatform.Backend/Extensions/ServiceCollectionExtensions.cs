@@ -28,12 +28,7 @@ namespace EnglishGamesPlatform.Backend.Extensions
             services.AddSingleton<TokenService>();
             services.AddScoped<IGeneralGameService, GeneralGameService>();
 
-            #region PictureHangman
-
-            services.AddScoped<IGeneralGameRepository, PictureHangmanRepository>();
-            services.AddScoped<IGeneralGameRepository, PictureHangmanRepositoryFake>();
-
-            #endregion
+        
 
             // Register custom services here
             // services.AddScoped<IMyService, MyService>();

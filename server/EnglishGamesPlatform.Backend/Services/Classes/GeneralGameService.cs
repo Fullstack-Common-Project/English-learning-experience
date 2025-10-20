@@ -1,5 +1,5 @@
-﻿using EnglishGamesPlatform.Backend.Models;
-using EnglishGamesPlatform.Backend.Repositories.Classes.Entities;
+using EnglishGamesPlatform.Backend.Models.DTOs;
+using EnglishGamesPlatform.Backend.Models.DTOs.Entities_DTOs;
 using EnglishGamesPlatform.Backend.Repositories.Interfaces;
 using EnglishGamesPlatform.Backend.Services.Interfaces;
 using System.Net;
@@ -8,19 +8,38 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
 {
     public class GeneralGameService : IGeneralGameService
     {
-        private readonly Dictionary<int, IGeneralGameRepository> _repositories;
-
+        private readonly Dictionary<string, IGeneralGameRepository> _repositories;
+        private readonly IGameRepository _gameRepository;
         private readonly IGameResultRepository _gameResultRepository;
 
-        public GeneralGameService(IEnumerable<IGeneralGameRepository> repositories,IGameResultRepository gameResultRepository)
+
+        public GeneralGameService(IEnumerable<IGeneralGameRepository> repositories, IGameRepository gameRepository, IGameResultRepository gameResultRepository)
         {
-            _repositories = repositories.ToDictionary(r => r.GameID);
+            _repositories = repositories.ToDictionary(r => r.GameName);
+            _gameRepository = gameRepository;
             _gameResultRepository = gameResultRepository;
         }
 
+        public Task<Response<FinalGameStatus>> GetFinalGameStatusAsync(GameResultDTO gameResultDTO)
+        {
+            throw new NotImplementedException();
+        }
+        
         public async Task<Response<GameData>> GetGameDataAsync(int gameId)
         {
-            if (_repositories.TryGetValue(gameId, out var repository))
+            string? gameName = await GetGameNameByIdAsync(gameId);
+
+            if (gameName == null)
+            {
+                return new ()
+                {
+                    IsSuccess = false,
+                    StatusCode = HttpStatusCode.NotFound,
+                    Message = $"Game ID: {gameId} Not Found",
+                };
+            }
+
+            if (_repositories.TryGetValue("Picture Hangman", out var repository))
             {
                 GameInitialData gameInitialData = repository.GetData();
 
@@ -38,9 +57,9 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
             }
             else
             {
-                return new()
+                return new ()
                 {
-                    StatusCode =HttpStatusCode.InternalServerError,
+                    StatusCode = HttpStatusCode.InternalServerError,
                     IsSuccess = false,
                     Message = $"Error Dependencies Injection - Repository",
                 };
@@ -59,5 +78,14 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
                 Data = topResults
             };
         }
+
+        #region Private Methods
+
+        private async Task<string?> GetGameNameByIdAsync(int gameId)
+        {
+            return await _gameRepository.GetGameNameByIdAsync(gameId);
+        }
+
+        #endregion
     }
 }

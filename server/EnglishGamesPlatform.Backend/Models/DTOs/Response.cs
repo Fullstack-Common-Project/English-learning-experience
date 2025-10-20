@@ -1,7 +1,6 @@
-﻿using EnglishGamesPlatform.Backend.Models;
 using System.Net;
 
-namespace EnglishGamesPlatform.Backend.Models
+namespace EnglishGamesPlatform.Backend.Models.DTOs
 {
     public class Response
     {
