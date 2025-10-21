@@ -10,24 +10,41 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes.Games
     {
         public string GameName => "Picture Hangman";
 
+        private readonly IImageRepository _imageRepository;
 
-        private readonly ImageRepository _imageRepository;
 
-        public GameInitialData GetData()
+        public PictureHangmanRepository(IImageRepository imageRepository)
         {
+            _imageRepository = imageRepository;
+        }
+
+
+        public async Task<GameInitialData?> GetData()
+        {
+            Image? image = await _imageRepository.GetByIdAsync(await RandomImageIdAsync());
+
+            if (image == null)
+            {
+                return null;
+            }
+
             return new PictureHangmanData
             {
-
-
-                //Image = new Image()
-                //{
-                //    ImageId = 1,
-                //    ImageUrl = "Images/Image_1.jpg",
-                //    Word = new Word(),
-                //    WordId = 1
-                //}
-
+                ImageUrl = image.ImageUrl,
+                TargetWord = image.Word.WordText
             };
         }
+
+        #region Private Methods
+
+        public async Task<int> RandomImageIdAsync()
+        {
+            int countImages = await _imageRepository.GetCountImagesAsync();
+            Random random = new Random();
+            int randomImageId = random.Next(1, countImages + 1);
+            return randomImageId;
+        }
+
+        #endregion
     }
 }

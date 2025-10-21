@@ -6,7 +6,7 @@ using EnglishGamesPlatform.Backend.Models.Entities;
 using EnglishGamesPlatform.Backend.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
-namespace EnglishGamesPlatform.Backend.Repositories.Implementations
+namespace EnglishGamesPlatform.Backend.Repositories
 {
     public class AuthRepository : IAuthRepository
     {

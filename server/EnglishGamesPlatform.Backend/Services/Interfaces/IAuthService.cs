@@ -1,5 +1,4 @@
-﻿using EnglishGamesPlatform.Backend.Models;
-using EnglishGamesPlatform.Backend.Models.DTOs;
+﻿using EnglishGamesPlatform.Backend.Models.DTOs;
 using EnglishGamesPlatform.Backend.Models.Entities;
 
 namespace EnglishGamesPlatform.Backend.Services.Interfaces
