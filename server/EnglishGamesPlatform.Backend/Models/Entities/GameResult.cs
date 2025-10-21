@@ -20,5 +20,7 @@ namespace EnglishGamesPlatform.Backend.Models.Entities
 
         [Required]
         public double Time { get; set; } // בשניות
+
+        public int Rounds { get; set; }
     }
 }

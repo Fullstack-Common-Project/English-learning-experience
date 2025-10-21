@@ -6,7 +6,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap');
 
 @layer base {
-  html { direction: rtl; }
   body {
     @apply min-h-screen flex flex-col bg-slate-950 text-white font-sans antialiased;
     background-image:
@@ -108,3 +107,5 @@
     }
   }
 }
+
+

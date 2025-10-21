@@ -1,16 +1,17 @@
-﻿using EnglishGamesPlatform.Backend.Models;
+﻿using EnglishGamesPlatform.Backend.Models.DTOs;
+using EnglishGamesPlatform.Backend.Models.DTOs.Entities_DTOs;
 using EnglishGamesPlatform.Backend.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EnglishGamesPlatform.Backend.Controllers
 {
-    [Route("api/v1")]
+    [Route("api/v1/[controller]")]
     [ApiController]
-    public class GameControllerBase : ControllerBase
+    public class GeneralGameController : ControllerBase
     {
         private readonly IGeneralGameService _gameService;
 
-        public GameControllerBase(IGeneralGameService gameService)
+        public GeneralGameController(IGeneralGameService gameService)
         {
             _gameService = gameService;
         }
@@ -22,7 +23,7 @@ namespace EnglishGamesPlatform.Backend.Controllers
             if (response.IsSuccess)
                 return Ok(response);
             else
-                return StatusCode(response.StatusCode, response);
+                return StatusCode((int)response.StatusCode, response);
         }
 
         [HttpGet("{gameId}/leaderboard")]
@@ -32,7 +33,17 @@ namespace EnglishGamesPlatform.Backend.Controllers
             if (response.IsSuccess)
                 return Ok(response);
             else
-                return StatusCode(response.StatusCode, response);
+                return StatusCode((int)response.StatusCode, response);
+        }
+
+        [HttpPost("{gameId}/progress")]
+        public async Task<ActionResult<Response<FinalGameStatus>>> GetFinalGameStatusAsync([FromBody] GameResultDTO gameResultDTO)
+        {
+            Response<FinalGameStatus> response = await _gameService.GetFinalGameStatusAsync(gameResultDTO);
+            if (response.IsSuccess)
+                return Ok(response);
+            else
+                return StatusCode((int)response.StatusCode, response);
         }
 
     }
