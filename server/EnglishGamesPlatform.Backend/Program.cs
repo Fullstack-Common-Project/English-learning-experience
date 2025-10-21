@@ -13,6 +13,8 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
@@ -55,8 +57,6 @@ builder.Services.AddScoped<IGameResultRepository, GameResultRepository>();
 
 #region PictureHangman
 
-builder.Services.AddScoped<IGeneralGameRepository, PictureHangmanRepository>();
-builder.Services.AddScoped<IGeneralGameRepository, OppositeQuestRepository>();
 
 #endregion
 
@@ -69,6 +69,10 @@ builder.Services.AddScoped<IImageRepository, ImageRepository>();
 builder.Services.AddScoped<ISentenceRepository, SentenceRepository>();
 builder.Services.AddScoped<IWordRepository, WordRepository>();
 builder.Services.AddScoped<IOppositeWordRepository, OppositeWordRepository>();
+builder.Services.AddScoped<IGeneralGameRepository, WordSorterRepository>();
+
+
+
 
 
 #endregion

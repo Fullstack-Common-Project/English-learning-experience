@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EnglishGamesPlatform.Backend.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20251016115537_InitialCreate")]
+    [Migration("20251021064852_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -25,7 +25,7 @@ namespace EnglishGamesPlatform.Backend.Migrations
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
 
-            modelBuilder.Entity("server.models.Category", b =>
+            modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.Category", b =>
                 {
                     b.Property<int>("CategoryId")
                         .ValueGeneratedOnAdd()
@@ -43,7 +43,7 @@ namespace EnglishGamesPlatform.Backend.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("server.models.Game", b =>
+            modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.Game", b =>
                 {
                     b.Property<int>("GameId")
                         .ValueGeneratedOnAdd()
@@ -61,7 +61,7 @@ namespace EnglishGamesPlatform.Backend.Migrations
                     b.ToTable("Games");
                 });
 
-            modelBuilder.Entity("server.models.GameResult", b =>
+            modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.GameResult", b =>
                 {
                     b.Property<int>("GameResultId")
                         .ValueGeneratedOnAdd()
@@ -90,7 +90,7 @@ namespace EnglishGamesPlatform.Backend.Migrations
                     b.ToTable("GameResults");
                 });
 
-            modelBuilder.Entity("server.models.Image", b =>
+            modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.Image", b =>
                 {
                     b.Property<int>("ImageId")
                         .ValueGeneratedOnAdd()
@@ -112,7 +112,30 @@ namespace EnglishGamesPlatform.Backend.Migrations
                     b.ToTable("Images");
                 });
 
-            modelBuilder.Entity("server.models.Progress", b =>
+            modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.OppositeWord", b =>
+                {
+                    b.Property<int>("OppositeWordId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("OppositeWordId"));
+
+                    b.Property<int>("FirstWordId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SecondWordId")
+                        .HasColumnType("int");
+
+                    b.HasKey("OppositeWordId");
+
+                    b.HasIndex("FirstWordId");
+
+                    b.HasIndex("SecondWordId");
+
+                    b.ToTable("OppositeWords");
+                });
+
+            modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.Progress", b =>
                 {
                     b.Property<int>("ProgressId")
                         .ValueGeneratedOnAdd()
@@ -147,7 +170,7 @@ namespace EnglishGamesPlatform.Backend.Migrations
                     b.ToTable("Progress");
                 });
 
-            modelBuilder.Entity("server.models.Sentence", b =>
+            modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.Sentence", b =>
                 {
                     b.Property<int>("SentenceId")
                         .ValueGeneratedOnAdd()
@@ -164,7 +187,7 @@ namespace EnglishGamesPlatform.Backend.Migrations
                     b.ToTable("Sentences");
                 });
 
-            modelBuilder.Entity("server.models.User", b =>
+            modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.User", b =>
                 {
                     b.Property<int>("UserId")
                         .ValueGeneratedOnAdd()
@@ -191,7 +214,7 @@ namespace EnglishGamesPlatform.Backend.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("server.models.Word", b =>
+            modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.Word", b =>
                 {
                     b.Property<int>("WordId")
                         .ValueGeneratedOnAdd()
@@ -214,15 +237,15 @@ namespace EnglishGamesPlatform.Backend.Migrations
                     b.ToTable("Words");
                 });
 
-            modelBuilder.Entity("server.models.GameResult", b =>
+            modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.GameResult", b =>
                 {
-                    b.HasOne("server.models.Game", "Game")
+                    b.HasOne("EnglishGamesPlatform.Backend.Models.Entities.Game", "Game")
                         .WithMany("GameResults")
                         .HasForeignKey("GameId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("server.models.User", "User")
+                    b.HasOne("EnglishGamesPlatform.Backend.Models.Entities.User", "User")
                         .WithMany("GameResults")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -233,9 +256,9 @@ namespace EnglishGamesPlatform.Backend.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("server.models.Image", b =>
+            modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.Image", b =>
                 {
-                    b.HasOne("server.models.Word", "Word")
+                    b.HasOne("EnglishGamesPlatform.Backend.Models.Entities.Word", "Word")
                         .WithMany("Images")
                         .HasForeignKey("WordId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -244,15 +267,34 @@ namespace EnglishGamesPlatform.Backend.Migrations
                     b.Navigation("Word");
                 });
 
-            modelBuilder.Entity("server.models.Progress", b =>
+            modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.OppositeWord", b =>
                 {
-                    b.HasOne("server.models.Game", "Game")
+                    b.HasOne("EnglishGamesPlatform.Backend.Models.Entities.Word", "FirstWord")
+                        .WithMany()
+                        .HasForeignKey("FirstWordId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("EnglishGamesPlatform.Backend.Models.Entities.Word", "SecondWord")
+                        .WithMany()
+                        .HasForeignKey("SecondWordId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("FirstWord");
+
+                    b.Navigation("SecondWord");
+                });
+
+            modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.Progress", b =>
+                {
+                    b.HasOne("EnglishGamesPlatform.Backend.Models.Entities.Game", "Game")
                         .WithMany("Progress")
                         .HasForeignKey("GameId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("server.models.User", "User")
+                    b.HasOne("EnglishGamesPlatform.Backend.Models.Entities.User", "User")
                         .WithMany("Progress")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -263,9 +305,9 @@ namespace EnglishGamesPlatform.Backend.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("server.models.Word", b =>
+            modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.Word", b =>
                 {
-                    b.HasOne("server.models.Category", "Category")
+                    b.HasOne("EnglishGamesPlatform.Backend.Models.Entities.Category", "Category")
                         .WithMany("Words")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -274,26 +316,26 @@ namespace EnglishGamesPlatform.Backend.Migrations
                     b.Navigation("Category");
                 });
 
-            modelBuilder.Entity("server.models.Category", b =>
+            modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.Category", b =>
                 {
                     b.Navigation("Words");
                 });
 
-            modelBuilder.Entity("server.models.Game", b =>
+            modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.Game", b =>
                 {
                     b.Navigation("GameResults");
 
                     b.Navigation("Progress");
                 });
 
-            modelBuilder.Entity("server.models.User", b =>
+            modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.User", b =>
                 {
                     b.Navigation("GameResults");
 
                     b.Navigation("Progress");
                 });
 
-            modelBuilder.Entity("server.models.Word", b =>
+            modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.Word", b =>
                 {
                     b.Navigation("Images");
                 });
