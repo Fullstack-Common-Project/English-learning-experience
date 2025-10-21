@@ -1,23 +1,313 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Tailwind v4 */
+@import "tailwindcss";
+@reference "tailwindcss";
 
-/* משתני צבעים */
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* Rubik + RTL */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap');
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply min-h-screen flex flex-col bg-slate-950 text-white font-sans antialiased;
+    background-image:
+      radial-gradient(1200px 600px at 80% -20%, rgba(99,102,241,.18), transparent 60%),
+      radial-gradient(800px 400px at -10% 0%, rgba(14,165,233,.16), transparent 60%),
+      linear-gradient(180deg, rgb(2 6 23), rgb(2 6 23 / 1) 40%, rgb(2 8 23));
+    background-blend-mode: overlay;
+  }
+  h1,h2,h3 { @apply font-semibold text-slate-100; }
+  main {
+    @apply flex-grow;
   }
 }
 
-/* שימוש במשתנים לעיצוב הבסיס */
-body {
-  @apply bg-[var(--background)] text-[var(--foreground)] font-sans;
+
+/* ===== מחלקות משותפות בלבד ===== */
+@layer components {
+  /* עטיפת עמודים */
+  .page-container { @apply container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-10; }
+
+/*   רקע ל - header*/
+  .header-bg { @apply fixed top-0 left-0 right-0 z-40 transition-shadow bg-slate-900/40 backdrop-blur-md;}
+
+  /* כותרת עמוד */
+  .section-title { @apply text-center text-4xl md:text-5xl leading-tight mb-8 md:mb-10; }
+
+  /* גריד קלפים */
+  .cards-grid { @apply grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4; }
+
+  /* קלף בסיסי (למקרה שתרצי להשתמש בו ישירות ב-markup) */
+  .card {
+    @apply bg-slate-900/60 backdrop-blur-sm border border-white/5 rounded-2xl shadow-lg p-6 md:p-8;
+  }
+  .card-hover { @apply transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl; }
+
+  /* קלף משחק קומפוזיט – בלי @apply על מחלקות מותאמות, רק יוטיליטיז */
+  .game-card {
+    @apply relative overflow-hidden flex flex-col items-center text-center
+           bg-slate-900/60 backdrop-blur-sm border border-white/5 rounded-2xl shadow-lg
+           p-6 md:p-8 transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl;
+  }
+
+  /* אזור האייקון */
+  .game-card__icon-wrap {
+    @apply mt-2 mb-4 inline-flex items-center justify-center rounded-full
+           h-24 w-24 md:h-28 md:w-28 bg-amber-400/15 ring-1 ring-white/10 shadow-md;
+  }
+  .game-card__icon { @apply scale-110; }
+
+  /* כותרת בתוך קלף */
+  .game-card__title { @apply text-xl md:text-2xl font-medium text-slate-100 mb-4; }
+
+  /* כפתורים */
+  .btn-primary {
+    @apply inline-flex items-center justify-center w-full rounded-xl px-5 py-3 text-base font-medium
+           text-white bg-indigo-600 hover:bg-indigo-500 active:scale-95 transition shadow-md;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-xl px-5 py-3 text-base font-medium
+           text-slate-100 bg-white/10 hover:bg-white/15 border border-white/10 transition;
+  }
+
+  /* פנלים למסכי משחק (שאלות/תוצאות/HowTo) */
+  .panel {
+    @apply bg-slate-900/60 backdrop-blur-sm border border-white/5 rounded-2xl shadow-lg p-6 md:p-8;
+  }
+
+  /* נביגציה */
+  .nav { @apply h-16 bg-slate-900/40 backdrop-blur-md border-b border-white/5; }
+  .nav-inner { @apply container mx-auto px-4 flex items-center justify-between h-full; }
+  .nav-brand { @apply text-xl font-extrabold tracking-tight; }
+  .nav-list { @apply hidden md:flex items-center gap-2; }
+  .nav-link { @apply text-slate-300 hover:text-white px-3 py-2 rounded-lg transition; }
+
+    /* פוטר */
+  @layer components {
+    .footer {
+      @apply bg-gray-900 text-gray-300 py-4 w-full flex flex-col items-center relative;
+    }
+  
+    .footer__container {
+      @apply container mx-auto px-6 text-center relative;
+    }
+  
+    .footer__title {
+      @apply text-lg font-semibold text-white mb-2 flex items-center justify-center gap-2;
+    }
+  
+    .footer__github {
+      @apply absolute left-0 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white text-2xl;
+    }
+  
+    .footer__developers {
+      @apply grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-y-1 gap-x-2 text-sm;
+    }
+  
+    .footer__developers a {
+      @apply hover:text-white transition;
+    }
+  }
 }
 
-/* ניתן להוסיף הרחבות אישיות בהמשך */
+
+/* ===== עיצוב כללי למסך המשחקים ===== */
+@layer components {
+  .game-layout {
+    @apply flex flex-col items-center justify-center min-h-screen p-8 relative;
+  }
+
+  .game-layout__title {
+    @apply text-4xl font-bold text-indigo-400 mb-8 drop-shadow;
+  }
+
+  .game-layout__center {
+    @apply text-center;
+  }
+
+  .game-layout__container {
+    @apply w-full max-w-3xl relative z-0;
+  }
+
+  .game-overlay {
+    @apply fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm;
+  }
+
+  .game-hud {
+    @apply flex justify-between items-center mb-6 relative z-20;
+  }
+
+  .game-hud.disabled {
+    @apply pointer-events-none opacity-60;
+  }
+
+  .hud-timer {
+    @apply font-mono text-lg font-semibold px-4 py-2 bg-indigo-600 text-white rounded-xl shadow;
+  }
+
+  .game-content {
+    @apply bg-slate-900/60 backdrop-blur-sm border border-white/5 rounded-2xl shadow p-6;
+  }
+
+  .game-content.disabled {
+    @apply pointer-events-none opacity-60;
+  }
+}
+
+@layer components {
+  /* ===== Help Screen ===== */
+  .help-screen {
+    @apply text-center max-w-2xl mx-auto bg-slate-900/60 backdrop-blur-sm border border-white/5 
+           rounded-2xl shadow-lg p-8 md:p-10;
+  }
+
+  .help-screen__title {
+    @apply text-3xl font-bold mb-4 text-indigo-400;
+  }
+
+  .help-screen__text {
+    @apply text-slate-300 mb-6 leading-relaxed;
+  }
+
+  .help-screen__button {
+    @apply mt-4;
+  }
+}
+
+
+@layer components {
+  /* ===== Game Over Modal ===== */
+  .gameover-modal {
+    @apply fixed inset-0 flex items-center justify-center z-50 bg-black/60 backdrop-blur-sm;
+  }
+
+  .gameover-modal__content {
+    @apply bg-slate-900/70 backdrop-blur-md border border-white/5 rounded-2xl 
+           shadow-xl p-8 w-96 text-center;
+  }
+
+  .gameover-modal__title {
+    @apply text-3xl font-bold mb-4 text-indigo-400;
+  }
+
+  .gameover-modal__score {
+    @apply text-xl mb-2 text-slate-200;
+  }
+
+  .gameover-modal__time {
+    @apply text-lg mb-6 text-slate-300;
+  }
+
+  .gameover-modal__button {
+    @apply mt-4;
+  }
+}
+
+
+@layer components {
+  /* ===== Score Display ===== */
+  .score-display {
+    @apply bg-emerald-600 text-white px-4 py-2 rounded-xl shadow-md inline-flex items-center justify-center;
+  }
+
+  .score-display__text {
+    @apply font-semibold text-xl tracking-wide;
+  }
+}
+
+@layer components {
+  /* ===== Timer Display ===== */
+  .timer-display {
+    @apply font-mono text-lg font-semibold px-4 py-2 bg-blue-600 text-white rounded-xl shadow-md inline-flex items-center justify-center;
+  }
+}
+
+@layer components {
+  /* ===== Audio Toggle Button ===== */
+  .audio-toggle {
+    @apply px-3 py-2 bg-slate-700 text-white rounded-xl shadow-md hover:bg-slate-600 transition-all;
+    @apply inline-flex items-center justify-center;
+  }
+}
+
+@layer components {
+  /* ===== Countdown 3-2-1 Overlay ===== */
+  .countdown-overlay {
+    @apply absolute inset-0 flex items-center justify-center text-6xl font-bold text-white 
+           bg-black/50 backdrop-blur-sm;
+  }
+}
+
+@layer components {
+  /* ===== Level Badge ===== */
+  .level-badge {
+    @apply px-3 py-1 bg-emerald-500 text-white rounded-full font-bold shadow-md inline-flex items-center justify-center;
+  }
+}
+
+@layer components {
+  /* ===== Pause Overlay ===== */
+  .pause-overlay {
+    @apply fixed inset-0 flex flex-col items-center justify-center z-50 bg-black/50 backdrop-blur-sm;
+  }
+
+  .pause-overlay__content {
+    @apply bg-slate-100 rounded-2xl p-8 flex flex-col items-center shadow-lg;
+  }
+
+  .pause-overlay__icon {
+    @apply text-6xl font-bold text-red-600 mb-4;
+  }
+
+  .pause-overlay__message {
+    @apply text-xl font-semibold text-gray-800;
+  }
+}
+
+@layer components {
+  /* ===== Progress Bar ===== */
+  .progress-bar {
+    @apply w-full h-4 bg-gray-300 rounded-full overflow-hidden;
+  }
+
+  .progress-bar__fill {
+    @apply h-4 bg-blue-500 rounded-full transition-all duration-300 ease-in-out;
+  }
+}
+
+@layer components {
+  /* ===== Sentence Shuffle Game ===== */
+  .sentence-game {
+    @apply text-center max-w-3xl mx-auto p-4;
+  }
+
+  .sentence-game__title {
+    @apply text-xl font-semibold mb-4 text-blue-400;
+  }
+
+  .sentence-game__words {
+    @apply mb-4 flex flex-wrap justify-center gap-2;
+  }
+
+  .sentence-game__word {
+    @apply px-3 py-1 rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition-all;
+  }
+
+  .sentence-game__word--disabled {
+    @apply bg-gray-700 cursor-not-allowed;
+  }
+
+  .sentence-game__selected {
+    @apply mb-4 text-green-400;
+  }
+
+  .sentence-game__submit {
+    @apply mt-2;
+  }
+
+  .sentence-game__submit--disabled {
+    @apply bg-gray-700 cursor-not-allowed;
+  }
+
+  .sentence-game__completed {
+    @apply text-xl font-semibold text-green-600;
+  }
+}
