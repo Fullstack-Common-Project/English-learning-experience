@@ -51,11 +51,21 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes
             return await _appDbContext.Words
                  .OrderBy(i => EF.Functions.Random())
                  .OrderBy(w => EF.Functions.Random())
+                 .OrderBy(i => EF.Functions.Random())
                  .Where(w => w.WordId != firstWordId && w.WordId != secondWordId)
                  .Take(3)
                  .ToListAsync();
         }
 
-        
+        public async Task<List<Word>> GetWordsAsync(int firstWordId, int secondWordId, int categoryId, int count = 3)
+        {
+            return await _appDbContext.Words
+                    .Where(w => w.WordId != firstWordId &&
+                                w.WordId != secondWordId &&
+                                w.CategoryId != categoryId)
+                    .OrderBy(w => Guid.NewGuid())
+                    .Take(count)
+                    .ToListAsync();
+        }
     }
 }
