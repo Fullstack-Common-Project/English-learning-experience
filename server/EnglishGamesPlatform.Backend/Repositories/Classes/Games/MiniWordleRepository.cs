@@ -9,24 +9,34 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes.Games
     {
     
        
-        private readonly WordRepository _wordRepository;
-        public MiniWordleRepository(WordRepository wordRepository)
+        private readonly IWordRepository _wordRepository;
+        public MiniWordleRepository(IWordRepository wordRepository)
         {
             _wordRepository = wordRepository;
         }
 
         public string GameName => "Mini Wordle";
 
-        public GameInitialData GetData()
+
+        public async Task<GameInitialData> GetData()
         {
-            string targetWord = _wordRepository.GetRandomWordsAsync(1,3,5).ToString()!;
-            return new MiniWordleData()
+            var words = await _wordRepository.GetRandomWordsAsync(1, 3, 5);
+            var targetWord = words.First().WordText; 
+
+            var res= new MiniWordleData
             {
+                Id=1,
                 WordLength = targetWord.Length,
                 TargetWord = targetWord
             };
+            return res;
         }
 
-     
+
+      
+
+
+
+
     }
 }

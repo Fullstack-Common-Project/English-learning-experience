@@ -1,8 +1,11 @@
 using EnglishGamesPlatform.Backend.Models.DTOs;
 using EnglishGamesPlatform.Backend.Models.DTOs.Entities_DTOs;
+using EnglishGamesPlatform.Backend.Models.GameInitialDatas;
 using EnglishGamesPlatform.Backend.Repositories.Interfaces;
 using EnglishGamesPlatform.Backend.Services.Interfaces;
 using System.Net;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace EnglishGamesPlatform.Backend.Services.Classes
 {
@@ -24,14 +27,14 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
         {
             throw new NotImplementedException();
         }
-        
+
         public async Task<Response<GameData>> GetGameDataAsync(int gameId)
         {
             string? gameName = await GetGameNameByIdAsync(gameId);
 
             if (gameName == null)
             {
-                return new ()
+                return new()
                 {
                     IsSuccess = false,
                     StatusCode = HttpStatusCode.NotFound,
@@ -43,6 +46,7 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
             {
                 GameInitialData gameInitialData = await repository.GetData();
 
+
                 return new()
                 {
                     StatusCode = HttpStatusCode.OK,
@@ -53,11 +57,12 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
                         GameId = gameId,
                         Data = gameInitialData
                     }
+
                 };
             }
             else
             {
-                return new ()
+                return new()
                 {
                     StatusCode = HttpStatusCode.InternalServerError,
                     IsSuccess = false,
