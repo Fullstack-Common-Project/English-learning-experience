@@ -1,9 +1,10 @@
-﻿using EnglishGamesPlatform.Backend.Models.Entities;
+﻿using EnglishGamesPlatform.Backend.Models.DTOs;
+using EnglishGamesPlatform.Backend.Models.Entities;
 
 namespace EnglishGamesPlatform.Backend.Models.GameDatas
 {
     public class PictureHangmanData : GameInitialData
     {
-        public Image Image { get; set; }
+        public List<Word> Words { get; set; }
     }
 }

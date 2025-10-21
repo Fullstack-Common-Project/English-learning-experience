@@ -5,11 +5,11 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useSelector } from "react-redux";
 export default function Header() {
- const user = useSelector((state: { user: { user: { name: string; email: string } } }) => state.user.user);
- const playerName = user?.name || null;
+  const user = useSelector((state: { user: { user: { userId: number; fullName: string } } }) => state.user.user);
+  const playerName = user?.fullName || null;
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
@@ -29,7 +29,7 @@ export default function Header() {
 
       <div className="max-w-screen-xl mx-auto px-4 md:px-6">
         <div className="h-16 flex items-center justify-between">
-        
+
           <div className="flex items-center gap-4">
             <Link
               href="/about"
@@ -55,7 +55,7 @@ export default function Header() {
               <span className="font-semibold text-lg">Game-English</span>
             </Link>
 
-     
+
             <nav className="hidden md:flex items-center gap-3 ml-4" aria-label="Primary">
               {nav.map((n) => (
                 <Link
@@ -69,29 +69,26 @@ export default function Header() {
             </nav>
           </div>
 
-     
+
           <div className="flex items-center gap-3">
-            <div className="hidden sm:flex items-center gap-2 px-3 py-1 rounded-full bg-white/60 backdrop-blur-sm">
-              <div
-                className="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-400 to-sky-400 flex items-center justify-center text-white font-medium"
-                aria-hidden
-              >
-                {playerName ? playerName.charAt(0).toUpperCase() : "G"}
-              </div>
-              <div className="text-sm">
-                <div className="font-medium leading-none">
-                  {playerName ?? "Guest"}
-                </div>
-                <div className="text-xs text-gray-600">Player</div>
+            <div
+              className="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-400 to-sky-400 flex items-center justify-center text-white font-medium"
+              aria-hidden
+            >
+              {playerName ? playerName.charAt(0).toUpperCase() : "G"}
+            </div>
+            <div className="text-sm">
+              <div className="font-medium leading-none">
+                {playerName ?? "Guest"}
               </div>
             </div>
 
-            
+
             <button
               aria-label="Open menu"
               aria-expanded={mobileOpen}
               onClick={() => {
-                setMobileOpen((s) => !s);               
+                setMobileOpen((s) => !s);
               }}
               className="p-2 rounded-md md:hidden focus:outline-none focus-visible:ring-2"
             >
@@ -118,7 +115,7 @@ export default function Header() {
         </div>
       </div>
 
-    
+
       <AnimatePresence>
         {mobileOpen && (
           <motion.nav

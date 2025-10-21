@@ -1,4 +1,4 @@
-﻿namespace EnglishGamesPlatform.Backend.Models
+﻿namespace EnglishGamesPlatform.Backend.Models.DTOs
 {
     public class LeaderboardData
     {

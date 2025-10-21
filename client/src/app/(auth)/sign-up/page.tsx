@@ -3,28 +3,40 @@ import { useRef } from "react";
 import { useDispatch } from "react-redux";
 import { setUser } from "@/store/userSlice";
 import { useRouter } from "next/navigation";
+import axios from "axios";
 
 export default function SignUp() {
-  const nameRef = useRef<HTMLInputElement>(null);
+  const fullNameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
   const dispatch = useDispatch();
   const router = useRouter();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const name = nameRef.current?.value;
+    const fullName = fullNameRef.current?.value;
     const email = emailRef.current?.value;
     const password = passwordRef.current?.value;
 
-    if (!name || !email || !password) {
+    if (!fullName || !email || !password) {
       alert("Please fill in all fields");
       return;
     }
-    dispatch(setUser({ name, email }));
-
-    alert("Sign up successful!");
+    try{
+        const response = await axios.post("https://localhost:7292/api/Auth/register", {
+            fullName,
+            email,
+            password
+        })
+        const {token, user} = response.data;
+        localStorage.setItem("token", token);        
+        dispatch(setUser(user));
+        alert("Sign up successful!");
+    }
+    catch(error){
+        console.log("ERROR: ", error);
+    }
     router.push("/");
   };
 
@@ -36,7 +48,7 @@ export default function SignUp() {
 
         <form onSubmit={handleSubmit} className="flex flex-col gap-3 w-64">
         <input
-          ref={nameRef}
+          ref={fullNameRef}
           type="text"
           placeholder="Name"
           className="border p-2 rounded"
