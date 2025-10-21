@@ -13,7 +13,6 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes.Games
         private readonly IImageRepository _imageRepository;
 
 
-<<<<<<< HEAD
         public PictureHangmanRepository(IImageRepository imageRepository)
         {
             _imageRepository = imageRepository;
@@ -47,26 +46,6 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes.Games
         }
 
         #endregion
-=======
-        public  Task<GameInitialData> GetData()
-        {
-            throw new NotImplementedException();
-            //return new PictureHangmanData
-            //{
-
-
-            //Image = new Image()
-            //{
-            //    ImageId = 1,
-            //    ImageUrl = "Images/Image_1.jpg",
-            //    Word = new Word(),
-            //    WordId = 1
-            //}
-
-            //};
-        }
-
        
->>>>>>> origin/main
     }
 }
