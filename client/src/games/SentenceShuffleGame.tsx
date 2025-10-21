@@ -19,7 +19,6 @@ export default function SentenceShuffleGame({ onScoreChange, onGameOver, paused 
   const [selectedOrder, setSelectedOrder] = useState<string[]>([]);
   const [completed, setCompleted] = useState(false);
 
-  // Shuffle words for the current sentence
   useEffect(() => {
     if (demoSentences[currentIndex]) {
       const words = demoSentences[currentIndex].text.split(" ");
@@ -31,7 +30,7 @@ export default function SentenceShuffleGame({ onScoreChange, onGameOver, paused 
   const shuffleArray = (arr: string[]) => [...arr].sort(() => Math.random() - 0.5);
 
   const handleSelectWord = (word: string) => {
-    if (paused || completed) return; // לא מאפשר לבחור בזמן הפסקה או לאחר סיום
+    if (paused || completed) return;
     setSelectedOrder(prev => [...prev, word]);
   };
 
@@ -40,7 +39,6 @@ export default function SentenceShuffleGame({ onScoreChange, onGameOver, paused 
 
     const original = demoSentences[currentIndex].text.split(" ");
     if (selectedOrder.join(" ") === original.join(" ")) {
-      // הוספת ניקוד דרך onScoreChange מ-GameLayout
       onScoreChange?.((prev) => prev + 10);
     }
 
@@ -48,49 +46,41 @@ export default function SentenceShuffleGame({ onScoreChange, onGameOver, paused 
       setCurrentIndex(currentIndex + 1);
     } else {
       setCompleted(true);
-      onGameOver?.(); // GameLayout ינהל את הזמן והסיום
+      onGameOver?.();
     }
   };
 
   if (completed) {
-    return (
-      <p className="text-xl font-semibold text-green-600">
-        כל המשפטים הושלמו! 👏
-      </p>
-    );
+    return <p className="sentence-game__completed">כל המשפטים הושלמו! 👏</p>;
   }
 
   return (
-    <div className="text-center">
-      <h3 className="text-xl font-semibold mb-4 text-blue-400">
+    <div className="sentence-game">
+      <h3 className="sentence-game__title">
         Sentence {currentIndex + 1} from {demoSentences.length}
       </h3>
 
-      <div className="mb-4 flex flex-wrap justify-center gap-2">
+      <div className="sentence-game__words">
         {shuffledWords.map(word => (
           <button
             key={word + Math.random()}
             onClick={() => handleSelectWord(word)}
-            disabled={paused} // כפתורים לא פעילים בזמן Pause
-            className={`px-3 py-1 rounded-lg text-white transition-all ${
-              paused ? "bg-gray-700 cursor-not-allowed" : "bg-blue-500 hover:bg-blue-600"
-            }`}
+            disabled={paused}
+            className={`sentence-game__word ${paused ? 'sentence-game__word--disabled' : ''}`}
           >
             {word}
           </button>
         ))}
       </div>
 
-      <div className="mb-4 text-green-400">
+      <div className="sentence-game__selected">
         <p>The correct sentence: {selectedOrder.join(" ")}</p>
       </div>
 
       <button
         onClick={handleSubmit}
         disabled={paused}
-        className={`px-6 py-3 rounded-xl shadow text-white transition-all ${
-          paused ? "bg-gray-700 cursor-not-allowed" : "bg-green-500 hover:bg-green-600"
-        }`}
+        className={`btn-primary sentence-game__submit ${paused ? 'sentence-game__submit--disabled' : ''}`}
       >
         Submit
       </button>
