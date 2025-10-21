@@ -1,5 +1,5 @@
 ﻿using EnglishGamesPlatform.Backend.Repositories.Classes.Games;
-using EnglishGamesPlatform.Backend.Repositories.Implementations;
+using EnglishGamesPlatform.Backend.Repositories;
 using EnglishGamesPlatform.Backend.Repositories.Interfaces;
 using EnglishGamesPlatform.Backend.Services.Classes;
 using EnglishGamesPlatform.Backend.Services.Implementations;
