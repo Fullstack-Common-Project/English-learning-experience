@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 // "use client";
 // import React, { useState, useEffect } from "react";
 // import useGameState from "@/hooks/useGameState";
@@ -177,9 +175,6 @@
 //     </div>
 //   );
 // }
-
-
->>>>>>> origin/main
 "use client";
 import React, { useState, useEffect } from "react";
 import useGameState from "@/hooks/useGameState";
@@ -189,10 +184,7 @@ import HelpScreen from "../leaderboard/HelpScreen";
 import useGameTimer from "@/hooks/useGameTimer";
 import Countdown3_2_1 from "../hud/countdown3_2_1";
 import AudioToggle from "../hud/audioToggle";
-<<<<<<< HEAD
 import { QueryProvider } from "@/providers/QueryProvider";
-=======
->>>>>>> origin/main
 
 export type GameProps = {
   onScoreChange?: (value: number | ((prev: number) => number)) => void;
@@ -252,11 +244,8 @@ export default function GameLayout({ children, gameTitle }: GameLayoutProps) {
   const handleResume = () => setCountdownActive(true);
 
   return (
-<<<<<<< HEAD
      <QueryProvider> <div className="game-layout">
-=======
     <div className="game-layout">
->>>>>>> origin/main
       <h1 className="game-layout__title">{gameTitle}</h1>
 
       {/* Welcome */}
@@ -322,10 +311,8 @@ export default function GameLayout({ children, gameTitle }: GameLayoutProps) {
       {stage === "end" && gameOver && (
         <GameOverModal score={score} time={time} onRestart={handleRestart} />
       )}
-<<<<<<< HEAD
     </div></QueryProvider>
    
-=======
     </div>
 >>>>>>> origin/main
   );
