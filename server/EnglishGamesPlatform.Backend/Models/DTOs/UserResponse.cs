@@ -1,6 +1,6 @@
 ﻿using EnglishGamesPlatform.Backend.Models.Entities;
 
-namespace EnglishGamesPlatform.Backend.Models
+namespace EnglishGamesPlatform.Backend.Models.DTOs
 {
     public class UserResponse
     {
