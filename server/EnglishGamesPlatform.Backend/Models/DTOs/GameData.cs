@@ -3,6 +3,6 @@
     public class GameData
     {
         public int GameId { get; set; }
-        public GameInitialData Data { get; set; }
+        public object Data { get; set; }
     }
 }

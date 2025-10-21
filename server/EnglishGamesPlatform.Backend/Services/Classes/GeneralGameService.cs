@@ -1,5 +1,6 @@
 using EnglishGamesPlatform.Backend.Models.DTOs;
 using EnglishGamesPlatform.Backend.Models.DTOs.Entities_DTOs;
+using EnglishGamesPlatform.Backend.Models.GameInitialDatas;
 using EnglishGamesPlatform.Backend.Repositories.Interfaces;
 using EnglishGamesPlatform.Backend.Services.Interfaces;
 using System.Net;
@@ -42,6 +43,7 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
             if (_repositories.TryGetValue(gameName, out var repository))
             {
                 GameInitialData gameInitialData = await repository.GetData();
+                //var gameInitialData2 = (OppositeQuestData)gameInitialData;//DELETE
 
                 return new()
                 {
