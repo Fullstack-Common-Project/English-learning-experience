@@ -1,325 +1,36 @@
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-# מדריך הוספת משחק חדש (Frontend)
+## Getting Started
 
-> **מטרה:** לאפשר לכל מפתחת (גם מחוץ לצוות) להוסיף משחק חדש לאתר באופן עקבי ובטוח, בלי לשבור את התשתית המשותפת.
+First, run the development server:
 
----
-
-## 0) לפני שמתחילים
-- הפרויקט בנוי על **Next.js (App Router) + React 18**.
-- קיימת מסגרת משותפת: `GameLayout`, רכיבי HUD/דיאלוגים, Hooks ל־Timer/Leaderboard וכו’.
-- **אסור** לשנות חוזים כלליים/Endpoints/רכיבים משותפים בלי תיאום עם Core.
-- **Tailwind v4**: משתמשים ב־utilities וב־CSS Variables (tokens) בלבד; לא עושים `@apply` על מחלקות מותאמות; צבעים/רקעים דרך משתנים; שמירה על מחלקות קיימות (למשל `page-container`, `btn-primary` וכו’).
-
----
-
-## 1) מה יוצרים? (TL;DR)
-1. עמוד משחק: `src/app/games/<game-id>/page.tsx`
-2. קומפוננטת משחק: `src/games/<GameName>/<GameName>Game.tsx`
-3. טיפוסים מקומיים (רשות): `src/games/<GameName>/types.ts`
-4. בדיקות/סטוריז (מומלץ):  
-   `src/games/<GameName>/<GameName>Game.test.tsx`  
-   `src/games/<GameName>/<GameName>Game.stories.tsx`
-
-> `<game-id>` = ה־slug ב־URL (למשל `picpick`), `<GameName>` = שם קומפוננטה בפסקל־קייס (למשל `PicPick`).
-
----
-
-## 2) החוזה שחייבים לכבד (Contract)
-כל משחק הוא קומפוננטת React שמקבלת:
-```ts
-export interface GameComponentProps {
-  playerName: string;
-  onGameEnd: (score: number, timeMs: number) => void;
-}
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-דוגמה:
-```tsx
-import { GameComponentProps } from "@/types/game";
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-export default function PicPickGame({ playerName, onGameEnd }: GameComponentProps) {
-  // ... לוגיקה
-  // onGameEnd(finalScore, elapsedMs) בסיום
-  return (/* UI */);
-}
-```
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-> אין לשנות שמות/טיפוסים. צריך מידע נוסף? הביאו מה־API של המשחק שלכם.
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
----
+## Learn More
 
-## 3) הזרימה המנוהלת (Managed by GameLayout)
-`GameLayout` מטפל במסכים: **Welcome → Help → Game → Results/Leaderboard**.  
-אתן מממשות רק את שלב **Game** (ועיצוב תוכן Help דרך `helpSteps`).
+To learn more about Next.js, take a look at the following resources:
 
----
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-## 4) יצירת עמוד המשחק (Next.js)
-```tsx
-// src/app/games/picpick/page.tsx
-import GameLayout from "@/components/common/GameLayout";
-import PicPickGame from "@/games/PicPick/PicPickGame";
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-export default function Page() {
-  return (
-    <GameLayout
-      gameId="picpick"
-      title="PicPick"
-      helpSteps={[
-        { title: "איך משחקים", text: "בחרי את המשפט שמתאים לתמונה", img: "/help/picpick-1.png" },
-        { title: "טיפ", text: "עני מהר יותר → ניקוד גבוה יותר" }
-      ]}
-      renderGame={(props) => <PicPickGame {...props} />}
-    />
-  );
-}
-```
+## Deploy on Vercel
 
-- `gameId` חייב להתאים לנתיבי ה־API שלכם.
-- `helpSteps` מגדיר את תוכן מסך ה־Help (מודאל פנימי).
-- `renderGame` מקבל `GameComponentProps`.
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
----
-
-## 5) שלד קומפוננטת משחק (מינימום עובד)
-```tsx
-// src/games/PicPick/PicPickGame.tsx
-"use client";
-
-import { useQuery, useMutation } from "@tanstack/react-query";
-import { GameComponentProps } from "@/types/game";
-import { getGameData, postProgress } from "@/lib/api";
-import GameHUD from "@/components/hud/GameHUD";
-import Timer from "@/components/hud/Timer";
-import ScoreCounter from "@/components/hud/ScoreCounter";
-import PrimaryButton from "@/components/controls/PrimaryButton";
-import { useRef, useState } from "react";
-
-type PicPickRound = {
-  imageUrl: string;
-  sentences: string[];
-  correctIndex: number;
-};
-type PicPickData = {
-  rounds: PicPickRound[];
-  timeLimitMs: number;
-  baseScorePerCorrect: number;
-};
-
-export default function PicPickGame({ playerName, onGameEnd }: GameComponentProps) {
-  const [score, setScore] = useState(0);
-  const [roundIndex, setRoundIndex] = useState(0);
-  const elapsedRef = useRef(0);
-
-  // 1) נתונים
-  const { data, isLoading, isError } = useQuery<PicPickData>({
-    queryKey: ["game-data", "picpick", playerName],
-    queryFn: () => getGameData("picpick"), // GET /api/v1/games/picpick/data
-  });
-
-  // 2) שמירת התקדמות
-  const { mutateAsync: saveProgress } = useMutation({
-    mutationFn: (payload: { name: string; score: number; timeMs: number }) =>
-      postProgress("picpick", payload), // POST /api/v1/games/picpick/progress
-  });
-
-  if (isLoading) return <div className="page-container">טוען…</div>;
-  if (isError || !data) return <div className="page-container">שגיאה בטעינת המשחק</div>;
-
-  const round = data.rounds[roundIndex];
-
-  function handleAnswer(i: number) {
-    const correct = i === round.correctIndex;
-    if (correct) setScore((s) => s + data.baseScorePerCorrect);
-
-    const next = roundIndex + 1;
-    if (next < data.rounds.length) setRoundIndex(next);
-    else finish();
-  }
-
-  async function finish() {
-    const timeMs = elapsedRef.current;
-    await saveProgress({ name: playerName, score, timeMs });
-    onGameEnd(score, timeMs); // חובה!
-  }
-
-  return (
-    <div className="page-container">
-      <GameHUD
-        leftSlot={<ScoreCounter value={score} />}
-        rightSlot={
-          <Timer
-            mode="down"
-            initialMs={data.timeLimitMs}
-            onTick={(ms) => { elapsedRef.current = data.timeLimitMs - ms; }}
-            onComplete={finish}
-          />
-        }
-      />
-      <div className="card grid gap-4">
-        <img src={round.imageUrl} alt="תמונה לשאלה" className="rounded-2xl" />
-        <div className="grid md:grid-cols-2 gap-3">
-          {round.sentences.map((s, i) => (
-            <PrimaryButton key={i} onClick={() => handleAnswer(i)}>
-              {s}
-            </PrimaryButton>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-```
-
-> משחקים שאינם זקוקים ל־API יכולים לעבוד עם נתוני דמו לוקאליים.
-
----
-
-## 6) באילו רכיבים להשתמש
-- **HUD**: `GameHUD`, `Timer`, `ScoreCounter`, `LivesIndicator` (אם צריך), `LevelBadge`.
-- **בקרה**: `PrimaryButton`, `IconButton`, `AudioToggle`.
-- **דיאלוגים**: `HelpDialog` (דרך `GameLayout`), `ResultsDialog` מוצג אחרי `onGameEnd`.
-- **נתונים**: `LeaderboardTable` במסך Leaderboard המשותף.
-
-> לא ממציאים טיימר/כפתורים חדשים – משתמשים בקיימים לשמירת קונסיסטנטיות.
-
----
-
-## 7) API – מה פתוח לכם
-לכל משחק:
-- `GET /api/v1/games/{gameId}/data` – להבאת נתוני משחק/סשן
-- `POST /api/v1/games/{gameId}/progress` – שמירת שם/ניקוד/זמן
-- `GET /api/v1/games/{gameId}/leaderboard` – טבלת מובילים
-
-בפרונט:
-```ts
-// src/lib/api.ts
-export async function getGameData(gameId: string) { /* ... */ }
-export async function postProgress(gameId: string, body: { name: string; score: number; timeMs: number }) { /* ... */ }
-export async function getLeaderboard(gameId: string) { /* ... */ }
-```
-
-> אין לשנות מסלולים/פורמט תגובות. צריך shape ייחודי? הגדירו טיפוסים לוקאליים ומפו אותם במימוש שלכם, בתיאום עם ה־backend.
-
----
-
-## 8) עיצוב וקונסיסטנטיות
-- Tailwind utilities בלבד + tokens מ־`globals.css`/`tokens.css`.
-- לא עושים `@apply` למחלקות מותאמות. כן מותר `rounded-2xl`, `grid`, `gap-4`, `p-6` וכו’.
-- צבעים/רקעים: דרך CSS Variables (למשל `bg-[var(--color-surface)]`).
-- RTL כבר פעיל גלובלית. לדאוג ל־`alt` לתמונות ונגישות מקלדת.
-
----
-
-## 9) סיום משחק – חובה!
-- בסיום: `onGameEnd(score, timeMs)` (ולפני כן מומלץ `postProgress`).
-- אחרי `onGameEnd` מתקבל מסך תוצאות אוטומטי + קישורים ל־Leaderboard/Menu/Play Again.
-
----
-
-## 10) הוספה למסך “בחירת משחק”
-ערכו את `gamesCatalog`:
-```ts
-// src/app/(home)/games.config.ts
-export const gamesCatalog = [
-  // ...
-  {
-    id: "picpick",
-    title: "PicPick",
-    description: "התאמת משפט לתמונה",
-    thumbnail: "/thumbs/picpick.png",
-    href: "/games/picpick"
-  }
-];
-```
-
----
-
-## 11) צ’ק־ליסט מהיר
-- [ ] `src/app/games/<game-id>/page.tsx` עם `GameLayout` ו־`helpSteps`
-- [ ] `src/games/<GameName>/<GameName>Game.tsx` שמקבל `GameComponentProps`
-- [ ] קריאת `onGameEnd(score, timeMs)` בטוחה
-- [ ] שימוש ב־`getGameData`/`postProgress` לפי צורך
-- [ ] בלי שינוי חוזים/Endpoints גלובליים
-- [ ] Tailwind utilities + tokens; בלי `@apply` מותאם
-- [ ] הוספה ל־`gamesCatalog`
-- [ ] ESLint/TS ירוקים; טקסטים RTL; alt לתמונות
-
----
-
-## 12) תבנית להעתקה (Skeleton)
-```tsx
-// src/app/games/<slug>/page.tsx
-import GameLayout from "@/components/common/GameLayout";
-import XxxGame from "@/games/Xxx/XxxGame";
-
-export default function Page() {
-  return (
-    <GameLayout
-      gameId="<slug>"
-      title="Xxx"
-      helpSteps={[{ title: "איך משחקים", text: "הסבר קצר", img: "/help/xxx-1.png" }]}
-      renderGame={(props) => <XxxGame {...props} />}
-    />
-  );
-}
-```
-```tsx
-// src/games/Xxx/XxxGame.tsx
-"use client";
-import { GameComponentProps } from "@/types/game";
-import GameHUD from "@/components/hud/GameHUD";
-import Timer from "@/components/hud/Timer";
-import ScoreCounter from "@/components/hud/ScoreCounter";
-import PrimaryButton from "@/components/controls/PrimaryButton";
-import { useState, useRef } from "react";
-import { postProgress } from "@/lib/api";
-
-export default function XxxGame({ playerName, onGameEnd }: GameComponentProps) {
-  const [score, setScore] = useState(0);
-  const elapsedRef = useRef(0);
-
-  function finish() {
-    postProgress("xxx", { name: playerName, score, timeMs: elapsedRef.current })
-      .finally(() => onGameEnd(score, elapsedRef.current));
-  }
-
-  return (
-    <div className="page-container">
-      <GameHUD
-        leftSlot={<ScoreCounter value={score} />}
-        rightSlot={
-          <Timer
-            mode="down"
-            initialMs={60000}
-            onTick={(ms) => (elapsedRef.current = 60000 - ms)}
-            onComplete={finish}
-          />
-        }
-      />
-      <div className="card grid gap-4">
-        {/* המשחק שלך כאן */}
-        <PrimaryButton onClick={() => setScore((s) => s + 10)}>+10</PrimaryButton>
-        <PrimaryButton onClick={finish}>סיום</PrimaryButton>
-      </div>
-    </div>
-  );
-}
-```
-
----
-
-## 13) נפילות נפוצות
-- ❌ שכחת `onGameEnd` → אין תוצאות/Leaderboard.
-- ❌ שינוי `GameComponentProps` → המעטפת נשברת.
-- ❌ צבעים/`@apply` מותאם → שבירת קו עיצוב וכללי Tailwind v4.
-- ❌ `gameId` לא תואם לנתיבי ה־API → שגיאות שרשרת.
-- ❌ חוסר נגישות (אין alt/מיקוד) → נפסל ב־QA.
-
----
-
-## 14) תמיכה
-- צריך שדה ייחודי? הגדירו טיפוסים לוקאליים בקובץ המשחק.
-- שינוי פרוטוקול/סקימה – רק בתיאום Core, ומומלץ מאחורי `/v2`.
-- רוצים דוגמה למשחק ספציפי? בקשו שלד (Opposite Quest / Grammar Guru / MiniWordle וכו’).
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
