@@ -26,13 +26,39 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes
                 .ToListAsync();
         }
 
-        public  async Task<List<Word>> GetWordsAsync(int firstWordId, int secondWordId)
+        public async Task<List<Word>> GetRandomWordsAsync(int count, int? minLength = null, int? maxLength = null)
+        {
+            var query = _appDbContext.Words.AsQueryable();
+
+         
+            if (minLength.HasValue)
+                query = query.Where(w => w.WordText.Length >= minLength.Value);
+
+           
+            if (maxLength.HasValue)
+                query = query.Where(w => w.WordText.Length <= maxLength.Value);
+
+         
+            return await query
+                .OrderBy(w => EF.Functions.Random())
+                .Take(count)
+                .ToListAsync();
+        }
+
+
+        public async Task<List<Word>> GetWordsAsync(int firstWordId, int secondWordId)
         {
             return await _appDbContext.Words
+<<<<<<< HEAD
                  .OrderBy(i => EF.Functions.Random())
+=======
+                 .OrderBy(w => EF.Functions.Random())
+>>>>>>> main
                  .Where(w => w.WordId != firstWordId && w.WordId != secondWordId)
                  .Take(3)
                  .ToListAsync();
         }
+
+        
     }
 }

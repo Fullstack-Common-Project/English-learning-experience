@@ -26,5 +26,10 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes
                 .ToListAsync();
         }
 
+        public async Task<int> GetCountImagesAsync()
+        {
+            return _appDbContext.Images.Count();
+        }
+
     }
 }

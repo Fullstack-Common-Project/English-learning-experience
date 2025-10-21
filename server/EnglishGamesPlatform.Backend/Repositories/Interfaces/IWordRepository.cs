@@ -6,6 +6,8 @@ namespace EnglishGamesPlatform.Backend.Repositories.Interfaces
     {
         Task<Word?> GetByIdAsync(int id);
         Task<List<Word>> GetRandomWordsAsync(int count);
+        Task<List<Word>> GetRandomWordsAsync(int count, int? minLength = null, int? maxLength = null);
+
         Task<List<Word>> GetWordsAsync(int firstWordId,int secondWordId);
     }
 }

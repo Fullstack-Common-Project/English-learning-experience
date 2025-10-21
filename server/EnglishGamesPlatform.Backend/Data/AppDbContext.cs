@@ -16,6 +16,7 @@ namespace EnglishGamesPlatform.Backend.Data
         public DbSet<Sentence> Sentences { get; set; }
         public DbSet<Progress> Progress { get; set; }
         public DbSet<OppositeWord> OppositeWords { get; set; }
+        public DbSet<TwinWord> TwinWords { get; set; }
         public DbSet<MemoryMatchSynonymsPair> MemoryMatchSynonymsPairs { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -70,7 +71,20 @@ namespace EnglishGamesPlatform.Backend.Data
                .HasForeignKey<MemoryMatchSynonymsPair>(p => p.WordId)
                .OnDelete(DeleteBehavior.Cascade);
 
+            modelBuilder.Entity<TwinWord>()
+               .HasOne(t => t.BaseWord)
+               .WithMany()
+               .HasForeignKey(t => t.BaseWordId)
+               .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<TwinWord>()
+                .HasOne(t => t.SynonymWord)
+                .WithMany()
+                .HasForeignKey(t => t.SynonymWordId)
+                .OnDelete(DeleteBehavior.Restrict);
+
             base.OnModelCreating(modelBuilder);
+
         }
     }
 }

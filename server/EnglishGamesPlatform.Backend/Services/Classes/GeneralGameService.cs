@@ -1,9 +1,18 @@
+using AutoMapper;
 using EnglishGamesPlatform.Backend.Models.DTOs;
 using EnglishGamesPlatform.Backend.Models.DTOs.Entities_DTOs;
 using EnglishGamesPlatform.Backend.Models.GameInitialDatas;
+<<<<<<< HEAD
+=======
+using EnglishGamesPlatform.Backend.Models.Entities;
+>>>>>>> main
 using EnglishGamesPlatform.Backend.Repositories.Interfaces;
 using EnglishGamesPlatform.Backend.Services.Interfaces;
+using System.ComponentModel;
+using System.Diagnostics;
 using System.Net;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace EnglishGamesPlatform.Backend.Services.Classes
 {
@@ -12,27 +21,68 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
         private readonly Dictionary<string, IGeneralGameRepository> _repositories;
         private readonly IGameRepository _gameRepository;
         private readonly IGameResultRepository _gameResultRepository;
+        private readonly IMapper _mapper;
 
 
-        public GeneralGameService(IEnumerable<IGeneralGameRepository> repositories, IGameRepository gameRepository, IGameResultRepository gameResultRepository)
+        public GeneralGameService(IEnumerable<IGeneralGameRepository> repositories, IGameRepository gameRepository, IGameResultRepository gameResultRepository, IMapper mapper)
         {
             _repositories = repositories.ToDictionary(r => r.GameName);
             _gameRepository = gameRepository;
             _gameResultRepository = gameResultRepository;
+            _mapper = mapper;
         }
 
-        public Task<Response<FinalGameStatus>> GetFinalGameStatusAsync(GameResultDTO gameResultDTO)
+
+        public async Task<Response<FinalGameStatus>> GetFinalGameStatusAndAddGameResultAsync(GameResultDTO gameResultDTO)
         {
-            throw new NotImplementedException();
+            if (gameResultDTO == null)
+            {
+                return new()
+                {
+                    IsSuccess = false,
+                    StatusCode = HttpStatusCode.BadRequest,
+                    Message = "Invalid Game Result Data.",
+                };
+            }
+
+            GameResult gameResult = await AddGameResultAsync(_mapper.Map<GameResult>(gameResultDTO));
+
+            int index = await GetRankByUserId(gameResultDTO.GameID, gameResultDTO.UserID, 10);
+
+            if (index == -1)
+            {
+                return new()
+                {
+                    IsSuccess = true,
+                    StatusCode = HttpStatusCode.OK,
+                    Message = "Add Game Result Successfully.",
+                    Data = new ()
+                    {
+                        IsLeadingPlayer = false,
+                    }
+                };
+            }
+
+            return new Response<FinalGameStatus>()
+            {
+                IsSuccess = true,
+                StatusCode = HttpStatusCode.OK,
+                Message = "Add Game Result Successfully.",
+                Data = new FinalGameStatus()
+                {
+                    IsLeadingPlayer = true,
+                    Rank = index + 1
+                }
+            };
         }
-        
+
         public async Task<Response<GameData>> GetGameDataAsync(int gameId)
         {
             string? gameName = await GetGameNameByIdAsync(gameId);
 
             if (gameName == null)
             {
-                return new ()
+                return new()
                 {
                     IsSuccess = false,
                     StatusCode = HttpStatusCode.NotFound,
@@ -43,8 +93,7 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
             if (_repositories.TryGetValue(gameName, out var repository))
             {
                 GameInitialData gameInitialData = await repository.GetData();
-                //var gameInitialData2 = (OppositeQuestData)gameInitialData;//DELETE
-
+ 
                 return new()
                 {
                     StatusCode = HttpStatusCode.OK,
@@ -55,11 +104,12 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
                         GameId = gameId,
                         Data = gameInitialData
                     }
+
                 };
             }
             else
             {
-                return new ()
+                return new()
                 {
                     StatusCode = HttpStatusCode.InternalServerError,
                     IsSuccess = false,
@@ -88,6 +138,25 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
             return await _gameRepository.GetGameNameByIdAsync(gameId);
         }
 
+        private async Task<GameResult> AddGameResultAsync(GameResult gameResult)
+        {
+            return await _gameResultRepository.AddGameResultAsync(gameResult);
+        }
+
+        private async Task<IEnumerable<GameResult>> GetTopGameResultsByGameIdAsync(int gameId, int topCount)
+        {
+            return await _gameResultRepository.GetTopGameResultsByGameIdAsync(gameId, topCount);
+        }
+
+        private async Task<int> GetRankByUserId(int gameId, int userId, int topCount)
+        {
+            List<GameResult> gameResults = (await GetTopGameResultsByGameIdAsync(gameId, topCount)).ToList();
+
+            int index = gameResults.FindIndex(gameResult => gameResult.UserId == userId);
+
+            return index;
+        }
+        
         #endregion
     }
 }
