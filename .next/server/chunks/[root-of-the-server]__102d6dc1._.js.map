@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 3, "column": 0}, "map": {"version":3,"sources":[],"names":[],"mappings":"","debugId":null}},
+    {"offset": {"line": 55, "column": 0}, "map": {"version":3,"sources":["file:///C:/game/educational-games/src/app/api/v1/games/rhyme-time/data/route.ts"],"sourcesContent":["import { NextResponse } from \"next/server\";\r\n\r\nexport async function GET() {\r\n  return NextResponse.json({\r\n    gameId: \"rhyme-time\",\r\n    data: [\r\n      {\r\n        id: 1,\r\n        word: \"cat\",\r\n        options: [\"hat\", \"hot\", \"cut\", \"bat\"],\r\n        correctIndices: [0, 3],\r\n      },\r\n    ],\r\n  });\r\n}\r\n"],"names":[],"mappings":";;;;AAAA;;AAEO,eAAe;IACpB,OAAO,gJAAY,CAAC,IAAI,CAAC;QACvB,QAAQ;QACR,MAAM;YACJ;gBACE,IAAI;gBACJ,MAAM;gBACN,SAAS;oBAAC;oBAAO;oBAAO;oBAAO;iBAAM;gBACrC,gBAAgB;oBAAC;oBAAG;iBAAE;YACxB;SACD;IACH;AACF","debugId":null}}]
+}
