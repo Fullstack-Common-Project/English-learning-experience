@@ -39,7 +39,7 @@ namespace EnglishGamesPlatform.Backend.Controllers
         [HttpPost("{gameId}/progress")]
         public async Task<ActionResult<Response<FinalGameStatus>>> GetFinalGameStatusAsync([FromBody] GameResultDTO gameResultDTO)
         {
-            Response<FinalGameStatus> response = await _gameService.GetFinalGameStatusAsync(gameResultDTO);
+            Response<FinalGameStatus> response = await _gameService.GetFinalGameStatusAndAddGameResultAsync(gameResultDTO);
             if (response.IsSuccess)
                 return Ok(response);
             else
