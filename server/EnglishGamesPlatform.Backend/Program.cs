@@ -57,6 +57,7 @@ builder.Services.AddScoped<IGameResultRepository, GameResultRepository>();
 
 builder.Services.AddScoped<IGeneralGameRepository, PictureHangmanRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, OppositeQuestRepository>();
+builder.Services.AddScoped<IGeneralGameRepository,LetterChaosRepository>();
 
 #endregion
 
