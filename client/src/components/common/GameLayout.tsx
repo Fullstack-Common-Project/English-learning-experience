@@ -175,8 +175,6 @@
 //     </div>
 //   );
 // }
-
-
 "use client";
 import React, { useState, useEffect } from "react";
 import useGameState from "@/hooks/useGameState";
@@ -186,6 +184,7 @@ import HelpScreen from "../leaderboard/HelpScreen";
 import useGameTimer from "@/hooks/useGameTimer";
 import Countdown3_2_1 from "../hud/countdown3_2_1";
 import AudioToggle from "../hud/audioToggle";
+import { QueryProvider } from "@/providers/QueryProvider";
 
 export type GameProps = {
   onScoreChange?: (value: number | ((prev: number) => number)) => void;
@@ -245,6 +244,7 @@ export default function GameLayout({ children, gameTitle }: GameLayoutProps) {
   const handleResume = () => setCountdownActive(true);
 
   return (
+     <QueryProvider> <div className="game-layout">
     <div className="game-layout">
       <h1 className="game-layout__title">{gameTitle}</h1>
 
@@ -311,6 +311,9 @@ export default function GameLayout({ children, gameTitle }: GameLayoutProps) {
       {stage === "end" && gameOver && (
         <GameOverModal score={score} time={time} onRestart={handleRestart} />
       )}
+    </div></QueryProvider>
+   
     </div>
+>>>>>>> origin/main
   );
 }

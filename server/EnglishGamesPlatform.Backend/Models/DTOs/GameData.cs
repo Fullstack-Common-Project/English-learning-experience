@@ -1,3 +1,5 @@
+﻿using EnglishGamesPlatform.Backend.Models.GameInitialDatas;
+namespace EnglishGamesPlatform.Backend.Models.DTOs
 ﻿namespace EnglishGamesPlatform.Backend.Models.DTOs
 {
     public class GameData
