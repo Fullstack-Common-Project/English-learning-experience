@@ -67,6 +67,7 @@ builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IImageRepository, ImageRepository>();
 builder.Services.AddScoped<ISentenceRepository, SentenceRepository>();
 builder.Services.AddScoped<IWordRepository, WordRepository>();
+builder.Services.AddScoped<IGeneralGameRepository, MemoryMatchSynonymsRepository>();
 
 #endregion
 
