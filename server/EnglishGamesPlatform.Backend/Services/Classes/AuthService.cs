@@ -4,8 +4,7 @@ using EnglishGamesPlatform.Backend.Repositories.Interfaces;
 using EnglishGamesPlatform.Backend.Services.Interfaces;
 using EnglishGamesPlatform.Backend.Utils;
 using EnglishGamesPlatform.Backend.Validation;
-using Org.BouncyCastle.Crypto.Generators;
-using System.Diagnostics.Eventing.Reader;
+
 
 namespace EnglishGamesPlatform.Backend.Services.Implementations
 {

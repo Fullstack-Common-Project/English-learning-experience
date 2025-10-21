@@ -4,6 +4,7 @@ using EnglishGamesPlatform.Backend.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EnglishGamesPlatform.Backend.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251020182312_addMemoryMatchSynonymsPairTable")]
+    partial class addMemoryMatchSynonymsPairTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -220,29 +223,6 @@ namespace EnglishGamesPlatform.Backend.Migrations
                     b.ToTable("Sentences");
                 });
 
-            modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.TwinWord", b =>
-                {
-                    b.Property<int>("TwinWordId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("TwinWordId"));
-
-                    b.Property<int>("BaseWordId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SynonymWordId")
-                        .HasColumnType("int");
-
-                    b.HasKey("TwinWordId");
-
-                    b.HasIndex("BaseWordId");
-
-                    b.HasIndex("SynonymWordId");
-
-                    b.ToTable("TwinWords");
-                });
-
             modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.User", b =>
                 {
                     b.Property<int>("UserId")
@@ -370,25 +350,6 @@ namespace EnglishGamesPlatform.Backend.Migrations
                     b.Navigation("Game");
 
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.TwinWord", b =>
-                {
-                    b.HasOne("EnglishGamesPlatform.Backend.Models.Entities.Word", "BaseWord")
-                        .WithMany()
-                        .HasForeignKey("BaseWordId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("EnglishGamesPlatform.Backend.Models.Entities.Word", "SynonymWord")
-                        .WithMany()
-                        .HasForeignKey("SynonymWordId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("BaseWord");
-
-                    b.Navigation("SynonymWord");
                 });
 
             modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.Word", b =>

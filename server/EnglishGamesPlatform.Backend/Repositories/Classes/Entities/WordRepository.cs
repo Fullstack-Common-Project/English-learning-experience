@@ -26,9 +26,13 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes
                 .ToListAsync();
         }
 
-        public Task<List<Word>> GetWordsAsync(int firstWordId, int secondWordId)
+        public  async Task<List<Word>> GetWordsAsync(int firstWordId, int secondWordId)
         {
-            throw new NotImplementedException();
+            return await _appDbContext.Words
+                 .OrderBy(i => Guid.NewGuid())
+                 .Where(w => w.WordId != firstWordId && w.WordId != secondWordId)
+                 .Take(3)
+                 .ToListAsync();
         }
     }
 }
