@@ -5,4 +5,4 @@ export interface PhraseCrazeItem {
 
 
 export interface PhraseCrazeResponse
-  extends GameResponseBase<"phraseCraze", PhraseCrazeItem[]> {}
+  extends GameResponseBase<16, PhraseCrazeItem> {}

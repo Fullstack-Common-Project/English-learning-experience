@@ -6,6 +6,7 @@ using EnglishGamesPlatform.Backend.Models.GameInitialDatas;
 using EnglishGamesPlatform.Backend.Models.GameInitialDatas;
 using EnglishGamesPlatform.Backend.Repositories.Interfaces;
 using EnglishGamesPlatform.Backend.Services.Interfaces;
+using System.Net;
 
 namespace EnglishGamesPlatform.Backend.Services.Classes
 {

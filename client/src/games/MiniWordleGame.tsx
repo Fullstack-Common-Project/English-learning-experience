@@ -1,48 +1,21 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
 import MiniWordle from "./mini-wordle/MiniWordle";
 import { GameProps } from "@/components/common/GameLayout";
-import axios from "axios";
-
-
-interface MiniWordleModel {
-    targetWord: string;
-    wordLength: number;
-    id: number | null;
-}
+import { useGameData } from "@/hooks/useGameData";
+import { GameId } from "@/types";
 
 export default function MiniWordleGame({ onScoreChange, onGameOver, paused }: GameProps) {
-    const [miniWordleModel, setMiniWordleModel] = useState<MiniWordleModel | null>(null);
-    const [loading, setLoading] = useState(true);
-    const hasFetchedRef = useRef(false);
+    const gameId: GameId = 6; 
+    const { data, isLoading, isError } = useGameData(gameId);
 
-    useEffect(() => {
-        if (hasFetchedRef.current) return;
-        hasFetchedRef.current = true;
+    if (isLoading) return <p>Loading...</p>;
+    if (isError || !data?.data) return <p>No data available.</p>;
 
-        const fetchData = async () => {
-            try {
-                // setMiniWordleModel({
-                //     targetWord: "APPL",
-                //     wordLength: 4,
-                //     id: 1
-                // });
-                const response = await axios.get("https://localhost:7292/api/v1/GeneralGame/6/data");
-                const data = response.data.data.data;
-                console.log(data)
-                setMiniWordleModel({ targetWord: data.targetWord, wordLength: data.wordLength, id: data.id });
-            } catch (error) {
-                console.error("Failed to fetch MiniWordle data:", error);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchData();
-    }, []);
-
-    if (loading) return <p>Loading...</p>;
-    if (!miniWordleModel) return <p>No data available.</p>;
+    const miniWordleModel = {
+        targetWord: data.data.data.targetWord,
+        wordLength: data.data.data.wordLength,
+        id: data.data.data.id,
+    };
 
     return (
         <MiniWordle
@@ -52,7 +25,5 @@ export default function MiniWordleGame({ onScoreChange, onGameOver, paused }: Ga
             onScoreChange={onScoreChange}
             onGameOver={onGameOver}
         />
-
     );
 }
-

@@ -5,4 +5,4 @@ export interface WordwiseFlashItem {
 
 
 export interface WordwiseFlashResponse
-  extends GameResponseBase<"wordwiseFlash", WordwiseFlashItem[]> {}
+  extends GameResponseBase<"wordwiseFlash", WordwiseFlashItem> {}

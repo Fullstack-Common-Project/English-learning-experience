@@ -5,4 +5,4 @@ export interface MemoryAntonymsItem {
 }
 
 export interface MemoryAntonymsResponse
-  extends GameResponseBase<"memoryAntonyms", MemoryAntonymsItem[]> {}
+  extends GameResponseBase<11, MemoryAntonymsItem> {}
