@@ -5,4 +5,4 @@ export interface WordSorterItem {
 
 
 export interface WordSorterResponse
-  extends GameResponseBase<"wordSorter", WordSorterItem[]> {}
+  extends GameResponseBase<7, WordSorterItem> {}

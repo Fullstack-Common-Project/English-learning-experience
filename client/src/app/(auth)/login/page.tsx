@@ -5,12 +5,28 @@ import { useDispatch } from "react-redux";
 import { setUser } from "@/store/userSlice";
 import { useRouter } from "next/navigation";
 import axios from "axios";
+import { GoogleLogin } from "@react-oauth/google";
 
 export default function Login() {
     const emailRef = useRef<HTMLInputElement>(null);
     const passwordRef = useRef<HTMLInputElement>(null);
     const dispatch = useDispatch();
     const router = useRouter();
+
+    const handleGoogleLogin = async (credentialResponse: any) => {
+        try {
+            const idToken = credentialResponse.credential;
+            const res = await axios.post("https://localhost:7292/api/Auth/google-login", { idToken });
+
+            localStorage.setItem("token", res.data.token);
+            dispatch(setUser(res.data.user));
+            router.push("/");
+        } catch (err) {
+            console.error("Google login failed:", err);
+            alert("Google login failed");
+        }
+    };
+
 
     const handleLogin = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -24,7 +40,6 @@ export default function Login() {
                 password
             });
             console.log("res:", response);
-            
             // נשלוף את הנתונים שהשרת החזיר
             const { token, user } = response.data;
             console.log("user:", user);
@@ -67,6 +82,13 @@ export default function Login() {
                     Login
                 </button>
             </form>
-        </div>
+
+            <div className="mt-4">
+                <GoogleLogin
+                    onSuccess={handleGoogleLogin}
+                    onError={() => console.log("Google Login Failed")}
+                />
+            </div>
+        </div >
     );
 }

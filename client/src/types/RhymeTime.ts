@@ -5,4 +5,4 @@ export interface RhymeTimeItem {
 
 
 export interface RhymeTimeResponse
-  extends GameResponseBase<"rhymeTime", RhymeTimeItem[]> {}
+  extends GameResponseBase<18, RhymeTimeItem> {}

@@ -5,4 +5,4 @@ export interface GuessMasterItem {
 
 
 export interface GuessMasterResponse
-  extends GameResponseBase<"guessMaster20", GuessMasterItem[]> {}
+  extends GameResponseBase<14, GuessMasterItem> {}

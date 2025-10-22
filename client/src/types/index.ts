@@ -9,32 +9,32 @@ import { MemorySynonymsResponse } from "./MemorySynonyms";
 import { MemoryAntonymsResponse } from "./MemoryAntonyms";
 import { RhymeTimeResponse } from "./RhymeTime";
 import { WordwiseFlashResponse } from "./WordwiseFlash";
-import { RevealItResponse } from "./RevealIt";
 import { WordSorterResponse } from "./WordSorter";
 import { LetterChaosResponse } from "./LetterChaos";
 import { GuessMasterResponse } from "./GuessMaster";
 import { DoubleVisionResponse } from "./DoubleVision";
 import { ContextCluesResponse } from "./ContextClues";
 import { PhraseCrazeResponse } from "./PhraseCraze";
+import { PictureHangmanResponse } from "./PictureHangman";
 
-export enum GameId {
-  SentenceShuffle = 1,
-  PicPick,
-  GrammarGuru,
-  OppositeQuest,
-  TwinWords,
-  MiniWordle,
-  MemorySynonyms,
-  MemoryAntonyms,
-  RhymeTime,
-  WordwiseFlash,
-  RevealIt,
-  WordSorter,
-  LetterChaos,
-  GuessMaster,
-  DoubleVision,
-  ContextClues,
-  PhraseCraze,
+export interface GameResponseMap {
+  sentenceShuffle: SentenceShuffleResponse;
+  17 : PicPickResponse;
+  9: GrammarGuruResponse;
+  1: OppositeQuestResponse;
+  10: TwinWordsResponse;
+  6 : MiniWordleResponse;
+  8: MemorySynonymsResponse;
+  11: MemoryAntonymsResponse;
+  18: RhymeTimeResponse;
+  wordwiseFlash: WordwiseFlashResponse;
+  2: PictureHangmanResponse;
+  7: WordSorterResponse;
+  3: LetterChaosResponse;
+  14: GuessMasterResponse;
+  12 : DoubleVisionResponse;
+  15: ContextCluesResponse;
+  16: PhraseCrazeResponse;
 }
 
 export type GameResponseMap = Record<

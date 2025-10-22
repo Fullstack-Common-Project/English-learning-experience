@@ -4,4 +4,4 @@ export interface OppositeQuestItem {
 }
 
 
-export interface OppositeQuestResponse extends GameResponseBase<"oppositeQuest", OppositeQuestItem[]> {}
+export interface OppositeQuestResponse extends GameResponseBase<1, OppositeQuestItem> {}
