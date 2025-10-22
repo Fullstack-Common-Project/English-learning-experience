@@ -1,4 +1,4 @@
-using EnglishGamesPlatform.Backend.Data;
+﻿using EnglishGamesPlatform.Backend.Data;
 using EnglishGamesPlatform.Backend.Extensions;
 using EnglishGamesPlatform.Backend.Repositories.Classes;
 using EnglishGamesPlatform.Backend.Repositories.Classes.Entities;
@@ -72,6 +72,7 @@ builder.Services.AddScoped<IImageRepository, ImageRepository>();
 builder.Services.AddScoped<ISentenceRepository, SentenceRepository>();
 builder.Services.AddScoped<IWordRepository, WordRepository>();
 builder.Services.AddScoped<IOppositeWordRepository, OppositeWordRepository>();
+builder.Services.AddScoped<IGeneralGameRepository, GuessMaster20Repository>();
 
 
 
@@ -94,6 +95,7 @@ builder.Services.AddCustomServices();
 
 var app = builder.Build();
 
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -112,9 +114,9 @@ app.UseCustomExceptionHandler();
 app.UseHttpsRedirection();
 app.UseCors("AllowAll");
 
-app.UseAuthorization();
-
 app.UseAuthentication();
+
+app.UseAuthorization();
 
 app.MapControllers();
 
