@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { fetchLeaderboard } from "../lib/api";
 import { QUERY_KEYS } from "@/lib/queryKeys";
-import type { GameId,LeaderboardResponse } from "../types";
+import type { GameId, LeaderboardResponse } from "../types";
 
 export function useLeaderboard(
   gameId: GameId,

@@ -5,7 +5,7 @@ import type {
   SubmitProgressPayload,
   SubmitProgressResponse,
 } from "../types";
-import type { GameResponseMap } from "../types"; 
+import type { GameResponseMap } from "../types";
 
 async function handleResponse<T>(res: Response): Promise<T> {
   const text = await res.text();
