@@ -175,6 +175,10 @@
 //     </div>
 //   );
 // }
+
+
+
+
 "use client";
 import React, { useState, useEffect } from "react";
 import useGameState from "@/hooks/useGameState";
@@ -184,6 +188,7 @@ import HelpScreen from "../leaderboard/HelpScreen";
 import useGameTimer from "@/hooks/useGameTimer";
 import Countdown3_2_1 from "../hud/countdown3_2_1";
 import AudioToggle from "../hud/audioToggle";
+
 import { QueryProvider } from "@/providers/QueryProvider";
 
 export type GameProps = {
@@ -311,8 +316,7 @@ export default function GameLayout({ children, gameTitle }: GameLayoutProps) {
       {stage === "end" && gameOver && (
         <GameOverModal score={score} time={time} onRestart={handleRestart} />
       )}
-    </div> </QueryProvider>
-   
-   
+    </div> 
+   </QueryProvider>
   );
 }
