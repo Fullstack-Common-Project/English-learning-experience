@@ -4,6 +4,7 @@ using EnglishGamesPlatform.Backend.Repositories.Interfaces;
 using EnglishGamesPlatform.Backend.Services.Interfaces;
 using EnglishGamesPlatform.Backend.Utils;
 using EnglishGamesPlatform.Backend.Validation;
+using Google.Apis.Auth;
 
 
 namespace EnglishGamesPlatform.Backend.Services.Implementations
@@ -81,6 +82,63 @@ namespace EnglishGamesPlatform.Backend.Services.Implementations
             };
         }
 
+
+
+        public async Task<Response<UserResponse>> GoogleLogin(string idToken)
+        {
+            var res = new Response<UserResponse>();
+
+            try
+            {
+                // מאמתים את ה-id_token מול Google
+                var payload = await GoogleJsonWebSignature.ValidateAsync(idToken);
+
+                // בודקים אם המשתמש כבר קיים במסד
+                var userEntity = await _authRepository.IsExistingUser(payload.Email);
+
+                if (userEntity == null)
+                {
+                    // יוצרים משתמש חדש אם לא קיים
+                    var newUser = new RegisterDTO
+                    {
+                        Email = payload.Email,
+                        FullName = payload.Name,
+                       
+                    };
+
+                    var createdUser = await _authRepository.Register(newUser);
+
+                    // לאחר הרישום, מחזירים את ה־User
+                    userEntity = new User
+                    {
+                        UserId = createdUser.UserId,
+                        FullName = createdUser.FullName,
+                        Email = createdUser.Email
+                    };
+                }
+
+                // יוצרים JWT
+                var token = _tokenService.GenerateToken(userEntity.Email);
+
+                // מחזירים את התוצאה
+                res.IsSuccess = true;
+                res.StatusCode = System.Net.HttpStatusCode.OK;
+                res.Message = "Google login successful";
+                res.Data = new UserResponse
+                {
+                    Token = token,
+                    User = userEntity
+                };
+            }
+            catch (Exception ex)
+            {
+                res.IsSuccess = false;
+                res.Message = ex.Message;
+                res.StatusCode = System.Net.HttpStatusCode.BadRequest;
+            }
+
+            return res;
+        }
 
     }
 }
