@@ -1,5 +1,5 @@
-using EnglishGamesPlatform.Backend.Repositories.Classes.Games;
-using EnglishGamesPlatform.Backend.Repositories;
+﻿using EnglishGamesPlatform.Backend.Repositories.Classes.Games;
+using EnglishGamesPlatform.Backend.Repositories.Implementations;
 using EnglishGamesPlatform.Backend.Repositories.Interfaces;
 using EnglishGamesPlatform.Backend.Services.Classes;
 using EnglishGamesPlatform.Backend.Services.Implementations;
@@ -26,6 +26,12 @@ namespace EnglishGamesPlatform.Backend.Extensions
             services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddScoped<IAuthService, AuthService>();
             services.AddSingleton<TokenService>();
+            services.AddScoped<IGeneralGameService, GeneralGameService>();
+
+        
+
+            // Register custom services here
+            // services.AddScoped<IMyService, MyService>();
             return services;
         }
     }

@@ -6,7 +6,8 @@ namespace EnglishGamesPlatform.Backend.Data
     public class AppDbContext : DbContext
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
-
+        public DbSet<GrammarQuestion> GrammarQuestions { get; set; }
+        public DbSet<GrammarQuestionFakeSentence> GrammarQuestionFakeSentences { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Word> Words { get; set; }
         public DbSet<Image> Images { get; set; }
@@ -16,8 +17,6 @@ namespace EnglishGamesPlatform.Backend.Data
         public DbSet<Sentence> Sentences { get; set; }
         public DbSet<Progress> Progress { get; set; }
         public DbSet<OppositeWord> OppositeWords { get; set; }
-        public DbSet<TwinWord> TwinWords { get; set; }
-        public DbSet<MemoryMatchSynonymsPair> MemoryMatchSynonymsPairs { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -65,26 +64,18 @@ namespace EnglishGamesPlatform.Backend.Data
                 .HasForeignKey(o => o.SecondWordId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            modelBuilder.Entity<MemoryMatchSynonymsPair>()
-               .HasOne(p => p.Word)
-               .WithOne()
-               .HasForeignKey<MemoryMatchSynonymsPair>(p => p.WordId)
-               .OnDelete(DeleteBehavior.Cascade);
-
-            modelBuilder.Entity<TwinWord>()
-               .HasOne(t => t.BaseWord)
+            modelBuilder.Entity<GrammarQuestion>()
+               .HasOne(q => q.CorrectSentence)
                .WithMany()
-               .HasForeignKey(t => t.BaseWordId)
+               .HasForeignKey(q => q.CorrectSentenceId)
                .OnDelete(DeleteBehavior.Restrict);
 
-            modelBuilder.Entity<TwinWord>()
-                .HasOne(t => t.SynonymWord)
-                .WithMany()
-                .HasForeignKey(t => t.SynonymWordId)
-                .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<GrammarQuestionFakeSentence>()
+                .HasOne(fs => fs.GrammarQuestion)
+                .WithMany(q => q.FakeSentences)
+                .HasForeignKey(fs => fs.GrammarQuestionId);
 
             base.OnModelCreating(modelBuilder);
-
         }
     }
 }

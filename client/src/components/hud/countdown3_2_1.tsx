@@ -1,10 +1,6 @@
 import { useState, useEffect } from "react";
 
-interface CountdownProps {
-  onFinish: () => void;
-}
-
-export default function Countdown3_2_1({ onFinish }: CountdownProps) {
+export default function Countdown3_2_1({ onFinish }: { onFinish: () => void }) {
   const [count, setCount] = useState(3);
 
   useEffect(() => {
@@ -14,11 +10,11 @@ export default function Countdown3_2_1({ onFinish }: CountdownProps) {
     }
     const timer = setTimeout(() => setCount(count - 1), 1000);
     return () => clearTimeout(timer);
-  }, [count, onFinish]);
+  }, [count]);
 
   return (
-    <div className="countdown-overlay">
+    <div className="absolute inset-0 flex items-center justify-center text-6xl font-bold text-white bg-black/50">
       {count > 0 ? count : null}
     </div>
-  );
+  )
 }

@@ -1,12 +1,15 @@
 ﻿using EnglishGamesPlatform.Backend.Models.DTOs;
 using EnglishGamesPlatform.Backend.Models.DTOs.Entities_DTOs;
 using EnglishGamesPlatform.Backend.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace EnglishGamesPlatform.Backend.Controllers
 {
     [Route("api/v1/[controller]")]
     [ApiController]
+    [Authorize]
     public class GeneralGameController : ControllerBase
     {
         private readonly IGeneralGameService _gameService;
@@ -18,7 +21,7 @@ namespace EnglishGamesPlatform.Backend.Controllers
 
         [HttpGet("{gameId}/data")]
         public async Task<ActionResult<Response<GameData>>> GetGameData(int gameId)
-        {
+        { 
             Response<GameData> response = await _gameService.GetGameDataAsync(gameId);
             if (response.IsSuccess)
                 return Ok(response);
@@ -39,7 +42,7 @@ namespace EnglishGamesPlatform.Backend.Controllers
         [HttpPost("{gameId}/progress")]
         public async Task<ActionResult<Response<FinalGameStatus>>> GetFinalGameStatusAsync([FromBody] GameResultDTO gameResultDTO)
         {
-            Response<FinalGameStatus> response = await _gameService.GetFinalGameStatusAndAddGameResultAsync(gameResultDTO);
+            Response<FinalGameStatus> response = await _gameService.GetFinalGameStatusAsync(gameResultDTO);
             if (response.IsSuccess)
                 return Ok(response);
             else

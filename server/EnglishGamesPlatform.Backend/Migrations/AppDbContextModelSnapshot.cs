@@ -99,6 +99,46 @@ namespace EnglishGamesPlatform.Backend.Migrations
                     b.ToTable("GameResults");
                 });
 
+            modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.GrammarQuestion", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CorrectSentenceId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CorrectSentenceId");
+
+                    b.ToTable("GrammarQuestions");
+                });
+
+            modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.GrammarQuestionFakeSentence", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("GrammarQuestionId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Sentence")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GrammarQuestionId");
+
+                    b.ToTable("GrammarQuestionFakeSentences");
+                });
+
             modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.Image", b =>
                 {
                     b.Property<int>("ImageId")
@@ -119,30 +159,6 @@ namespace EnglishGamesPlatform.Backend.Migrations
                     b.HasIndex("WordId");
 
                     b.ToTable("Images");
-                });
-
-            modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.MemoryMatchSynonymsPair", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Synonym")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("varchar(100)");
-
-                    b.Property<int>("WordId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("WordId")
-                        .IsUnique();
-
-                    b.ToTable("MemoryMatchSynonymsPairs");
                 });
 
             modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.OppositeWord", b =>
@@ -220,29 +236,6 @@ namespace EnglishGamesPlatform.Backend.Migrations
                     b.ToTable("Sentences");
                 });
 
-            modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.TwinWord", b =>
-                {
-                    b.Property<int>("TwinWordId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("TwinWordId"));
-
-                    b.Property<int>("BaseWordId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SynonymWordId")
-                        .HasColumnType("int");
-
-                    b.HasKey("TwinWordId");
-
-                    b.HasIndex("BaseWordId");
-
-                    b.HasIndex("SynonymWordId");
-
-                    b.ToTable("TwinWords");
-                });
-
             modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.User", b =>
                 {
                     b.Property<int>("UserId")
@@ -312,22 +305,33 @@ namespace EnglishGamesPlatform.Backend.Migrations
                     b.Navigation("User");
                 });
 
+            modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.GrammarQuestion", b =>
+                {
+                    b.HasOne("EnglishGamesPlatform.Backend.Models.Entities.Sentence", "CorrectSentence")
+                        .WithMany()
+                        .HasForeignKey("CorrectSentenceId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.Navigation("CorrectSentence");
+                });
+
+            modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.GrammarQuestionFakeSentence", b =>
+                {
+                    b.HasOne("EnglishGamesPlatform.Backend.Models.Entities.GrammarQuestion", "GrammarQuestion")
+                        .WithMany("FakeSentences")
+                        .HasForeignKey("GrammarQuestionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("GrammarQuestion");
+                });
+
             modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.Image", b =>
                 {
                     b.HasOne("EnglishGamesPlatform.Backend.Models.Entities.Word", "Word")
                         .WithMany("Images")
                         .HasForeignKey("WordId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Word");
-                });
-
-            modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.MemoryMatchSynonymsPair", b =>
-                {
-                    b.HasOne("EnglishGamesPlatform.Backend.Models.Entities.Word", "Word")
-                        .WithOne()
-                        .HasForeignKey("EnglishGamesPlatform.Backend.Models.Entities.MemoryMatchSynonymsPair", "WordId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -372,25 +376,6 @@ namespace EnglishGamesPlatform.Backend.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.TwinWord", b =>
-                {
-                    b.HasOne("EnglishGamesPlatform.Backend.Models.Entities.Word", "BaseWord")
-                        .WithMany()
-                        .HasForeignKey("BaseWordId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("EnglishGamesPlatform.Backend.Models.Entities.Word", "SynonymWord")
-                        .WithMany()
-                        .HasForeignKey("SynonymWordId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("BaseWord");
-
-                    b.Navigation("SynonymWord");
-                });
-
             modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.Word", b =>
                 {
                     b.HasOne("EnglishGamesPlatform.Backend.Models.Entities.Category", "Category")
@@ -412,6 +397,11 @@ namespace EnglishGamesPlatform.Backend.Migrations
                     b.Navigation("GameResults");
 
                     b.Navigation("Progress");
+                });
+
+            modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.GrammarQuestion", b =>
+                {
+                    b.Navigation("FakeSentences");
                 });
 
             modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.User", b =>

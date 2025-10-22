@@ -5,10 +5,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useSelector } from "react-redux";
 export default function Header() {
-  const user = useSelector(
-    (state: { user: { user: { userId: number; fullName: string } } }) =>
-      state.user.user
-  );
+  const user = useSelector((state: { user: { user: { userId: number; fullName: string } } }) => state.user.user);
   const playerName = user?.fullName || null;
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -28,14 +25,16 @@ export default function Header() {
   ];
 
   return (
-    <header
-      className={`header-bg ${scrolled ? "shadow-md" : ""}`}
-      aria-label="Main site header"
-    >
+    <header className={`header-bg ${scrolled ? "shadow-md" : ""}`} aria-label="Main site header">
+
       <div className="max-w-screen-xl mx-auto px-4 md:px-6">
         <div className="h-16 flex items-center justify-between">
+
           <div className="flex items-center gap-4">
-            <Link href="/about" className="nav-link">
+            <Link
+              href="/about"
+              className="nav-link"
+            >
               <svg
                 width="36"
                 height="36"
@@ -56,17 +55,20 @@ export default function Header() {
               <span className="font-semibold text-lg">Game-English</span>
             </Link>
 
-            <nav
-              className="hidden md:flex items-center gap-3 ml-4"
-              aria-label="Primary"
-            >
+
+            <nav className="hidden md:flex items-center gap-3 ml-4" aria-label="Primary">
               {nav.map((n) => (
-                <Link key={n.href} href={n.href} className="nav-link">
+                <Link
+                  key={n.href}
+                  href={n.href}
+                  className="nav-link"
+                >
                   {n.label}
                 </Link>
               ))}
             </nav>
           </div>
+
 
           <div className="flex items-center gap-3">
             <div
@@ -81,6 +83,7 @@ export default function Header() {
               </div>
             </div>
 
+
             <button
               aria-label="Open menu"
               aria-expanded={mobileOpen}
@@ -89,13 +92,7 @@ export default function Header() {
               }}
               className="p-2 rounded-md md:hidden focus:outline-none focus-visible:ring-2"
             >
-              <svg
-                width="22"
-                height="22"
-                viewBox="0 0 24 24"
-                fill="none"
-                aria-hidden
-              >
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden>
                 <path
                   d="M4 7h16M4 12h16M4 17h16"
                   stroke="currentColor"
@@ -110,12 +107,14 @@ export default function Header() {
               <button
                 title="Toggle theme"
                 aria-label="Toggle theme"
-                className="btn-primary"
-              ></button>
+                className="btn btn-primary"
+              >
+              </button>
             </div>
           </div>
         </div>
       </div>
+
 
       <AnimatePresence>
         {mobileOpen && (

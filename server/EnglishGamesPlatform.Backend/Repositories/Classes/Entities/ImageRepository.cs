@@ -21,14 +21,9 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes
         public async Task<List<Image>> GetRandomImagesAsync(int count)
         {
             return await _appDbContext.Images
-                .OrderBy(i => EF.Functions.Random())
+                .OrderBy(i => Guid.NewGuid())
                 .Take(count)
                 .ToListAsync();
-        }
-
-        public async Task<int> GetCountImagesAsync()
-        {
-            return _appDbContext.Images.Count();
         }
 
     }

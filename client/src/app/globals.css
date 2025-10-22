@@ -1,92 +1,73 @@
 /* Tailwind v4 */
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap');
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 /* Rubik + RTL */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap');
 
 @layer base {
   body {
-    @apply min-h-screen flex flex-col bg-slate-950 text-white font-sans antialiased;
+    
+    @apply min-h-screen bg-slate-950 text-white font-sans antialiased;
+    
     background-image:
-      radial-gradient(1200px 600px at 80% -20%, rgba(99, 102, 241, .18), transparent 60%),
-      radial-gradient(800px 400px at -10% 0%, rgba(14, 165, 233, .16), transparent 60%),
+      radial-gradient(1200px 600px at 80% -20%, rgba(99,102,241,.18), transparent 60%),
+      radial-gradient(800px 400px at -10% 0%, rgba(14,165,233,.16), transparent 60%),
       linear-gradient(180deg, rgb(2 6 23), rgb(2 6 23 / 1) 40%, rgb(2 8 23));
     background-blend-mode: overlay;
   }
-
-  h1,
-  h2,
-  h3 {
-    @apply font-semibold text-slate-100;
-  }
-
-  main {
-    @apply flex-grow;
-  }
+  h1,h2,h3 { @apply font-semibold text-slate-100; }
 }
-
 
 /* ===== מחלקות משותפות בלבד ===== */
 @layer components {
-
   /* עטיפת עמודים */
-  .page-container {
-    @apply container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-10;
-  }
+  .page-container { @apply container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-10; }
 
-  /*   רקע ל - header*/
-  .header-bg {
-    @apply fixed top-0 left-0 right-0 z-40 transition-shadow bg-slate-900/40 backdrop-blur-md;
-  }
+/*   רקע ל - header*/
+  .header-bg { @apply fixed top-0 left-0 right-0 z-40 transition-shadow bg-slate-900/40 backdrop-blur-md;}
 
   /* כותרת עמוד */
-  .section-title {
-    @apply text-center text-4xl md:text-5xl leading-tight mb-8 md:mb-10;
-  }
+  .section-title { @apply text-center text-4xl md:text-5xl leading-tight mb-8 md:mb-10; }
 
   /* גריד קלפים */
-  .cards-grid {
-    @apply grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
-  }
+  .cards-grid { @apply grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4; }
 
   /* קלף בסיסי (למקרה שתרצי להשתמש בו ישירות ב-markup) */
   .card {
     @apply bg-slate-900/60 backdrop-blur-sm border border-white/5 rounded-2xl shadow-lg p-6 md:p-8;
   }
-
-  .card-hover {
-    @apply transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl;
-  }
+  .card-hover { @apply transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl; }
 
   /* קלף משחק קומפוזיט – בלי @apply על מחלקות מותאמות, רק יוטיליטיז */
   .game-card {
-    @apply relative overflow-hidden flex flex-col items-center text-center bg-slate-900/60 backdrop-blur-sm border border-white/5 rounded-2xl shadow-lg p-6 md:p-8 transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl;
+    @apply relative overflow-hidden flex flex-col items-center text-center
+           bg-slate-900/60 backdrop-blur-sm border border-white/5 rounded-2xl shadow-lg
+           p-6 md:p-8 transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl;
   }
 
   /* אזור האייקון */
   .game-card__icon-wrap {
-    @apply mt-2 mb-4 inline-flex items-center justify-center rounded-full h-24 w-24 md:h-28 md:w-28 bg-amber-400/15 ring-1 ring-white/10 shadow-md;
+    @apply mt-2 mb-4 inline-flex items-center justify-center rounded-full
+           h-24 w-24 md:h-28 md:w-28 bg-amber-400/15 ring-1 ring-white/10 shadow-md;
   }
-
-  .game-card__icon {
-    @apply scale-110;
-  }
+  .game-card__icon { @apply scale-110; }
 
   /* כותרת בתוך קלף */
-  .game-card__title {
-    @apply text-xl md:text-2xl font-medium text-slate-100 mb-4;
-  }
+  .game-card__title { @apply text-xl md:text-2xl font-medium text-slate-100 mb-4; }
 
   /* כפתורים */
   .btn-primary {
-    @apply inline-flex items-center justify-center w-full rounded-xl px-5 py-3 text-base font-medium text-white bg-indigo-600 hover:bg-indigo-500 active:scale-95 transition shadow-md;
+    @apply inline-flex items-center justify-center w-full rounded-xl px-5 py-3 text-base font-medium
+           text-white bg-indigo-600 hover:bg-indigo-500 active:scale-95 transition shadow-md
+           cursor-pointer;
   }
-
   .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-xl px-5 py-3 text-base font-medium text-slate-100 bg-white/10 hover:bg-white/15 border border-white/10 transition;
+    @apply inline-flex items-center justify-center rounded-xl px-5 py-3 text-base font-medium
+           text-slate-100 bg-white/10 hover:bg-white/15 border border-white/10 transition
+           cursor-pointer;
+  }
+  .btn{
+    @apply cursor-pointer;
   }
 
   /* פנלים למסכי משחק (שאלות/תוצאות/HowTo) */
@@ -95,474 +76,11 @@
   }
 
   /* נביגציה */
-  .nav {
-    @apply h-16 bg-slate-900/40 backdrop-blur-md border-b border-white/5;
-  }
-
-  .nav-inner {
-    @apply container mx-auto px-4 flex items-center justify-between h-full;
-  }
-
-  .nav-brand {
-    @apply text-xl font-extrabold tracking-tight;
-  }
-
-  .nav-list {
-    @apply hidden md:flex items-center gap-2;
-  }
-
-  .nav-link {
-    @apply text-slate-300 hover:text-white px-3 py-2 rounded-lg transition;
-  }
-
-  /* פוטר */
-  @layer components {
-    .footer {
-      @apply bg-gray-900 text-gray-300 py-4 w-full flex flex-col items-center relative;
-    }
-
-    .footer__container {
-      @apply container mx-auto px-6 text-center relative;
-    }
-
-    .footer__title {
-      @apply text-lg font-semibold text-white mb-2 flex items-center justify-center gap-2;
-    }
-
-    .footer__github {
-      @apply absolute left-0 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white text-2xl;
-    }
-
-    .footer__developers {
-      @apply grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-y-1 gap-x-2 text-sm;
-    }
-
-    .footer__developers a {
-      @apply hover:text-white transition;
-    }
-  }
+  .nav { @apply h-16 bg-slate-900/40 backdrop-blur-md border-b border-white/5; }
+  .nav-inner { @apply container mx-auto px-4 flex items-center justify-between h-full; }
+  .nav-brand { @apply text-xl font-extrabold tracking-tight; }
+  .nav-list { @apply hidden md:flex items-center gap-2; }
+  .nav-link { @apply text-slate-300 hover:text-white px-3 py-2 rounded-lg transition; }
 }
 
-
-/* ===== עיצוב כללי למסך המשחקים ===== */
-@layer components {
-  .game-layout {
-    @apply flex flex-col items-center justify-center min-h-screen p-8 relative;
-  }
-
-  .game-layout__title {
-    @apply text-4xl font-bold text-indigo-400 mb-8 drop-shadow;
-  }
-
-  .game-layout__center {
-    @apply text-center;
-  }
-
-  .game-layout__container {
-    @apply w-full max-w-3xl relative z-0;
-  }
-
-  .game-overlay {
-    @apply fixed inset-0 z-50 flex items-center justify-center bg-black/30 backdrop-blur-sm;
-  }
-
-  .game-hud {
-    @apply flex justify-between items-center mb-6 relative z-20;
-  }
-
-  .game-hud.disabled {
-    @apply pointer-events-none opacity-60;
-  }
-
-  .hud-timer {
-    @apply font-mono text-lg font-semibold px-4 py-2 bg-indigo-600 text-white rounded-xl shadow;
-  }
-
-  .game-content {
-    @apply bg-slate-900/60 backdrop-blur-sm border border-white/5 rounded-2xl shadow p-6;
-  }
-
-  .game-content.disabled {
-    @apply pointer-events-none opacity-60;
-  }
-}
-
-@layer components {
-
-  /* ===== Help Screen ===== */
-  .help-screen {
-    @apply text-center max-w-2xl mx-auto bg-slate-900/60 backdrop-blur-sm border border-white/5 rounded-2xl shadow-lg p-8 md:p-10;
-  }
-
-  .help-screen__title {
-    @apply text-3xl font-bold mb-4 text-indigo-400;
-  }
-
-  .help-screen__text {
-    @apply text-slate-300 mb-6 leading-relaxed;
-  }
-
-  .help-screen__button {
-    @apply mt-4;
-  }
-}
-
-
-@layer components {
-
-  /* ===== Game Over Modal ===== */
-  .gameover-modal {
-    @apply fixed inset-0 flex items-center justify-center z-50 bg-black/60 backdrop-blur-sm;
-  }
-
-  .gameover-modal__content {
-    @apply bg-slate-900/70 backdrop-blur-md border border-white/5 rounded-2xl shadow-xl p-8 w-96 text-center;
-  }
-
-  .gameover-modal__title {
-    @apply text-3xl font-bold mb-4 text-indigo-400;
-  }
-
-  .gameover-modal__score {
-    @apply text-xl mb-2 text-slate-200;
-  }
-
-  .gameover-modal__time {
-    @apply text-lg mb-6 text-slate-300;
-  }
-
-  .gameover-modal__button {
-    @apply mt-4;
-  }
-}
-
-
-@layer components {
-
-  /* ===== Score Display ===== */
-  .score-display {
-    @apply bg-emerald-600 text-white px-4 py-2 rounded-xl shadow-md inline-flex items-center justify-center;
-  }
-
-  .score-display__text {
-    @apply font-semibold text-xl tracking-wide;
-  }
-}
-
-@layer components {
-
-  /* ===== Timer Display ===== */
-  .timer-display {
-    @apply font-mono text-lg font-semibold px-4 py-2 bg-blue-600 text-white rounded-xl shadow-md inline-flex items-center justify-center;
-  }
-}
-
-@layer components {
-
-  /* ===== Audio Toggle Button ===== */
-  .audio-toggle {
-    @apply px-3 py-2 bg-slate-700 text-white rounded-xl shadow-md hover:bg-slate-600 transition-all;
-    @apply inline-flex items-center justify-center;
-  }
-}
-
-@layer components {
-
-  /* ===== Countdown 3-2-1 Overlay ===== */
-  .countdown-overlay {
-    @apply absolute inset-0 flex items-center justify-center text-6xl font-bold text-white bg-black/50 backdrop-blur-sm;
-  }
-}
-
-@layer components {
-
-  /* ===== Level Badge ===== */
-  .level-badge {
-    @apply px-3 py-1 bg-emerald-500 text-white rounded-full font-bold shadow-md inline-flex items-center justify-center;
-  }
-}
-
-@layer components {
-
-  /* ===== Pause Overlay ===== */
-  .pause-overlay {
-    @apply fixed inset-0 flex flex-col items-center justify-center z-50 bg-black/50 backdrop-blur-sm;
-  }
-
-  .pause-overlay__content {
-    @apply bg-slate-100 rounded-2xl p-8 flex flex-col items-center shadow-lg;
-  }
-
-  .pause-overlay__icon {
-    @apply text-6xl font-bold text-red-600 mb-4;
-  }
-
-  .pause-overlay__message {
-    @apply text-xl font-semibold text-gray-800;
-  }
-}
-
-@layer components {
-
-  /* ===== Progress Bar ===== */
-  .progress-bar {
-    @apply w-full h-4 bg-gray-300 rounded-full overflow-hidden;
-  }
-
-  .progress-bar__fill {
-    @apply h-4 bg-blue-500 rounded-full transition-all duration-300 ease-in-out;
-  }
-}
-
-@layer components {
-
-  /* ===== Sentence Shuffle Game ===== */
-  .sentence-game {
-    @apply text-center max-w-3xl mx-auto p-4;
-  }
-
-  .sentence-game__title {
-    @apply text-xl font-semibold mb-4 text-blue-400;
-  }
-
-  .sentence-game__words {
-    @apply mb-4 flex flex-wrap justify-center gap-2;
-  }
-
-  .sentence-game__word {
-    @apply px-3 py-1 rounded-lg bg-blue-500 text-white hover:bg-blue-600 transition-all;
-  }
-
-  .sentence-game__word--disabled {
-    @apply bg-gray-700 cursor-not-allowed;
-  }
-
-  .sentence-game__selected {
-    @apply mb-4 text-green-400;
-  }
-
-  .sentence-game__submit {
-    @apply mt-2;
-  }
-
-  .sentence-game__submit--disabled {
-    @apply bg-gray-700 cursor-not-allowed;
-  }
-
-  .sentence-game__completed {
-    @apply text-xl font-semibold text-green-600;
-  }
-}
-
-
-/* ===== DoubleVision Game ===== */
-.doublevision {
-  @apply flex flex-col items-center gap-8 p-8 rounded-2xl shadow-xl bg-gradient-to-br from-indigo-900 via-indigo-800 to-indigo-700;
-}
-
-.doublevision__word {
-  @apply text-4xl font-bold text-indigo-300 drop-shadow-lg;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
-}
-
-.doublevision__grid {
-  @apply grid grid-cols-2 gap-6;
-}
-
-.doublevision__option {
-  @apply w-32 h-32 object-cover cursor-pointer rounded-xl border-4 border-transparent shadow-lg transition-transform transition-shadow duration-300;
-}
-
-.doublevision__option:hover {
-  transform: scale(1.05) rotate(-2deg);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-}
-
-.doublevision__option.correct {
-  @apply border-green-500;
-  animation: correctZoom 0.6s ease forwards;
-  box-shadow: 0 0 20px #34d399;
-}
-
-.doublevision__option.wrong {
-  @apply border-red-500;
-  animation: shake 0.5s;
-  box-shadow: 0 0 20px #f87171;
-}
-/* === Global Layout === */
-.homepage-container {
-  min-height: 100vh;
-  background: linear-gradient(to bottom right, #e0e7ff, #f3e8ff, #fbcfe8);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 3rem 1.5rem;
-  position: relative;
-  font-family: "Inter", sans-serif;
-}
-
-/* === Titles === */
-.homepage-title {
-  font-size: 3rem;
-  font-weight: 800;
-  color: #4338ca;
-  text-align: center;
-  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-  margin-bottom: 0.5rem;
-}
-
-.homepage-subtitle {
-  font-size: 1.125rem;
-  color: #374151;
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-/* === Icon Buttons === */
-.icon-bar {
-  display: flex;
-  gap: 2rem;
-  margin-bottom: 3rem;
-  font-size: 1.8rem;
-}
-
-.icon-bar button {
-  transition: all 0.3s ease;
-}
-
-.icon-bar button:hover {
-  color: #4f46e5;
-  transform: scale(1.1);
-}
-
-/* === Game Grid === */
-.games-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2.5rem;
-  width: 100%;
-  max-width: 1200px;
-}
-
-/* === Game Cards === */
-.game-card {
-  color: white;
-  border-radius: 1.5rem;
-  padding: 2rem;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: all 0.3s ease;
-}
-
-.game-card h2 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-
-/* === Color Themes === */
-.game-card.pink {
-  background: linear-gradient(to bottom right, #f472b6, #f43f5e);
-}
-.game-card.blue {
-  background: linear-gradient(to bottom right, #60a5fa, #6366f1);
-}
-.game-card.green {
-  background: linear-gradient(to bottom right, #4ade80, #10b981);
-}
-.game-card.yellow {
-  background: linear-gradient(to bottom right, #facc15, #fb923c);
-}
-.game-card.purple {
-  background: linear-gradient(to bottom right, #a855f7, #7c3aed);
-}
-.game-card.cyan {
-  background: linear-gradient(to bottom right, #22d3ee, #0284c7);
-}
-
-/* === Play Button === */
-.play-button {
-  width: 100%;
-  padding: 0.75rem 0;
-  border-radius: 0.75rem;
-  background: white;
-  color: #111827;
-  font-weight: 700;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.play-button:hover {
-  background: #f3f4f6;
-}
-
-/* === Score Display === */
-.score-display {
-  position: fixed;
-  top: 1rem;
-  left: 1.5rem;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(10px);
-  padding: 0.5rem 1rem;
-  border-radius: 0.75rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  border: 1px solid #c7d2fe;
-  color: #4338ca;
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-/* === Footer === */
-.homepage-footer {
-  margin-top: 4rem;
-  color: #6b7280;
-  font-size: 0.875rem;
-  text-align: center;
-}
-
-@keyframes shake {
-  0% {
-    transform: translateX(0);
-  }
-
-  20% {
-    transform: translateX(-8px);
-  }
-
-  40% {
-    transform: translateX(8px);
-  }
-
-  60% {
-    transform: translateX(-8px);
-  }
-
-  80% {
-    transform: translateX(8px);
-  }
-
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@keyframes correctZoom {
-  0% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.3);
-  }
-
-  100% {
-    transform: scale(1.2);
-  }
-
-}
 

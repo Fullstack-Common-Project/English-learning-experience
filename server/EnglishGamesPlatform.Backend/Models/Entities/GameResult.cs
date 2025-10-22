@@ -19,7 +19,7 @@ namespace EnglishGamesPlatform.Backend.Models.Entities
         public int Score { get; set; }
 
         [Required]
-        public double Time { get; set; } // בשניות
+        public double Time { get; set; } 
 
         public int Rounds { get; set; }
     }

@@ -10,6 +10,6 @@ namespace EnglishGamesPlatform.Backend.Services.Interfaces
 
         Task<Response<LeaderboardData>> GetLeaderboardAsync(int gameId);
 
-        Task<Response<FinalGameStatus>> GetFinalGameStatusAndAddGameResultAsync(GameResultDTO gameResultDTO); 
+        Task<Response<FinalGameStatus>> GetFinalGameStatusAsync(GameResultDTO gameResultDTO); 
     }
 }

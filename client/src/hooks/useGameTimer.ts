@@ -19,9 +19,11 @@ export default function useGameTimer(startMs: number = 0) {
     }
 
     return () => {
-      if (intervalRef.current) clearInterval(intervalRef.current);
+      if (intervalRef.current)
+         clearInterval(intervalRef.current);
     };
   }, [running]);
 
   return { time, start, stop, reset, running };
 }
+

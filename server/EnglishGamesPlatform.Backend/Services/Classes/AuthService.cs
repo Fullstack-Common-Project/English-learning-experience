@@ -4,7 +4,8 @@ using EnglishGamesPlatform.Backend.Repositories.Interfaces;
 using EnglishGamesPlatform.Backend.Services.Interfaces;
 using EnglishGamesPlatform.Backend.Utils;
 using EnglishGamesPlatform.Backend.Validation;
-
+using Org.BouncyCastle.Crypto.Generators;
+using System.Diagnostics.Eventing.Reader;
 
 namespace EnglishGamesPlatform.Backend.Services.Implementations
 {
@@ -65,7 +66,7 @@ namespace EnglishGamesPlatform.Backend.Services.Implementations
             if (result != null)
                 return new Response<UserResponse> { IsSuccess = false, StatusCode = System.Net.HttpStatusCode.Conflict, Message = "User already exists" };
 
-            var res = await _authRepository.Register(new RegisterDTO { FullName = username, Password = BCrypt.Net.BCrypt.HashPassword(password), Email = email });
+            await _authRepository.Register(new RegisterDTO { FullName = username, Password = BCrypt.Net.BCrypt.HashPassword(password), Email = email });
 
             var token = _tokenService.GenerateToken(email);
             return new Response<UserResponse>
@@ -76,7 +77,7 @@ namespace EnglishGamesPlatform.Backend.Services.Implementations
                 Data = new UserResponse
                 {
                     Token = token,
-                    User = new User { UserId = res!.UserId, FullName = res.FullName }
+                    User = new User { UserId = result!.UserId, FullName = result.FullName }
                 }
             };
         }

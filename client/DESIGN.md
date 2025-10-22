@@ -29,7 +29,7 @@
         <span className="game-card__icon">🎮</span>
       </div>
       <div className="game-card__title">Memory</div>
-      <button className="btn-primary">התחל</button>
+      <Button className="btn-primary">התחל</Button>
     </div>
   </div>
 </div>
