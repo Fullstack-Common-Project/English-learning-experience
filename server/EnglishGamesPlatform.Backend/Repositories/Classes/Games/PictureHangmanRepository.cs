@@ -13,7 +13,7 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes.Games
 
         private readonly ImageRepository _imageRepository;
 
-        public GameInitialData GetData()
+        public async Task<GameInitialData >GetData()
         {
             return new PictureHangmanData
             {

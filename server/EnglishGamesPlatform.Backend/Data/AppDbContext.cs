@@ -16,7 +16,7 @@ namespace EnglishGamesPlatform.Backend.Data
         public DbSet<Sentence> Sentences { get; set; }
         public DbSet<Progress> Progress { get; set; }
         public DbSet<OppositeWord> OppositeWords { get; set; }
-
+        public DbSet<MissingWordSentence> MissingWords { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Word>()
@@ -52,16 +52,28 @@ namespace EnglishGamesPlatform.Backend.Data
                 .HasForeignKey(p => p.UserId);
 
             modelBuilder.Entity<OppositeWord>()
-                .HasOne(o=>o.FirstWord)
+                .HasOne(o => o.FirstWord)
                 .WithMany()
                 .HasForeignKey(o => o.FirstWordId)
                 .OnDelete(DeleteBehavior.Restrict);
 
             modelBuilder.Entity<OppositeWord>()
-                .HasOne(o=>o.SecondWord)
+                .HasOne(o => o.SecondWord)
                 .WithMany()
                 .HasForeignKey(o => o.SecondWordId)
                 .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<MissingWordSentence>()
+               .HasOne(mws => mws.Sentence)       
+               .WithMany()                        
+               .HasForeignKey(mws => mws.SentenceId)
+               .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<MissingWordSentence>()
+                .HasOne(mws => mws.CorrectWord)   
+                .WithMany()                        
+                .HasForeignKey(mws => mws.CorrectWordId)
+                .OnDelete(DeleteBehavior.Restrict);
+
 
             base.OnModelCreating(modelBuilder);
         }

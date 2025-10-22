@@ -62,7 +62,7 @@ builder.Services.AddScoped<IGeneralGameRepository, PictureHangmanRepository>();
 builder.Services.AddScoped<IGeneralGameService, GeneralGameService>();
 
 #endregion 
-
+builder.Services.AddScoped<IGeneralGameRepository,ContextCluesRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IImageRepository, ImageRepository>();
 builder.Services.AddScoped<ISentenceRepository, SentenceRepository>();

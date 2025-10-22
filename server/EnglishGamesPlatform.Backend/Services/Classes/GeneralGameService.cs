@@ -39,9 +39,9 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
                 };
             }
 
-            if (_repositories.TryGetValue("Picture Hangman", out var repository))
+            if (_repositories.TryGetValue(gameName, out var repository))
             {
-                GameInitialData gameInitialData = repository.GetData();
+                GameInitialData gameInitialData =await repository.GetData();
 
                 return new()
                 {
