@@ -1,9 +1,9 @@
-/* Tailwind v4 */
-@import "tailwindcss";
-@reference "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* Rubik + RTL */
-@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap');
 
 @layer base {
   body {
@@ -310,4 +310,4 @@
   .sentence-game__completed {
     @apply text-xl font-semibold text-green-600;
   }
-}
+}  
