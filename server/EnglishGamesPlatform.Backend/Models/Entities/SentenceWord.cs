@@ -13,10 +13,8 @@ namespace EnglishGamesPlatform.Backend.Models.Entities
 
         [ForeignKey(nameof(Word))]
         public int WordId { get; set; }
-
         [Required]
         public int Position { get; set; }  
-
         public Sentence Sentence { get; set; } = null!;
         public Word Word { get; set; } = null!;
     }

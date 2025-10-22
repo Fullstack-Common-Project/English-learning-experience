@@ -73,6 +73,7 @@ builder.Services.AddScoped<ISentenceRepository, SentenceRepository>();
 builder.Services.AddScoped<IWordRepository, WordRepository>();
 builder.Services.AddScoped<IOppositeWordRepository, OppositeWordRepository>();
 builder.Services.AddScoped<ITwinWordRepository, TwinWordRepository>();
+builder.Services.AddScoped<IGeneralGameRepository, >();
 
 
 

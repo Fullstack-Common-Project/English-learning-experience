@@ -1,9 +1,8 @@
 using AutoMapper;
 using EnglishGamesPlatform.Backend.Models.DTOs;
 using EnglishGamesPlatform.Backend.Models.DTOs.Entities_DTOs;
+using EnglishGamesPlatform.Backend.Models.Entities;
 using EnglishGamesPlatform.Backend.Models.GameInitialDatas;
-using EnglishGamesPlatform.Backend.Models.Entities;
-using EnglishGamesPlatform.Backend.Models.Entities;
 using EnglishGamesPlatform.Backend.Repositories.Interfaces;
 using EnglishGamesPlatform.Backend.Services.Interfaces;
 using System.Net;
@@ -96,7 +95,7 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
                     Data = new GameData()
                     {
                         GameId = gameId,
-                        Data = gameInitialData
+                        Data = gameInitialData!
                     }
 
                 };
