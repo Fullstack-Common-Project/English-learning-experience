@@ -18,9 +18,12 @@ namespace EnglishGamesPlatform.Backend.Data
         public DbSet<OppositeWord> OppositeWords { get; set; }
         public DbSet<TwinWord> TwinWords { get; set; }
         public DbSet<MemoryMatchSynonymsPair> MemoryMatchSynonymsPairs { get; set; }
+<<<<<<< HEAD
         public DbSet<Question> Questions { get; set; }
         public DbSet<WordQuestionAnswerEntity> WordQuestionAnswers { get; set; }
         public DbSet<GuessMasterSession> GuessMasterSessions { get; set; }
+=======
+>>>>>>> origin/main-v2
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -85,6 +88,7 @@ namespace EnglishGamesPlatform.Backend.Data
                 .WithMany()
                 .HasForeignKey(t => t.SynonymWordId)
                 .OnDelete(DeleteBehavior.Restrict);
+<<<<<<< HEAD
             modelBuilder.Entity<Question>()
               .Property(q => q.Text)
               .IsRequired()
@@ -102,6 +106,8 @@ namespace EnglishGamesPlatform.Backend.Data
             modelBuilder.Entity<GuessMasterSession>()
              .Property(s => s.PlayerName)
              .HasMaxLength(100);
+=======
+>>>>>>> origin/main-v2
 
             base.OnModelCreating(modelBuilder);
 

@@ -99,6 +99,7 @@ namespace EnglishGamesPlatform.Backend.Migrations
                     b.ToTable("GameResults");
                 });
 
+<<<<<<< HEAD
             modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.GuessMasterSession", b =>
                 {
                     b.Property<Guid>("Id")
@@ -131,6 +132,8 @@ namespace EnglishGamesPlatform.Backend.Migrations
                     b.ToTable("GuessMasterSessions");
                 });
 
+=======
+>>>>>>> origin/main-v2
             modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.Image", b =>
                 {
                     b.Property<int>("ImageId")
@@ -235,6 +238,7 @@ namespace EnglishGamesPlatform.Backend.Migrations
                     b.ToTable("Progress");
                 });
 
+<<<<<<< HEAD
             modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.Question", b =>
                 {
                     b.Property<int>("QuestionId")
@@ -256,6 +260,8 @@ namespace EnglishGamesPlatform.Backend.Migrations
                     b.ToTable("Questions");
                 });
 
+=======
+>>>>>>> origin/main-v2
             modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.Sentence", b =>
                 {
                     b.Property<int>("SentenceId")
@@ -346,6 +352,7 @@ namespace EnglishGamesPlatform.Backend.Migrations
                     b.ToTable("Words");
                 });
 
+<<<<<<< HEAD
             modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.WordQuestionAnswerEntity", b =>
                 {
                     b.Property<int>("Id")
@@ -372,6 +379,8 @@ namespace EnglishGamesPlatform.Backend.Migrations
                     b.ToTable("WordQuestionAnswers");
                 });
 
+=======
+>>>>>>> origin/main-v2
             modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.GameResult", b =>
                 {
                     b.HasOne("EnglishGamesPlatform.Backend.Models.Entities.Game", "Game")
@@ -481,6 +490,7 @@ namespace EnglishGamesPlatform.Backend.Migrations
                     b.Navigation("Category");
                 });
 
+<<<<<<< HEAD
             modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.WordQuestionAnswerEntity", b =>
                 {
                     b.HasOne("EnglishGamesPlatform.Backend.Models.Entities.Question", "Question")
@@ -500,6 +510,8 @@ namespace EnglishGamesPlatform.Backend.Migrations
                     b.Navigation("Word");
                 });
 
+=======
+>>>>>>> origin/main-v2
             modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.Category", b =>
                 {
                     b.Navigation("Words");

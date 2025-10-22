@@ -8,6 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+<<<<<<< HEAD
+=======
+    <Compile Remove="Controllers\Games\**" />
+    <Content Remove="Controllers\Games\**" />
+    <EmbeddedResource Remove="Controllers\Games\**" />
+    <None Remove="Controllers\Games\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+>>>>>>> origin/main-v2
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="8.0.21" />
