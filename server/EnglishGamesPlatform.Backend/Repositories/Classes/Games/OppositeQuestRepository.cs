@@ -1,6 +1,7 @@
 ﻿using EnglishGamesPlatform.Backend.Models.DTOs;
 using EnglishGamesPlatform.Backend.Models.GameInitialDatas;
 using EnglishGamesPlatform.Backend.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace EnglishGamesPlatform.Backend.Repositories.Classes.Games
 {

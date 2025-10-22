@@ -13,7 +13,7 @@ export default function SignUp() {
   const dispatch = useDispatch();
   const router = useRouter();
 
-      const handleGoogleLogin = async (credentialResponse: any) => {
+  const handleGoogleLogin = async (credentialResponse: any) => {
     try {
       const idToken = credentialResponse.credential;
       const res = await axios.post("https://localhost:7292/api/Auth/google-login", { idToken });
@@ -39,30 +39,30 @@ export default function SignUp() {
       alert("Please fill in all fields");
       return;
     }
-    try{
-        const response = await axios.post("https://localhost:7292/api/Auth/register", {
-            fullName,
-            email,
-            password
-        })
-        const {token, user} = response.data;
-        localStorage.setItem("token", token);        
-        dispatch(setUser(user));
-        alert("Sign up successful!");
+    try {
+      const response = await axios.post("https://localhost:7292/api/Auth/register", {
+        fullName,
+        email,
+        password
+      })
+      const { token, user } = response.data;
+      localStorage.setItem("token", token);
+      dispatch(setUser(user));
+      alert("Sign up successful!");
     }
-    catch(error){
-        console.log("ERROR: ", error);
+    catch (error) {
+      console.log("ERROR: ", error);
     }
     router.push("/");
   };
 
   return (
-      <div className="flex flex-col items-center justify-center h-screen gap-4">
-        <h2 className="text-3xl font-bold text-center text-indigo-700 mb-6">
-          Sign Up
-        </h2>
+    <div className="flex flex-col items-center justify-center h-screen gap-4">
+      <h2 className="text-3xl font-bold text-center text-indigo-700 mb-6">
+        Sign Up
+      </h2>
 
-        <form onSubmit={handleSubmit} className="flex flex-col gap-3 w-64">
+      <form onSubmit={handleSubmit} className="flex flex-col gap-3 w-64">
         <input
           ref={fullNameRef}
           type="text"
@@ -76,7 +76,7 @@ export default function SignUp() {
           className="border p-2 rounded"
         />
 
-         <input
+        <input
           ref={passwordRef}
           type="text"
           placeholder="Password"
@@ -90,23 +90,23 @@ export default function SignUp() {
         </button>
       </form>
 
-        <p className="text-center text-gray-600 text-sm mt-5">
-          Already have an account?{" "}
-          <a
-            href="/login"
-            className="text-indigo-600 font-medium hover:underline"
-          >
-            Log in
-          </a>
-        </p>
+      <p className="text-center text-gray-600 text-sm mt-5">
+        Already have an account?{" "}
+        <a
+          href="/login"
+          className="text-indigo-600 font-medium hover:underline"
+        >
+          Log in
+        </a>
+      </p>
 
-         <div className="mt-4">
-                <GoogleLogin
-                    onSuccess={handleGoogleLogin}
-                    onError={() => console.log("Google Login Failed")}
-                />
-            </div>
-     
+      <div className="mt-4">
+        <GoogleLogin
+          onSuccess={handleGoogleLogin}
+          onError={() => console.log("Google Login Failed")}
+        />
       </div>
+
+    </div>
   );
 }

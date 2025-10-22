@@ -13,19 +13,19 @@ export default function Login() {
     const dispatch = useDispatch();
     const router = useRouter();
 
-      const handleGoogleLogin = async (credentialResponse: any) => {
-    try {
-      const idToken = credentialResponse.credential;
-      const res = await axios.post("https://localhost:7292/api/Auth/google-login", { idToken });
+    const handleGoogleLogin = async (credentialResponse: any) => {
+        try {
+            const idToken = credentialResponse.credential;
+            const res = await axios.post("https://localhost:7292/api/Auth/google-login", { idToken });
 
-      localStorage.setItem("token", res.data.token);
-      dispatch(setUser(res.data.user));
-      router.push("/");
-    } catch (err) {
-      console.error("Google login failed:", err);
-      alert("Google login failed");
-    }
-  };
+            localStorage.setItem("token", res.data.token);
+            dispatch(setUser(res.data.user));
+            router.push("/");
+        } catch (err) {
+            console.error("Google login failed:", err);
+            alert("Google login failed");
+        }
+    };
 
 
     const handleLogin = async (e: React.FormEvent) => {
@@ -40,7 +40,6 @@ export default function Login() {
                 password
             });
             console.log("res:", response);
-
             // נשלוף את הנתונים שהשרת החזיר
             const { token, user } = response.data;
             console.log("user:", user);
@@ -90,9 +89,6 @@ export default function Login() {
                     onError={() => console.log("Google Login Failed")}
                 />
             </div>
-     
-
-            
         </div >
     );
 }

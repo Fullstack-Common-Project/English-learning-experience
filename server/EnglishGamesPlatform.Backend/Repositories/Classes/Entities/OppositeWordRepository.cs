@@ -19,7 +19,7 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes.Entities
            return await _appDbContext.OppositeWords
                .Include(o => o.FirstWord)
                .Include(o => o.SecondWord)
-               .OrderBy(i => Guid.NewGuid())
+               .OrderBy(w => EF.Functions.Random())
                .Take(count) 
                .ToListAsync();
         }

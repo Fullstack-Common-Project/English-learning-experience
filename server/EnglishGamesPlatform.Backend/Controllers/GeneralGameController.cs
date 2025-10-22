@@ -8,7 +8,6 @@ namespace EnglishGamesPlatform.Backend.Controllers
 {
     [Route("api/v1/[controller]")]
     [ApiController]
-    //[Authorize] 
     public class GeneralGameController : ControllerBase
     {
         private readonly IGeneralGameService _gameService;

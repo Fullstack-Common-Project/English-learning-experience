@@ -6,34 +6,47 @@ using EnglishGamesPlatform.Backend.Utils;
 using EnglishGamesPlatform.Backend.Validation;
 using Google.Apis.Auth;
 
-
 namespace EnglishGamesPlatform.Backend.Services.Implementations
 {
     public class AuthService : IAuthService
     {
         private readonly IAuthRepository _authRepository;
         private readonly TokenService _tokenService;
+
         public AuthService(IAuthRepository authRepository, TokenService tokenService)
         {
             _authRepository = authRepository;
             _tokenService = tokenService;
         }
 
-
-
         public async Task<Response<UserResponse>> Login(LoginDto user)
         {
             var (password, email) = (user.Password, user.Email);
 
             if (!email.IsValidEmail())
-                return new Response<UserResponse> { IsSuccess = false, StatusCode = System.Net.HttpStatusCode.BadRequest, Message = "Email is not valid" };
+                return new Response<UserResponse>
+                {
+                    IsSuccess = false,
+                    StatusCode = System.Net.HttpStatusCode.BadRequest,
+                    Message = "Email is not valid",
+                };
             if (!password.IsValidPassword())
-                return new Response<UserResponse> { IsSuccess = false, StatusCode = System.Net.HttpStatusCode.BadRequest, Message = "Password is not valid" };
+                return new Response<UserResponse>
+                {
+                    IsSuccess = false,
+                    StatusCode = System.Net.HttpStatusCode.BadRequest,
+                    Message = "Password is not valid",
+                };
             var result = await _authRepository.IsExistingUser(email);
             if (result != null)
             {
                 if (!BCrypt.Net.BCrypt.Verify(password, result.Password))
-                    return new Response<UserResponse> { IsSuccess = false, StatusCode = System.Net.HttpStatusCode.Unauthorized, Message = "Incorrect password" };
+                    return new Response<UserResponse>
+                    {
+                        IsSuccess = false,
+                        StatusCode = System.Net.HttpStatusCode.Unauthorized,
+                        Message = "Incorrect password",
+                    };
                 var token = _tokenService.GenerateToken(result!.Email);
                 return new Response<UserResponse>
                 {
@@ -43,30 +56,61 @@ namespace EnglishGamesPlatform.Backend.Services.Implementations
                     Data = new UserResponse
                     {
                         Token = token,
-                        User = new User { UserId = result.UserId, FullName = result.FullName }
-                    }
+                        User = new User { UserId = result.UserId, FullName = result.FullName },
+                    },
                 };
             }
 
-            return new Response<UserResponse> { IsSuccess = false, StatusCode = System.Net.HttpStatusCode.NotFound, Message = "User not found" };
+            return new Response<UserResponse>
+            {
+                IsSuccess = false,
+                StatusCode = System.Net.HttpStatusCode.NotFound,
+                Message = "User not found",
+            };
         }
-
 
         public async Task<Response<UserResponse>> Register(RegisterDTO user)
         {
             var (username, password, email) = (user.FullName!, user.Password, user.Email);
 
             if (!username.IsValidUsername())
-                return new Response<UserResponse> { IsSuccess = false, StatusCode = System.Net.HttpStatusCode.BadRequest, Message = "UserName is not valid" };
+                return new Response<UserResponse>
+                {
+                    IsSuccess = false,
+                    StatusCode = System.Net.HttpStatusCode.BadRequest,
+                    Message = "UserName is not valid",
+                };
             if (!password.IsValidPassword())
-                return new Response<UserResponse> { IsSuccess = false, StatusCode = System.Net.HttpStatusCode.BadRequest, Message = "Password is not valid" };
+                return new Response<UserResponse>
+                {
+                    IsSuccess = false,
+                    StatusCode = System.Net.HttpStatusCode.BadRequest,
+                    Message = "Password is not valid",
+                };
             if (!email.IsValidEmail())
-                return new Response<UserResponse> { IsSuccess = false, StatusCode = System.Net.HttpStatusCode.BadRequest, Message = "Email is not valid" };
+                return new Response<UserResponse>
+                {
+                    IsSuccess = false,
+                    StatusCode = System.Net.HttpStatusCode.BadRequest,
+                    Message = "Email is not valid",
+                };
             var result = await _authRepository.IsExistingUser(email);
             if (result != null)
-                return new Response<UserResponse> { IsSuccess = false, StatusCode = System.Net.HttpStatusCode.Conflict, Message = "User already exists" };
+                return new Response<UserResponse>
+                {
+                    IsSuccess = false,
+                    StatusCode = System.Net.HttpStatusCode.Conflict,
+                    Message = "User already exists",
+                };
 
-            var res = await _authRepository.Register(new RegisterDTO { FullName = username, Password = BCrypt.Net.BCrypt.HashPassword(password), Email = email });
+            var res = await _authRepository.Register(
+                new RegisterDTO
+                {
+                    FullName = username,
+                    Password = BCrypt.Net.BCrypt.HashPassword(password),
+                    Email = email,
+                }
+            );
 
             var token = _tokenService.GenerateToken(email);
             return new Response<UserResponse>
@@ -77,12 +121,10 @@ namespace EnglishGamesPlatform.Backend.Services.Implementations
                 Data = new UserResponse
                 {
                     Token = token,
-                    User = new User { UserId = res!.UserId, FullName = res.FullName }
-                }
+                    User = new User { UserId = res!.UserId, FullName = res.FullName },
+                },
             };
         }
-
-
 
         public async Task<Response<UserResponse>> GoogleLogin(string idToken)
         {
@@ -90,45 +132,33 @@ namespace EnglishGamesPlatform.Backend.Services.Implementations
 
             try
             {
-                // מאמתים את ה-id_token מול Google
                 var payload = await GoogleJsonWebSignature.ValidateAsync(idToken);
-
-                // בודקים אם המשתמש כבר קיים במסד
                 var userEntity = await _authRepository.IsExistingUser(payload.Email);
 
                 if (userEntity == null)
                 {
-                    // יוצרים משתמש חדש אם לא קיים
                     var newUser = new RegisterDTO
                     {
                         Email = payload.Email,
                         FullName = payload.Name,
-                       
                     };
 
                     var createdUser = await _authRepository.Register(newUser);
 
-                    // לאחר הרישום, מחזירים את ה־User
                     userEntity = new User
                     {
                         UserId = createdUser.UserId,
                         FullName = createdUser.FullName,
-                        Email = createdUser.Email
+                        Email = createdUser.Email,
                     };
                 }
 
-                // יוצרים JWT
                 var token = _tokenService.GenerateToken(userEntity.Email);
 
-                // מחזירים את התוצאה
                 res.IsSuccess = true;
                 res.StatusCode = System.Net.HttpStatusCode.OK;
                 res.Message = "Google login successful";
-                res.Data = new UserResponse
-                {
-                    Token = token,
-                    User = userEntity
-                };
+                res.Data = new UserResponse { Token = token, User = userEntity };
             }
             catch (Exception ex)
             {
@@ -139,6 +169,5 @@ namespace EnglishGamesPlatform.Backend.Services.Implementations
 
             return res;
         }
-
     }
 }

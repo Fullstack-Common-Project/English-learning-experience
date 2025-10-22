@@ -2,20 +2,21 @@
 
 namespace EnglishGamesPlatform.Backend.Models.GameInitialDatas
 {
-    public class OppositeQuestData:GameInitialData
+    public class TwinWordsData : GameInitialData
     {
-        public List<OppositeQuestItem> Items { get; set; } = new();
-
-        public void AddItem(OppositeQuestItem item)
+        public List<TwinWordsItem> Items { get; set; } = new();
+        public void AddItem(TwinWordsItem item)
         {
             Items.Add(item);
         }
     }
-    public class OppositeQuestItem
+
+    public class TwinWordsItem
     {
         public int Id { get; set; }
         public string Word { get; set; } = string.Empty;
         public string[] Options { get; set; } = Array.Empty<string>();
         public int CorrectIndex { get; set; }
     }
+
 }
