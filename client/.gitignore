@@ -39,6 +39,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+<<<<<<< HEAD
+=======
 # Created by https://www.toptal.com/developers/gitignore/api/node,visualstudiocode,visualstudio,dotnet
 # Edit at https://www.toptal.com/developers/gitignore?templates=node,visualstudiocode,visualstudio,dotnet
 
@@ -624,3 +626,4 @@ out/
 
 # VSCode settings
 .vscode/
+>>>>>>> origin/main
