@@ -2,10 +2,14 @@
 
 namespace EnglishGamesPlatform.Backend.Models.GameInitialDatas
 {
-    public class SentenceShuffleData:GameInitialData
+    public class SentenceShuffleData : GameInitialData
     {
-        public required string CorrectSentence { get; set; }
-        public List<string> Words { get; set; } = new();
+        public List<SentenceShuffleItem> Rounds { get; set; } = new();
 
+    }
+    public class SentenceShuffleItem
+    {
+        public string CorrectSentence { get; set; } = string.Empty;
+        public List<string> Words { get; set; } = new();
     }
 }

@@ -53,15 +53,13 @@ builder.Services.AddScoped<IGameResultRepository, GameResultRepository>();
 #endregion
 
 #region General Game
-
-#region PictureHangman
-
 builder.Services.AddScoped<IGeneralGameService, GeneralGameService>();
 builder.Services.AddScoped<IGeneralGameRepository, PictureHangmanRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, OppositeQuestRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, MiniWordleRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, LetterChaosRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, TwinWordsGameRepository>();
+builder.Services.AddScoped<IGeneralGameRepository, SentenceShuffleRepository>();
 #endregion
 
 
@@ -73,12 +71,9 @@ builder.Services.AddScoped<ISentenceRepository, SentenceRepository>();
 builder.Services.AddScoped<IWordRepository, WordRepository>();
 builder.Services.AddScoped<IOppositeWordRepository, OppositeWordRepository>();
 builder.Services.AddScoped<ITwinWordRepository, TwinWordRepository>();
-builder.Services.AddScoped<IGeneralGameRepository, >();
 
 
 
-
-#endregion
 
 builder.Services.AddCustomServices();
 
