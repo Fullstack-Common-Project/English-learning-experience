@@ -1,6 +1,7 @@
 using AutoMapper;
 using EnglishGamesPlatform.Backend.Models.DTOs;
 using EnglishGamesPlatform.Backend.Models.DTOs.Entities_DTOs;
+using EnglishGamesPlatform.Backend.Models.Entities;
 using EnglishGamesPlatform.Backend.Models.GameInitialDatas;
 using EnglishGamesPlatform.Backend.Models.GameInitialDatas;
 using EnglishGamesPlatform.Backend.Repositories.Interfaces;
@@ -86,7 +87,6 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
             {
                 GameInitialData? gameInitialData = await repository.GetData();
 
-
                 return new()
                 {
                     StatusCode = HttpStatusCode.OK,
@@ -114,8 +114,9 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
             {
                 StatusCode = HttpStatusCode.OK,
                 IsSuccess = true,
-                Message = $"Successfully retrieved the list of the 10 top players for game {gameId}.",
-                Data = topResults
+                Message =
+                    $"Successfully retrieved the list of the 10 top players for game {gameId}.",
+                Data = topResults,
             };
         }
 

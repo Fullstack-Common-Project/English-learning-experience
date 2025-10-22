@@ -4,6 +4,7 @@ import MiniWordle from "./mini-wordle/MiniWordle";
 import { GameProps } from "@/components/common/GameLayout";
 import axios from "axios";
 
+
 interface MiniWordleModel {
     targetWord: string;
     wordLength: number;
@@ -44,14 +45,14 @@ export default function MiniWordleGame({ onScoreChange, onGameOver, paused }: Ga
     if (!miniWordleModel) return <p>No data available.</p>;
 
     return (
-         <MiniWordle
+        <MiniWordle
             wordLength={miniWordleModel.wordLength}
             targetWord={miniWordleModel.targetWord}
             paused={paused}
             onScoreChange={onScoreChange}
             onGameOver={onGameOver}
         />
- 
+
     );
 }
 
