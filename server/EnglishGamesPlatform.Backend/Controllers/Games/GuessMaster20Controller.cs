@@ -103,7 +103,6 @@ namespace EnglishGamesPlatform.Backend.Controllers.Games
                 Won = gameOver ? false : (bool?)null,
                 NextSuggestedQuestions = nextQuestions
             });
-            return Ok(Response);
         }
     }
 }
