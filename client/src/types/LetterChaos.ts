@@ -5,4 +5,4 @@ export interface LetterChaosItem {
 
 
 export interface LetterChaosResponse
-  extends GameResponseBase<"letterChaos", LetterChaosItem[]> {}
+  extends GameResponseBase<3, LetterChaosItem> {}
