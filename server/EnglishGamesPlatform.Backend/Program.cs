@@ -62,7 +62,7 @@ builder.Services.AddScoped<IGeneralGameRepository, OppositeQuestRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, MiniWordleRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, LetterChaosRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, TwinWordsGameRepository>();
-
+builder.Services.AddScoped<IGeneralGameRepository, DoubleVisionRepository>();
 
 #endregion
 
@@ -75,8 +75,6 @@ builder.Services.AddScoped<ISentenceRepository, SentenceRepository>();
 builder.Services.AddScoped<IWordRepository, WordRepository>();
 builder.Services.AddScoped<IOppositeWordRepository, OppositeWordRepository>();
 builder.Services.AddScoped<ITwinWordRepository, TwinWordRepository>();
-
-
 
 #endregion
 
