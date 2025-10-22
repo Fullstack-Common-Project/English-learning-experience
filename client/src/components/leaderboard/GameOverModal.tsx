@@ -1,3 +1,4 @@
+
 "use client";
 
 type GameOverModalProps = {
@@ -6,7 +7,11 @@ type GameOverModalProps = {
   onRestart: () => void;
 };
 
-export default function GameOverModal({ score, time, onRestart }: GameOverModalProps) {
+export default function GameOverModal({
+  score,
+  time,
+  onRestart,
+}: GameOverModalProps) {
   const minutes = Math.floor(time / 60);
   const seconds = Math.floor(time % 60);
 
@@ -21,7 +26,10 @@ export default function GameOverModal({ score, time, onRestart }: GameOverModalP
           Finish time: {minutes}:{seconds < 10 ? "0" + seconds : seconds}
         </p>
 
-        <button onClick={onRestart} className="btn-primary gameover-modal__button">
+        <button
+          onClick={onRestart}
+          className="btn-primary gameover-modal__button"
+        >
           Restart
         </button>
       </div>
