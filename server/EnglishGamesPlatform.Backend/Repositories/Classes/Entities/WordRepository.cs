@@ -50,8 +50,6 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes
         {
             return await _appDbContext.Words
                  .OrderBy(i => EF.Functions.Random())
-                 .OrderBy(w => EF.Functions.Random())
-                 .OrderBy(i => EF.Functions.Random())
                  .Where(w => w.WordId != firstWordId && w.WordId != secondWordId)
                  .Take(3)
                  .ToListAsync();
