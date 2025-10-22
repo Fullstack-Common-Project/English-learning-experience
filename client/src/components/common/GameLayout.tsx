@@ -244,7 +244,7 @@ export default function GameLayout({ children, gameTitle }: GameLayoutProps) {
   const handleResume = () => setCountdownActive(true);
 
   return (
-     <QueryProvider> <div className="game-layout">
+     <QueryProvider> 
     <div className="game-layout">
       <h1 className="game-layout__title">{gameTitle}</h1>
 
@@ -311,9 +311,8 @@ export default function GameLayout({ children, gameTitle }: GameLayoutProps) {
       {stage === "end" && gameOver && (
         <GameOverModal score={score} time={time} onRestart={handleRestart} />
       )}
-    </div></QueryProvider>
+    </div> </QueryProvider>
    
-    </div>
->>>>>>> origin/main
+   
   );
 }
