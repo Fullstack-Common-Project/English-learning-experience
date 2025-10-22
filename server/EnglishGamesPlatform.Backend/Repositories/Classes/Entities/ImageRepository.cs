@@ -31,5 +31,14 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes
             return _appDbContext.Images.Count();
         }
 
+        public async Task<Image?> GetRandomImageWithSentenceAsync()
+        {
+            return await _appDbContext.ImageSentences
+                .Include(isn => isn.Image)
+                .OrderBy(x => EF.Functions.Random())
+                .Select(x => x.Image)
+                .FirstOrDefaultAsync();
+        }
+
     }
 }
