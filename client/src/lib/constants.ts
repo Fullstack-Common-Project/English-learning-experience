@@ -1,0 +1,1 @@
+export const BASE_IMAGE_URL = "https://english-platform-testpnoren.s3.us-east-1.amazonaws.com/";

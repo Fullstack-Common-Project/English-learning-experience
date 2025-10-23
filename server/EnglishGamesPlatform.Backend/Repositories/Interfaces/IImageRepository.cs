@@ -10,5 +10,7 @@ namespace EnglishGamesPlatform.Backend.Repositories.Interfaces
 
         Task<int> GetCountImagesAsync();
 
+        Task<Image?> GetRandomImageAsync();
+
     }
 }
