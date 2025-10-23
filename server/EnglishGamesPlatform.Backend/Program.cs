@@ -60,6 +60,7 @@ builder.Services.AddScoped<IGeneralGameService, GeneralGameService>();
 builder.Services.AddScoped<IGeneralGameRepository, PictureHangmanRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, OppositeQuestRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, MiniWordleRepository>();
+builder.Services.AddScoped<IGeneralGameRepository, MemoryMatchSynonymsRepository>();
 
 #endregion
 
