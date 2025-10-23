@@ -1,7 +1,11 @@
 import { GameResponseBase } from "./index";
+
 export interface MiniWordleItem {
-  // empty item shape by request
+  data: {
+    targetWord: string;
+    wordLength: number;
+    id: number | null;}
 }
 
 
-export interface MiniWordleResponse extends GameResponseBase<"miniWordle", MiniWordleItem[]> {}
+export interface MiniWordleResponse extends GameResponseBase<6, MiniWordleItem> {}

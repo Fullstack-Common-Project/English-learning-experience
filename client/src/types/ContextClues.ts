@@ -5,4 +5,4 @@ export interface ContextCluesItem {
 
 
 export interface ContextCluesResponse
-  extends GameResponseBase<"contextClues", ContextCluesItem[]> {}
+  extends GameResponseBase<15, ContextCluesItem> {}

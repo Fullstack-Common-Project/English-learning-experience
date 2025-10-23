@@ -5,4 +5,4 @@ export interface PicPickItem {
 
 
 export interface PicPickResponse
-  extends GameResponseBase<"picpick", PicPickItem[]> {}
+  extends GameResponseBase<17, PicPickItem> {}

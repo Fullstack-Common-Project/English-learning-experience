@@ -5,4 +5,4 @@ export interface DoubleVisionItem {
 
 
 export interface DoubleVisionResponse
-  extends GameResponseBase<"doubleVision", DoubleVisionItem[]> {}
+  extends GameResponseBase<12, DoubleVisionItem> {}
