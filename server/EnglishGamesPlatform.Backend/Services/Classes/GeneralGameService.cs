@@ -1,15 +1,10 @@
 using AutoMapper;
 using EnglishGamesPlatform.Backend.Models.DTOs;
 using EnglishGamesPlatform.Backend.Models.DTOs.Entities_DTOs;
-using EnglishGamesPlatform.Backend.Models.GameInitialDatas;
 using EnglishGamesPlatform.Backend.Models.Entities;
 using EnglishGamesPlatform.Backend.Repositories.Interfaces;
 using EnglishGamesPlatform.Backend.Services.Interfaces;
-using System.ComponentModel;
-using System.Diagnostics;
 using System.Net;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 
 namespace EnglishGamesPlatform.Backend.Services.Classes
 {
@@ -20,14 +15,19 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
         private readonly IGameResultRepository _gameResultRepository;
         private readonly IMapper _mapper;
 
-
-        public GeneralGameService(IEnumerable<IGeneralGameRepository> repositories, IGameRepository gameRepository, IGameResultRepository gameResultRepository, IMapper mapper)
+        public GeneralGameService(
+            IEnumerable<IGeneralGameRepository> repositories,
+            IGameRepository gameRepository,
+            IGameResultRepository gameResultRepository,
+            IMapper mapper
+        )
         {
             _repositories = repositories.ToDictionary(r => r.GameName);
             _gameRepository = gameRepository;
             _gameResultRepository = gameResultRepository;
             _mapper = mapper;
         }
+
 
 
         public async Task<Response<FinalGameStatus>> GetFinalGameStatusAndAddGameResultAsync(GameResultDTO gameResultDTO)
@@ -53,6 +53,7 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
                     IsSuccess = true,
                     StatusCode = HttpStatusCode.OK,
                     Message = "Add Game Result Successfully.",
+
                     Data = new ()
                     {
                         IsLeadingPlayer = false,
@@ -91,7 +92,6 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
             {
                 GameInitialData? gameInitialData = await repository.GetData();
 
-
                 return new()
                 {
                     StatusCode = HttpStatusCode.OK,
@@ -102,7 +102,6 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
                         GameId = gameId,
                         Data = gameInitialData
                     }
-
                 };
             }
             else
@@ -154,7 +153,7 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
 
             return index;
         }
-        
+
         #endregion
     }
 }
