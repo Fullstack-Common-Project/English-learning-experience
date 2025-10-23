@@ -1,92 +1,3 @@
-// "use client";
-
-// import { useState } from "react";
-// import { GameProps } from "@/components/common/GameLayout";
-// import { OppositeItem } from "@/types/OppositeQuestData";
-
-// const demoItems: OppositeItem[] = [
-//   { id: 1, word: "push", options: ["paperclip", "pull", "gorilla", "boat"], correctIndex: 1 },
-//   { id: 2, word: "open", options: ["azure", "yell", "singer", "close"], correctIndex: 3 },
-//   { id: 3, word: "kind", options: ["stand", "punch", "guilty", "mean"], correctIndex: 3 },
-//   { id: 4, word: "go", options: ["blender", "plum", "orangutan", "come"], correctIndex: 3 },
-//   { id: 5, word: "run", options: ["skirt", "walk", "armadillo", "pilot"], correctIndex: 1 },
-// ];
-
-// export default function OppositeQuestGame({ onScoreChange, onGameOver, paused }: GameProps) {
-//   const [currentIndex, setCurrentIndex] = useState(0);
-//   const [score, setScore] = useState(0);
-//   const [completed, setCompleted] = useState(false);
-//   const [highlightIndex, setHighlightIndex] = useState<number | null>(null); 
-//   const [isFlashing, setIsFlashing] = useState(false); 
-
-//   const currentItem = demoItems[currentIndex];
-
-//   const handleAnswer = (i: number) => {
-//     if (paused || completed || isFlashing) return;
-
-//     const isCorrect = i === currentItem.correctIndex;
-
-//     if (isCorrect) {
-//       setScore((prev) => prev + 1);
-//       onScoreChange?.((prev) => (prev ?? 0) + 1);
-//     } else {
-//       setHighlightIndex(currentItem.correctIndex);
-//       setIsFlashing(true);
-
-//       setTimeout(() => {
-//         setIsFlashing(false);
-//         setHighlightIndex(null);
-
-//         moveNext();
-//       }, 1200);
-
-//       return;
-//     }
-
-//     moveNext();
-//   };
-
-//   const moveNext = () => {
-//     const next = currentIndex + 1;
-//     if (next < demoItems.length) {
-//       setCurrentIndex(next);
-//     } else {
-//       setCompleted(true);
-//       onGameOver?.();
-//     }
-//   };
-
-//   if (completed) {
-//     return <p className="text-center text-xl font-bold mt-4">🎉 Game Over! Final Score: {score}</p>;
-//   }
-
-//   return (
-//     <div className="opposite-quest-game grid gap-4">
-//       <h2 className="text-2xl font-bold text-center">{currentItem.word}</h2>
-
-//       <div className="grid md:grid-cols-2 gap-3">
-//         {currentItem.options.map((opt, i) => {
-//           const isHighlighted = i === highlightIndex;
-
-//           return (
-//             <button
-//               key={i}
-//               onClick={() => handleAnswer(i)}
-//               disabled={paused || isFlashing}
-//               className={`px-4 py-2 rounded text-white transition-all duration-150 
-//                 ${isHighlighted ? "bg-green-500 animate-pulse" : "bg-blue-500"} 
-//                 disabled:opacity-50`}
-//             >
-//               {opt}
-//             </button>
-//           );
-//         })}
-//       </div>
-//       <p className="text-center mt-2">Question {currentIndex + 1} of {demoItems.length}</p>
-//       <p className="text-center mt-1">Current Score: {score}</p>
-//     </div>
-//   );
-// }
 "use client";
 
 import { useState } from "react";
@@ -159,27 +70,6 @@ export default function OppositeQuestGame({ onScoreChange, onGameOver, paused }:
       <h2 className="text-2xl font-bold text-center">{currentItem.word}</h2>
 
       <div className="grid md:grid-cols-2 gap-3">
-        {/* {currentItem.options.map((opt, i) => {
-          const isHighlighted = i === highlightIndex;
-          return (
-            <button
-              key={i}
-              onClick={() => handleAnswer(i)}
-              disabled={paused || isWaiting}
-              className={`px-4 py-2 rounded text-white transition-all duration-200 transform
-                ${
-                  feedback === "wrong" && i === highlightIndex
-                    ? "bg-green-500 animate-pulse"
-                    : feedback === "wrong" && i !== highlightIndex
-                    ? "bg-red-500"
-                    : "bg-blue-500 hover:scale-105"
-                }
-                disabled:opacity-50`}
-            >
-              {opt}
-            </button>
-          );
-        })} */}
         {currentItem.options.map((opt, i) => {
   const isHighlighted = i === highlightIndex;
   return (
@@ -190,10 +80,10 @@ export default function OppositeQuestGame({ onScoreChange, onGameOver, paused }:
       className={`px-4 py-2 rounded text-white transition-all duration-150 transform
         ${
           feedback === "wrong" && i === highlightIndex
-            ? "bg-green-500 animate-pulse" // הבהוב עדין
+            ? "bg-green-500 animate-pulse" 
             : feedback === "wrong" && i !== highlightIndex
             ? "bg-red-500"
-            : "bg-blue-500 hover:scale-102" // scale עדין
+            : "bg-blue-500 hover:scale-102" 
         }
         disabled:opacity-50`}
     >
@@ -204,7 +94,6 @@ export default function OppositeQuestGame({ onScoreChange, onGameOver, paused }:
 
       </div>
 
-      {/* Floating animated feedback */}
       <AnimatePresence>
         {feedback && (
           <motion.div
