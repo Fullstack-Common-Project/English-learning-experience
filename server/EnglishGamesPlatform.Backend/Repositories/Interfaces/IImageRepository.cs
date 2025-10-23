@@ -11,6 +11,7 @@ namespace EnglishGamesPlatform.Backend.Repositories.Interfaces
         Task<int> GetCountImagesAsync();
 
         Task<Image?> GetRandomImageAsync();
-        Task<Image?> GetRandomImageWithSentenceAsync();
+
+        Task<List<Image>> GetAllImagesWithSentenceAsync();
     }
 }
