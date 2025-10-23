@@ -22,6 +22,7 @@ export async function fetchGameData<T extends GameId>(
   const res = await fetch(`${API_BASE}/${gameId}/data`, {
     ...DEFAULT_FETCH_OPTIONS,
   });
+  
   return handleResponse<GameResponseMap[T]>(res);
 }
 
