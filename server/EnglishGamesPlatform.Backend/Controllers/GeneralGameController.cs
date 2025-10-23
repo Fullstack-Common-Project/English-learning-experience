@@ -8,6 +8,7 @@ namespace EnglishGamesPlatform.Backend.Controllers
 {
     [Route("api/v1/[controller]")]
     [ApiController]
+
     public class GeneralGameController : ControllerBase
     {
         private readonly IGeneralGameService _gameService;
