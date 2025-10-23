@@ -7,6 +7,6 @@ namespace EnglishGamesPlatform.Backend.Services.Interfaces
     {
         Task<Response<UserResponse>> Login(LoginDto user);
         Task<Response<UserResponse>> Register(RegisterDTO user);
+        Task<Response<UserResponse>> GoogleLogin(string idToken);
     }
-
 }

@@ -9,14 +9,7 @@
   body {
     @apply min-h-screen flex flex-col bg-slate-950 text-white font-sans antialiased;
     background-image:
-<<<<<<< HEAD
-      radial-gradient(1200px 600px at 80% -20%, rgba(99,102,241,.18), transparent 60%),
-      radial-gradient(800px 400px at -10% 0%, rgba(14,165,233,.16), transparent 60%),
-      linear-gradient(180deg, rgb(2 6 23), rgb(2 6 23 / 1) 40%, rgb(2 8 23));
-    background-blend-mode: overlay;
-  }
-  h1,h2,h3 { @apply font-semibold text-slate-100; }
-=======
+
       radial-gradient(1200px 600px at 80% -20%, rgba(99, 102, 241, .18), transparent 60%),
       radial-gradient(800px 400px at -10% 0%, rgba(14, 165, 233, .16), transparent 60%),
       linear-gradient(180deg, rgb(2 6 23), rgb(2 6 23 / 1) 40%, rgb(2 8 23));
@@ -29,7 +22,6 @@
     @apply font-semibold text-slate-100;
   }
 
->>>>>>> origin/main-v2
   main {
     @apply flex-grow;
   }
@@ -38,19 +30,7 @@
 
 /* ===== מחלקות משותפות בלבד ===== */
 @layer components {
-<<<<<<< HEAD
-  /* עטיפת עמודים */
-  .page-container { @apply container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-10; }
 
-/*   רקע ל - header*/
-  .header-bg { @apply fixed top-0 left-0 right-0 z-40 transition-shadow bg-slate-900/40 backdrop-blur-md;}
-
-  /* כותרת עמוד */
-  .section-title { @apply text-center text-4xl md:text-5xl leading-tight mb-8 md:mb-10; }
-
-  /* גריד קלפים */
-  .cards-grid { @apply grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4; }
-=======
 
   /* עטיפת עמודים */
   .page-container {
@@ -71,21 +51,12 @@
   .cards-grid {
     @apply grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
   }
->>>>>>> origin/main-v2
 
   /* קלף בסיסי (למקרה שתרצי להשתמש בו ישירות ב-markup) */
   .card {
     @apply bg-slate-900/60 backdrop-blur-sm border border-white/5 rounded-2xl shadow-lg p-6 md:p-8;
   }
-<<<<<<< HEAD
-  .card-hover { @apply transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl; }
 
-  /* קלף משחק קומפוזיט – בלי @apply על מחלקות מותאמות, רק יוטיליטיז */
-  .game-card {
-    @apply relative overflow-hidden flex flex-col items-center text-center
-           bg-slate-900/60 backdrop-blur-sm border border-white/5 rounded-2xl shadow-lg
-           p-6 md:p-8 transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl;
-=======
 
   .card-hover {
     @apply transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl;
@@ -94,29 +65,11 @@
   /* קלף משחק קומפוזיט – בלי @apply על מחלקות מותאמות, רק יוטיליטיז */
   .game-card {
     @apply relative overflow-hidden flex flex-col items-center text-center bg-slate-900/60 backdrop-blur-sm border border-white/5 rounded-2xl shadow-lg p-6 md:p-8 transition-transform duration-200 hover:-translate-y-1 hover:shadow-xl;
->>>>>>> origin/main-v2
   }
 
   /* אזור האייקון */
   .game-card__icon-wrap {
-<<<<<<< HEAD
-    @apply mt-2 mb-4 inline-flex items-center justify-center rounded-full
-           h-24 w-24 md:h-28 md:w-28 bg-amber-400/15 ring-1 ring-white/10 shadow-md;
-  }
-  .game-card__icon { @apply scale-110; }
 
-  /* כותרת בתוך קלף */
-  .game-card__title { @apply text-xl md:text-2xl font-medium text-slate-100 mb-4; }
-
-  /* כפתורים */
-  .btn-primary {
-    @apply inline-flex items-center justify-center w-full rounded-xl px-5 py-3 text-base font-medium
-           text-white bg-indigo-600 hover:bg-indigo-500 active:scale-95 transition shadow-md;
-  }
-  .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-xl px-5 py-3 text-base font-medium
-           text-slate-100 bg-white/10 hover:bg-white/15 border border-white/10 transition;
-=======
     @apply mt-2 mb-4 inline-flex items-center justify-center rounded-full h-24 w-24 md:h-28 md:w-28 bg-amber-400/15 ring-1 ring-white/10 shadow-md;
   }
 
@@ -136,7 +89,6 @@
 
   .btn-secondary {
     @apply inline-flex items-center justify-center rounded-xl px-5 py-3 text-base font-medium text-slate-100 bg-white/10 hover:bg-white/15 border border-white/10 transition;
->>>>>>> origin/main-v2
   }
 
   /* פנלים למסכי משחק (שאלות/תוצאות/HowTo) */
@@ -145,15 +97,6 @@
   }
 
   /* נביגציה */
-<<<<<<< HEAD
-  .nav { @apply h-16 bg-slate-900/40 backdrop-blur-md border-b border-white/5; }
-  .nav-inner { @apply container mx-auto px-4 flex items-center justify-between h-full; }
-  .nav-brand { @apply text-xl font-extrabold tracking-tight; }
-  .nav-list { @apply hidden md:flex items-center gap-2; }
-  .nav-link { @apply text-slate-300 hover:text-white px-3 py-2 rounded-lg transition; }
-
-    /* פוטר */
-=======
   .nav {
     @apply h-16 bg-slate-900/40 backdrop-blur-md border-b border-white/5;
   }
@@ -175,30 +118,11 @@
   }
 
   /* פוטר */
->>>>>>> origin/main-v2
   @layer components {
     .footer {
       @apply bg-gray-900 text-gray-300 py-4 w-full flex flex-col items-center relative;
     }
-<<<<<<< HEAD
-  
-    .footer__container {
-      @apply container mx-auto px-6 text-center relative;
-    }
-  
-    .footer__title {
-      @apply text-lg font-semibold text-white mb-2 flex items-center justify-center gap-2;
-    }
-  
-    .footer__github {
-      @apply absolute left-0 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white text-2xl;
-    }
-  
-    .footer__developers {
-      @apply grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-y-1 gap-x-2 text-sm;
-    }
-  
-=======
+
 
     .footer__container {
       @apply container mx-auto px-6 text-center relative;
@@ -216,7 +140,6 @@
       @apply grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-y-1 gap-x-2 text-sm;
     }
 
->>>>>>> origin/main-v2
     .footer__developers a {
       @apply hover:text-white transition;
     }
@@ -268,17 +191,11 @@
 }
 
 @layer components {
-<<<<<<< HEAD
-  /* ===== Help Screen ===== */
-  .help-screen {
-    @apply text-center max-w-2xl mx-auto bg-slate-900/60 backdrop-blur-sm border border-white/5 
-           rounded-2xl shadow-lg p-8 md:p-10;
-=======
+
 
   /* ===== Help Screen ===== */
   .help-screen {
     @apply text-center max-w-2xl mx-auto bg-slate-900/60 backdrop-blur-sm border border-white/5 rounded-2xl shadow-lg p-8 md:p-10;
->>>>>>> origin/main-v2
   }
 
   .help-screen__title {
@@ -296,22 +213,14 @@
 
 
 @layer components {
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/main-v2
   /* ===== Game Over Modal ===== */
   .gameover-modal {
     @apply fixed inset-0 flex items-center justify-center z-50 bg-black/60 backdrop-blur-sm;
   }
 
   .gameover-modal__content {
-<<<<<<< HEAD
-    @apply bg-slate-900/70 backdrop-blur-md border border-white/5 rounded-2xl 
-           shadow-xl p-8 w-96 text-center;
-=======
     @apply bg-slate-900/70 backdrop-blur-md border border-white/5 rounded-2xl shadow-xl p-8 w-96 text-center;
->>>>>>> origin/main-v2
   }
 
   .gameover-modal__title {
@@ -333,10 +242,7 @@
 
 
 @layer components {
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/main-v2
   /* ===== Score Display ===== */
   .score-display {
     @apply bg-emerald-600 text-white px-4 py-2 rounded-xl shadow-md inline-flex items-center justify-center;
@@ -348,10 +254,7 @@
 }
 
 @layer components {
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/main-v2
   /* ===== Timer Display ===== */
   .timer-display {
     @apply font-mono text-lg font-semibold px-4 py-2 bg-blue-600 text-white rounded-xl shadow-md inline-flex items-center justify-center;
@@ -359,10 +262,7 @@
 }
 
 @layer components {
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/main-v2
   /* ===== Audio Toggle Button ===== */
   .audio-toggle {
     @apply px-3 py-2 bg-slate-700 text-white rounded-xl shadow-md hover:bg-slate-600 transition-all;
@@ -371,25 +271,15 @@
 }
 
 @layer components {
-<<<<<<< HEAD
-  /* ===== Countdown 3-2-1 Overlay ===== */
-  .countdown-overlay {
-    @apply absolute inset-0 flex items-center justify-center text-6xl font-bold text-white 
-           bg-black/50 backdrop-blur-sm;
-=======
 
   /* ===== Countdown 3-2-1 Overlay ===== */
   .countdown-overlay {
     @apply absolute inset-0 flex items-center justify-center text-6xl font-bold text-white bg-black/50 backdrop-blur-sm;
->>>>>>> origin/main-v2
   }
 }
 
 @layer components {
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/main-v2
   /* ===== Level Badge ===== */
   .level-badge {
     @apply px-3 py-1 bg-emerald-500 text-white rounded-full font-bold shadow-md inline-flex items-center justify-center;
@@ -397,10 +287,7 @@
 }
 
 @layer components {
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/main-v2
   /* ===== Pause Overlay ===== */
   .pause-overlay {
     @apply fixed inset-0 flex flex-col items-center justify-center z-50 bg-black/50 backdrop-blur-sm;
@@ -420,10 +307,7 @@
 }
 
 @layer components {
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/main-v2
   /* ===== Progress Bar ===== */
   .progress-bar {
     @apply w-full h-4 bg-gray-300 rounded-full overflow-hidden;
@@ -435,10 +319,6 @@
 }
 
 @layer components {
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/main-v2
   /* ===== Sentence Shuffle Game ===== */
   .sentence-game {
     @apply text-center max-w-3xl mx-auto p-4;
@@ -476,8 +356,7 @@
     @apply text-xl font-semibold text-green-600;
   }
 }
-<<<<<<< HEAD
-=======
+
 
 
 /* ===== DoubleVision Game ===== */
@@ -554,4 +433,3 @@
     transform: scale(1.2);
   }
 }
->>>>>>> origin/main-v2

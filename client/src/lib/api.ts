@@ -1,45 +1,46 @@
-import { API_BASE, GUESSMASTER20_ENDPOINTS } from "./constants";
+import { API_BASE, DEFAULT_FETCH_OPTIONS } from "./constants";
 import type {
-  GuessMasterData,
-  GuessMasterAskRequest,
-  GuessMasterAskResponse,
-} from "@/types";
+  GameId,
+  LeaderboardResponse,
+  SubmitProgressPayload,
+  SubmitProgressResponse,
+} from "../types";
+import type { GameResponseMap } from "../types";
 
-// עטיפה נוחה ל-fetch עם JSON (אם כבר יש פונקציה דומה בקובץ – השתמשי בה)
-async function requestJSON<T>(
-  input: RequestInfo,
-  init?: RequestInit
-): Promise<T> {
-  const res = await fetch(input, {
-    headers: { "Content-Type": "application/json", ...(init?.headers ?? {}) },
-    ...init,
-  });
+async function handleResponse<T>(res: Response): Promise<T> {
+  const text = await res.text();
   if (!res.ok) {
-    const text = await res.text().catch(() => "");
-    throw new Error(`HTTP ${res.status} ${res.statusText} – ${text}`);
+    const data = text ? JSON.parse(text) : {};
+    throw new Error(data?.message || res.statusText);
   }
-  return (await res.json()) as T;
+  return text ? JSON.parse(text) : ({} as T);
 }
 
-/**
- * יצירת סשן וקבלת נתוני פתיחה של GuessMaster 20
- * GET /api/v1/generalgame/guessmaster-20/data
- */
-export async function gm20GetInit(): Promise<GuessMasterData> {
-  const url = `${API_BASE}${GUESSMASTER20_ENDPOINTS.init}`;
-  return requestJSON<GuessMasterData>(url, { method: "GET" });
-}
-
-/**
- * שליחת שאלה/ניחוש לשרת
- * POST /api/v1/games/guessmaster-20/ask
- */
-export async function gm20Ask(
-  body: GuessMasterAskRequest
-): Promise<GuessMasterAskResponse> {
-  const url = `${API_BASE}${GUESSMASTER20_ENDPOINTS.ask}`;
-  return requestJSON<GuessMasterAskResponse>(url, {
-    method: "POST",
-    body: JSON.stringify(body),
+export async function fetchGameData<T extends GameId>(
+  gameId: T
+): Promise<GameResponseMap[T]> {
+  const res = await fetch(`${API_BASE}/${gameId}/data`, {
+    ...DEFAULT_FETCH_OPTIONS,
   });
+  return handleResponse<GameResponseMap[T]>(res);
+}
+
+export async function fetchLeaderboard(
+  gameId: GameId
+): Promise<LeaderboardResponse> {
+  const res = await fetch(`${API_BASE}/${gameId}/leaderboard`, {
+    ...DEFAULT_FETCH_OPTIONS,
+  });
+  return handleResponse<LeaderboardResponse>(res);
+}
+
+export async function submitProgress(
+  payload: SubmitProgressPayload
+): Promise<SubmitProgressResponse> {
+  const res = await fetch(`${API_BASE}/${payload.gameId}/progress`, {
+    method: "POST",
+    ...DEFAULT_FETCH_OPTIONS,
+    body: JSON.stringify(payload),
+  });
+  return handleResponse<SubmitProgressResponse>(res);
 }

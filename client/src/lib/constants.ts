@@ -1,6 +1,9 @@
-export const API_BASE = process.env.NEXT_PUBLIC_API_BASE ?? ""; 
 
-export const GUESSMASTER20_ENDPOINTS = {
-  init: "/api/v1/generalgame/guessmaster-20/data",
-  ask: "/api/v1/games/guessmaster-20/ask",
+
+export const API_BASE = process.env.NEXT_PUBLIC_API_BASE_URL || "https://localhost:7292/api/v1/GeneralGame";
+
+export const DEFAULT_FETCH_OPTIONS: RequestInit = {
+  headers: {
+    "Content-Type": "application/json",
+  },
 };
