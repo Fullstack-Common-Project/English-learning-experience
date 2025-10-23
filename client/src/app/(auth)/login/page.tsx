@@ -40,18 +40,9 @@ export default function Login() {
                 password
             });
             console.log("res:", response);
-            // נשלוף את הנתונים שהשרת החזיר
             const { token, user } = response.data;
-            console.log("user:", user);
-
-            // נשמור את הטוקן בלוקאל סטורג' (כדי שיהיה זמין לקריאות הבאות)
             localStorage.setItem("token", token);
-
-
-            // נעדכן את המשתמש ברידאקס
             dispatch(setUser(user));
-
-            // נעבור לעמוד הראשי
             router.push("/");
         } catch (error) {
             console.error("Login failed:", error);
