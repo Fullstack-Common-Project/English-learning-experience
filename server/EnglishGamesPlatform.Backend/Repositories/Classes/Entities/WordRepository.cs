@@ -49,20 +49,13 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes
         public async Task<List<Word>> GetWordsAsync(int firstWordId, int secondWordId)
         {
             return await _appDbContext.Words
-<<<<<<< HEAD
 
-                 .OrderBy(w => EF.Functions.Random())
-=======
                  .OrderBy(i => EF.Functions.Random())
->>>>>>> origin/main-v2
                  .Where(w => w.WordId != firstWordId && w.WordId != secondWordId)
                  .Take(3)
                  .ToListAsync();
         }
 
-<<<<<<< HEAD
-        
-=======
         public async Task<List<Word>> GetWordsAsync(int firstWordId, int secondWordId, int categoryId, int count = 3)
         {
             return await _appDbContext.Words
@@ -73,6 +66,5 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes
                     .Take(count)
                     .ToListAsync();
         }
->>>>>>> origin/main-v2
     }
 }

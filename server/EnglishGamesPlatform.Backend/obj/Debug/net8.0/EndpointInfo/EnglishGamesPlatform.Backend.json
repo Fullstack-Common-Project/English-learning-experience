@@ -233,6 +233,54 @@
           }
         }
       }
+    },
+    "/api/v1/games/guessmaster-20/ask": {
+      "post": {
+        "tags": [
+          "GuessMaster20"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GuessMasterAskRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GuessMasterAskRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/GuessMasterAskRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuessMasterAskResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuessMasterAskResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GuessMasterAskResponse"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -373,6 +421,68 @@
           "rounds": {
             "type": "integer",
             "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "GuessMasterAskRequest": {
+        "type": "object",
+        "properties": {
+          "sessionId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "questionText": {
+            "type": "string",
+            "nullable": true
+          },
+          "questionId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "isGuess": {
+            "type": "boolean"
+          },
+          "guessWord": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "GuessMasterAskResponse": {
+        "type": "object",
+        "properties": {
+          "sessionId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "yesNoAnswer": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "guessCorrect": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "remainingTurns": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nextSuggestedQuestions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "gameOver": {
+            "type": "boolean"
+          },
+          "won": {
+            "type": "boolean",
+            "nullable": true
           }
         },
         "additionalProperties": false

@@ -1,11 +1,8 @@
 using AutoMapper;
 using EnglishGamesPlatform.Backend.Models.DTOs;
 using EnglishGamesPlatform.Backend.Models.DTOs.Entities_DTOs;
-<<<<<<< HEAD
 using EnglishGamesPlatform.Backend.Models.GameInitialDatas;
 
-=======
->>>>>>> origin/main-v2
 using EnglishGamesPlatform.Backend.Models.Entities;
 using EnglishGamesPlatform.Backend.Repositories.Interfaces;
 using EnglishGamesPlatform.Backend.Services.Interfaces;

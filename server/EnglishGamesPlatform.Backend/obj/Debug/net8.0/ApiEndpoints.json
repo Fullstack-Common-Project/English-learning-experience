@@ -52,6 +52,32 @@
     ]
   },
   {
+    "ContainingType": "EnglishGamesPlatform.Backend.Controllers.Games.GuessMaster20Controller",
+    "Method": "Ask",
+    "RelativePath": "api/v1/games/guessmaster-20/ask",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "req",
+        "Type": "EnglishGamesPlatform.Backend.Models.DTOs.GuessMasterAskRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "EnglishGamesPlatform.Backend.Models.DTOs.GuessMasterAskResponse",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "EnglishGamesPlatform.Backend.Controllers.GeneralGameController",
     "Method": "GetGameData",
     "RelativePath": "api/v1/GeneralGame/{gameId}/data",

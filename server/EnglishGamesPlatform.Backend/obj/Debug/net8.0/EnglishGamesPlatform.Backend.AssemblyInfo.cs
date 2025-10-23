@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EnglishGamesPlatform.Backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9333704c787202ed4fef2b388f08ca5bc633f614")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e2c2f05db8e4468999effc720061f42ff20bc394")]
 [assembly: System.Reflection.AssemblyProductAttribute("EnglishGamesPlatform.Backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EnglishGamesPlatform.Backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

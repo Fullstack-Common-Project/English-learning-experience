@@ -8,19 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-<<<<<<< HEAD
-=======
-    <Compile Remove="Controllers\Games\**" />
-    <Content Remove="Controllers\Games\**" />
-    <EmbeddedResource Remove="Controllers\Games\**" />
-    <None Remove="Controllers\Games\**" />
-  </ItemGroup>
-
-  <ItemGroup>
->>>>>>> origin/main-v2
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
     <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="8.0.21" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="9.0.10" />
     <PackageReference Include="Portable.BouncyCastle" Version="1.9.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
 	  <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.10">
