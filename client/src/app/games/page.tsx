@@ -7,52 +7,44 @@ import HelpDialog from "@/components/dialogs/HelpDialog";
 import SettingsDialog from "@/components/dialogs/SettingsDialog";
 import ConfirmDialog from "@/components/dialogs/ConfirmDialog";
 import Toast from "@/components/feedback/Toast";
+import { usePlatformGames } from "@/hooks/usePlatformGames";
 
 export default function HomePage() {
   const [showHelp, setShowHelp] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
   const [toastMessage, setToastMessage] = useState("");
+  const { data } = usePlatformGames();
+  console.log("Games data:", data);
+  
+ const styleMap: Record<number, { color: string; emoji: string }> = {
+   1: { color: "from-purple-400 to-violet-500", emoji: "❓" }, // Opposite Quest
+   2: { color: "from-sky-400 to-blue-500", emoji: "🪢" }, // Picture Hangman
+   3: { color: "from-yellow-400 to-orange-500", emoji: "🔤" }, // Letter Chaos
+   6: { color: "from-green-400 to-emerald-500", emoji: "🧩" }, // Mini Wordle
+   7: { color: "from-pink-400 to-rose-500", emoji: "📚" }, // Word Sorter
+   8: { color: "from-indigo-400 to-blue-600", emoji: "🧠" }, // Memory Match: Synonyms
+   9: { color: "from-amber-400 to-orange-500", emoji: "✍️" }, // Grammar Guru
+   10: { color: "from-teal-400 to-green-500", emoji: "🌀" }, // TwinWords
+   11: { color: "from-cyan-500 to-sky-600", emoji: "⚖️" }, // Memory Match: Antonyms
+   12: { color: "from-rose-400 to-red-500", emoji: "👀" }, // Double Vision
+   14: { color: "from-lime-400 to-green-500", emoji: "🎯" }, // GuessMaster 20
+   15: { color: "from-blue-400 to-indigo-500", emoji: "🔍" }, // Context Clues
+   16: { color: "from-fuchsia-400 to-pink-500", emoji: "💬" }, // Phrase Craze
+   17: { color: "from-violet-400 to-purple-600", emoji: "🖼️" }, // PicPick
+   18: { color: "from-teal-400 to-green-500", emoji: "🎵" }, // Rhyme Time
+ };
 
-  const games = [
-    {
-      id: 1,
-      name: "🎵 Rhyme Time",
-      path: "/games/rhyme-time",
-      color: "from-pink-400 to-rose-500",
-    },
-    {
-      id: 2,
-      name: "🧩 Sentence Shuffle",
-      path: "/games/sentence-shuffle",
-      color: "from-blue-400 to-indigo-500",
-    },
-    {
-      id: 3,
-      name: "🧠 Grammar Guru",
-      path: "/games/grammar-guru",
-      color: "from-green-400 to-emerald-500",
-    },
-    {
-      id: 4,
-      name: "🔤 Letter Chaos",
-      path: "/games/letter-chaos",
-      color: "from-yellow-400 to-orange-500",
-    },
-    {
-      id: 5,
-      name: "❓ Opposite Quest",
-      path: "/games/opposite-quest",
-      color: "from-purple-500 to-violet-600",
-    },
-    {
-      id: 6,
-      name: "💡 WordWise Flash",
-      path: "/games/wordwise-flash",
-      color: "from-cyan-500 to-sky-600",
-    },
-  ];
-
+  const mergedGames =
+    data?.map((game) => ({
+      id: game.gameId,
+      name: game.gameName,
+      description: game.description,
+      instructions: game.instructions,
+      path: `/games/${game.gameName.toLowerCase().replace(/\s+/g, "-")}`,
+      ...styleMap[game.gameId], // מוסיף צבע ואימוג׳י
+    })) ?? [];
+  
   const handleConfirm = () => {
     setToastMessage("✅ אישרת את תנאי השימוש בהצלחה!");
     setShowConfirm(false);
@@ -60,7 +52,6 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen from-indigo-100 via-purple-100 to-pink-100 flex flex-col items-center py-12 px-6 relative">
-
       {/* כותרת */}
       <motion.h1
         initial={{ opacity: 0, y: -20 }}
@@ -99,19 +90,19 @@ export default function HomePage() {
 
       {/* גריד כרטיסים */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-10 w-full max-w-6xl">
-        {games.map((game) => (
+        {mergedGames.map((game) => (
           <motion.div
             key={game.id}
             whileHover={{ scale: 1.05 }}
             className={`bg-gradient-to-br ${game.color} text-white rounded-3xl shadow-xl p-8 flex flex-col justify-between transition-all duration-300 hover:shadow-2xl`}
           >
-            <h2 className="text-2xl font-bold mb-6 text-center">{game.name}</h2>
+            <h2 className="text-2xl font-bold mb-6 text-center">{game.name} {game.emoji }</h2>
             <Link href={game.path}>
               <motion.button
                 whileTap={{ scale: 0.95 }}
                 className="w-full py-3 rounded-xl bg-white text-gray-900 font-bold shadow hover:bg-gray-100 transition"
               >
-                🎮 התחילי לשחק
+                🎮Lets Start
               </motion.button>
             </Link>
           </motion.div>

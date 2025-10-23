@@ -24,27 +24,34 @@ export default function Footer() {
 
   return (
     <footer className="footer">
-
       <div className="footer__container">
-        <h2 className="footer__title"> Project Developers
+        <h2 className="footer__title">
+          {" "}
+          Project Developers
           <a
-          href="https://github.com/Fullstack-Common-Project/English-learning-experience"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-gray-400 hover:text-white transition text-2xl"><FaGithub />
+            href="https://github.com/Fullstack-Common-Project/English-learning-experience"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-white transition text-2xl"
+          >
+            <FaGithub />
           </a>
         </h2>
 
         <div className="footer__developers">
           {developers.map((dev) => (
             <a
-            key={dev.name}
-            href={dev.url}
-            className="text-sm hover:text-white transition">
-      {dev.name}
-      </a>
+              key={dev.name}
+              href={dev.url}
+              className="text-sm hover:text-white transition"
+            >
+              {dev.name}
+            </a>
           ))}
         </div>
+        <footer className="mt-16 text-gray-500 text-sm text-center">
+          © 2025 English Learning Platform | Built with ❤️ by Team Experis
+        </footer>
       </div>
     </footer>
   );

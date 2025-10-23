@@ -19,7 +19,7 @@ async function handleResponse<T>(res: Response): Promise<T> {
 export async function fetchGameData<T extends GameId>(
   gameId: T
 ): Promise<GameResponseMap[T]> {
-  const res = await fetch(`${API_BASE}/${gameId}/data`, {
+  const res = await fetch(`${API_BASE}/GeneralGame/${gameId}/data`, {
     ...DEFAULT_FETCH_OPTIONS,
   });
   return handleResponse<GameResponseMap[T]>(res);
@@ -28,7 +28,7 @@ export async function fetchGameData<T extends GameId>(
 export async function fetchLeaderboard(
   gameId: GameId
 ): Promise<LeaderboardResponse> {
-  const res = await fetch(`${API_BASE}/${gameId}/leaderboard`, {
+  const res = await fetch(`${API_BASE}/GeneralGame/${gameId}/leaderboard`, {
     ...DEFAULT_FETCH_OPTIONS,
   });
   return handleResponse<LeaderboardResponse>(res);
@@ -37,10 +37,22 @@ export async function fetchLeaderboard(
 export async function submitProgress(
   payload: SubmitProgressPayload
 ): Promise<SubmitProgressResponse> {
-  const res = await fetch(`${API_BASE}/${payload.gameId}/progress`, {
+  const res = await fetch(`${API_BASE}/GeneralGame/${payload.gameId}/progress`, {
     method: "POST",
     ...DEFAULT_FETCH_OPTIONS,
     body: JSON.stringify(payload),
   });
   return handleResponse<SubmitProgressResponse>(res);
+}
+
+export async function fetchPlatformGames() {
+  const res = await fetch(`${API_BASE}/Game/GetAll`, {
+    headers:{ "Content-Type": "application/json" }
+  });
+  const result = await res.json();
+  console.log("Fetched platform games:", result);
+  if (!res.ok) throw new Error(
+    `Failed to fetch games ${result?.message || result.statusText}`
+  );
+  return result.data; 
 }

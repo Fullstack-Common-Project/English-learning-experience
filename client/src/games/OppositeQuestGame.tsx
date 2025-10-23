@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { GameProps } from "@/components/common/GameLayout";
-import { OppositeItem } from "@/types/OppositeQuestData";
+import { OppositeItem } from "@/types/gamesTypes/OppositeQuestData";
 import { motion, AnimatePresence } from "framer-motion";
 
 const demoItems: OppositeItem[] = [
