@@ -16,7 +16,8 @@ const userSlice = createSlice({
     clearUser(state) {
       state.user = {
         userId:0,
-        fullName: ""              
+        fullName: ""
+              
       };
     },
   },
