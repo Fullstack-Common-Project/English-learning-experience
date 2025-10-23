@@ -22,7 +22,12 @@ export default function MiniWordleGame({ onScoreChange, onGameOver, paused, time
     const hasFetchedRef = useRef(false);
     const score = useRef(0);
     const round = useRef(1);
+    const timeRef = useRef(time);
     const user = useSelector((state: any) => state.user.user);
+
+    useEffect(() => {
+        timeRef.current = time;
+    }, [time]);
 
     useEffect(() => {
         if (!data || hasFetchedRef.current) return;
@@ -63,16 +68,15 @@ export default function MiniWordleGame({ onScoreChange, onGameOver, paused, time
     };
 
     const handleGameOver = async () => {
-        const saveTime = time;
-        onGameOver?.();
 
         submitProgressMutation.mutate({
             gameID: gameId,
             userID: user?.userId!,
             score: score.current,
-            time: saveTime ?? 0,
+            time: timeRef.current ?? 0,
             rounds: round.current,
         });
+        onGameOver?.();
         await loadNewWord();
     };
 

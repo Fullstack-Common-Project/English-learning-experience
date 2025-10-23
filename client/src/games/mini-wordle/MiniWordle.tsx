@@ -143,8 +143,10 @@ export default function MiniWordle({
             if (guess.join("") === targetWordRef.current.toUpperCase()) {
                 OnWin?.();
             } else if (currentRowRef.current + 1 >= maxGuesses) {
+                 alert(`Game Over! The word was: ${targetWordRef.current}`);
                 setCompleted(true);
                 onGameOver?.();
+               
             } else {
                 setCurrentRow(currentRowRef.current + 1);
                 setCurrentCol(0);
