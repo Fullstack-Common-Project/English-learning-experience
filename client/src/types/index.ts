@@ -37,7 +37,27 @@ export interface GameResponseMap {
   16: PhraseCrazeResponse;
 }
 
-export type GameId = keyof GameResponseMap;
+export type GameResponseMap = Record<
+  GameId,
+  | SentenceShuffleResponse
+  | PicPickResponse
+  | GrammarGuruResponse
+  | OppositeQuestResponse
+  | TwinWordsResponse
+  | MiniWordleResponse
+  | MemorySynonymsResponse
+  | MemoryAntonymsResponse
+  | RhymeTimeResponse
+  | WordwiseFlashResponse
+  | RevealItResponse
+  | WordSorterResponse
+  | LetterChaosResponse
+  | GuessMasterResponse
+  | DoubleVisionResponse
+  | ContextCluesResponse
+  | PhraseCrazeResponse
+>;
+
 export type GameDataResponse = GameResponseMap[GameId];
 export type GameResponseFor<T extends GameId> = GameResponseMap[T];
 export interface GameResponseBase<T extends GameId, D> {
