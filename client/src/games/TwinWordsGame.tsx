@@ -9,7 +9,6 @@ import { TwinWordsItem, TwinWordsSingleQuestion } from "@/types/TwinWords";
 export default function TwinWordsGame({ onScoreChange, onGameOver, paused }: GameProps) {
   const gameId: GameId = 10;
 
-  // 📡 שליפה מהשרת
   const { data, isLoading, isError, refetch } = useGameData(gameId);
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -64,8 +63,8 @@ export default function TwinWordsGame({ onScoreChange, onGameOver, paused }: Gam
     }, 1200);
   };
 
-  if (isLoading) return <p>טוען נתוני משחק...</p>;
-  if (isError || items.length === 0) return <p>שגיאה בטעינת המשחק.</p>;
+  if (isLoading) return <p>loading game...</p>;
+  if (isError || items.length === 0) return <p>error in loading game.</p>;
   if (completed) return <p className="twinwords__completed">🎉 All questions completed!</p>;
 
   return (
