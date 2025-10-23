@@ -13,5 +13,8 @@ export default function MiniWordlePage() {
     <GameLayout gameTitle="Mini Wordle">
         <MiniWordleGame onGameOver={handleGameOver} />
     </GameLayout>
+    
   );
+
+  
 }
