@@ -20,28 +20,45 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes.Games
 
         public async Task<GameInitialData?> GetData()
         {
-            Image? image = await _imageRepository.GetByIdAsync(await RandomImageIdAsync());
+            List<Image>? images = await _imageRepository.GetRandomImagesAsync(3);
 
-            if (image == null)
+            if (images == null)
             {
                 return null;
             }
 
+            List<ImageWordPair> pairs = images.Select(i => new ImageWordPair
+            {
+                ImageUrl = i.ImageUrl,
+                TargetWord = CapitalizeWord(i.Word.WordText)
+            }).ToList();
+
             return new PictureHangmanData
             {
-                ImageUrl = image.ImageUrl,
-                TargetWord = image.Word.WordText
+                Pairs = pairs
             };
         }
 
         #region Private Methods
 
-        public async Task<int> RandomImageIdAsync()
+        private string CapitalizeWord(string text)
         {
-            int countImages = await _imageRepository.GetCountImagesAsync();
-            Random random = new Random();
-            int randomImageId = random.Next(1, countImages + 1);
-            return randomImageId;
+            if (string.IsNullOrWhiteSpace(text))
+                return text;
+
+            text = text.Trim().ToLower();
+            string[] words = text.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+            for (int i = 0; i < words.Length; i++)
+            {
+                string word = words[i];
+                if (words.Length > 0)
+                {
+                    words[i] = char.ToUpper(word[0]) + word.Substring(1);
+                }
+            }
+
+            return string.Join(' ', words);
         }
         #endregion
 

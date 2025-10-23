@@ -54,15 +54,12 @@ builder.Services.AddScoped<IGameResultRepository, GameResultRepository>();
 
 #region General Game
 
-#region PictureHangman
-
 builder.Services.AddScoped<IGeneralGameService, GeneralGameService>();
 builder.Services.AddScoped<IGeneralGameRepository, PictureHangmanRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, OppositeQuestRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, MiniWordleRepository>();
-
-#endregion
-
+builder.Services.AddScoped<IGeneralGameRepository, LetterChaosRepository>();
+builder.Services.AddScoped<IGeneralGameRepository, MemoryMatchSynonymsRepository>();
 
 #endregion 
 
@@ -71,6 +68,7 @@ builder.Services.AddScoped<IImageRepository, ImageRepository>();
 builder.Services.AddScoped<ISentenceRepository, SentenceRepository>();
 builder.Services.AddScoped<IWordRepository, WordRepository>();
 builder.Services.AddScoped<IOppositeWordRepository, OppositeWordRepository>();
+builder.Services.AddScoped<ITwinWordRepository, TwinWordRepository>();
 
 
 
@@ -78,18 +76,18 @@ builder.Services.AddScoped<IOppositeWordRepository, OppositeWordRepository>();
 
 builder.Services.AddCustomServices();
 
-//builder.Services.AddAuthentication(options =>
-//{
-//    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-//    options.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;
-//})
-//.AddCookie()
-//.AddGoogle(options =>
-//{
-//    options.ClientId = builder.Configuration["Authentication:Google:ClientId"]!;
-//    options.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"]!;
-//    options.CallbackPath = "/signin-google";
-//});
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;
+})
+.AddCookie()
+.AddGoogle(options =>
+{
+    options.ClientId = builder.Configuration["Authentication:Google:ClientId"]!;
+    options.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"]!;
+    options.CallbackPath = "/signin-google";
+});
 
 var app = builder.Build();
 
@@ -99,12 +97,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
-//app.MapGet("/login-google", async (HttpContext context) =>
-//{
-//    await context.ChallengeAsync(GoogleDefaults.AuthenticationScheme,
-//        new AuthenticationProperties { RedirectUri = "/" });
-//});
 
 app.UseCustomExceptionHandler();
 
