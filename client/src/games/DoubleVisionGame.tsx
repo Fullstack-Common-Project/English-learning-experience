@@ -494,7 +494,6 @@ export default function DoubleVisionGame({ onScoreChange, onGameOver, paused }: 
 
                 console.log("✅ API response:", response.data);
 
-                // 🟢 הנתיב הנכון לפי מה ששלחת
                 const rounds: DoubleVisionRound[] = response.data?.data?.data?.items || [];
 
                 if (!Array.isArray(rounds) || rounds.length === 0) {
