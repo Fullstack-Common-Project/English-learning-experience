@@ -6,6 +6,7 @@ import { useLeaderboard } from "@/hooks/useLeaderboard";
 import { useSubmitProgress } from "@/hooks/useSubmitProgress";
 import { GameId } from "@/types";
 import { PicPickItem } from "@/types/PicPick";
+import { motion } from "framer-motion";
 
 export default function PicPickGame({ onScoreChange, onGameOver, paused }: GameProps) {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -13,6 +14,8 @@ export default function PicPickGame({ onScoreChange, onGameOver, paused }: GameP
     const [score, setScore] = useState(0);
     const [time, setTime] = useState(0);
     const [questions, setQuestions] = useState<PicPickItem[]>([]);
+    const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+    const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
 
     const gameId: GameId = 17; 
     const { data, isLoading, isError, refetch } = useGameData(gameId);
@@ -55,19 +58,29 @@ export default function PicPickGame({ onScoreChange, onGameOver, paused }: GameP
     }
 
     const handleAnswer = (index: number) => {
-        if (paused || completed || !currentItem) return;
+        if (paused || completed || !currentItem ||selectedIndex !== null) return;
 
-        if (index === currentItem.correctIndex) {
+        setSelectedIndex(index);
+        const correct = index === currentItem.correctIndex;
+        setIsCorrect(correct);
+
+        if (correct) {
             onScoreChange?.((prev) => prev + 10);
         }
-        const nextIndex = currentIndex + 1;
-        if (nextIndex < questions.length) {
-            setCurrentIndex(nextIndex);
-        } else {
-            setCompleted(true);
-            onGameOver?.();
-            handleFinish();
-        }
+
+        setTimeout(() => {
+            setSelectedIndex(null);
+            setIsCorrect(null);
+    
+            const nextIndex = currentIndex + 1;
+            if (nextIndex < questions.length) {
+                setCurrentIndex(nextIndex);
+            } else {
+                setCompleted(true);
+                onGameOver?.();
+                handleFinish();
+            }
+        }, 600);
     };
 
     if (completed) {
@@ -79,22 +92,32 @@ export default function PicPickGame({ onScoreChange, onGameOver, paused }: GameP
             <h3 className="sentence-game__title">
                 Picture {currentIndex + 1} of {questions.length}
             </h3>
-
             <div className="sentence-game__image">
-                <img src={baseUrl + currentItem.imageUrl} alt="Game Image" className="rounded-2xl" />
+                <motion.img
+                   key={currentItem.imageUrl}
+                   src={baseUrl + currentItem.imageUrl}
+                   alt="Game Image"
+                   className="rounded-2xl picpick__image"
+                   initial={{ opacity: 0 }}
+                   animate={{ opacity: 1 }}
+                   transition={{ duration: 0.5 }}
+                   exit={{ opacity: 0 }}
+                />
             </div>
 
             <div className="sentence-game__words grid md:grid-cols-2 gap-3">
                 {currentItem.sentences.map((s, i) => (
-                    <button
-                        key={i}
-                        onClick={() => handleAnswer(i)}
-                        disabled={paused}
-                        className={`btn-primary sentence-game__word ${paused ? "sentence-game__word--disabled" : ""}`}
-                    >
-                        {s}
-                    </button>
+                   <motion.button
+                   key={i}
+                   onClick={() => handleAnswer(i)}
+                   disabled={paused}
+                   className={`btn-primary picpick__option ${selectedIndex === i ? (isCorrect ? "correct" : "wrong") : ""}`}
+                   whileHover={{ scale: 1.05 }}
+                   transition={{ type: "spring", stiffness: 300, damping: 20 }}>
+                   {s}
+               </motion.button>
                 ))}
+
             </div>
         </div>
     );
