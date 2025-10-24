@@ -151,8 +151,8 @@ namespace EnglishGamesPlatform.Backend.Services.Implementations
                     userEntity = new User
                     {
                         UserId = createdUser.UserId,
-                        FullName = createdUser.FullName,
-                        Email = createdUser.Email,
+                        FullName = createdUser.FullName,   
+                        Email = createdUser.Email,                
                     };
                 }
 

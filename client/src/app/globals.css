@@ -388,6 +388,70 @@
   box-shadow: 0 0 20px #f87171;
 }
 
+/* ===== TwinWords Game ===== */
+.twinwords {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.twinwords__title {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.twinwords__word {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.twinwords__options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.twinwords__option {
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+  font-size: 1rem;
+  color: #222; /* ✅ טקסט כהה וברור */
+  transition: 0.2s;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.twinwords__option:hover {
+  background: #eaeaea;
+}
+
+/* תשובה נכונה */
+.twinwords__option--correct {
+  background-color: #2ecc71; /* ירוק חזק */
+  border-color: #27ae60;
+  color: #fff; /* ✅ טקסט לבן כדי לבלוט */
+}
+
+/* תשובה שגויה */
+.twinwords__option--wrong {
+  background-color: #e74c3c; /* אדום חזק */
+  border-color: #c0392b;
+  color: #fff; /* ✅ טקסט לבן */
+}
+
+.twinwords__feedback {
+  margin-top: 1rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+
+
+
+
 @keyframes shake {
   0% {
     transform: translateX(0);

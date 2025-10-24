@@ -61,6 +61,7 @@ builder.Services.AddScoped<IGeneralGameRepository, MiniWordleRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, LetterChaosRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, MemoryMatchSynonymsRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, PicPickRepository>();
+builder.Services.AddScoped<IGeneralGameRepository, TwinWordsGameRepository>();
 
 #endregion 
 
@@ -77,18 +78,18 @@ builder.Services.AddScoped<ITwinWordRepository, TwinWordRepository>();
 
 builder.Services.AddCustomServices();
 
-builder.Services.AddAuthentication(options =>
-{
-    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-    options.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;
-})
-.AddCookie()
-.AddGoogle(options =>
-{
-    options.ClientId = builder.Configuration["Authentication:Google:ClientId"]!;
-    options.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"]!;
-    options.CallbackPath = "/signin-google";
-});
+//builder.Services.AddAuthentication(options =>
+//{
+//    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+//    options.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;
+//})
+//.AddCookie()
+//.AddGoogle(options =>
+//{
+//    options.ClientId = builder.Configuration["Authentication:Google:ClientId"]!;
+//    options.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"]!;
+//    options.CallbackPath = "/signin-google";
+//});
 
 var app = builder.Build();
 
