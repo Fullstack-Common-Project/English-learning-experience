@@ -92,20 +92,19 @@ export default function PicPickGame({ onScoreChange, onGameOver, paused }: GameP
             <h3 className="sentence-game__title">
                 Picture {currentIndex + 1} of {questions.length}
             </h3>
-            <div className="sentence-game__image">
+            <div className="picpick__image_container">
                 <motion.img
                    key={currentItem.imageUrl}
                    src={baseUrl + currentItem.imageUrl}
                    alt="Game Image"
-                   className="rounded-2xl picpick__image"
+                   className="picpick__image"
                    initial={{ opacity: 0 }}
                    animate={{ opacity: 1 }}
                    transition={{ duration: 0.5 }}
                    exit={{ opacity: 0 }}
                 />
             </div>
-
-            <div className="sentence-game__words grid md:grid-cols-2 gap-3">
+            <div className="picpick__grid">
                 {currentItem.sentences.map((s, i) => (
                    <motion.button
                    key={i}
@@ -117,7 +116,6 @@ export default function PicPickGame({ onScoreChange, onGameOver, paused }: GameP
                    {s}
                </motion.button>
                 ))}
-
             </div>
         </div>
     );
