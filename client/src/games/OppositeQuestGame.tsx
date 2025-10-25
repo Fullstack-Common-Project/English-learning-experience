@@ -6,8 +6,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { GameId } from "@/types";
 import { useGameData } from "@/hooks/useGameData";
 import { OppositeQuestItemSingle } from "@/types/OppositeQuest";
+import { useSubmitProgress } from "@/hooks/useSubmitProgress";
+import { useSelector } from "react-redux";
+import { useLeaderboard } from "@/hooks/useLeaderboard";
 
-export default function OppositeQuestGame({ onScoreChange, onGameOver, paused }: GameProps) {
+export default function OppositeQuestGame({ onScoreChange, onGameOver, paused,time }: GameProps) {
+  const gameId: GameId = 1;
+
   const [items, setItems] = useState<OppositeQuestItemSingle[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [score, setScore] = useState(0);
@@ -16,7 +21,10 @@ export default function OppositeQuestGame({ onScoreChange, onGameOver, paused }:
   const [feedback, setFeedback] = useState<"correct" | "wrong" | null>(null);
   const [isWaiting, setIsWaiting] = useState(false);
 
-  const gameId: GameId = 1;
+  const user = useSelector((state: any) => state.user.user);
+  const submitProgressMutation = useSubmitProgress();
+  const { data: leaderboardData } = useLeaderboard(gameId);
+
   const { data, isLoading, isError, refetch } = useGameData(gameId); 
 
   const restartGame = async () => {
@@ -38,7 +46,7 @@ export default function OppositeQuestGame({ onScoreChange, onGameOver, paused }:
 
   useEffect(() => {
     restartGame();
-  }, []);
+  }, []);//??
 
   const currentItem = items[currentIndex];
 
@@ -70,9 +78,23 @@ export default function OppositeQuestGame({ onScoreChange, onGameOver, paused }:
     if (next < items.length) {
       setCurrentIndex(next);
     } else {
-      setCompleted(true);
-      onGameOver?.();
+     endGame();
     }
+  };
+
+  const endGame = () => {
+    setCompleted(true);
+    onGameOver?.();
+    submitProgressMutation.mutate({
+      gameID: gameId,
+      userID: user?.userId!, 
+      score: score+1,
+      time: time ?? 0,
+      rounds: items.length,
+  });
+  console.log("Leaderboard:", leaderboardData?.leaderboard);
+
+
   };
 
   if (isLoading) return <p className="text-center mt-10">Loading...</p>;
