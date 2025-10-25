@@ -5,6 +5,7 @@ export interface MiniWordleItem {
     targetWord: string;
     wordLength: number;
     id: number | null;}
+
 }
 
 
