@@ -1,6 +1,6 @@
 "use client";
 
-import { FaGamepad, FaGithub } from "react-icons/fa"; 
+import {  FaGithub } from "react-icons/fa"; 
 
 export default function Footer() {
     const developers = [
@@ -9,7 +9,7 @@ export default function Footer() {
         { name: "Michal Segal", url: "/games/michal-segal" },
         { name: "Tamar Vurtzel", url: "/games/tamar-vurtzel" },
         { name: "Abigail Berk", url: "/games/abigail-berk" },
-        { name: "Shifra Strul", url: "/games/shifra-strul" },
+        { name: "Shifra Strul", url: "/games/grammar-guru" },
         { name: "Rivka Merchavy", url: "/games/rivka-merchavy" },
         { name: "Miriam Rosenberg", url: "/games/miriam-rosenberg" },
         { name: "Rivka Maman", url: "/games/rivka-maman" },

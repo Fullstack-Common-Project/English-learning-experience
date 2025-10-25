@@ -107,7 +107,7 @@ export default function Header() {
               <button
                 title="Toggle theme"
                 aria-label="Toggle theme"
-                className="btn btn-primary"
+                className="btn-primary"
               >
               </button>
             </div>

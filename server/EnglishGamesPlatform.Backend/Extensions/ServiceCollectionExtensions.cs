@@ -19,8 +19,9 @@ namespace EnglishGamesPlatform.Backend.Extensions
                 options.AddPolicy("AllowAll", builder =>
                 {
                     builder.AllowAnyOrigin()
-                           .AllowAnyMethod()
-                           .AllowAnyHeader();
+                            .AllowAnyMethod()
+                            .AllowAnyHeader();
+                           
                 });
             });
             services.AddScoped<IAuthRepository, AuthRepository>();

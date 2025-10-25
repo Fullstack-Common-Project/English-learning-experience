@@ -1,164 +1,240 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\",
+  "WorkspaceRootPath": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\englishgamesplatform.backend\\controllers\\generalgamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\controllers\\generalgamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\controllers\\generalgamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\englishgamesplatform.backend\\utils\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\utils\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\englishgamesplatform.backend\\controllers\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\controllers\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\englishgamesplatform.backend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\englishgamesplatform.backend\\models\\gameinitialdatas\\grammargurudata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\models\\gameinitialdatas\\grammargurudata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\englishgamesplatform.backend\\repositories\\classes\\games\\grammargururepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\repositories\\classes\\games\\grammargururepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\repositories\\classes\\games\\grammargururepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\englishgamesplatform.backend\\models\\entities\\image.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\models\\entities\\image.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\englishgamesplatform.backend\\models\\entities\\oppositeword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\models\\entities\\oppositeword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\englishgamesplatform.backend\\models\\entities\\progress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\models\\entities\\progress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\englishgamesplatform.backend\\services\\classes\\generalgameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\services\\classes\\generalgameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\englishgamesplatform.backend\\repositories\\classes\\entities\\gamerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\repositories\\classes\\entities\\gamerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\englishgamesplatform.backend\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\englishgamesplatform.backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\englishgamesplatform.backend\\repositories\\classes\\entities\\fakesentencerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\repositories\\classes\\entities\\fakesentencerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\utils\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\utils\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\englishgamesplatform.backend\\repositories\\interfaces\\igrammarquestionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\repositories\\interfaces\\igrammarquestionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\englishgamesplatform.backend\\repositories\\classes\\entities\\grammarquestionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\repositories\\classes\\entities\\grammarquestionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\englishgamesplatform.backend\\repositories\\interfaces\\ifakesentencerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\repositories\\interfaces\\ifakesentencerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\englishgamesplatform.backend\\repositories\\classes\\entities\\sentencerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\repositories\\classes\\entities\\sentencerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\englishgamesplatform.backend\\models\\entities\\grammarquestionfakesentence.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\models\\entities\\grammarquestionfakesentence.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\englishgamesplatform.backend\\models\\entities\\grammarquestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\models\\entities\\grammarquestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\englishgamesplatform.backend\\models\\entities\\sentence.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\models\\entities\\sentence.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\englishgamesplatform.backend\\repositories\\classes\\games\\picturehangmanrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\repositories\\classes\\games\\picturehangmanrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\englishgamesplatform.backend\\models\\dtos\\gamedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\models\\dtos\\gamedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\englishgamesplatform.backend\\services\\interfaces\\igameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\services\\interfaces\\igameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\englishgamesplatform.backend\\services\\interfaces\\igeneralgameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\services\\interfaces\\igeneralgameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\englishgamesplatform.backend\\extensions\\servicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\extensions\\servicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\englishgamesplatform.backend\\extensions\\exceptionhandlerextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\extensions\\exceptionhandlerextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\extensions\\exceptionhandlerextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\englishgamesplatform.backend\\models\\entities\\gameresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\models\\entities\\gameresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\englishgamesplatform.backend\\repositories\\classes\\entities\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\repositories\\classes\\entities\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\englishgamesplatform.backend\\migrations\\20251021114156_change-tables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\migrations\\20251021114156_change-tables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\englishgamesplatform.backend\\repositories\\interfaces\\igeneralgamerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\repositories\\interfaces\\igeneralgamerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\englishgamesplatform.backend\\repositories\\classes\\entities\\gameresultrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\repositories\\classes\\entities\\gameresultrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\englishgamesplatform.backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\englishgamesplatform.backend\\repositories\\classes\\entities\\grammar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\repositories\\classes\\entities\\grammar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\extensions\\servicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\extensions\\servicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\user1\\AppData\\Roaming\\Microsoft\\UserSecrets\\b0449661-f4a8-45ba-9b63-23404011f099\\secrets.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\englishgamesplatform.backend\\services\\classes\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\services\\classes\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\englishgamesplatform.backend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\englishgamesplatform.backend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\englishgamesplatform.backend\\models\\dtos\\userresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\models\\dtos\\userresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\controllers\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\controllers\\gamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\englishgamesplatform.backend\\services\\classes\\gameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\models\\entities\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\models\\entities\\game.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\models\\gameinitialdatas\\grammargurudata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\models\\gameinitialdatas\\grammargurudata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\repositories\\classes\\entities\\gameresultrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\repositories\\classes\\entities\\gameresultrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\models\\dtos\\gamedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\models\\dtos\\gamedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\services\\classes\\generalgameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\services\\classes\\generalgameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\repositories\\classes\\entities\\gamerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\repositories\\classes\\entities\\gamerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\repositories\\classes\\entities\\wordrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\repositories\\classes\\entities\\wordrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\repositories\\classes\\games\\miniwordlerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\repositories\\classes\\games\\miniwordlerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\repositories\\interfaces\\iwordrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\repositories\\interfaces\\iwordrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\repositories\\classes\\entities\\twinwordrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\repositories\\classes\\entities\\twinwordrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\repositories\\classes\\games\\memorymatchsynonymsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\repositories\\classes\\games\\memorymatchsynonymsrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\services\\interfaces\\igameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\services\\interfaces\\igameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\repositories\\interfaces\\igameresultrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\repositories\\interfaces\\igameresultrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\services\\interfaces\\igeneralgameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\services\\interfaces\\igeneralgameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\models\\entities\\gameresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\models\\entities\\gameresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\models\\dtos\\entities dtos\\gameresultdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\models\\dtos\\entities dtos\\gameresultdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\services\\classes\\gameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\services\\classes\\gameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\englishgamesplatform.backend\\migrations\\20251021015049_create fake tables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\services\\classes\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\services\\classes\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\repositories\\interfaces\\isentencerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\repositories\\interfaces\\isentencerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\repositories\\interfaces\\igeneralgamerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\repositories\\interfaces\\igeneralgamerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\services\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\services\\interfaces\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\repositories\\interfaces\\iauthrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\repositories\\interfaces\\iauthrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\repositories\\classes\\entities\\grammar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\repositories\\classes\\entities\\grammar.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\repositories\\classes\\entities\\fakesentencerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\repositories\\classes\\entities\\fakesentencerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\models\\dtos\\userresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\models\\dtos\\userresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\models\\dtos\\response.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\models\\dtos\\response.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\models\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\models\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\models\\dtos\\leaderboardentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\models\\dtos\\leaderboardentry.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\models\\dtos\\leaderboarddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\models\\dtos\\leaderboarddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\models\\dtos\\googlelogindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\models\\dtos\\googlelogindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\models\\dtos\\finalgamestatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\models\\dtos\\finalgamestatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\models\\dtos\\entities dtos\\gamedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\models\\dtos\\entities dtos\\gamedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\models\\entities\\image.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\models\\entities\\image.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\models\\entities\\oppositeword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\models\\entities\\oppositeword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\models\\entities\\progress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\models\\entities\\progress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\repositories\\interfaces\\igrammarquestionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\repositories\\interfaces\\igrammarquestionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\repositories\\classes\\entities\\grammarquestionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\repositories\\classes\\entities\\grammarquestionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\repositories\\interfaces\\ifakesentencerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\repositories\\interfaces\\ifakesentencerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\repositories\\classes\\entities\\sentencerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\repositories\\classes\\entities\\sentencerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\models\\entities\\grammarquestionfakesentence.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\models\\entities\\grammarquestionfakesentence.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\models\\entities\\grammarquestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\models\\entities\\grammarquestion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\models\\entities\\sentence.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\models\\entities\\sentence.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\repositories\\classes\\games\\picturehangmanrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\repositories\\classes\\games\\picturehangmanrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\repositories\\classes\\entities\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\repositories\\classes\\entities\\categoryrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\migrations\\20251021114156_change-tables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\migrations\\20251021114156_change-tables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\migrations\\20251021015049_create fake tables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\migrations\\20251021015049_create fake tables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\englishgamesplatform.backend\\migrations\\20251021004828_add grammarsentence table.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|c:\\users\\user1\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\english-learning-experience\\server\\englishgamesplatform.backend\\migrations\\20251021004828_add grammarsentence table.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\migrations\\20251021004828_add grammarsentence table.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -169,488 +245,774 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TokenService.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Utils\\TokenService.cs",
-              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Utils\\TokenService.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Utils\\TokenService.cs",
-              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Utils\\TokenService.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAiwBsAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T09:39:18.539Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "GrammarGuruRepository.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Games\\GrammarGuruRepository.cs",
-              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Games\\GrammarGuruRepository.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Games\\GrammarGuruRepository.cs",
-              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Games\\GrammarGuruRepository.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAAABkAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T00:59:55.099Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "OppositeWord.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Models\\Entities\\OppositeWord.cs",
-              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Models\\Entities\\OppositeWord.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Models\\Entities\\OppositeWord.cs",
-              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\Entities\\OppositeWord.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T08:24:02.39Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Image.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Models\\Entities\\Image.cs",
-              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Models\\Entities\\Image.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Models\\Entities\\Image.cs",
-              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\Entities\\Image.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T00:39:22.998Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "GameController.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Controllers\\GameController.cs",
-              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Controllers\\GameController.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Controllers\\GameController.cs",
-              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Controllers\\GameController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Program.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Program.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Program.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Program.cs",
+              "ViewState": "AgIAAG0AAAAAAAAAAAAAAIcAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T11:40:32.1Z"
+              "WhenOpened": "2025-10-21T16:52:02.633Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "GrammarGuruData.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Models\\GameInitialDatas\\GrammarGuruData.cs",
-              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Models\\GameInitialDatas\\GrammarGuruData.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Models\\GameInitialDatas\\GrammarGuruData.cs",
-              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\GameInitialDatas\\GrammarGuruData.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAqAAAAAAAAAA==",
+              "Title": "ExceptionHandlerExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Extensions\\ExceptionHandlerExtensions.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Extensions\\ExceptionHandlerExtensions.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Extensions\\ExceptionHandlerExtensions.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Extensions\\ExceptionHandlerExtensions.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAwBgAAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T00:52:28.263Z"
+              "WhenOpened": "2025-10-21T16:26:03.99Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "TokenService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Utils\\TokenService.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Utils\\TokenService.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Utils\\TokenService.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Utils\\TokenService.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAiwBsAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T09:39:18.539Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "GeneralGameController.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Controllers\\GeneralGameController.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Controllers\\GeneralGameController.cs",
               "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Controllers\\GeneralGameController.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Controllers\\GeneralGameController.cs",
-              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Controllers\\GeneralGameController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAsAAAAPAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Controllers\\GeneralGameController.cs*",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Controllers\\GeneralGameController.cs*",
+              "ViewState": "AgIAABYAAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-21T11:40:36.58Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "GrammarGuruRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Games\\GrammarGuruRepository.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Games\\GrammarGuruRepository.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Games\\GrammarGuruRepository.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Games\\GrammarGuruRepository.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAQwDMAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T11:40:34.167Z"
+              "WhenOpened": "2025-10-21T00:59:55.099Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Progress.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Models\\Entities\\Progress.cs",
-              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Models\\Entities\\Progress.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Models\\Entities\\Progress.cs",
-              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\Entities\\Progress.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAAABYAAABCAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T00:39:27.897Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "GameRepository.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\GameRepository.cs",
-              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\GameRepository.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\GameRepository.cs",
-              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\GameRepository.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAIA+wCAAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T06:59:51.232Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "GeneralGameService.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Services\\Classes\\GeneralGameService.cs",
-              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Services\\Classes\\GeneralGameService.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Services\\Classes\\GeneralGameService.cs",
-              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Services\\Classes\\GeneralGameService.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAvwDoAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T09:12:53.059Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "FakeSentenceRepository.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\FakeSentenceRepository.cs",
-              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\FakeSentenceRepository.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\FakeSentenceRepository.cs",
-              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\FakeSentenceRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T17:56:18.762Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Data\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAswE4AAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-20T19:47:05.169Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Program.cs",
-              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Program.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Program.cs",
-              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Program.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAAAE8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T16:52:02.633Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "IGrammarQuestionRepository.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IGrammarQuestionRepository.cs",
-              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IGrammarQuestionRepository.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IGrammarQuestionRepository.cs",
-              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IGrammarQuestionRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAYAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T17:51:09.612Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "GrammarQuestionRepository.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\GrammarQuestionRepository.cs",
-              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\GrammarQuestionRepository.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\GrammarQuestionRepository.cs",
-              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\GrammarQuestionRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T17:51:56.399Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "IFakeSentenceRepository.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IFakeSentenceRepository.cs",
-              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IFakeSentenceRepository.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IFakeSentenceRepository.cs",
-              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IFakeSentenceRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T17:57:07.306Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "PictureHangmanRepository.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Games\\PictureHangmanRepository.cs",
-              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Games\\PictureHangmanRepository.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Games\\PictureHangmanRepository.cs",
-              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Games\\PictureHangmanRepository.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAgwBEAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T09:10:35.041Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "GrammarQuestion.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Models\\Entities\\GrammarQuestion.cs",
-              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Models\\Entities\\GrammarQuestion.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Models\\Entities\\GrammarQuestion.cs",
-              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\Entities\\GrammarQuestion.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T01:42:34.715Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "GrammarQuestionFakeSentence.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Models\\Entities\\GrammarQuestionFakeSentence.cs",
-              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Models\\Entities\\GrammarQuestionFakeSentence.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Models\\Entities\\GrammarQuestionFakeSentence.cs",
-              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\Entities\\GrammarQuestionFakeSentence.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T01:44:00.066Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "Sentence.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Models\\Entities\\Sentence.cs",
-              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Models\\Entities\\Sentence.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Models\\Entities\\Sentence.cs",
-              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\Entities\\Sentence.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T00:39:26.064Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "SentenceRepository.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\SentenceRepository.cs",
-              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\SentenceRepository.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\SentenceRepository.cs",
-              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\SentenceRepository.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAIwB4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T02:19:52.341Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "GameData.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Models\\DTOs\\GameData.cs",
-              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Models\\DTOs\\GameData.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Models\\DTOs\\GameData.cs",
-              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\DTOs\\GameData.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T16:36:05.118Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "IGameService.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Services\\Interfaces\\IGameService.cs",
-              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Services\\Interfaces\\IGameService.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Services\\Interfaces\\IGameService.cs",
-              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Services\\Interfaces\\IGameService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T16:20:05.023Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "IGeneralGameService.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Services\\Interfaces\\IGeneralGameService.cs",
-              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Services\\Interfaces\\IGeneralGameService.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Services\\Interfaces\\IGeneralGameService.cs",
-              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Services\\Interfaces\\IGeneralGameService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T16:20:09.258Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 5,
               "Title": "ServiceCollectionExtensions.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Extensions\\ServiceCollectionExtensions.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Extensions\\ServiceCollectionExtensions.cs",
               "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Extensions\\ServiceCollectionExtensions.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Extensions\\ServiceCollectionExtensions.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Extensions\\ServiceCollectionExtensions.cs",
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Extensions\\ServiceCollectionExtensions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAAwBkAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T16:26:05.636Z"
+              "WhenOpened": "2025-10-21T16:26:05.636Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "ExceptionHandlerExtensions.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Extensions\\ExceptionHandlerExtensions.cs",
-              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Extensions\\ExceptionHandlerExtensions.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Extensions\\ExceptionHandlerExtensions.cs",
-              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Extensions\\ExceptionHandlerExtensions.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T16:26:03.99Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "GameResult.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Models\\Entities\\GameResult.cs",
-              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Models\\Entities\\GameResult.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Models\\Entities\\GameResult.cs",
-              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\Entities\\GameResult.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAuwBUAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-20T19:45:15.919Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "CategoryRepository.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\CategoryRepository.cs",
-              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\CategoryRepository.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\CategoryRepository.cs",
-              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\CategoryRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T07:54:29.731Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "20251021114156_change-tables.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Migrations\\20251021114156_change-tables.cs",
-              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Migrations\\20251021114156_change-tables.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Migrations\\20251021114156_change-tables.cs",
-              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Migrations\\20251021114156_change-tables.cs",
-              "ViewState": "AgIAAAEAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T11:41:56.365Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "IGeneralGameRepository.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IGeneralGameRepository.cs",
-              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IGeneralGameRepository.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IGeneralGameRepository.cs",
-              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IGeneralGameRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T07:57:13.913Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "GameResultRepository.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\GameResultRepository.cs",
-              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\GameResultRepository.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\GameResultRepository.cs",
-              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\GameResultRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T02:20:30.086Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\appsettings.json",
-              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\appsettings.json",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\appsettings.json",
-              "RelativeToolTip": "EnglishGamesPlatform.Backend\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAACxAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-10-20T17:13:27.233Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "Grammar.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\Grammar.cs",
-              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\Grammar.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\Grammar.cs",
-              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\Grammar.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T07:53:19.864Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 6,
               "Title": "secrets.json",
               "DocumentMoniker": "C:\\Users\\user1\\AppData\\Roaming\\Microsoft\\UserSecrets\\b0449661-f4a8-45ba-9b63-23404011f099\\secrets.json",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\b0449661-f4a8-45ba-9b63-23404011f099\\secrets.json",
               "ToolTip": "C:\\Users\\user1\\AppData\\Roaming\\Microsoft\\UserSecrets\\b0449661-f4a8-45ba-9b63-23404011f099\\secrets.json",
               "RelativeToolTip": "..\\..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\b0449661-f4a8-45ba-9b63-23404011f099\\secrets.json",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-10-20T15:55:58.284Z"
+              "WhenOpened": "2025-10-20T15:55:58.284Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "20251021015049_create fake tables.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Migrations\\20251021015049_create fake tables.cs",
-              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Migrations\\20251021015049_create fake tables.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Migrations\\20251021015049_create fake tables.cs",
-              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Migrations\\20251021015049_create fake tables.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAlAAAAAAAAAA==",
+              "DocumentIndex": 7,
+              "Title": "EnglishGamesPlatform.Backend.csproj",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj",
+              "ViewState": "AgIAAAUAAAAAAAAAAAD4vw0AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-10-23T08:36:52.623Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "GameController.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Controllers\\GameController.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Controllers\\GameController.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Controllers\\GameController.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Controllers\\GameController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T01:50:49.697Z"
+              "WhenOpened": "2025-10-21T11:40:32.1Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Game.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\Entities\\Game.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Models\\Entities\\Game.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\Entities\\Game.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\Entities\\Game.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T12:49:48.896Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "GrammarGuruData.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\GameInitialDatas\\GrammarGuruData.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Models\\GameInitialDatas\\GrammarGuruData.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\GameInitialDatas\\GrammarGuruData.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\GameInitialDatas\\GrammarGuruData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T00:52:28.263Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "GameResultRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\GameResultRepository.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\GameResultRepository.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\GameResultRepository.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\GameResultRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T02:20:30.086Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "GameData.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\DTOs\\GameData.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Models\\DTOs\\GameData.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\DTOs\\GameData.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\DTOs\\GameData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T16:36:05.118Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "GameRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\GameRepository.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\GameRepository.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\GameRepository.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\GameRepository.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAWwCAAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T06:59:51.232Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "MemoryMatchSynonymsRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Games\\MemoryMatchSynonymsRepository.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Games\\MemoryMatchSynonymsRepository.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Games\\MemoryMatchSynonymsRepository.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Games\\MemoryMatchSynonymsRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T10:08:42.734Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "GeneralGameService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Services\\Classes\\GeneralGameService.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Services\\Classes\\GeneralGameService.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Services\\Classes\\GeneralGameService.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Services\\Classes\\GeneralGameService.cs",
+              "ViewState": "AgIAAFsAAAAAAAAAAADwv2sAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T09:12:53.059Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "IWordRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IWordRepository.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IWordRepository.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IWordRepository.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IWordRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T08:32:02.489Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAEkAAAAAAAAAAAAWwGQAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T19:47:05.169Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "MiniWordleRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Games\\MiniWordleRepository.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Games\\MiniWordleRepository.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Games\\MiniWordleRepository.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Games\\MiniWordleRepository.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAIBJwA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T10:12:11.33Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "WordRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\WordRepository.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\WordRepository.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\WordRepository.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\WordRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T10:14:04.717Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "TwinWordRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\TwinWordRepository.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\TwinWordRepository.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\TwinWordRepository.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\TwinWordRepository.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAIwAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T14:56:16.793Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "IGameResultRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IGameResultRepository.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IGameResultRepository.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IGameResultRepository.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IGameResultRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T08:30:44.411Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "IGameService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Services\\Interfaces\\IGameService.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Services\\Interfaces\\IGameService.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Services\\Interfaces\\IGameService.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Services\\Interfaces\\IGameService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T16:20:05.023Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "IGeneralGameService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Services\\Interfaces\\IGeneralGameService.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Services\\Interfaces\\IGeneralGameService.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Services\\Interfaces\\IGeneralGameService.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Services\\Interfaces\\IGeneralGameService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T16:20:09.258Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "GameResult.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\Entities\\GameResult.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Models\\Entities\\GameResult.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\Entities\\GameResult.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\Entities\\GameResult.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAqwBUAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T19:45:15.919Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "GameResultDTO.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\DTOs\\Entities DTOs\\GameResultDTO.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Models\\DTOs\\Entities DTOs\\GameResultDTO.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\DTOs\\Entities DTOs\\GameResultDTO.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\DTOs\\Entities DTOs\\GameResultDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T08:59:39.073Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "GameService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Services\\Classes\\GameService.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Services\\Classes\\GameService.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Services\\Classes\\GameService.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Services\\Classes\\GameService.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T00:49:24.576Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Services\\Classes\\AuthService.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Services\\Classes\\AuthService.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Services\\Classes\\AuthService.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Services\\Classes\\AuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-20T17:24:26.048Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "ISentenceRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\ISentenceRepository.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\ISentenceRepository.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\ISentenceRepository.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\ISentenceRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T08:32:01.381Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "IGeneralGameRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IGeneralGameRepository.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IGeneralGameRepository.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IGeneralGameRepository.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IGeneralGameRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T07:57:13.913Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Services\\Interfaces\\IAuthService.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Services\\Interfaces\\IAuthService.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Services\\Interfaces\\IAuthService.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Services\\Interfaces\\IAuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T08:25:44.651Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "IAuthRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IAuthRepository.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IAuthRepository.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IAuthRepository.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IAuthRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T08:25:35.745Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "FakeSentenceRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\FakeSentenceRepository.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\FakeSentenceRepository.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\FakeSentenceRepository.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\FakeSentenceRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T17:56:18.762Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "UserResponse.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\DTOs\\UserResponse.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Models\\DTOs\\UserResponse.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\DTOs\\UserResponse.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\DTOs\\UserResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T00:57:55.991Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 35,
-              "Title": "AuthService.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Services\\Classes\\AuthService.cs",
-              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Services\\Classes\\AuthService.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Services\\Classes\\AuthService.cs",
-              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Services\\Classes\\AuthService.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAAAE4AAAAiAAAAAAAAAA==",
+              "Title": "Response.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\DTOs\\Response.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Models\\DTOs\\Response.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\DTOs\\Response.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\DTOs\\Response.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-20T17:24:26.048Z"
+              "WhenOpened": "2025-10-23T08:14:52.084Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "Grammar.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\Grammar.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\Grammar.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\Grammar.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\Grammar.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T07:53:19.864Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 36,
-              "Title": "UserResponse.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Models\\DTOs\\UserResponse.cs",
-              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Models\\DTOs\\UserResponse.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Models\\DTOs\\UserResponse.cs",
-              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\DTOs\\UserResponse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAnAAAAAAAAAA==",
+              "Title": "LoginDTO.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\DTOs\\LoginDTO.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Models\\DTOs\\LoginDTO.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\DTOs\\LoginDTO.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\DTOs\\LoginDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T00:57:55.991Z"
+              "WhenOpened": "2025-10-23T08:14:50.916Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 37,
-              "Title": "GameService.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Services\\Classes\\GameService.cs",
-              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Services\\Classes\\GameService.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Services\\Classes\\GameService.cs",
-              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Services\\Classes\\GameService.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "LeaderboardEntry.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\DTOs\\LeaderboardEntry.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Models\\DTOs\\LeaderboardEntry.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\DTOs\\LeaderboardEntry.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\DTOs\\LeaderboardEntry.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T00:49:24.576Z"
+              "WhenOpened": "2025-10-23T08:14:49.805Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "LeaderboardData.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\DTOs\\LeaderboardData.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Models\\DTOs\\LeaderboardData.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\DTOs\\LeaderboardData.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\DTOs\\LeaderboardData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T08:14:48.526Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 39,
+              "Title": "GoogleLoginDTO.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\DTOs\\GoogleLoginDTO.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Models\\DTOs\\GoogleLoginDTO.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\DTOs\\GoogleLoginDTO.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\DTOs\\GoogleLoginDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T08:14:46.697Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "FinalGameStatus.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\DTOs\\FinalGameStatus.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Models\\DTOs\\FinalGameStatus.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\DTOs\\FinalGameStatus.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\DTOs\\FinalGameStatus.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T08:14:43.622Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "GameDTO.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\DTOs\\Entities DTOs\\GameDTO.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Models\\DTOs\\Entities DTOs\\GameDTO.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\DTOs\\Entities DTOs\\GameDTO.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\DTOs\\Entities DTOs\\GameDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T08:14:41.516Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T11:40:34.167Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "Image.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\Entities\\Image.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Models\\Entities\\Image.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\Entities\\Image.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\Entities\\Image.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T00:39:22.998Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "OppositeWord.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\Entities\\OppositeWord.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Models\\Entities\\OppositeWord.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\Entities\\OppositeWord.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\Entities\\OppositeWord.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T08:24:02.39Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "Progress.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\Entities\\Progress.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Models\\Entities\\Progress.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\Entities\\Progress.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\Entities\\Progress.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAABBwBYAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T00:39:27.897Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "IGrammarQuestionRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IGrammarQuestionRepository.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IGrammarQuestionRepository.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IGrammarQuestionRepository.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IGrammarQuestionRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAYAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T17:51:09.612Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "GrammarQuestionRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\GrammarQuestionRepository.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\GrammarQuestionRepository.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\GrammarQuestionRepository.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\GrammarQuestionRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T17:51:56.399Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "IFakeSentenceRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IFakeSentenceRepository.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IFakeSentenceRepository.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IFakeSentenceRepository.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IFakeSentenceRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T17:57:07.306Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "PictureHangmanRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Games\\PictureHangmanRepository.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Games\\PictureHangmanRepository.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Games\\PictureHangmanRepository.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Games\\PictureHangmanRepository.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAgwBEAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T09:10:35.041Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "GrammarQuestion.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\Entities\\GrammarQuestion.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Models\\Entities\\GrammarQuestion.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\Entities\\GrammarQuestion.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\Entities\\GrammarQuestion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T01:42:34.715Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "GrammarQuestionFakeSentence.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\Entities\\GrammarQuestionFakeSentence.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Models\\Entities\\GrammarQuestionFakeSentence.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\Entities\\GrammarQuestionFakeSentence.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\Entities\\GrammarQuestionFakeSentence.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T01:44:00.066Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "Sentence.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\Entities\\Sentence.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Models\\Entities\\Sentence.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\Entities\\Sentence.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\Entities\\Sentence.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T00:39:26.064Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "SentenceRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\SentenceRepository.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\SentenceRepository.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\SentenceRepository.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\SentenceRepository.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAIwB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T02:19:52.341Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "CategoryRepository.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\CategoryRepository.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\CategoryRepository.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\CategoryRepository.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\CategoryRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T07:54:29.731Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "20251021114156_change-tables.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Migrations\\20251021114156_change-tables.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Migrations\\20251021114156_change-tables.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Migrations\\20251021114156_change-tables.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Migrations\\20251021114156_change-tables.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAxwA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T11:41:56.365Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\appsettings.json",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\appsettings.json",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\appsettings.json",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAACxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-20T17:13:27.233Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "20251021015049_create fake tables.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Migrations\\20251021015049_create fake tables.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Migrations\\20251021015049_create fake tables.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Migrations\\20251021015049_create fake tables.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Migrations\\20251021015049_create fake tables.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T01:50:49.697Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
               "Title": "20251021004828_add grammarsentence table.cs",
-              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Migrations\\20251021004828_add grammarsentence table.cs",
+              "DocumentMoniker": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Migrations\\20251021004828_add grammarsentence table.cs",
               "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Migrations\\20251021004828_add grammarsentence table.cs",
-              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\\u05D2\u05D9\u05D1\u05D5\u05D9 \u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\\server\\EnglishGamesPlatform.Backend\\Migrations\\20251021004828_add grammarsentence table.cs",
+              "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Migrations\\20251021004828_add grammarsentence table.cs",
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Migrations\\20251021004828_add grammarsentence table.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T00:48:29.064Z"
+              "WhenOpened": "2025-10-21T00:48:29.064Z",
+              "EditorCaption": ""
             }
           ]
         }

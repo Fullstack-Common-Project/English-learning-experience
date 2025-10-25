@@ -147,3 +147,13 @@ C:\Users\user1\Desktop\פרויקטים שעורי בית ועוד דברים\En
 C:\Users\user1\Desktop\פרויקטים שעורי בית ועוד דברים\English-learning-experience\server\EnglishGamesPlatform.Backend\obj\Debug\net8.0\EnglishGamesPlatform.Backend.pdb
 C:\Users\user1\Desktop\פרויקטים שעורי בית ועוד דברים\English-learning-experience\server\EnglishGamesPlatform.Backend\obj\Debug\net8.0\EnglishGamesPlatform.Backend.genruntimeconfig.cache
 C:\Users\user1\Desktop\פרויקטים שעורי בית ועוד דברים\English-learning-experience\server\EnglishGamesPlatform.Backend\obj\Debug\net8.0\ref\EnglishGamesPlatform.Backend.dll
+C:\Users\user1\Desktop\פרויקטים שעורי בית ועוד דברים\English-learning-experience\server\EnglishGamesPlatform.Backend\bin\Debug\net8.0\package-lock.json
+C:\Users\user1\Desktop\פרויקטים שעורי בית ועוד דברים\English-learning-experience\server\EnglishGamesPlatform.Backend\bin\Debug\net8.0\Google.Apis.dll
+C:\Users\user1\Desktop\פרויקטים שעורי בית ועוד דברים\English-learning-experience\server\EnglishGamesPlatform.Backend\bin\Debug\net8.0\Google.Apis.Auth.dll
+C:\Users\user1\Desktop\פרויקטים שעורי בית ועוד דברים\English-learning-experience\server\EnglishGamesPlatform.Backend\bin\Debug\net8.0\Google.Apis.Core.dll
+C:\Users\user1\Desktop\פרויקטים שעורי בית ועוד דברים\English-learning-experience\server\EnglishGamesPlatform.Backend\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\user1\Desktop\פרויקטים שעורי בית ועוד דברים\English-learning-experience\server\EnglishGamesPlatform.Backend\bin\Debug\net8.0\System.Management.dll
+C:\Users\user1\Desktop\פרויקטים שעורי בית ועוד דברים\English-learning-experience\server\EnglishGamesPlatform.Backend\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Management.dll
+C:\Users\user1\Desktop\פרויקטים שעורי בית ועוד דברים\English-learning-experience\server\EnglishGamesPlatform.Backend\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\user1\Desktop\פרויקטים שעורי בית ועוד דברים\English-learning-experience\server\EnglishGamesPlatform.Backend\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+C:\Users\user1\Desktop\פרויקטים שעורי בית ועוד דברים\English-learning-experience\server\EnglishGamesPlatform.Backend\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
