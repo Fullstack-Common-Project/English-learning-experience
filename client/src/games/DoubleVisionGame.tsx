@@ -950,7 +950,7 @@ export default function DoubleVisionGame({ onScoreChange, onGameOver, paused, ti
   console.log("Leaderboard:", leaderboardData?.data.leaderboards);
   useEffect(() => {
   if ( leaderboardData) {
-    console.log("Leaderboard at game over:", leaderboardData.leaderboard);
+    console.log("Leaderboard at game over:", leaderboardData.data.leaderboards);
     // או עדכני state/props כדי להציג את הלידרבורד במסך הסיום
   }
 }, [ leaderboardData]);
