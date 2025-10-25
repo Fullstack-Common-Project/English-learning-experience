@@ -14,47 +14,48 @@ public class ContextCluesRepository : IGeneralGameRepository
         _context = context;
     }
 
+   public async Task<GameInitialData> GetData()
+{
+    // סופרים כמה שאלות יש
+    var count = await _context.MissingWords.CountAsync();
+    if (count == 0) return null;
 
-    public async Task<GameInitialData> GetData()
+    // בוחרים אינדקס רנדומלי
+    var random = new Random();
+    int skip = random.Next(count);
+
+    // מדלגים לאותה שורה ומביאים רק אחת
+    var m = await _context.MissingWords
+        .Include(mw => mw.Sentence)
+        .Include(mw => mw.CorrectWord)
+        .Skip(skip)
+        .Take(1)
+        .FirstOrDefaultAsync();
+
+    if (m == null) return null;
+
+    // שולף 3 מילים הסחות מאותה קטגוריה
+    var distractors = await _context.Words
+        .Where(w => w.CategoryId == m.CorrectWord.CategoryId && w.WordId != m.CorrectWordId)
+        .OrderBy(r => Guid.NewGuid())
+        .Take(3)
+        .Select(w => w.WordText)
+        .ToListAsync();
+
+    // מערבב את כל האופציות
+    var options = distractors.Append(m.CorrectWord.WordText)
+                             .OrderBy(r => Guid.NewGuid())
+                             .ToList();
+
+    int correctIndex = options.IndexOf(m.CorrectWord.WordText);
+
+    // בונה את האובייקט של השאלה
+    return new ContextCluesData
     {
-
-        var questions = await _context.MissingWords
-            .Include(m => m.Sentence)
-            .Include(m => m.CorrectWord)
-            .OrderBy(r => Guid.NewGuid())
-            .Take(5)
-            .ToListAsync();
-
-        var questionDtos = new List<ContextCluesModel>();
-        int id = 1;
-
-        foreach (var m in questions)
-        {
-
-            var distractors = await _context.Words
-                .Where(w => w.CategoryId == m.CorrectWord.CategoryId && w.WordId != m.CorrectWordId)
-                .OrderBy(r => Guid.NewGuid())
-                .Take(3)
-                .Select(w => w.WordText)
-                .ToListAsync();
-
-
-            var options = distractors.Append(m.CorrectWord.WordText).OrderBy(r => Guid.NewGuid()).ToList();
-            int correctIndex = options.IndexOf(m.CorrectWord.WordText);
-
-            questionDtos.Add(new ContextCluesModel
-            {
-                Id = id,
-                Sentence = m.Sentence.SentenceText.Replace(m.CorrectWord.WordText, "___"),
-                Options = options,
-                CorrectIndex = correctIndex
-            });
-            id++;
-        }
-
-        return new ContextCluesData
-        {
-            contextCluesList = questionDtos
-        };
-    }
+        Id = m.CorrectWordId,
+        Sentence = m.Sentence.SentenceText.Replace(m.CorrectWord.WordText, "___"),
+        Options = options,
+        CorrectIndex = correctIndex
+    };
+   }
 }

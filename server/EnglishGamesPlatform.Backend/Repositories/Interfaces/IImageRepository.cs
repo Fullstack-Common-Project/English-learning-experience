@@ -8,5 +8,8 @@ namespace EnglishGamesPlatform.Backend.Repositories.Interfaces
 
         Task<Image?> GetByIdAsync(int id);
 
+        Task<int> GetCountImagesAsync();
+
+        Task<Image?> GetRandomImageAsync();
     }
 }

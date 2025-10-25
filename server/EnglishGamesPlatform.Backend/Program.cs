@@ -43,6 +43,7 @@ builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddScoped<IGameRepository, GameRepository>();
 builder.Services.AddScoped<IGameService, GameService>();
 
+
 #endregion
 
 #region GameResult
@@ -53,13 +54,12 @@ builder.Services.AddScoped<IGameResultRepository, GameResultRepository>();
 
 #region General Game
 
-#region PictureHangman
-
-builder.Services.AddScoped<IGeneralGameRepository, PictureHangmanRepository>();
-
-#endregion
-
 builder.Services.AddScoped<IGeneralGameService, GeneralGameService>();
+builder.Services.AddScoped<IGeneralGameRepository, PictureHangmanRepository>();
+builder.Services.AddScoped<IGeneralGameRepository, OppositeQuestRepository>();
+builder.Services.AddScoped<IGeneralGameRepository, MiniWordleRepository>();
+builder.Services.AddScoped<IGeneralGameRepository, LetterChaosRepository>();
+builder.Services.AddScoped<IGeneralGameRepository, MemoryMatchSynonymsRepository>();
 
 #endregion 
 builder.Services.AddScoped<IGeneralGameRepository,ContextCluesRepository>();
@@ -67,6 +67,10 @@ builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IImageRepository, ImageRepository>();
 builder.Services.AddScoped<ISentenceRepository, SentenceRepository>();
 builder.Services.AddScoped<IWordRepository, WordRepository>();
+builder.Services.AddScoped<IOppositeWordRepository, OppositeWordRepository>();
+builder.Services.AddScoped<ITwinWordRepository, TwinWordRepository>();
+
+
 
 #endregion
 
@@ -93,12 +97,6 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
-app.MapGet("/login-google", async (HttpContext context) =>
-{
-    await context.ChallengeAsync(GoogleDefaults.AuthenticationScheme,
-        new AuthenticationProperties { RedirectUri = "/" });
-});
 
 app.UseCustomExceptionHandler();
 

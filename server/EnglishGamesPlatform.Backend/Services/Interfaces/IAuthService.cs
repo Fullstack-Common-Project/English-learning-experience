@@ -1,5 +1,4 @@
-﻿using EnglishGamesPlatform.Backend.Models;
-using EnglishGamesPlatform.Backend.Models.DTOs;
+﻿using EnglishGamesPlatform.Backend.Models.DTOs;
 using EnglishGamesPlatform.Backend.Models.Entities;
 
 namespace EnglishGamesPlatform.Backend.Services.Interfaces
@@ -8,6 +7,7 @@ namespace EnglishGamesPlatform.Backend.Services.Interfaces
     {
         Task<Response<UserResponse>> Login(LoginDto user);
         Task<Response<UserResponse>> Register(RegisterDTO user);
+        Task<Response<UserResponse>> GoogleLogin(string idToken);
     }
 
 }

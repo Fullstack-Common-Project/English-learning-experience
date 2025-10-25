@@ -1,7 +1,5 @@
 "use client";
-
-import {  FaGithub } from "react-icons/fa"; 
-
+import { FaGamepad, FaGithub } from "react-icons/fa";
 export default function Footer() {
     const developers = [
         { name: "Sara Kahana", url: "/games/sara-kahana" },

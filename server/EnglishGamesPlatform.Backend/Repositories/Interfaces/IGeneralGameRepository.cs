@@ -7,5 +7,6 @@ namespace EnglishGamesPlatform.Backend.Repositories.Interfaces
     {
         string GameName { get; }
         Task<GameInitialData> GetData();
+
     }
 }

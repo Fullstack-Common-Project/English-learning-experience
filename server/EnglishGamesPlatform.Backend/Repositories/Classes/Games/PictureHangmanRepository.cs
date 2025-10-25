@@ -10,24 +10,61 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes.Games
     {
         public string GameName => "Picture Hangman";
 
+        private readonly IImageRepository _imageRepository;
 
-        private readonly ImageRepository _imageRepository;
 
-        public async Task<GameInitialData >GetData()
+
+
+        public PictureHangmanRepository(IImageRepository imageRepository)
+
         {
+            _imageRepository = imageRepository;
+        }
+
+
+        public async Task<GameInitialData?> GetData()
+        {
+            List<Image>? images = await _imageRepository.GetRandomImagesAsync(3);
+
+            if (images == null)
+            {
+                return null;
+            }
+
+            List<ImageWordPair> pairs = images.Select(i => new ImageWordPair
+            {
+                ImageUrl = i.ImageUrl,
+                TargetWord = CapitalizeWord(i.Word.WordText)
+            }).ToList();
+
             return new PictureHangmanData
             {
-
-
-                //Image = new Image()
-                //{
-                //    ImageId = 1,
-                //    ImageUrl = "Images/Image_1.jpg",
-                //    Word = new Word(),
-                //    WordId = 1
-                //}
-
+                Pairs = pairs
             };
         }
+
+        #region Private Methods
+
+        private string CapitalizeWord(string text)
+        {
+            if (string.IsNullOrWhiteSpace(text))
+                return text;
+
+            text = text.Trim().ToLower();
+            string[] words = text.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+            for (int i = 0; i < words.Length; i++)
+            {
+                string word = words[i];
+                if (words.Length > 0)
+                {
+                    words[i] = char.ToUpper(word[0]) + word.Substring(1);
+                }
+            }
+
+            return string.Join(' ', words);
+        }
+
+        #endregion
     }
 }

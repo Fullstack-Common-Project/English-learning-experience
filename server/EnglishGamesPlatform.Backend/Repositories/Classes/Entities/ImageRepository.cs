@@ -15,16 +15,31 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes
         }
         public async Task<Image?> GetByIdAsync(int id)
         {
-            return await _appDbContext.Images.FindAsync(id);
+            return await _appDbContext.Images.
+                Include(i => i.Word)
+                .FirstOrDefaultAsync(i => i.ImageId == id);
         }
 
         public async Task<List<Image>> GetRandomImagesAsync(int count)
         {
             return await _appDbContext.Images
-                .OrderBy(i => Guid.NewGuid())
+                .Include(i => i.Word)
+                .OrderBy(w => EF.Functions.Random())
                 .Take(count)
                 .ToListAsync();
         }
 
+        public async Task<int> GetCountImagesAsync()
+        {
+            return _appDbContext.Images.Count();
+        }
+
+        public async Task<Image?> GetRandomImageAsync()
+        {
+            return await _appDbContext.Images
+                .Include(i => i.Word)
+                .OrderBy(w => EF.Functions.Random())
+                .FirstOrDefaultAsync();
+        }
     }
 }
