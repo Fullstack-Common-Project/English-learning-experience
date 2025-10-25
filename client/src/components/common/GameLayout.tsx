@@ -1,5 +1,8 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
+import { usePathname } from "next/navigation";
+import { useQueryClient } from "@tanstack/react-query";
+
 import useGameState from "@/hooks/useGameState";
 import ScoreDisplay from "../leaderboard/ScoreDisplay";
 import GameOverModal from "../leaderboard/GameOverModal";
@@ -7,6 +10,9 @@ import HelpScreen from "../leaderboard/HelpScreen";
 import useGameTimer from "@/hooks/useGameTimer";
 import Countdown3_2_1 from "../hud/countdown3_2_1";
 import AudioToggle from "../hud/audioToggle";
+
+import { Game } from "@/types";
+import WelcomeScreen from "../leaderboard/WelcomeScreen";
 
 export type GameProps = {
   onScoreChange?: (value: number | ((prev: number) => number)) => void;
@@ -29,12 +35,30 @@ export default function GameLayout({ children, gameTitle }: GameLayoutProps) {
   const [paused, setPaused] = React.useState(false);
   const [countdownActive, setCountdownActive] = React.useState(false);
 
+  const queryClient = useQueryClient();
+  const pathname = usePathname();
+  const gameNameFromUrl = pathname?.split("/").pop()?.toLowerCase() ?? "";
+
+  // שולף את הנתונים של המשחק מ־React Query
+  const gameData = useMemo(() => {
+    const allData: Game[] = queryClient
+      .getQueriesData<Game>({})
+      .map(([_, data]) => data)
+      .filter(Boolean)
+      .flat() as Game[];
+
+    return allData.find((data) => {
+      const normalizedName = data.gameName.toLowerCase().replace(/\s+/g, "-");
+      return normalizedName === gameNameFromUrl;
+    });
+  }, [queryClient, gameNameFromUrl]);
+
   useEffect(() => {
     const savedTotal = localStorage.getItem("totalScore");
     if (savedTotal) setTotalScore(Number(savedTotal));
   }, []);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (stage === "game" && !gameOver && !paused) start();
     else stop();
   }, [stage, gameOver, paused]);
@@ -72,16 +96,19 @@ export default function GameLayout({ children, gameTitle }: GameLayoutProps) {
 
       {/* Welcome */}
       {stage === "welcome" && (
-        <div className="game-layout__center">
-          <button onClick={nextStage} className="btn-primary">
-            Start ▶
-          </button>
-        </div>
+        <WelcomeScreen
+          onStart={nextStage}
+          description={gameData?.description}
+        />
       )}
 
       {/* Help */}
-      {stage === "help" && <HelpScreen onContinue={() => {
-        goToStage("game")}} />}
+      {stage === "help" && (
+        <HelpScreen
+          onContinue={() => goToStage("game")}
+          instructions={gameData?.instructions}
+        />
+      )}
 
       {/* Game */}
       {stage === "game" && (
@@ -104,9 +131,14 @@ export default function GameLayout({ children, gameTitle }: GameLayoutProps) {
             </div>
           )}
 
-          <div className={`game-hud ${paused || countdownActive ? "disabled" : ""}`}>
+          <div
+            className={`game-hud ${
+              paused || countdownActive ? "disabled" : ""
+            }`}
+          >
             <div className="hud-timer">
-              {Math.floor(time / 60)}:{time % 60 < 10 ? "0" + (time % 60) : time % 60}
+              {Math.floor(time / 60)}:
+              {time % 60 < 10 ? "0" + (time % 60) : time % 60}
             </div>
             <ScoreDisplay score={score} />
             <AudioToggle />
