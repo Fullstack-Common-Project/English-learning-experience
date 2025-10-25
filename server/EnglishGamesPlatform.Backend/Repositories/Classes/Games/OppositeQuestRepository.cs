@@ -2,6 +2,10 @@
 using EnglishGamesPlatform.Backend.Models.GameInitialDatas;
 using EnglishGamesPlatform.Backend.Repositories.Interfaces;
 using Microsoft.EntityFrameworkCore;
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/main-v2
 
 namespace EnglishGamesPlatform.Backend.Repositories.Classes.Games
 {

@@ -1,7 +1,15 @@
 import { GameResponseBase } from "./index";
 export interface TwinWordsItem {
-  // empty item shape by request
+  id: any;
+  data: {
+    items: TwinWordsSingleQuestion[];
+  }
+};
+
+export interface TwinWordsSingleQuestion { 
+  id: number;
+  word: string;
+  options: string[];
+  correctIndex: number;
 }
-
-
-export interface TwinWordsResponse extends GameResponseBase<10, TwinWordsItem> {}
+export interface TwinWordsResponse extends GameResponseBase<10, TwinWordsItem> { }

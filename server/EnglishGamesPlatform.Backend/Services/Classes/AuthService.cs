@@ -4,7 +4,13 @@ using EnglishGamesPlatform.Backend.Repositories.Interfaces;
 using EnglishGamesPlatform.Backend.Services.Interfaces;
 using EnglishGamesPlatform.Backend.Utils;
 using EnglishGamesPlatform.Backend.Validation;
+<<<<<<< HEAD
 using Google.Apis.Auth;
+=======
+
+using Google.Apis.Auth;
+
+>>>>>>> origin/main-v2
 
 namespace EnglishGamesPlatform.Backend.Services.Implementations
 {
@@ -56,8 +62,13 @@ namespace EnglishGamesPlatform.Backend.Services.Implementations
                     Data = new UserResponse
                     {
                         Token = token,
+<<<<<<< HEAD
                         User = new User { UserId = result.UserId, FullName = result.FullName },
                     },
+=======
+                        User = new User { UserId = result.UserId, FullName = result.FullName }
+                    }
+>>>>>>> origin/main-v2
                 };
             }
 
@@ -94,6 +105,7 @@ namespace EnglishGamesPlatform.Backend.Services.Implementations
                     StatusCode = System.Net.HttpStatusCode.BadRequest,
                     Message = "Email is not valid",
                 };
+
             var result = await _authRepository.IsExistingUser(email);
             if (result != null)
                 return new Response<UserResponse>
@@ -121,8 +133,13 @@ namespace EnglishGamesPlatform.Backend.Services.Implementations
                 Data = new UserResponse
                 {
                     Token = token,
+<<<<<<< HEAD
                     User = new User { UserId = res!.UserId, FullName = res.FullName },
                 },
+=======
+                    User = new User { UserId = res!.UserId, FullName = res.FullName }
+                }
+>>>>>>> origin/main-v2
             };
         }
 
@@ -148,8 +165,8 @@ namespace EnglishGamesPlatform.Backend.Services.Implementations
                     userEntity = new User
                     {
                         UserId = createdUser.UserId,
-                        FullName = createdUser.FullName,
-                        Email = createdUser.Email,
+                        FullName = createdUser.FullName,   
+                        Email = createdUser.Email,                
                     };
                 }
 

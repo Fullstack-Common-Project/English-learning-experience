@@ -1,11 +1,15 @@
 using AutoMapper;
 using EnglishGamesPlatform.Backend.Models.DTOs;
 using EnglishGamesPlatform.Backend.Models.DTOs.Entities_DTOs;
+<<<<<<< HEAD
 using EnglishGamesPlatform.Backend.Models.GameInitialDatas;
 
 using EnglishGamesPlatform.Backend.Models.Entities;
 using EnglishGamesPlatform.Backend.Models.GameInitialDatas;
 using EnglishGamesPlatform.Backend.Models.GameInitialDatas;
+=======
+using EnglishGamesPlatform.Backend.Models.Entities;
+>>>>>>> origin/main-v2
 using EnglishGamesPlatform.Backend.Repositories.Interfaces;
 using EnglishGamesPlatform.Backend.Services.Interfaces;
 using System.Net;
@@ -32,9 +36,15 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
             _mapper = mapper;
         }
 
+<<<<<<< HEAD
         public async Task<Response<FinalGameStatus>> GetFinalGameStatusAndAddGameResultAsync(
             GameResultDTO gameResultDTO
         )
+=======
+
+
+        public async Task<Response<FinalGameStatus>> GetFinalGameStatusAndAddGameResultAsync(GameResultDTO gameResultDTO)
+>>>>>>> origin/main-v2
         {
             if (gameResultDTO == null)
             {
@@ -46,9 +56,13 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
                 };
             }
 
+<<<<<<< HEAD
             GameResult gameResult = await AddGameResultAsync(
                 _mapper.Map<GameResult>(gameResultDTO)
             );
+=======
+            GameResult gameResult = await AddGameResultAsync(_mapper.Map<GameResult>(gameResultDTO));
+>>>>>>> origin/main-v2
 
             int index = await GetRankByUserId(gameResultDTO.GameID, gameResultDTO.UserID, 10);
 
@@ -59,7 +73,15 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
                     IsSuccess = true,
                     StatusCode = HttpStatusCode.OK,
                     Message = "Add Game Result Successfully.",
+<<<<<<< HEAD
                     Data = new() { IsLeadingPlayer = false },
+=======
+
+                    Data = new ()
+                    {
+                        IsLeadingPlayer = false,
+                    }
+>>>>>>> origin/main-v2
                 };
             }
 
@@ -68,7 +90,15 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
                 IsSuccess = true,
                 StatusCode = HttpStatusCode.OK,
                 Message = "Add Game Result Successfully.",
+<<<<<<< HEAD
                 Data = new FinalGameStatus() { IsLeadingPlayer = true, Rank = index + 1 },
+=======
+                Data = new FinalGameStatus()
+                {
+                    IsLeadingPlayer = true,
+                    Rank = index + 1
+                }
+>>>>>>> origin/main-v2
             };
         }
 
@@ -95,7 +125,15 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
                     StatusCode = HttpStatusCode.OK,
                     IsSuccess = true,
                     Message = $"Get Initial Data For Game ID: {gameId} Successfully,",
+<<<<<<< HEAD
                     Data = new GameData() { GameId = gameId, Data = gameInitialData },
+=======
+                    Data = new GameData()
+                    {
+                        GameId = gameId,
+                        Data = gameInitialData
+                    }
+>>>>>>> origin/main-v2
                 };
             }
             else
@@ -117,9 +155,14 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
             {
                 StatusCode = HttpStatusCode.OK,
                 IsSuccess = true,
+<<<<<<< HEAD
                 Message =
                     $"Successfully retrieved the list of the 10 top players for game {gameId}.",
                 Data = topResults,
+=======
+                Message = $"Successfully retrieved the list of the 10 top players for game {gameId}.",
+                Data = topResults
+>>>>>>> origin/main-v2
             };
         }
 
@@ -135,19 +178,27 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
             return await _gameResultRepository.AddGameResultAsync(gameResult);
         }
 
+<<<<<<< HEAD
         private async Task<IEnumerable<GameResult>> GetTopGameResultsByGameIdAsync(
             int gameId,
             int topCount
         )
+=======
+        private async Task<IEnumerable<GameResult>> GetTopGameResultsByGameIdAsync(int gameId, int topCount)
+>>>>>>> origin/main-v2
         {
             return await _gameResultRepository.GetTopGameResultsByGameIdAsync(gameId, topCount);
         }
 
         private async Task<int> GetRankByUserId(int gameId, int userId, int topCount)
         {
+<<<<<<< HEAD
             List<GameResult> gameResults = (
                 await GetTopGameResultsByGameIdAsync(gameId, topCount)
             ).ToList();
+=======
+            List<GameResult> gameResults = (await GetTopGameResultsByGameIdAsync(gameId, topCount)).ToList();
+>>>>>>> origin/main-v2
 
             int index = gameResults.FindIndex(gameResult => gameResult.UserId == userId);
 

@@ -14,7 +14,7 @@ export default function Footer() {
         { name: "Miriam Rosenberg", url: "/games/miriam-rosenberg" },
         { name: "Rivka Maman", url: "/games/rivka-maman" },
         { name: "Shira Shtiglitz", url: "/games/shira-shtiglitz" },
-        { name: "Hadar Gerashi", url: "/games/hadar-gerashi" },
+        { name: "Hadar Gerashi", url: "/games/mini-wordle" },
         { name: "Avital Goldring", url: "/games/avital-goldring" },
         { name: "Dvora Etinger", url: "/games/dvora-etinger" },
         { name: "Shani Gavra", url: "/games/shani-gavra" },

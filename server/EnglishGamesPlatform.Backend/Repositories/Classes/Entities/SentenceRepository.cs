@@ -21,7 +21,11 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes
         public async Task<List<Sentence>> GetRandomSentencesAsync(int count)
         {
             return await _appDbContext.Sentences
+<<<<<<< HEAD
                 .OrderBy(i => EF.Functions.Random())
+=======
+                .OrderBy(w => EF.Functions.Random())
+>>>>>>> origin/main-v2
                 .Take(count)
                 .ToListAsync();
         }

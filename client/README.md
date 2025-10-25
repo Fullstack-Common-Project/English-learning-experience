@@ -1,5 +1,6 @@
 # English-learning-experience
 game ideas to help learn English language as a second language
+<<<<<<< HEAD
 
 # English Learning Experience – Client
 
@@ -139,6 +140,8 @@ src/
 ```
 
 > מבנה זה מציג את קבצי הליבה, תיקיות המשחקים, קומפוננטות, לוגיקה, סטור, וסוגי נתונים.
+=======
+>>>>>>> origin/main-v2
 
 # מדריך הוספת משחק חדש (Frontend)
 

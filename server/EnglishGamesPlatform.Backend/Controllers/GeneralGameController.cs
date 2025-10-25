@@ -1,19 +1,28 @@
 ﻿using EnglishGamesPlatform.Backend.Models.DTOs;
 using EnglishGamesPlatform.Backend.Models.DTOs.Entities_DTOs;
 using EnglishGamesPlatform.Backend.Services.Interfaces;
+<<<<<<< HEAD
 using Microsoft.AspNetCore.Authorization;
+=======
+
+using Microsoft.AspNetCore.Authorization;
+
+>>>>>>> origin/main-v2
 using Microsoft.AspNetCore.Mvc;
 
 namespace EnglishGamesPlatform.Backend.Controllers
 {
     [Route("api/v1/[controller]")]
     [ApiController]
+
     public class GeneralGameController : ControllerBase
     {
         private readonly IGeneralGameService _gameService;
 
         public GeneralGameController(IGeneralGameService gameService)
         {
+
+
             _gameService = gameService;
         }
 

@@ -57,19 +57,23 @@ builder.Services.AddScoped<IGameResultRepository, GameResultRepository>();
 
 #region General Game
 
-#region PictureHangman
-
 builder.Services.AddScoped<IGeneralGameService, GeneralGameService>();
 builder.Services.AddScoped<IGeneralGameRepository, PictureHangmanRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, OppositeQuestRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, MiniWordleRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, LetterChaosRepository>();
+<<<<<<< HEAD
 
 builder.Services.AddScoped<IGeneralGameRepository, TwinWordsGameRepository>();
 
 
 #endregion
 
+=======
+builder.Services.AddScoped<IGeneralGameRepository, MemoryMatchSynonymsRepository>();
+builder.Services.AddScoped<IGeneralGameRepository, MemoryMatchAntonymsRepository>();
+builder.Services.AddScoped<IGeneralGameRepository, TwinWordsGameRepository>();
+>>>>>>> origin/main-v2
 
 #endregion 
 
@@ -78,7 +82,10 @@ builder.Services.AddScoped<IImageRepository, ImageRepository>();
 builder.Services.AddScoped<ISentenceRepository, SentenceRepository>();
 builder.Services.AddScoped<IWordRepository, WordRepository>();
 builder.Services.AddScoped<IOppositeWordRepository, OppositeWordRepository>();
+<<<<<<< HEAD
 builder.Services.AddScoped<IGeneralGameRepository, GuessMaster20Repository>();
+=======
+>>>>>>> origin/main-v2
 builder.Services.AddScoped<ITwinWordRepository, TwinWordRepository>();
 
 
@@ -87,6 +94,7 @@ builder.Services.AddScoped<ITwinWordRepository, TwinWordRepository>();
 
 builder.Services.AddCustomServices();
 
+<<<<<<< HEAD
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
@@ -99,6 +107,20 @@ builder.Services.AddAuthentication(options =>
     options.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"]!;
     options.CallbackPath = "/signin-google";
 });
+=======
+//builder.Services.AddAuthentication(options =>
+//{
+//    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+//    options.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;
+//})
+//.AddCookie()
+//.AddGoogle(options =>
+//{
+//    options.ClientId = builder.Configuration["Authentication:Google:ClientId"]!;
+//    options.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"]!;
+//    options.CallbackPath = "/signin-google";
+//});
+>>>>>>> origin/main-v2
 
 var app = builder.Build();
 

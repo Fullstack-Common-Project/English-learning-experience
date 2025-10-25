@@ -9,7 +9,7 @@ export function useSubmitProgress() {
   return useMutation<SubmitProgressResponse, Error, SubmitProgressPayload>({
     mutationFn: (payload) => submitProgress(payload),
     onSuccess: (_, variables) => {
-      qc.invalidateQueries({ queryKey: QUERY_KEYS.leaderboard(variables.gameId) });
+      qc.invalidateQueries({ queryKey: QUERY_KEYS.leaderboard(variables.gameID) });
     },
   });
 }

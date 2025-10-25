@@ -5,7 +5,10 @@ namespace EnglishGamesPlatform.Backend.Models.GameInitialDatas
     public class OppositeQuestData:GameInitialData
     {
         public List<OppositeQuestItem> Items { get; set; } = new();
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/main-v2
         public void AddItem(OppositeQuestItem item)
         {
             Items.Add(item);
