@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import Board from "./Board";
 import Keyboard from "@/components/ui/Keyboard";
 
@@ -10,7 +10,7 @@ interface MiniWordleProps {
     paused?: boolean;
     onScoreChange?: (roundScore: number) => void;
     onGameOver?: () => void;
-    OnWin?: () => void;
+    onWin?: () => void;
 }
 
 const getRowColors = (guess: string[], solution: string) => {
@@ -43,11 +43,14 @@ export default function MiniWordle({
     paused = false,
     onScoreChange,
     onGameOver,
-    OnWin
+    onWin,
 }: MiniWordleProps) {
-
-    const [board, setBoard] = useState<string[][]>(Array.from({ length: maxGuesses }, () => Array(wordLength).fill("")));
-    const [rowColors, setRowColors] = useState<string[][]>(Array.from({ length: maxGuesses }, () => Array(wordLength).fill("empty")));
+    const [board, setBoard] = useState<string[][]>(
+        Array.from({ length: maxGuesses }, () => Array(wordLength).fill(""))
+    );
+    const [rowColors, setRowColors] = useState<string[][]>(
+        Array.from({ length: maxGuesses }, () => Array(wordLength).fill("empty"))
+    );
     const [currentRow, setCurrentRow] = useState(0);
     const [currentCol, setCurrentCol] = useState(0);
     const [keyboardColors, setKeyboardColors] = useState<Record<string, string>>({});
@@ -56,18 +59,21 @@ export default function MiniWordle({
     const [completed, setCompleted] = useState(false);
 
     const targetWordRef = useRef(targetWord);
-
     const boardRef = useRef(board);
     const currentRowRef = useRef(currentRow);
     const currentColRef = useRef(currentCol);
     const keyboardColorsRef = useRef(keyboardColors);
     const revealingRowRef = useRef(revealingRow);
 
-    useEffect(() => { boardRef.current = board; }, [board]);
-    useEffect(() => { currentRowRef.current = currentRow; }, [currentRow]);
-    useEffect(() => { currentColRef.current = currentCol; }, [currentCol]);
-    useEffect(() => { keyboardColorsRef.current = keyboardColors; }, [keyboardColors]);
-    useEffect(() => { revealingRowRef.current = revealingRow; }, [revealingRow]);
+    const updateRef = <T,>(ref: React.RefObject<T>, value: T) => {
+        ref.current = value;
+    };
+
+    useEffect(() => updateRef(boardRef, board), [board]);
+    useEffect(() => updateRef(currentRowRef, currentRow), [currentRow]);
+    useEffect(() => updateRef(currentColRef, currentCol), [currentCol]);
+    useEffect(() => updateRef(keyboardColorsRef, keyboardColors), [keyboardColors]);
+    useEffect(() => updateRef(revealingRowRef, revealingRow), [revealingRow]);
 
     const resetBoard = (newLength: number) => {
         setBoard(Array.from({ length: maxGuesses }, () => Array(newLength).fill("")));
@@ -83,24 +89,26 @@ export default function MiniWordle({
         resetBoard(targetWord.length);
     }, [targetWord]);
 
-    const onType = (letter: string) => {
+    const onType = useCallback((letter: string) => {
         if (paused || completed || revealingRowRef.current !== -1) return;
         if (currentColRef.current >= wordLength) return;
+
         const newBoard = boardRef.current.map(r => [...r]);
         newBoard[currentRowRef.current][currentColRef.current] = letter.toUpperCase();
         setBoard(newBoard);
         setCurrentCol(currentColRef.current + 1);
-    };
+    }, [paused, completed, wordLength]);
 
-    const onDelete = () => {
+    const onDelete = useCallback(() => {
         if (paused || completed || currentColRef.current === 0 || revealingRowRef.current !== -1) return;
+
         const newBoard = boardRef.current.map(r => [...r]);
         newBoard[currentRowRef.current][currentColRef.current - 1] = "";
         setBoard(newBoard);
         setCurrentCol(currentColRef.current - 1);
-    };
+    }, [paused, completed]);
 
-    const onSubmit = () => {
+    const onSubmit = useCallback(() => {
         if (paused || completed || revealingRowRef.current !== -1) return;
         if (currentColRef.current < wordLength) {
             setShake(true);
@@ -138,15 +146,14 @@ export default function MiniWordle({
             });
             setKeyboardColors(newKeyboardColors);
 
-            onScoreChange?.(roundScore); 
+            onScoreChange?.(roundScore);
 
             if (guess.join("") === targetWordRef.current.toUpperCase()) {
-                OnWin?.();
+                onWin?.();
             } else if (currentRowRef.current + 1 >= maxGuesses) {
-                 alert(`Game Over! The word was: ${targetWordRef.current}`);
+                alert(`Game Over! The word was: ${targetWordRef.current}`);
                 setCompleted(true);
                 onGameOver?.();
-               
             } else {
                 setCurrentRow(currentRowRef.current + 1);
                 setCurrentCol(0);
@@ -154,7 +161,7 @@ export default function MiniWordle({
 
             setRevealingRow(-1);
         }, wordLength * 220 + 300);
-    };
+    }, [paused, completed, wordLength, onScoreChange, onGameOver, onWin]);
 
     useEffect(() => {
         const handleKey = (e: KeyboardEvent) => {
@@ -165,7 +172,7 @@ export default function MiniWordle({
         };
         window.addEventListener("keydown", handleKey);
         return () => window.removeEventListener("keydown", handleKey);
-    }, []);
+    }, [onType, onDelete, onSubmit]);
 
     return (
         <div className="mini-wordle flex flex-col items-center mt-6">
@@ -173,8 +180,21 @@ export default function MiniWordle({
                 Guess {currentRow + 1} of {maxGuesses}
             </p>
 
-            <Board board={board} rowColors={rowColors} currentRow={currentRow} shake={shake} revealingRow={revealingRow} />
-            <Keyboard onType={onType} onDelete={onDelete} onSubmit={onSubmit} keyboardColors={keyboardColors} disabled={paused || completed || revealingRow !== -1} />
+            <Board
+                board={board}
+                rowColors={rowColors}
+                currentRow={currentRow}
+                shake={shake}
+                revealingRow={revealingRow}
+            />
+            <Keyboard
+                onType={onType}
+                onDelete={onDelete}
+                onSubmit={onSubmit}
+                keyboardColors={keyboardColors}
+                disabled={paused || completed || revealingRow !== -1}
+            />
         </div>
     );
 }
+
