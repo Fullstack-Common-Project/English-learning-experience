@@ -10,7 +10,9 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes.Games
     
        
         private readonly IWordRepository _wordRepository;
+
         private static int counter = 1;
+
         public MiniWordleRepository(IWordRepository wordRepository)
         {
             _wordRepository = wordRepository;
