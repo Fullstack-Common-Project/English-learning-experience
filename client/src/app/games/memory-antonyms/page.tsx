@@ -1,6 +1,7 @@
 'use client';
 import GameLayout from '@/components/common/GameLayout';
-import MiniWordleGame from '@/games/MiniWordleGame';
+import MemoryAntonymsGame from '@/games/MemoryAntonymsGame';
+
 
 export default function MiniWordlePage() {
 
@@ -10,11 +11,8 @@ export default function MiniWordlePage() {
   };
 
   return (
-    <GameLayout gameTitle="Mini Wordle">
-        <MiniWordleGame onGameOver={handleGameOver} />
+    <GameLayout gameTitle="memory-antonyms">
+        <MemoryAntonymsGame onGameOver={handleGameOver} />
     </GameLayout>
-    
   );
-
-  
 }

@@ -38,7 +38,7 @@ export interface GameResponseMap {
 }
 
 
-export type GameId=keyof GameResponseMap
+export type GameId = keyof GameResponseMap;
 export type GameDataResponse = GameResponseMap[GameId];
 export type GameResponseFor<T extends GameId> = GameResponseMap[T];
 export interface GameResponseBase<T extends GameId, D> {
