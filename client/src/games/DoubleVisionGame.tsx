@@ -809,6 +809,8 @@ import { useSubmitProgress } from "@/hooks/useSubmitProgress";
 export default function DoubleVisionGame({ onScoreChange, onGameOver, paused }: GameProps) {
   const gameId: GameId = 12;
   const { data, isLoading, isError, refetch } = useGameData(gameId, { staleTime: 0 });
+  console.log(data);
+  
   const { data: leaderboardData, refetch: refetchLeaderboard } = useLeaderboard(gameId);
   const submitProgressMutation = useSubmitProgress();
 
