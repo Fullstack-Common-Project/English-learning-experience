@@ -1,8 +1,16 @@
 import { GameResponseBase } from "./index";
+
 export interface LetterChaosItem {
-  // empty item shape by request
+  id: number; 
+  data:{
+   words:LetterChaosItemSingle[]
+  }
+};
+
+export interface LetterChaosItemSingle {
+  id: number;
+  scrambled: string;
+  correctWord: string;
 }
 
-
-export interface LetterChaosResponse
-  extends GameResponseBase<3, LetterChaosItem> {}
+export interface LetterChaosResponse extends GameResponseBase<3, LetterChaosItem> {}
