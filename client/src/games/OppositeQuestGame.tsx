@@ -23,8 +23,11 @@ export default function OppositeQuestGame({ onScoreChange, onGameOver, paused,ti
 
   const user = useSelector((state: any) => state.user.user);
   const submitProgressMutation = useSubmitProgress();
-  const { data: leaderboardData } = useLeaderboard(gameId);
-
+  // const { data: leaderboardData } = useLeaderboard(gameId);
+  const { data: leaderboardData, refetch: refetchLeaderboard } = useLeaderboard(gameId, {
+    refetchInterval: 5000, // כל 5 שניות
+  });
+  
   const { data, isLoading, isError, refetch } = useGameData(gameId); 
 
   const restartGame = async () => {
@@ -81,18 +84,23 @@ export default function OppositeQuestGame({ onScoreChange, onGameOver, paused,ti
      endGame();
     }
   };
-
-  const endGame = () => {
+  useEffect(() => {
+    if (completed) {
+      submitProgressMutation.mutate({
+        gameID: gameId,
+        userID: user?.userId!,
+        score: score,
+        time: time ?? 0,
+        rounds: items.length,
+      });
+    }
+  }, [completed,score]); 
+  
+  const endGame = async () => {
     setCompleted(true);
     onGameOver?.();
-    submitProgressMutation.mutate({
-      gameID: gameId,
-      userID: user?.userId!, 
-      score: score+1,
-      time: time ?? 0,
-      rounds: items.length,
-  });
-  console.log("Leaderboard:", leaderboardData?.leaderboard);
+    await refetchLeaderboard();
+  console.log("Leaderboard:", leaderboardData?.data.leaderboards);
 
 
   };
