@@ -1,29 +1,118 @@
 "use client";
+import { useState, useEffect, useRef } from "react";
 import MiniWordle from "./mini-wordle/MiniWordle";
 import { GameProps } from "@/components/common/GameLayout";
 import { useGameData } from "@/hooks/useGameData";
 import { GameId } from "@/types";
+import { useSubmitProgress } from "@/hooks/useSubmitProgress";
+import { useSelector } from "react-redux";
+import { useLeaderboard } from "@/hooks/useLeaderboard";
 
-export default function MiniWordleGame({ onScoreChange, onGameOver, paused }: GameProps) {
-    const gameId: GameId = 6; 
-    const { data, isLoading, isError } = useGameData(gameId);
+interface MiniWordleModel {
+    targetWord: string;
+    wordLength: number;
+    id: number | null;
+}
 
-    if (isLoading) return <p>Loading...</p>;
-    if (isError || !data?.data) return <p>No data available.</p>;
+export default function MiniWordleGame({
+    onScoreChange,
+    onGameOver,
+    paused,
+    time,
+}: GameProps) {
+    const gameId: GameId = 6;
+    const { data, isLoading, isError, refetch } = useGameData(gameId);
+    const submitProgressMutation = useSubmitProgress();
+    const { data: leaderboardData } = useLeaderboard(gameId);
 
-    const miniWordleModel = {
-        targetWord: data.data.data.targetWord,
-        wordLength: data.data.data.wordLength,
-        id: data.data.data.id,
+    const [miniWordleModel, setMiniWordleModel] = useState<MiniWordleModel | null>(null);
+    const [loadingWord, setLoadingWord] = useState(false);
+    const hasFetchedRef = useRef(false);
+    const score = useRef(0);
+    const round = useRef(1);
+    const timeRef = useRef(time);
+    const user = useSelector((state: any) => state.user.user);
+
+    useEffect(() => {
+        timeRef.current = time;
+    }, [time]);
+
+    const setWordFromData = (wordData: any) => {
+        if (!wordData) return;
+        setMiniWordleModel({
+            targetWord: wordData.targetWord,
+            wordLength: wordData.wordLength,
+            id: wordData.id ?? null,
+        });
     };
+
+    useEffect(() => {
+        const fetchNewWord = async () => {
+            try {
+                setLoadingWord(true);
+                const response = await refetch();
+                setWordFromData(response?.data?.data?.data);
+            } catch (err) {
+                console.error("Error loading word:", err);
+            } finally {
+                setLoadingWord(false);
+            }
+        };
+
+        fetchNewWord();
+    }, [refetch]);
+
+    const loadNewWord = async () => {
+        try {
+            setLoadingWord(true);
+            hasFetchedRef.current = false;
+            const newData = await refetch();
+            setWordFromData(newData?.data?.data?.data);
+        } catch (err) {
+            console.error("Error loading new word:", err);
+        } finally {
+            setLoadingWord(false);
+        }
+    };
+
+    const handleScoreChange = (roundScore: number) => {
+        onScoreChange?.((prev) => {
+            const newScore = prev + roundScore;
+            score.current = newScore;
+            return newScore;
+        });
+    };
+
+    const handleGameOver = () => {
+        submitProgressMutation.mutate({
+            gameID: gameId,
+            userID: user?.userId!,
+            score: score.current,
+            time: timeRef.current ?? 0,
+            rounds: round.current,
+        });
+
+        console.log("Leaderboard:", leaderboardData?.data.leaderboards);
+        onGameOver?.();
+    };
+
+    const handleWin = async () => {
+        round.current += 1;
+        await loadNewWord();
+    };
+
+    if (isLoading || loadingWord) return <p>Loading...</p>;
+    if (isError) return <p>Failed to load data.</p>;
+    if (!miniWordleModel) return <p>No data available.</p>;
 
     return (
         <MiniWordle
             wordLength={miniWordleModel.wordLength}
             targetWord={miniWordleModel.targetWord}
             paused={paused}
-            onScoreChange={onScoreChange}
-            onGameOver={onGameOver}
+            onScoreChange={handleScoreChange}
+            onGameOver={handleGameOver}
+            onWin={handleWin}
         />
     );
 }
