@@ -14,6 +14,8 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+const string ClientCors = "ClientCors";
+
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 
@@ -61,13 +63,10 @@ builder.Services.AddScoped<IGeneralGameService, GeneralGameService>();
 builder.Services.AddScoped<IGeneralGameRepository, PictureHangmanRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, OppositeQuestRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, MiniWordleRepository>();
-<<<<<<< HEAD
 builder.Services.AddScoped<IGeneralGameRepository, LetterChaosRepository>();
 
 builder.Services.AddScoped<IGeneralGameRepository, TwinWordsGameRepository>();
 
-=======
->>>>>>> origin/main-v2
 
 #endregion
 

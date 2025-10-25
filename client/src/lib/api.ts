@@ -6,6 +6,7 @@ import type {
   SubmitProgressResponse,
 } from "../types";
 import type { GameResponseMap } from "../types";
+import { GuessMasterAskRequest, GuessMasterAskResponse } from "@/types/GuessMaster";
 
 async function handleResponse<T>(res: Response): Promise<T> {
   const text = await res.text();
@@ -43,4 +44,16 @@ export async function submitProgress(
     body: JSON.stringify(payload),
   });
   return handleResponse<SubmitProgressResponse>(res);
+}
+export async function postGuessMasterTurn(
+  gameId: GameId,
+  body: GuessMasterAskRequest
+): Promise<GuessMasterAskResponse> {
+  const res = await fetch(`${API_BASE}/${gameId}/progress`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(body),
+  });
+  if (!res.ok) throw new Error("failed to submit GM20 turn");
+  return await res.json();
 }

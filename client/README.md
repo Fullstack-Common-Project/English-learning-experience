@@ -1,6 +1,145 @@
 # English-learning-experience
 game ideas to help learn English language as a second language
 
+# English Learning Experience – Client
+
+## מבנה הפרויקט
+
+```
+DESIGN.md
+next-env.d.ts
+next.config.ts
+package.json
+postcss.config.mjs
+README.md
+tailwind.config.mjs
+tsconfig.json
+tsconfig.tsbuildinfo
+public/
+  file.svg
+  globe.svg
+  next.svg
+  vercel.svg
+  window.svg
+src/
+  app/
+    favicon.ico
+    globals.css
+    layout.tsx
+    page.tsx
+    (auth)/
+      login/
+        page.tsx
+      sign-up/
+        page.tsx
+    api/
+      v1/
+        games/
+          [gameId]/
+        users/
+    games/
+      grammar-guru/
+        page.tsx
+      mini-wordle/
+        page.tsx
+      opposite-quest/
+        page.tsx
+      picpick/
+        page.tsx
+      sentence-shuffle/
+        page.tsx
+    leaderboard/
+      [gameId]/
+        page.tsx
+  components/
+    common/
+      Footer.tsx
+      GameLayout.tsx
+      Header.tsx
+    hud/
+      audioToggle.tsx
+      countdown3_2_1.tsx
+      levelBadge.tsx
+      pauseOverlay.tsx
+      progressBar.tsx
+    leaderboard/
+      ChoiceButton.tsx
+      GameOverModal.tsx
+      HelpScreen.tsx
+      Leaderboard.tsx
+      ProgressBar.tsx
+      ScoreDisplay.tsx
+      Timer.tsx
+    ui/
+      Button.tsx
+      Card.tsx
+      Modal.tsx
+  games/
+    DoubleVisionGame.tsx
+    GrammarGuruGame.tsx
+    GuessMaster20Game.tsx
+    LetterChaosGame.tsx
+    MemoryAntonymsGame.tsx
+    MemorySynonymsGame.tsx
+    MiniWordleGame.tsx
+    OppositeQuestGame.tsx
+    PicPickGame.tsx
+    RevealItGame.tsx
+    SentenceShuffleGame.tsx
+    TwinWordsGame.tsx
+    WordSorterGame.tsx
+    WordWiseFlashGame.tsx
+    mini-wordle/
+      Board.tsx
+      Keyboard.tsx
+      MiniWordle.tsx
+      Tile.tsx
+  hooks/
+    useGameData.ts
+    useGameState.ts
+    useGameTimer.ts
+    useLeaderboard.ts
+    useSubmitProgress.ts
+  lib/
+    animations.ts
+    api.ts
+    constants.ts
+    queryKeys.ts
+    scoring.ts
+  providers/
+    QueryProvider.tsx
+  store/
+    gameStore.tsx
+    Providers.tsx
+    userSlice.tsx
+  styles/
+    globals.css
+  types/
+    ContextClues.ts
+    DoubleVision.ts
+    GrammarGuru.ts
+    GuessMaster.ts
+    index.ts
+    Leaderboard.ts
+    LetterChaos.ts
+    MemoryAntonyms.ts
+    MemorySynonyms.ts
+    MiniWordle.ts
+    OppositeQuest.ts
+    OppositeQuestData.tsx
+    PhraseCraze.ts
+    PicPick.ts
+    PictureHangman.ts
+    RhymeTime.ts
+    SentenceShuffle.ts
+    SubmitProgress.ts
+    TwinWords.ts
+    WordSorter.ts
+    WordwiseFlash.ts
+```
+
+> מבנה זה מציג את קבצי הליבה, תיקיות המשחקים, קומפוננטות, לוגיקה, סטור, וסוגי נתונים.
+
 # מדריך הוספת משחק חדש (Frontend)
 
 > **מטרה:** לאפשר לכל מפתחת (גם מחוץ לצוות) להוסיף משחק חדש לאתר באופן עקבי ובטוח, בלי לשבור את התשתית המשותפת.

@@ -3,16 +3,48 @@
   "WorkspaceRootPath": "D:\\EXE\\JS\\English-learning-experience\\English-learning-experience\\server\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|d:\\exe\\js\\english-learning-experience\\english-learning-experience\\server\\englishgamesplatform.backend\\services\\classes\\generalgameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\services\\classes\\generalgameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|d:\\exe\\js\\english-learning-experience\\english-learning-experience\\server\\englishgamesplatform.backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|d:\\exe\\js\\english-learning-experience\\english-learning-experience\\server\\englishgamesplatform.backend\\extensions\\servicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\extensions\\servicecollectionextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|d:\\exe\\js\\english-learning-experience\\english-learning-experience\\server\\englishgamesplatform.backend\\models\\dtos\\guessmasteraskrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\models\\dtos\\guessmasteraskrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|d:\\exe\\js\\english-learning-experience\\english-learning-experience\\server\\englishgamesplatform.backend\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|d:\\exe\\js\\english-learning-experience\\english-learning-experience\\server\\englishgamesplatform.backend\\models\\dtos\\googlelogindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\models\\dtos\\googlelogindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|d:\\exe\\js\\english-learning-experience\\english-learning-experience\\server\\englishgamesplatform.backend\\models\\dtos\\gamedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\models\\dtos\\gamedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|d:\\exe\\js\\english-learning-experience\\english-learning-experience\\server\\englishgamesplatform.backend\\validation\\emailvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\validation\\emailvalidation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|d:\\exe\\js\\english-learning-experience\\english-learning-experience\\server\\englishgamesplatform.backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|d:\\exe\\js\\english-learning-experience\\english-learning-experience\\server\\englishgamesplatform.backend\\englishgamesplatform.backend.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\englishgamesplatform.backend.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|d:\\exe\\js\\english-learning-experience\\english-learning-experience\\server\\englishgamesplatform.backend\\package-lock.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\package-lock.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|d:\\exe\\js\\english-learning-experience\\english-learning-experience\\server\\englishgamesplatform.backend\\services\\classes\\generalgameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\services\\classes\\generalgameservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|d:\\exe\\js\\english-learning-experience\\english-learning-experience\\server\\englishgamesplatform.backend\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
@@ -25,10 +57,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|d:\\exe\\js\\english-learning-experience\\english-learning-experience\\server\\englishgamesplatform.backend\\englishgamesplatform.backend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\englishgamesplatform.backend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|d:\\exe\\js\\english-learning-experience\\english-learning-experience\\server\\englishgamesplatform.backend\\models\\dtos\\gamedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|solutionrelative:englishgamesplatform.backend\\models\\dtos\\gamedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4652486B-ABE8-4A37-B1C2-04E60E4EAFAA}|EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj|d:\\exe\\js\\english-learning-experience\\english-learning-experience\\server\\englishgamesplatform.backend\\repositories\\classes\\entities\\wordrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -62,11 +90,135 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ServiceCollectionExtensions.cs",
+              "DocumentMoniker": "D:\\EXE\\JS\\English-learning-experience\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Extensions\\ServiceCollectionExtensions.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Extensions\\ServiceCollectionExtensions.cs",
+              "ToolTip": "D:\\EXE\\JS\\English-learning-experience\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Extensions\\ServiceCollectionExtensions.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Extensions\\ServiceCollectionExtensions.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA0wCAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-25T16:43:39.801Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GuessMasterAskRequest.cs",
+              "DocumentMoniker": "D:\\EXE\\JS\\English-learning-experience\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\DTOs\\GuessMasterAskRequest.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Models\\DTOs\\GuessMasterAskRequest.cs",
+              "ToolTip": "D:\\EXE\\JS\\English-learning-experience\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\DTOs\\GuessMasterAskRequest.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\DTOs\\GuessMasterAskRequest.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAcwAYAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-25T16:29:07.647Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\EXE\\JS\\English-learning-experience\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Program.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Program.cs",
+              "ToolTip": "D:\\EXE\\JS\\English-learning-experience\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Program.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Program.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAcwBgAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T21:20:42.442Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "EmailValidation.cs",
+              "DocumentMoniker": "D:\\EXE\\JS\\English-learning-experience\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Validation\\EmailValidation.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Validation\\EmailValidation.cs",
+              "ToolTip": "D:\\EXE\\JS\\English-learning-experience\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Validation\\EmailValidation.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Validation\\EmailValidation.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T07:33:35.649Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\EXE\\JS\\English-learning-experience\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\appsettings.json",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\appsettings.json",
+              "ToolTip": "D:\\EXE\\JS\\English-learning-experience\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\appsettings.json",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-23T07:33:33.332Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "EnglishGamesPlatform.Backend.http",
+              "DocumentMoniker": "D:\\EXE\\JS\\English-learning-experience\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.http",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.http",
+              "ToolTip": "D:\\EXE\\JS\\English-learning-experience\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.http",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-10-23T07:33:32.054Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "D:\\EXE\\JS\\English-learning-experience\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Data\\AppDbContext.cs",
+              "ToolTip": "D:\\EXE\\JS\\English-learning-experience\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAE0AAAAAAAAAAAAlwBQAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-21T19:26:49.386Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "GoogleLoginDTO.cs",
+              "DocumentMoniker": "D:\\EXE\\JS\\English-learning-experience\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\DTOs\\GoogleLoginDTO.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Models\\DTOs\\GoogleLoginDTO.cs",
+              "ToolTip": "D:\\EXE\\JS\\English-learning-experience\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\DTOs\\GoogleLoginDTO.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\DTOs\\GoogleLoginDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-23T07:34:29.158Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "package-lock.json",
+              "DocumentMoniker": "D:\\EXE\\JS\\English-learning-experience\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\package-lock.json",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\package-lock.json",
+              "ToolTip": "D:\\EXE\\JS\\English-learning-experience\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\package-lock.json",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\package-lock.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-10-23T07:33:28.836Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GameData.cs",
+              "DocumentMoniker": "D:\\EXE\\JS\\English-learning-experience\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\DTOs\\GameData.cs",
+              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Models\\DTOs\\GameData.cs",
+              "ToolTip": "D:\\EXE\\JS\\English-learning-experience\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\DTOs\\GameData.cs",
+              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\DTOs\\GameData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-22T12:10:56.765Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "AppDbContextModelSnapshot.cs",
               "DocumentMoniker": "D:\\EXE\\JS\\English-learning-experience\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Migrations\\AppDbContextModelSnapshot.cs",
               "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Migrations\\AppDbContextModelSnapshot.cs",
@@ -74,38 +226,11 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Migrations\\AppDbContextModelSnapshot.cs",
               "ViewState": "AgIAANgBAAAAAAAAAAAmwOMBAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T12:11:39.956Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T12:11:39.956Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "D:\\EXE\\JS\\English-learning-experience\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Data\\AppDbContext.cs",
-              "ToolTip": "D:\\EXE\\JS\\English-learning-experience\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAIA4wBQAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T19:26:49.386Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\EXE\\JS\\English-learning-experience\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Program.cs",
-              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Program.cs",
-              "ToolTip": "D:\\EXE\\JS\\English-learning-experience\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Program.cs",
-              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Program.cs",
-              "ViewState": "AgIAAHcAAAAAAAAAAADwv4EAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T21:20:42.442Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 10,
               "Title": "GeneralGameService.cs",
               "DocumentMoniker": "D:\\EXE\\JS\\English-learning-experience\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Services\\Classes\\GeneralGameService.cs",
               "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Services\\Classes\\GeneralGameService.cs",
@@ -113,12 +238,11 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Services\\Classes\\GeneralGameService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T08:02:52.789Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T08:02:52.789Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 11,
               "Title": "launchSettings.json",
               "DocumentMoniker": "D:\\EXE\\JS\\English-learning-experience\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Properties\\launchSettings.json",
@@ -126,38 +250,23 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Properties\\launchSettings.json",
               "ViewState": "AgIAAB4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-10-22T12:14:24.687Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T12:14:24.687Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "EnglishGamesPlatform.Backend",
+              "DocumentIndex": 13,
+              "Title": "EnglishGamesPlatform.Backend.csproj",
               "DocumentMoniker": "D:\\EXE\\JS\\English-learning-experience\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj",
               "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj",
               "ToolTip": "D:\\EXE\\JS\\English-learning-experience\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj",
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\EnglishGamesPlatform.Backend.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-10-22T12:04:07.695Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T12:04:07.695Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "GameData.cs",
-              "DocumentMoniker": "D:\\EXE\\JS\\English-learning-experience\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\DTOs\\GameData.cs",
-              "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Models\\DTOs\\GameData.cs",
-              "ToolTip": "D:\\EXE\\JS\\English-learning-experience\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\DTOs\\GameData.cs",
-              "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\DTOs\\GameData.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T12:10:56.765Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 14,
               "Title": "WordRepository.cs",
               "DocumentMoniker": "D:\\EXE\\JS\\English-learning-experience\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\WordRepository.cs",
               "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\WordRepository.cs",
@@ -165,12 +274,11 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\WordRepository.cs",
               "ViewState": "AgIAADgAAAAAAAAAAAAqwEQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T12:09:57.904Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T12:09:57.904Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 15,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "D:\\EXE\\JS\\English-learning-experience\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\appsettings.Development.json",
               "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\appsettings.Development.json",
@@ -178,12 +286,11 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\appsettings.Development.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-10-22T12:05:16.972Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T12:05:16.972Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 16,
               "Title": "GeneralGameController.cs",
               "DocumentMoniker": "D:\\EXE\\JS\\English-learning-experience\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Controllers\\GeneralGameController.cs",
               "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Controllers\\GeneralGameController.cs",
@@ -191,12 +298,11 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Controllers\\GeneralGameController.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAAAAABgAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T08:03:45.716Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-22T08:03:45.716Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 18,
               "Title": "Category.cs",
               "DocumentMoniker": "D:\\EXE\\JS\\English-learning-experience\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\Entities\\Category.cs",
               "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Models\\Entities\\Category.cs",
@@ -208,7 +314,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 19,
               "Title": "TokenService.cs",
               "DocumentMoniker": "D:\\EXE\\JS\\English-learning-experience\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Utils\\TokenService.cs",
               "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Utils\\TokenService.cs",
@@ -220,7 +326,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 17,
               "Title": "Word.cs",
               "DocumentMoniker": "D:\\EXE\\JS\\English-learning-experience\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Models\\Entities\\Word.cs",
               "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Models\\Entities\\Word.cs",
