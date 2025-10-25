@@ -19,7 +19,6 @@ export default function OppositeQuestGame({ onScoreChange, onGameOver, paused }:
   const gameId: GameId = 1;
   const { data, isLoading, isError, refetch } = useGameData(gameId); 
 
-  // פונקציה לאתחול / התחלת משחק חדש
   const restartGame = async () => {
     setCompleted(false);
     setCurrentIndex(0);
@@ -28,7 +27,7 @@ export default function OppositeQuestGame({ onScoreChange, onGameOver, paused }:
     setHighlightIndex(null);
     setIsWaiting(false);
 
-    const newData = await refetch(); // קריאה חדשה לשרת
+    const newData = await refetch(); 
     if (!newData?.data) return;
 
     const newItems: OppositeQuestItemSingle[] = Array.isArray(newData.data.data.data.items)
