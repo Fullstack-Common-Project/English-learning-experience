@@ -1,4 +1,4 @@
-import { API_BASE, DEFAULT_FETCH_OPTIONS } from "./constants";
+import { API_BASE, getFetchOptions } from "./constants";
 import type {
   GameId,
   LeaderboardResponse,
@@ -20,7 +20,7 @@ export async function fetchGameData<T extends GameId>(
   gameId: T
 ): Promise<GameResponseMap[T]> {
   const res = await fetch(`${API_BASE}/GeneralGame/${gameId}/data`, {
-    ...DEFAULT_FETCH_OPTIONS,
+    ...getFetchOptions(),
   });
   return handleResponse<GameResponseMap[T]>(res);
 }
@@ -29,7 +29,7 @@ export async function fetchLeaderboard(
   gameId: GameId
 ): Promise<LeaderboardResponse> {
   const res = await fetch(`${API_BASE}/GeneralGame/${gameId}/leaderboard`, {
-    ...DEFAULT_FETCH_OPTIONS,
+    ...getFetchOptions(),
   });
   return handleResponse<LeaderboardResponse>(res);
 }
@@ -39,7 +39,7 @@ export async function submitProgress(
 ): Promise<SubmitProgressResponse> {
   const res = await fetch(`${API_BASE}/GeneralGame/${payload.gameId}/progress`, {
     method: "POST",
-    ...DEFAULT_FETCH_OPTIONS,
+    ...getFetchOptions(),
     body: JSON.stringify(payload),
   });
   return handleResponse<SubmitProgressResponse>(res);

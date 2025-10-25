@@ -1,94 +1,113 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { setUser } from "@/store/userSlice";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import { GoogleLogin } from "@react-oauth/google";
+import AlertDialog from "@/components/dialogs/AlertDialog";
+import GoogleAuthButton from "@/components/auth/GoogleAuthButton";
 
 export default function Login() {
-    const emailRef = useRef<HTMLInputElement>(null);
-    const passwordRef = useRef<HTMLInputElement>(null);
-    const dispatch = useDispatch();
-    const router = useRouter();
+  const emailRef = useRef<HTMLInputElement>(null);
+  const passwordRef = useRef<HTMLInputElement>(null);
 
-    const handleGoogleLogin = async (credentialResponse: any) => {
-        try {
-            const idToken = credentialResponse.credential;
-            const res = await axios.post("https://localhost:7292/api/Auth/google-login", { idToken });
+  const [open, setOpen] = useState(false);
+  const [title, setTitle] = useState("");
+  const [message, setMessage] = useState("");
+  const [redirectOnConfirm, setRedirectOnConfirm] = useState(false);
 
-            localStorage.setItem("token", res.data.token);
-            dispatch(setUser(res.data.user));
-            router.push("/");
-        } catch (err) {
-            console.error("Google login failed:", err);
-            alert("Google login failed");
-        }
-    };
+  const dispatch = useDispatch();
+  const router = useRouter();
 
+  const handleOpen = () => setOpen(true);
 
-    const handleLogin = async (e: React.FormEvent) => {
-        e.preventDefault();
+  const handleClose = () => {
+    setOpen(false);
+    if (redirectOnConfirm) {
+      router.push("/");
+    }
+  };
 
-        const email = emailRef.current?.value || "";
-        const password = passwordRef.current?.value || "";
+  const handleLogin = async (e: React.FormEvent) => {
+    e.preventDefault();
 
-        try {
-            const response = await axios.post("https://localhost:7292/api/Auth/login", {
-                email,
-                password
-            });
-            console.log("res:", response);
-            // נשלוף את הנתונים שהשרת החזיר
-            const { token, user } = response.data;
-            console.log("user:", user);
+    const email = emailRef.current?.value;
+    const password = passwordRef.current?.value;
 
-            // נשמור את הטוקן בלוקאל סטורג' (כדי שיהיה זמין לקריאות הבאות)
-            localStorage.setItem("token", token);
+    if (!email || !password) {
+      setTitle("Error");
+      setMessage("Please fill in all fields");
+      setRedirectOnConfirm(false);
+      handleOpen();
+      return;
+    }
 
+    try {
+      const response = await axios.post(
+        "https://localhost:7292/api/Auth/login",
+        { email, password }
+      );
 
-            // נעדכן את המשתמש ברידאקס
-            dispatch(setUser(user));
+      const { token, user } = response.data;
+      localStorage.setItem("token", token);
+      dispatch(setUser(user));
 
-            // נעבור לעמוד הראשי
-            router.push("/");
-        } catch (error) {
-            console.error("Login failed:", error);
-            alert("שגיאה בהתחברות, אנא בדקי את הפרטים.");
-        }
-    };
+      setTitle("Login");
+      setMessage("Login successful!");
+      setRedirectOnConfirm(true);
+      handleOpen();
+    } catch (error) {
+      console.error("Login failed:", error);
+      setTitle("Login Error");
+      setMessage("Invalid email or password");
+      setRedirectOnConfirm(false);
+      handleOpen();
+    }
+  };
 
-    return (
-        <div className="flex flex-col items-center justify-center h-screen gap-4">
-            <h1 className=".section-title">Login</h1>
-            <form onSubmit={handleLogin} className="flex flex-col gap-3 w-64">
-                <input
-                    ref={emailRef}
-                    type="email"
-                    placeholder="Email"
-                    className="border p-2 rounded"
-                />
-                <input
-                    ref={passwordRef}
-                    type="text"
-                    placeholder="Password"
-                    className="border p-2 rounded"
-                />
-                <button
-                    type="submit"
-                    className="btn-primary"
-                >
-                    Login
-                </button>
-            </form>
+  return (
+    <div className="flex flex-col items-center justify-center h-screen gap-4">
+      <h1 className="text-3xl font-bold text-center text-indigo-700 mb-6">
+        Login
+      </h1>
 
-            <div className="mt-4">
-                <GoogleLogin
-                    onSuccess={handleGoogleLogin}
-                    onError={() => console.log("Google Login Failed")}
-                />
-            </div>
-        </div >
-    );
+      <form onSubmit={handleLogin} className="flex flex-col gap-3 w-64">
+        <input
+          ref={emailRef}
+          type="email"
+          placeholder="Email"
+          className="border p-2 rounded"
+        />
+        <input
+          ref={passwordRef}
+          type="password"
+          placeholder="Password"
+          className="border p-2 rounded"
+        />
+        <button type="submit" className="btn-primary">
+          Login
+        </button>
+      </form>
+
+      <p className="text-center text-gray-600 text-sm mt-5">
+        Don’t have an account?{" "}
+        <a
+          href="/signup"
+          className="text-indigo-600 font-medium hover:underline"
+        >
+          Sign up
+        </a>
+      </p>
+
+      <div className="mt-4">
+        <GoogleAuthButton text="Login with Google" />
+      </div>
+
+      {open && (
+        <AlertDialog title={title} message={message} onClose={handleClose} />
+      )}
+    </div>
+  );
 }

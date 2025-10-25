@@ -1,39 +1,50 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import HelpDialog from "@/components/dialogs/HelpDialog";
 import SettingsDialog from "@/components/dialogs/SettingsDialog";
 import ConfirmDialog from "@/components/dialogs/ConfirmDialog";
 import Toast from "@/components/feedback/Toast";
+import AlertDialog from "@/components/dialogs/AlertDialog";
 import { usePlatformGames } from "@/hooks/usePlatformGames";
+import { useSelector } from "react-redux";
 
 export default function HomePage() {
   const [showHelp, setShowHelp] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
   const [toastMessage, setToastMessage] = useState("");
+  const [alertOpen, setAlertOpen] = useState(false);
+
   const { data } = usePlatformGames();
-  console.log("Games data:", data);
-  
- const styleMap: Record<number, { color: string; emoji: string }> = {
-   1: { color: "from-purple-400 to-violet-500", emoji: "❓" }, // Opposite Quest
-   2: { color: "from-sky-400 to-blue-500", emoji: "🪢" }, // Picture Hangman
-   3: { color: "from-yellow-400 to-orange-500", emoji: "🔤" }, // Letter Chaos
-   6: { color: "from-green-400 to-emerald-500", emoji: "🧩" }, // Mini Wordle
-   7: { color: "from-pink-400 to-rose-500", emoji: "📚" }, // Word Sorter
-   8: { color: "from-indigo-400 to-blue-600", emoji: "🧠" }, // Memory Match: Synonyms
-   9: { color: "from-amber-400 to-orange-500", emoji: "✍️" }, // Grammar Guru
-   10: { color: "from-teal-400 to-green-500", emoji: "🌀" }, // TwinWords
-   11: { color: "from-cyan-500 to-sky-600", emoji: "⚖️" }, // Memory Match: Antonyms
-   12: { color: "from-rose-400 to-red-500", emoji: "👀" }, // Double Vision
-   14: { color: "from-lime-400 to-green-500", emoji: "🎯" }, // GuessMaster 20
-   15: { color: "from-blue-400 to-indigo-500", emoji: "🔍" }, // Context Clues
-   16: { color: "from-fuchsia-400 to-pink-500", emoji: "💬" }, // Phrase Craze
-   17: { color: "from-violet-400 to-purple-600", emoji: "🖼️" }, // PicPick
-   18: { color: "from-teal-400 to-green-500", emoji: "🎵" }, // Rhyme Time
- };
+  const router = useRouter();
+
+  const user = useSelector(
+    (state: { user: { user: { userId: number; fullName: string } } }) =>
+      state.user.user
+  );
+  const isLoggedIn = user?.userId && user.userId !== 0;
+
+  const styleMap: Record<number, { color: string; emoji: string }> = {
+    1: { color: "from-purple-400 to-violet-500", emoji: "❓" },
+    2: { color: "from-sky-400 to-blue-500", emoji: "🪢" },
+    3: { color: "from-yellow-400 to-orange-500", emoji: "🔤" },
+    6: { color: "from-green-400 to-emerald-500", emoji: "🧩" },
+    7: { color: "from-pink-400 to-rose-500", emoji: "📚" },
+    8: { color: "from-indigo-400 to-blue-600", emoji: "🧠" },
+    9: { color: "from-amber-400 to-orange-500", emoji: "✍️" },
+    10: { color: "from-teal-400 to-green-500", emoji: "🌀" },
+    11: { color: "from-cyan-500 to-sky-600", emoji: "⚖️" },
+    12: { color: "from-rose-400 to-red-500", emoji: "👀" },
+    14: { color: "from-lime-400 to-green-500", emoji: "🎯" },
+    15: { color: "from-blue-400 to-indigo-500", emoji: "🔍" },
+    16: { color: "from-fuchsia-400 to-pink-500", emoji: "💬" },
+    17: { color: "from-violet-400 to-purple-600", emoji: "🖼️" },
+    18: { color: "from-teal-400 to-green-500", emoji: "🎵" },
+  };
 
   const mergedGames =
     data?.map((game) => ({
@@ -42,12 +53,24 @@ export default function HomePage() {
       description: game.description,
       instructions: game.instructions,
       path: `/games/${game.gameName.toLowerCase().replace(/\s+/g, "-")}`,
-      ...styleMap[game.gameId], // מוסיף צבע ואימוג׳י
+      ...styleMap[game.gameId],
     })) ?? [];
-  
+
   const handleConfirm = () => {
     setToastMessage("✅ אישרת את תנאי השימוש בהצלחה!");
     setShowConfirm(false);
+  };
+
+  // ✅ הגנה על העמוד – רק למשתמשים מחוברים
+  useEffect(() => {
+    if (!isLoggedIn) {
+      setAlertOpen(true);
+    }
+  }, [isLoggedIn]);
+
+  const handleAlertClose = () => {
+    setAlertOpen(false);
+    router.push("/login"); // מפנה לעמוד ההתחברות
   };
 
   return (
@@ -96,13 +119,15 @@ export default function HomePage() {
             whileHover={{ scale: 1.05 }}
             className={`bg-gradient-to-br ${game.color} text-white rounded-3xl shadow-xl p-8 flex flex-col justify-between transition-all duration-300 hover:shadow-2xl`}
           >
-            <h2 className="text-2xl font-bold mb-6 text-center">{game.name} {game.emoji }</h2>
+            <h2 className="text-2xl font-bold mb-6 text-center">
+              {game.name} {game.emoji}
+            </h2>
             <Link href={game.path}>
               <motion.button
                 whileTap={{ scale: 0.95 }}
                 className="w-full py-3 rounded-xl bg-white text-gray-900 font-bold shadow hover:bg-gray-100 transition"
               >
-                🎮Lets Start
+                🎮 Let's Start
               </motion.button>
             </Link>
           </motion.div>
@@ -128,6 +153,13 @@ export default function HomePage() {
           />
         )}
         {toastMessage && <Toast message={toastMessage} />}
+        {alertOpen && (
+          <AlertDialog
+            title="Access Denied"
+            message="Please log in or sign up to access the games."
+            onClose={handleAlertClose}
+          />
+        )}
       </AnimatePresence>
     </div>
   );
