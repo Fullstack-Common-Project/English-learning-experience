@@ -21,11 +21,8 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes
         public async Task<List<Category>> GetRandomCategoriesAsync(int count)
         {
             return await _appDbContext.Categories
-<<<<<<< HEAD
-                .OrderBy(i => EF.Functions.Random())
-=======
+
                 .OrderBy(w => EF.Functions.Random())
->>>>>>> origin/main-v2
                 .Take(count)
                 .ToListAsync();
         }

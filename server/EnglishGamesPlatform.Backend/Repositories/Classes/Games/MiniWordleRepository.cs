@@ -10,13 +10,10 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes.Games
     
        
         private readonly IWordRepository _wordRepository;
-<<<<<<< HEAD
-        private static int counter = 1;
-=======
+
 
         private static int counter = 1;
 
->>>>>>> origin/main-v2
         public MiniWordleRepository(IWordRepository wordRepository)
         {
             _wordRepository = wordRepository;
@@ -32,10 +29,8 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes.Games
 
             var res= new MiniWordleData
             {
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/main-v2
+
                 Id=counter++,
                 WordLength = targetWord.Length,
                 TargetWord = targetWord

@@ -2,22 +2,17 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { GameProps } from "@/components/common/GameLayout";
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useGuessMaster20 as useGuessMaster20Real } from "@/hooks/useGuessMaster20";
+import { submitProgress } from "@/lib/api";
 import type {
   GuessMasterData,
   GuessMasterAskRequest,
   GuessMasterAskResponse,
 } from "@/types/GuessMaster";
 
-/* =============================
-   Config: לעבוד על מוק / שרת
-   ============================= */
 const USE_MOCK = true;
 
-/* =============================
-   סוג לוג היסטוריה למסך
-   ============================= */
 type GuessTurn = {
   type: "question" | "guess";
   text: string;
@@ -25,10 +20,9 @@ type GuessTurn = {
   guessCorrect?: boolean | null;
 };
 
-/* =============================
-   MOCK – מדמה שרת עם התמדה אמיתית
-   ============================= */
-function useGuessMaster20Mock() {
+export function useGuessMaster20Mock() {
+  const qc = useQueryClient();
+
   const secretWordRef = useRef<string>("apple");
   const remainingRef = useRef<number>(20);
   const sessionIdRef = useRef<string>(crypto.randomUUID());
@@ -54,7 +48,7 @@ function useGuessMaster20Mock() {
 
   const nextFour = () => [...bank].sort(() => Math.random() - 0.5).slice(0, 4);
 
-  // מצב "שרת" שנשמר בין קריאות (לא מתאפס ברינדור)
+  // Persisted "server" state across renders
   const serverState = useRef<GuessMasterData>({
     sessionId: sessionIdRef.current,
     title: "GuessMaster 20",
@@ -63,14 +57,15 @@ function useGuessMaster20Mock() {
     suggestedQuestions: nextFour(),
   });
 
+  const dataKey = ["gm20", "data", "mock"] as const;
+
   // GET /data
   const dataQuery = useQuery<GuessMasterData>({
-    queryKey: ["gm20", "data", "mock"],
+    queryKey: dataKey,
     queryFn: async () => {
       await new Promise((r) => setTimeout(r, 150));
       return { ...serverState.current };
     },
-    // שלא יקרה refetch אוטומטי שמאפס UI
     staleTime: Infinity,
     refetchOnWindowFocus: false,
     refetchOnReconnect: false,
@@ -94,28 +89,30 @@ function useGuessMaster20Mock() {
         };
       }
 
-      // כל פעולה צורכת תור
+      // consume a turn
       remainingRef.current -= 1;
 
       if (req.isGuess) {
-        const correct = req.guessWord?.trim().toLowerCase() === secretWordRef.current.toLowerCase();
-        // סוף משחק תמיד בניחוש
+        const correct =
+          req.guessWord?.trim().toLowerCase() === secretWordRef.current.toLowerCase();
+
         serverState.current = {
           ...serverState.current,
           remainingTurns: remainingRef.current,
           suggestedQuestions: [],
         };
+
         return {
           sessionId: sessionIdRef.current,
           yesNoAnswer: null,
           guessCorrect: correct,
           remainingTurns: remainingRef.current,
           nextSuggestedQuestions: [],
-          gameOver: true,
+          gameOver: true, // guessing ends the game
           won: correct,
         };
       } else {
-        // כן/לא "חצי חכם"
+        // lightweight heuristic for yes/no
         const q = (req.questionText ?? "").toLowerCase();
         let yes = Math.random() > 0.5;
         if (q.includes("fruit")) yes = true;
@@ -124,6 +121,7 @@ function useGuessMaster20Mock() {
         if (q.includes("electronic")) yes = false;
 
         const over = remainingRef.current <= 0;
+
         serverState.current = {
           ...serverState.current,
           remainingTurns: remainingRef.current,
@@ -142,22 +140,31 @@ function useGuessMaster20Mock() {
       }
     },
     onSuccess: (res) => {
-      // סנכרון "שרת"
+      // keep "server" in sync
       serverState.current = {
         ...serverState.current,
         remainingTurns: res.remainingTurns,
         suggestedQuestions: res.nextSuggestedQuestions,
       };
+
+      // ✅ update React-Query cache so UI gets the new 4 questions immediately
+      qc.setQueryData<GuessMasterData>(dataKey, (prev) =>
+        prev
+          ? {
+            ...prev,
+            remainingTurns: res.remainingTurns,
+            suggestedQuestions: res.nextSuggestedQuestions ?? prev.suggestedQuestions,
+          }
+          : prev
+      );
     },
   });
 
   return { dataQuery, askMutation };
 }
 
-/* =============================
-   קומפוננטת המשחק
-   ============================= */
 export default function GuessMaster20Game({ onScoreChange, onGameOver, paused }: GameProps) {
+  const qc = useQueryClient();
   const { dataQuery, askMutation } = USE_MOCK ? useGuessMaster20Mock() : useGuessMaster20Real();
 
   const [history, setHistory] = useState<GuessTurn[]>([]);
@@ -166,10 +173,8 @@ export default function GuessMaster20Game({ onScoreChange, onGameOver, paused }:
   const [selectedAnswer, setSelectedAnswer] = useState<boolean | null | undefined>(undefined);
   const [ended, setEnded] = useState(false);
 
-  // “תורות שנותרו” — אופטימי + סנכרון מתגובה
   const [remaining, setRemaining] = useState<number>(20);
 
-  // נבצע איפוס פעם אחת בלבד ב-mount/טעינה ראשונה
   const didInit = useRef(false);
   useEffect(() => {
     if (dataQuery.isSuccess && !didInit.current && dataQuery.data) {
@@ -187,6 +192,7 @@ export default function GuessMaster20Game({ onScoreChange, onGameOver, paused }:
   const error = dataQuery.isError || !dataQuery.data;
   const sessionId = dataQuery.data?.sessionId ?? "";
   const suggested = dataQuery.data?.suggestedQuestions ?? [];
+  const dataKey = ["gm20", "data", USE_MOCK ? "mock" : "real"] as const;
 
   const disabledUI = paused || loading || askMutation.isPending || ended;
 
@@ -198,20 +204,18 @@ export default function GuessMaster20Game({ onScoreChange, onGameOver, paused }:
           <span className="flex-1">{h.text}</span>
           {h.type === "question" && (
             <span
-              className={`px-2 py-1 rounded-lg text-sm ${
-                h.answer ? "bg-emerald-600/80" : "bg-rose-600/80"
-              }`}
+              className={`px-2 py-1 rounded-lg text-sm ${h.answer ? "bg-emerald-600/80" : "bg-rose-600/80"
+                }`}
             >
-              {h.answer ? "כן" : "לא"}
+              {h.answer ? "yes" : "no"}
             </span>
           )}
           {h.type === "guess" && (
             <span
-              className={`px-2 py-1 rounded-lg text-sm ${
-                h.guessCorrect ? "bg-emerald-600/80" : "bg-rose-600/80"
-              }`}
+              className={`px-2 py-1 rounded-lg text-sm ${h.guessCorrect ? "bg-emerald-600/80" : "bg-rose-600/80"
+                }`}
             >
-              {h.guessCorrect ? "ניחוש נכון!" : "ניחוש שגוי"}
+              {h.guessCorrect ? "Correct guess!" : "Incorrect guess"}
             </span>
           )}
         </li>
@@ -219,12 +223,10 @@ export default function GuessMaster20Game({ onScoreChange, onGameOver, paused }:
     [history]
   );
 
-  /* ------------ Handlers ------------ */
 
   async function askSuggested(questionText: string, questionId?: number) {
     if (!sessionId || disabledUI) return;
 
-    // אופטימי: מורידים תור ברגע הלחיצה
     setRemaining((r) => Math.max(0, r - 1));
 
     setSelectedIdx(suggested.indexOf(questionText));
@@ -238,16 +240,22 @@ export default function GuessMaster20Game({ onScoreChange, onGameOver, paused }:
         isGuess: false,
       });
 
-      // סנכרון תורות מהתגובה
       setRemaining(res.remainingTurns);
 
-      // שמירת היסטוריה
+      qc.setQueryData<GuessMasterData>(dataKey, (prev) =>
+        prev
+          ? {
+            ...prev,
+            remainingTurns: res.remainingTurns,
+            suggestedQuestions: res.nextSuggestedQuestions ?? prev.suggestedQuestions,
+          }
+          : prev
+      );
+
       setHistory((arr) => [
         ...arr,
         { type: "question", text: questionText, answer: res.yesNoAnswer ?? null },
       ]);
-
-      // הצגת התשובה ליד השאלה
       setSelectedAnswer(res.yesNoAnswer ?? null);
 
       if (res.gameOver) {
@@ -256,21 +264,31 @@ export default function GuessMaster20Game({ onScoreChange, onGameOver, paused }:
         onScoreChange?.(score);
         onGameOver?.();
       } else {
-        // אחרי הצגת תשובה – חוזרים ל-4 חדשות
         setTimeout(() => {
           setSelectedIdx(null);
           setSelectedAnswer(undefined);
         }, 300);
       }
     } catch {
-      // אפשר להחזיר תור במקרה כשל רשת אם תרצי
     }
   }
 
+  async function onEndGame(score: number, elapsedSec: number, usedTurns: number) {
+    try {
+      await submitProgress({
+        gameID: 14,
+        userID: USE_MOCK ? "mockUser" : "realUser", // אם יש — לשים
+        score,
+        time: elapsedSec,
+        rounds: usedTurns,
+      });
+    } catch (e) {
+      console.error("submitProgress failed", e);
+    }
+  }
   async function submitGuess() {
     if (!guessWord.trim() || !sessionId || disabledUI) return;
 
-    // אופטימי: מורידים תור ומסיימים משחק ב-UI
     setRemaining((r) => Math.max(0, r - 1));
     setEnded(true);
 
@@ -286,6 +304,16 @@ export default function GuessMaster20Game({ onScoreChange, onGameOver, paused }:
 
       setRemaining(res.remainingTurns);
 
+      qc.setQueryData<GuessMasterData>(dataKey, (prev) =>
+        prev
+          ? {
+            ...prev,
+            remainingTurns: res.remainingTurns,
+            suggestedQuestions: res.nextSuggestedQuestions ?? [],
+          }
+          : prev
+      );
+
       setHistory((arr) => [
         ...arr,
         { type: "guess", text: word, guessCorrect: res.guessCorrect ?? null },
@@ -296,54 +324,50 @@ export default function GuessMaster20Game({ onScoreChange, onGameOver, paused }:
       onScoreChange?.(score);
       onGameOver?.();
     } catch {
-      // אם תרצי להתיר ניסיון נוסף במקרה כשל — setEnded(false)
     }
   }
 
-  /* ------------ UI ------------ */
 
-  if (loading) return <div className="page-container">טוען…</div>;
-  if (error) return <div className="page-container">שגיאה בטעינת הנתונים למשחק</div>;
+  if (loading) return <div className="page-container">Loading…</div>;
+  if (error) return <div className="page-container">Error loading game data</div>;
 
   return (
-    <div className={`page-container ${disabledUI && !ended ? "opacity-60 pointer-events-none" : ""}`} dir="rtl">
-      {/* HUD */}
+    <div className={`page-container ${disabledUI && !ended ? "opacity-60 pointer-events-none" : ""}`}>
       <div className="game-hud mb-4 flex items-center gap-3">
-        <div className="level-badge">תורות שנותרו: {remaining}</div>
-        {ended && <div className="px-3 py-1 rounded-xl bg-white/10 border border-white/10">המשחק נגמר</div>}
+        <div className="level-badge">Remaining turns: {remaining}</div>
+        {ended && (
+          <div className="px-3 py-1 rounded-xl bg-white/10 border border-white/10">Game over</div>
+        )}
       </div>
 
       <div className="grid gap-6">
-        {/* היסטוריה */}
         <div className="panel">
-          <h3 className="text-xl font-semibold text-indigo-400 mb-3">מה שאלת עד עכשיו</h3>
+          <h3 className="text-xl font-semibold text-indigo-400 mb-3">History</h3>
           {history.length === 0 ? (
-            <div className="text-slate-300">עוד לא נשאלה אף שאלה.</div>
+            <div className="text-slate-300">No questions asked yet.</div>
           ) : (
             <ul className="space-y-2">{renderedHistory}</ul>
           )}
         </div>
 
-        {/* שאלות מוצעות / שאלה נבחרת */}
         <div className="panel space-y-4">
-          <h3 className="text-xl font-semibold text-indigo-400">שאלות מוצעות</h3>
+          <h3 className="text-xl font-semibold text-indigo-400">Suggested questions</h3>
 
           {selectedIdx !== null ? (
             <div className="p-4 rounded-2xl border border-white/10 bg-white/5">
               <div className="flex flex-wrap items-center gap-3">
                 <span className="font-medium">{suggested[selectedIdx]}</span>
-                <span className="text-sm opacity-70">(שאלה נבחרת)</span>
+                <span className="text-sm opacity-70">(selected)</span>
               </div>
               <div className="mt-3">
                 {selectedAnswer === undefined ? (
-                  <div className="text-slate-300">ממתינים לתשובה…</div>
+                  <div className="text-slate-300">Waiting for answer…</div>
                 ) : (
                   <span
-                    className={`inline-block px-3 py-1 rounded-lg text-sm ${
-                      selectedAnswer ? "bg-emerald-600/80" : "bg-rose-600/80"
-                    }`}
+                    className={`inline-block px-3 py-1 rounded-lg text-sm ${selectedAnswer ? "bg-emerald-600/80" : "bg-rose-600/80"
+                      }`}
                   >
-                    {selectedAnswer ? "כן" : "לא"}
+                    {selectedAnswer ? "yes" : "no"}
                   </span>
                 )}
               </div>
@@ -365,13 +389,12 @@ export default function GuessMaster20Game({ onScoreChange, onGameOver, paused }:
 
           <div className="h-px bg-white/10 my-2" />
 
-          {/* ניחוש מילה – תמיד בתחתית; ניחוש מסיים משחק */}
-          <h4 className="text-lg text-slate-200">ניחוש המילה</h4>
+          <h4 className="text-lg text-slate-200">Guess the word</h4>
           <div className="flex gap-2">
             <input
               value={guessWord}
               onChange={(e) => setGuessWord(e.target.value)}
-              placeholder="ניחוש המילה…"
+              placeholder="Your guess…"
               className="flex-1 rounded-xl px-4 py-2 bg-white/10 border border-white/10 outline-none"
               disabled={disabledUI}
             />
@@ -380,7 +403,7 @@ export default function GuessMaster20Game({ onScoreChange, onGameOver, paused }:
               onClick={submitGuess}
               disabled={disabledUI || !guessWord.trim()}
             >
-              נחשי 🎯
+              Guess
             </button>
           </div>
         </div>

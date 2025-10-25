@@ -1,33 +1,25 @@
-// src/types/GuessMaster.ts
-
-// נתוני פתיחה / מצב משחק
-export interface GuessMasterData {
-  sessionId: string;            // Guid בצד שרת - כאן כמחרוזת
-  title: string;                // "GuessMaster 20"
+export type GuessMasterData = {
+  sessionId: string;
+  title: string;
   maxTurns: number;
   remainingTurns: number;
   suggestedQuestions: string[];
-}
+};
 
-// בקשת מהלך: שאלה או ניחוש
-export interface GuessMasterAskRequest {
-  sessionId: string;            // חובה
-  questionText?: string;        // אופציונלי (אם זו שאלה חופשית)
-  questionId?: number;          // אופציונלי (אם זו שאלה ממאגר)
-  isGuess?: boolean;            // true אם זה ניחוש
-  guessWord?: string;           // המילה המנוחשת
-}
-
-// תגובת מהלך
-export interface GuessMasterAskResponse {
+export type GuessMasterAskRequest = {
   sessionId: string;
-  yesNoAnswer?: boolean | null;       // null אם זה ניחוש
-  guessCorrect?: boolean | null;      // null אם זו שאלה
+  isGuess?: boolean;
+  questionText?: string;
+  questionId?: number;
+  guessWord?: string;
+};
+
+export type GuessMasterAskResponse = {
+  sessionId: string;
+  yesNoAnswer?: boolean | null;
+  guessCorrect?: boolean | null;
   remainingTurns: number;
   nextSuggestedQuestions: string[];
   gameOver: boolean;
   won?: boolean | null;
-}
-
-// לצורך הייבוא ב- types/index.ts
-export type GuessMasterResponse = GuessMasterData;
+};

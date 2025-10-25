@@ -51,7 +51,7 @@ export async function postGuessMasterTurn(
 ): Promise<GuessMasterAskResponse> {
   const res = await fetch(`${API_BASE}/${gameId}/progress`, {
     method: "POST",
-    headers: { "Content-Type": "application/json" },
+    ...DEFAULT_FETCH_OPTIONS,
     body: JSON.stringify(body),
   });
   if (!res.ok) throw new Error("failed to submit GM20 turn");

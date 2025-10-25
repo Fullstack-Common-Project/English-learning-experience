@@ -21,11 +21,8 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes
         public async Task<List<Word>> GetRandomWordsAsync(int count)
         {
             return await _appDbContext.Words
-<<<<<<< HEAD
-                .OrderBy(i => EF.Functions.Random())
-=======
+
                 .OrderBy(w => EF.Functions.Random())
->>>>>>> origin/main-v2
                 .Take(count)
                 .ToListAsync();
         }
@@ -53,12 +50,7 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes
         public async Task<List<Word>> GetWordsAsync(int firstWordId, int secondWordId)
         {
             return await _appDbContext.Words
-<<<<<<< HEAD
-
-                 .OrderBy(i => EF.Functions.Random())
-=======
                  .OrderBy(w => EF.Functions.Random())
->>>>>>> origin/main-v2
                  .Where(w => w.WordId != firstWordId && w.WordId != secondWordId)
                  .Take(3)
                  .ToListAsync();
