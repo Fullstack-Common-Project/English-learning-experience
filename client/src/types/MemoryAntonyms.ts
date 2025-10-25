@@ -1,8 +1,12 @@
 import { GameResponseBase } from "./index";
 
-export interface MemoryAntonymsItem {
-  // empty item shape by request
+export interface PairDTO {
+  wordA: string;
+  wordB: string;
 }
 
+
+
+
 export interface MemoryAntonymsResponse
-  extends GameResponseBase<11, MemoryAntonymsItem> {}
+  extends GameResponseBase<11, PairDTO[]> {}

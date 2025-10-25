@@ -6,6 +6,7 @@ import { setUser } from "@/store/userSlice";
 import { useRouter } from "next/navigation";
 import axios from "axios";
 import { GoogleLogin } from "@react-oauth/google";
+import { useSelector } from "react-redux";
 
 export default function Login() {
     const emailRef = useRef<HTMLInputElement>(null);
@@ -14,10 +15,10 @@ export default function Login() {
     const router = useRouter();
 
     const handleGoogleLogin = async (credentialResponse: any) => {
+
         try {
             const idToken = credentialResponse.credential;
             const res = await axios.post("https://localhost:7292/api/Auth/google-login", { idToken });
-
             localStorage.setItem("token", res.data.token);
             dispatch(setUser(res.data.user));
             router.push("/");
@@ -40,18 +41,9 @@ export default function Login() {
                 password
             });
             console.log("res:", response);
-            // נשלוף את הנתונים שהשרת החזיר
             const { token, user } = response.data;
-            console.log("user:", user);
-
-            // נשמור את הטוקן בלוקאל סטורג' (כדי שיהיה זמין לקריאות הבאות)
             localStorage.setItem("token", token);
-
-
-            // נעדכן את המשתמש ברידאקס
             dispatch(setUser(user));
-
-            // נעבור לעמוד הראשי
             router.push("/");
         } catch (error) {
             console.error("Login failed:", error);

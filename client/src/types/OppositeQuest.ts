@@ -1,7 +1,15 @@
 import { GameResponseBase } from "./index";
 export interface OppositeQuestItem {
-  // empty item shape by request
+  id: any;
+  data:{
+   items:OppositeQuestItemSingle[]
+  }
+};
+
+export interface OppositeQuestItemSingle { 
+  id: number;
+  word: string;
+  options: string[];
+  correctIndex: number;
 }
-
-
 export interface OppositeQuestResponse extends GameResponseBase<1, OppositeQuestItem> {}
