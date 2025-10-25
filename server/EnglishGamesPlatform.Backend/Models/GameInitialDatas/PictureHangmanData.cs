@@ -4,8 +4,6 @@ namespace EnglishGamesPlatform.Backend.Models.GameDatas
 {
     public class PictureHangmanData : GameInitialData
     {
-        public string TargetWord { get; set; }
-
-        public string ImageUrl { get; set; }
+        public List<ImageWordPair> Pairs { get; set; }
     }
 }

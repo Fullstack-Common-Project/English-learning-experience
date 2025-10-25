@@ -21,7 +21,6 @@ namespace EnglishGamesPlatform.Backend.Controllers
             _authService = authService; 
         }
 
-
         [HttpPost("google-login")]
         public async Task<IActionResult> GoogleLogin([FromBody] GoogleLoginDTO googleUser)
         {
@@ -32,7 +31,6 @@ namespace EnglishGamesPlatform.Backend.Controllers
 
             return Ok(new { res.Data!.Token, res.Data.User, res.Message });
         }
-
 
         [HttpPost("login")]
         public async Task< IActionResult> Login([FromBody] LoginDto user)
@@ -57,5 +55,6 @@ namespace EnglishGamesPlatform.Backend.Controllers
                 return Ok(new { res.Data!.Token, res.Data.User, res.Message });
             }
         }
+
     }
 }

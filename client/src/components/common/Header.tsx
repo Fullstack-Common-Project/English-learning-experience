@@ -8,6 +8,7 @@ import UserSection from "../ui/UserSection";
 import MobileMenu from "../ui/MobileMenu";
 import { useSelector } from "react-redux";
 
+
 export default function Header() {
   const user = useSelector(
     (state: { user: { user: { userId: number; fullName: string } } }) =>

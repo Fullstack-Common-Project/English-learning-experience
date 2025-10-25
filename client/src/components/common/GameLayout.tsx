@@ -18,6 +18,7 @@ export type GameProps = {
   onScoreChange?: (value: number | ((prev: number) => number)) => void;
   onGameOver?: () => void;
   paused?: boolean;
+  time?: number;
 };
 
 type GameLayoutProps = {
@@ -150,18 +151,16 @@ export default function GameLayout({ children, gameTitle }: GameLayoutProps) {
             </button>
           </div>
 
-          <div
-            className={`game-content ${
-              paused || countdownActive ? "disabled" : ""
-            }`}
-          >
-            {React.isValidElement(children) &&
-              React.cloneElement(children as React.ReactElement<GameProps>, {
-                onScoreChange: handleScoreChange,
-                onGameOver: handleGameOver,
-                paused: paused || countdownActive,
-              })}
-          </div>
+          <div className="game-content">
+  {React.isValidElement(children) &&
+    React.cloneElement(children as React.ReactElement<GameProps>, {
+      onScoreChange: handleScoreChange,
+      onGameOver: handleGameOver,
+      paused: paused || countdownActive,
+      time, // <-- מוסיפים כאן את הזמן
+    })}
+</div>
+
         </div>
       )}
 

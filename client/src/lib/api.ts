@@ -37,7 +37,7 @@ export async function fetchLeaderboard(
 export async function submitProgress(
   payload: SubmitProgressPayload
 ): Promise<SubmitProgressResponse> {
-  const res = await fetch(`${API_BASE}/GeneralGame/${payload.gameId}/progress`, {
+  const res = await fetch(`${API_BASE}/GeneralGame/${payload.gameID}/progress`, {
     method: "POST",
     ...getFetchOptions(),
     body: JSON.stringify(payload),
