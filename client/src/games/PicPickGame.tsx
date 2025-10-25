@@ -7,17 +7,19 @@ import { useSubmitProgress } from "@/hooks/useSubmitProgress";
 import { GameId } from "@/types";
 import { PicPickItem } from "@/types/PicPick";
 import { motion } from "framer-motion";
+import { useSelector } from "react-redux";
 
-export default function PicPickGame({ onScoreChange, onGameOver, paused }: GameProps) {
+export default function PicPickGame({ onScoreChange, onGameOver, paused, time }: GameProps) {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [completed, setCompleted] = useState(false);
     const [score, setScore] = useState(0);
-    const [time, setTime] = useState(0);
+    const round = useRef(1);
     const [questions, setQuestions] = useState<PicPickItem[]>([]);
     const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
     const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
 
     const gameId: GameId = 17; 
+    const user = useSelector((state: any) => state.user.user);
     const { data, isLoading, isError, refetch } = useGameData(gameId);
     const hasFetchedRef = useRef(false);
     const baseUrl = "https://english-platform-testpnoren.s3.us-east-1.amazonaws.com/";
@@ -29,11 +31,15 @@ export default function PicPickGame({ onScoreChange, onGameOver, paused }: GameP
       setQuestions(items);
     }, [data]);
 
-    const { data: leaderboard, refetch: refetchLeaderboard } = useLeaderboard(gameId, {
-      refetchInterval: 10000, 
-    });
 
     const submitProgress = useSubmitProgress();
+
+    const timeRef = useRef(time);
+    useEffect(() =>{
+    timeRef.current = time;
+    }, [time]);
+
+    const { data: leaderboardData } = useLeaderboard(gameId);   
     
     if (isLoading || !questions.length) return <p>Loading...</p>;
     if (isError || !data) return <p>No data available.</p>;
@@ -42,20 +48,21 @@ export default function PicPickGame({ onScoreChange, onGameOver, paused }: GameP
 
     const handleFinish = async () => {
         await submitProgress.mutateAsync({
-            gameId,
-            playerName: "שירה",
-            score,
-            time,
-            roundsCompleted: questions.length,
+            gameID: gameId,
+            userID: user?.userId!,
+            score:score,
+            time: timeRef.current?? 0,
+            rounds:round.current,
         });
-        refetchLeaderboard();
         hasFetchedRef.current = false;
         setCurrentIndex(0);
         setCompleted(false);
         setScore(0);
         setQuestions([]);
         refetch();
-    }
+
+    console.log("Leaderboard:", leaderboardData?.data.leaderboards);
+}
 
     const handleAnswer = (index: number) => {
         if (paused || completed || !currentItem ||selectedIndex !== null) return;
@@ -65,6 +72,7 @@ export default function PicPickGame({ onScoreChange, onGameOver, paused }: GameP
         setIsCorrect(correct);
 
         if (correct) {
+            round.current += 1;
             onScoreChange?.((prev) => prev + 10);
         }
 
