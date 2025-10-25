@@ -169,7 +169,7 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  if (!isClient) return null; // ✅ מונע Hydration mismatch
+  if (!isClient) return null; 
 
   const nav = [
     { href: "/", label: "Home" },
