@@ -8,22 +8,31 @@ import UserSection from "../ui/UserSection";
 import MobileMenu from "../ui/MobileMenu";
 import { useSelector } from "react-redux";
 
-
 export default function Header() {
   const user = useSelector(
     (state: { user: { user: { userId: number; fullName: string } } }) =>
       state.user.user
   );
+
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+
   const isLoggedIn = user?.userId && user.userId !== 0;
   const playerName = user?.fullName || "";
+
+  useEffect(() => {
+    // ✅ נוודא שהרינדור מתבצע רק בצד הלקוח
+    setIsClient(true);
+  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  if (!isClient) return null; // ❗ מונע Hydration Error
 
   return (
     <header
@@ -32,14 +41,17 @@ export default function Header() {
     >
       <div className="h-16 flex items-center justify-between mt-4 px-4 md:px-6">
         <Logo size="sm" />
-
         <NavLinks />
 
-      {isLoggedIn?<UserSection
-        onMenuToggle={() => setMobileOpen((prev) => !prev)}
-          mobileOpen={mobileOpen}
-          playerName={playerName} />
-        :<MobileMenu onClose={() => setMobileOpen(false)} />}
+        {isLoggedIn ? (
+          <UserSection
+            onMenuToggle={() => setMobileOpen((prev) => !prev)}
+            mobileOpen={mobileOpen}
+            playerName={playerName}
+          />
+        ) : (
+          <MobileMenu onClose={() => setMobileOpen(false)} />
+        )}
       </div>
 
       <AnimatePresence>

@@ -1,8 +1,7 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { clearUser } from "@/store/userSlice";
-import { useRouter } from "next/navigation";
 
 type Props = {
   onMenuToggle: () => void;
@@ -16,14 +15,21 @@ export default function UserSection({
   playerName,
 }: Props) {
   const [openMenu, setOpenMenu] = useState(false);
+  const [isClient, setIsClient] = useState(false);
   const dispatch = useDispatch();
-  const router = useRouter();
-  
+
+  useEffect(() => {
+    // נוודא שהקומפוננטה כבר נטענה בצד הלקוח
+    setIsClient(true);
+  }, []);
+
   const handleLogout = () => {
     dispatch(clearUser());
     setOpenMenu(false);
-    router.push("/");
   };
+
+  // בזמן רינדור בשרת, לא נציג כלום כדי למנוע mismatch
+  if (!isClient) return null;
 
   return (
     <div className="relative flex items-center gap-4">
@@ -34,7 +40,7 @@ export default function UserSection({
           className="w-9 h-9 rounded-full bg-gradient-to-br from-indigo-500 to-sky-500 flex items-center justify-center text-white font-semibold shadow-md hover:shadow-lg hover:from-indigo-400 hover:to-sky-400 transition-all"
           title={playerName}
         >
-          {playerName.charAt(0).toUpperCase()}
+          {playerName?.charAt(0)?.toUpperCase() ?? "?"}
         </button>
 
         {/* תפריט קטן מתחת לעיגול */}
