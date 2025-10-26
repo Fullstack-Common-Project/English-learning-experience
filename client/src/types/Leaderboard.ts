@@ -7,6 +7,8 @@ export interface LeaderboardEntry {
 }
 
 export interface LeaderboardResponse {
-  gameId: GameId;
-  leaderboard: LeaderboardEntry[];
+  data: {
+    gameId: GameId;
+    leaderboards: LeaderboardEntry[];
+  }
 }
