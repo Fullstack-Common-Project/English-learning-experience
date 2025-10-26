@@ -83,6 +83,10 @@ export default function DoubleVisionGame({ onScoreChange, onGameOver, paused, ti
       rounds: currentRound + 1,
     });
 
+    // if (leaderboardData?.data?.leaderboards) {
+    //   setLeaderboard(gameId, leaderboardData.data.leaderboards);
+    // }
+    
     onGameOver?.();
     restartGame();
   };
