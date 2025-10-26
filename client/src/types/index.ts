@@ -1,22 +1,21 @@
 
-// 📥 Imports - הוסיפי את כל קבצי המשחקים שלך:
-import { SentenceShuffleResponse } from "./SentenceShuffle";
-import { PicPickResponse } from "./PicPick";
-import { GrammarGuruResponse } from "./GrammarGuru";
-import { OppositeQuestResponse } from "./OppositeQuest";
-import { TwinWordsResponse } from "./TwinWords";
-import { MiniWordleResponse } from "./MiniWordle";
-import { MemorySynonymsResponse } from "./MemorySynonyms";
-import { MemoryAntonymsResponse } from "./MemoryAntonyms";
-import { RhymeTimeResponse } from "./RhymeTime";
-import { WordwiseFlashResponse } from "./WordwiseFlash";
-import { WordSorterResponse } from "./WordSorter";
-import { LetterChaosResponse } from "./LetterChaos";
-import { GuessMasterResponse } from "./GuessMaster";
-import { DoubleVisionResponse } from "./DoubleVision";
-import { ContextCluesResponse } from "./ContextClues";
-import { PhraseCrazeResponse } from "./PhraseCraze";
-import { PictureHangmanResponse } from "./PictureHangman";
+import { SentenceShuffleResponse } from "./gamesTypes/SentenceShuffle";
+import { PicPickResponse } from "./gamesTypes/PicPick";
+import { GrammarGuruResponse } from "./gamesTypes/GrammarGuru";
+import { OppositeQuestResponse } from "./gamesTypes/OppositeQuest";
+import { TwinWordsResponse } from "./gamesTypes/TwinWords";
+import { MiniWordleResponse } from "./gamesTypes/MiniWordle";
+import { MemorySynonymsResponse } from "./gamesTypes/MemorySynonyms";
+import { MemoryAntonymsResponse } from "./gamesTypes/MemoryAntonyms";
+import { RhymeTimeResponse } from "./gamesTypes/RhymeTime";
+import { WordwiseFlashResponse } from "./gamesTypes/WordwiseFlash";
+import { WordSorterResponse } from "./gamesTypes/WordSorter";
+import { LetterChaosResponse } from "./gamesTypes/LetterChaos";
+import { GuessMasterResponse } from "./gamesTypes/GuessMaster";
+import { DoubleVisionResponse } from "./gamesTypes/DoubleVision";
+import { ContextCluesResponse } from "./gamesTypes/ContextClues";
+import { PhraseCrazeResponse } from "./gamesTypes/PhraseCraze";
+import { PictureHangmanResponse } from "./gamesTypes/PictureHangman";
 
 export interface GameResponseMap {
   sentenceShuffle: SentenceShuffleResponse;
@@ -48,4 +47,5 @@ export interface GameResponseBase<T extends GameId, D> {
 }
 
 export type { LeaderboardResponse } from "./Leaderboard";
+export type { Game } from "./Game";
 export type { SubmitProgressPayload, SubmitProgressResponse } from "./SubmitProgress";
