@@ -96,11 +96,26 @@ export default function DoubleVisionGame({ onScoreChange, onGameOver, paused, ti
     setSelectedIndex(index);
     setIsCorrect(correct);
 
+    // if (correct) {
+    //   correctSound.current?.play();
+    //   onScoreChange?.((prev) => prev + 10);
+    // } else {
+    //   wrongSound.current?.play();
+    // }
+
     if (correct) {
-      correctSound.current?.play();
+      if (correctSound.current) {
+        correctSound.current.pause();
+        correctSound.current.currentTime = 0;
+        correctSound.current.play();
+      }
       onScoreChange?.((prev) => prev + 10);
     } else {
-      wrongSound.current?.play();
+      if (wrongSound.current) {
+        wrongSound.current.pause();
+        wrongSound.current.currentTime = 0;
+        wrongSound.current.play();
+      }
     }
 
     // שמירה קצרה של האנימציה לפני מעבר
