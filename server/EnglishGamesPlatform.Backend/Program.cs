@@ -63,14 +63,10 @@ builder.Services.AddScoped<IGeneralGameRepository, OppositeQuestRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, MiniWordleRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, LetterChaosRepository>();
 
-
-
-#endregion
-
-
+builder.Services.AddScoped<IGeneralGameRepository, TwinWordsGameRepository>();
+builder.Services.AddScoped<IGeneralGameRepository, DoubleVisionRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, MemoryMatchSynonymsRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, MemoryMatchAntonymsRepository>();
-builder.Services.AddScoped<IGeneralGameRepository, TwinWordsGameRepository>();
 
 #endregion 
 
@@ -84,6 +80,7 @@ builder.Services.AddScoped<ITwinWordRepository, TwinWordRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, GuessMaster20Repository>();
 
 
+#endregion
 
 
 builder.Services.AddCustomServices();

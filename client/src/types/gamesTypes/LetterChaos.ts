@@ -1,4 +1,4 @@
-import { GameResponseBase } from "./index";
+import { GameResponseBase } from "../index";
 
 export interface LetterChaosItem {
   id: number; 
