@@ -257,7 +257,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Program.cs",
               "ViewState": "AgIAAG0AAAAAAAAAAAAAAIcAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T16:52:02.633Z"
+              "WhenOpened": "2025-10-21T16:52:02.633Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -269,7 +270,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Extensions\\ExceptionHandlerExtensions.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAAAAwBgAAABLAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T16:26:03.99Z"
+              "WhenOpened": "2025-10-21T16:26:03.99Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -281,7 +283,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Utils\\TokenService.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAiwBsAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T09:39:18.539Z"
+              "WhenOpened": "2025-10-22T09:39:18.539Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -293,7 +296,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Controllers\\GeneralGameController.cs",
               "ViewState": "AgIAABYAAAAAAAAAAAAAACkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T11:40:36.58Z"
+              "WhenOpened": "2025-10-21T11:40:36.58Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -303,7 +307,7 @@
               "RelativeDocumentMoniker": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Games\\GrammarGuruRepository.cs",
               "ToolTip": "C:\\Users\\user1\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8\u05D9\u05DD \u05E9\u05E2\u05D5\u05E8\u05D9 \u05D1\u05D9\u05EA \u05D5\u05E2\u05D5\u05D3 \u05D3\u05D1\u05E8\u05D9\u05DD\\English-learning-experience\\server\\EnglishGamesPlatform.Backend\\Repositories\\Classes\\Games\\GrammarGuruRepository.cs",
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Games\\GrammarGuruRepository.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAQwCAAAAA3AAAAAAAAAA==",
+              "ViewState": "AgIAABcAAAAAAAAAAAAQwB8AAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-21T00:59:55.099Z",
               "EditorCaption": ""
@@ -318,7 +322,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Extensions\\ServiceCollectionExtensions.cs",
               "ViewState": "AgIAAAcAAAAAAAAAAAAAwBkAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T16:26:05.636Z"
+              "WhenOpened": "2025-10-21T16:26:05.636Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -330,7 +335,8 @@
               "RelativeToolTip": "..\\..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\b0449661-f4a8-45ba-9b63-23404011f099\\secrets.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-10-20T15:55:58.284Z"
+              "WhenOpened": "2025-10-20T15:55:58.284Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -355,7 +361,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Controllers\\GameController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T11:40:32.1Z"
+              "WhenOpened": "2025-10-21T11:40:32.1Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -367,7 +374,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\Entities\\Game.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T12:49:48.896Z"
+              "WhenOpened": "2025-10-23T12:49:48.896Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -379,7 +387,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\GameInitialDatas\\GrammarGuruData.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T00:52:28.263Z"
+              "WhenOpened": "2025-10-21T00:52:28.263Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -391,7 +400,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\GameResultRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T02:20:30.086Z"
+              "WhenOpened": "2025-10-21T02:20:30.086Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -403,7 +413,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\DTOs\\GameData.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T16:36:05.118Z"
+              "WhenOpened": "2025-10-21T16:36:05.118Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -415,7 +426,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\GameRepository.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAWwCAAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T06:59:51.232Z"
+              "WhenOpened": "2025-10-21T06:59:51.232Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -427,7 +439,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Games\\MemoryMatchSynonymsRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T10:08:42.734Z"
+              "WhenOpened": "2025-10-23T10:08:42.734Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -452,7 +465,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IWordRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T08:32:02.489Z"
+              "WhenOpened": "2025-10-23T08:32:02.489Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -464,7 +478,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Data\\AppDbContext.cs",
               "ViewState": "AgIAAEkAAAAAAAAAAAAWwGQAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-20T19:47:05.169Z"
+              "WhenOpened": "2025-10-20T19:47:05.169Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -476,7 +491,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Games\\MiniWordleRepository.cs",
               "ViewState": "AgIAABEAAAAAAAAAAIBJwA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T10:12:11.33Z"
+              "WhenOpened": "2025-10-23T10:12:11.33Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -488,7 +504,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\WordRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAEQAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T10:14:04.717Z"
+              "WhenOpened": "2025-10-23T10:14:04.717Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -500,7 +517,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\TwinWordRepository.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAAAIwAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-22T14:56:16.793Z"
+              "WhenOpened": "2025-10-22T14:56:16.793Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -512,7 +530,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IGameResultRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T08:30:44.411Z"
+              "WhenOpened": "2025-10-23T08:30:44.411Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -524,7 +543,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Services\\Interfaces\\IGameService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T16:20:05.023Z"
+              "WhenOpened": "2025-10-21T16:20:05.023Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -536,7 +556,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Services\\Interfaces\\IGeneralGameService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T16:20:09.258Z"
+              "WhenOpened": "2025-10-21T16:20:09.258Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -548,7 +569,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\Entities\\GameResult.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAqwBUAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-20T19:45:15.919Z"
+              "WhenOpened": "2025-10-20T19:45:15.919Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -560,7 +582,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\DTOs\\Entities DTOs\\GameResultDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T08:59:39.073Z"
+              "WhenOpened": "2025-10-23T08:59:39.073Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -572,7 +595,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Services\\Classes\\GameService.cs",
               "ViewState": "AgIAABAAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T00:49:24.576Z"
+              "WhenOpened": "2025-10-21T00:49:24.576Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -584,7 +608,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Services\\Classes\\AuthService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-20T17:24:26.048Z"
+              "WhenOpened": "2025-10-20T17:24:26.048Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -596,7 +621,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\ISentenceRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T08:32:01.381Z"
+              "WhenOpened": "2025-10-23T08:32:01.381Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -608,7 +634,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IGeneralGameRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T07:57:13.913Z"
+              "WhenOpened": "2025-10-21T07:57:13.913Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -620,7 +647,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Services\\Interfaces\\IAuthService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T08:25:44.651Z"
+              "WhenOpened": "2025-10-23T08:25:44.651Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -632,7 +660,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IAuthRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T08:25:35.745Z"
+              "WhenOpened": "2025-10-23T08:25:35.745Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -644,7 +673,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\FakeSentenceRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T17:56:18.762Z"
+              "WhenOpened": "2025-10-21T17:56:18.762Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -656,7 +686,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\DTOs\\UserResponse.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T00:57:55.991Z"
+              "WhenOpened": "2025-10-21T00:57:55.991Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -668,7 +699,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\DTOs\\Response.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T08:14:52.084Z"
+              "WhenOpened": "2025-10-23T08:14:52.084Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -680,7 +712,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\Grammar.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T07:53:19.864Z"
+              "WhenOpened": "2025-10-21T07:53:19.864Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -692,7 +725,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\DTOs\\LoginDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T08:14:50.916Z"
+              "WhenOpened": "2025-10-23T08:14:50.916Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -704,7 +738,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\DTOs\\LeaderboardEntry.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T08:14:49.805Z"
+              "WhenOpened": "2025-10-23T08:14:49.805Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -716,7 +751,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\DTOs\\LeaderboardData.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T08:14:48.526Z"
+              "WhenOpened": "2025-10-23T08:14:48.526Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -728,7 +764,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\DTOs\\GoogleLoginDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T08:14:46.697Z"
+              "WhenOpened": "2025-10-23T08:14:46.697Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -740,7 +777,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\DTOs\\FinalGameStatus.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T08:14:43.622Z"
+              "WhenOpened": "2025-10-23T08:14:43.622Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -752,7 +790,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\DTOs\\Entities DTOs\\GameDTO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-23T08:14:41.516Z"
+              "WhenOpened": "2025-10-23T08:14:41.516Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -764,7 +803,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Controllers\\AuthController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T11:40:34.167Z"
+              "WhenOpened": "2025-10-21T11:40:34.167Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -776,7 +816,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\Entities\\Image.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T00:39:22.998Z"
+              "WhenOpened": "2025-10-21T00:39:22.998Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -788,7 +829,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\Entities\\OppositeWord.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T08:24:02.39Z"
+              "WhenOpened": "2025-10-21T08:24:02.39Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -800,7 +842,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\Entities\\Progress.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAABBwBYAAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T00:39:27.897Z"
+              "WhenOpened": "2025-10-21T00:39:27.897Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -812,7 +855,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IGrammarQuestionRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAuwAYAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T17:51:09.612Z"
+              "WhenOpened": "2025-10-21T17:51:09.612Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -824,7 +868,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\GrammarQuestionRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T17:51:56.399Z"
+              "WhenOpened": "2025-10-21T17:51:56.399Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -836,7 +881,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Interfaces\\IFakeSentenceRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T17:57:07.306Z"
+              "WhenOpened": "2025-10-21T17:57:07.306Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -848,7 +894,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Games\\PictureHangmanRepository.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAgwBEAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T09:10:35.041Z"
+              "WhenOpened": "2025-10-21T09:10:35.041Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -860,7 +907,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\Entities\\GrammarQuestion.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T01:42:34.715Z"
+              "WhenOpened": "2025-10-21T01:42:34.715Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -872,7 +920,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\Entities\\GrammarQuestionFakeSentence.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T01:44:00.066Z"
+              "WhenOpened": "2025-10-21T01:44:00.066Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -884,7 +933,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Models\\Entities\\Sentence.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T00:39:26.064Z"
+              "WhenOpened": "2025-10-21T00:39:26.064Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -896,7 +946,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\SentenceRepository.cs",
               "ViewState": "AgIAAAIAAAAAAAAAAAAIwB4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T02:19:52.341Z"
+              "WhenOpened": "2025-10-21T02:19:52.341Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -908,7 +959,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Repositories\\Classes\\Entities\\CategoryRepository.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T07:54:29.731Z"
+              "WhenOpened": "2025-10-21T07:54:29.731Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -920,7 +972,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Migrations\\20251021114156_change-tables.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAxwA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T11:41:56.365Z"
+              "WhenOpened": "2025-10-21T11:41:56.365Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -932,7 +985,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAACxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-10-20T17:13:27.233Z"
+              "WhenOpened": "2025-10-20T17:13:27.233Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -944,7 +998,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Migrations\\20251021015049_create fake tables.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T01:50:49.697Z"
+              "WhenOpened": "2025-10-21T01:50:49.697Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -956,7 +1011,8 @@
               "RelativeToolTip": "EnglishGamesPlatform.Backend\\Migrations\\20251021004828_add grammarsentence table.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-21T00:48:29.064Z"
+              "WhenOpened": "2025-10-21T00:48:29.064Z",
+              "EditorCaption": ""
             }
           ]
         }
