@@ -492,6 +492,80 @@
   }
 }
 
+/* .nl-container *:not(.nl-bar) {
+  display: none !important;
+} */
+/* ===== Letter Chaos Game ===== */
+@layer components {
+
+  /* לוח הניחוש */
+  .letter-chaos__board {
+    @apply flex justify-center gap-4 mb-6;
+  }
+
+  /* אותיות בלוח */
+  .letter-chaos__letter {
+    @apply w-20 h-20 flex items-center justify-center text-3xl font-bold rounded-lg border-2 cursor-pointer transition-all duration-300 select-none;
+  }
+
+  .letter-chaos__letter--idle {
+    @apply bg-white text-slate-900 border-slate-700;
+  }
+
+  .letter-chaos__letter--success {
+    @apply bg-emerald-100 text-emerald-800 border-emerald-500;
+  }
+
+  .letter-chaos__letter--error {
+    @apply bg-red-100 text-red-800 border-red-500;
+  }
+
+  /* מגירת אותיות */
+  .letter-chaos__drawer {
+    @apply flex flex-wrap justify-center gap-3 bg-slate-800/30 p-4 rounded-xl mb-6;
+  }
+
+  .letter-chaos__drawer-letter {
+    @apply w-14 h-14 flex items-center justify-center text-xl font-bold bg-white text-indigo-700 border-2 border-indigo-500 rounded-lg cursor-pointer transition-transform duration-200;
+  }
+
+  .letter-chaos__drawer-letter--dragged {
+    @apply scale-125 border-dashed;
+  }
+
+  /* כפתור Submit */
+  .letter-chaos__submit {
+    @apply px-6 py-3 bg-indigo-600 text-white font-semibold rounded-xl shadow-md hover:bg-indigo-500 active:scale-95 transition;
+  }
+
+  .letter-chaos__submit:disabled {
+    @apply bg-gray-600 cursor-not-allowed;
+  }
+
+  /* כותרת המשחק */
+  .letter-chaos__title {
+    @apply text-3xl font-bold text-indigo-400 mb-6 text-center;
+  }
+
+  /* טקסט סיום המשחק */
+  .letter-chaos__completed {
+    @apply text-xl font-bold text-emerald-500 text-center mt-6;
+  }
+
+  /* אנימציה pop */
+  @keyframes letter-pop {
+    0% { transform: scale(0.5); opacity: 0; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  .letter-chaos__letter,
+  .letter-chaos__drawer-letter {
+    animation: letter-pop 0.3s ease forwards;
+  }
+}
+}
+
 /* ===== PicPick Game ===== */
 
 .picpick__grid {

@@ -5,6 +5,6 @@ namespace EnglishGamesPlatform.Backend.Repositories.Interfaces
     public interface IOppositeWordRepository
     {
         Task<List<OppositeWord>> GetRandomPairsOppositeWordsAsync(int count = 5);
-        Task<List<OppositeWord>> GetAllOppositeWordsAsync();
+   
     }
 }

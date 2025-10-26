@@ -1,32 +1,33 @@
 "use client";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useDispatch } from "react-redux";
 import { setUser } from "@/store/userSlice";
 import { useRouter } from "next/navigation";
 import axios from "axios";
-import { GoogleLogin } from "@react-oauth/google";
+import AlertDialog from "@/components/dialogs/AlertDialog";
+import GoogleAuthButton from "@/components/auth/GoogleAuthButton";
 
 export default function SignUp() {
   const fullNameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
   const passwordRef = useRef<HTMLInputElement>(null);
+  const [open, setOpen] = useState(false);
+  const [title, setTitle] = useState("");
+  const [message, setMessage] = useState("");
+  const [redirectOnConfirm, setRedirectOnConfirm] = useState(false);
+
   const dispatch = useDispatch();
   const router = useRouter();
 
-  const handleGoogleLogin = async (credentialResponse: any) => {
-    try {
-      const idToken = credentialResponse.credential;
-      const res = await axios.post("https://localhost:7292/api/Auth/google-login", { idToken });
-
-      localStorage.setItem("token", res.data.token);
-      dispatch(setUser(res.data.user));
+  const handleOpen = () => {
+    setOpen(true);
+  }
+  const handleClose = () => {
+    setOpen(false);
+    if (redirectOnConfirm) {
       router.push("/");
-    } catch (err) {
-      console.error("Google login failed:", err);
-      alert("Google login failed");
     }
   };
-
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -36,24 +37,31 @@ export default function SignUp() {
     const password = passwordRef.current?.value;
 
     if (!fullName || !email || !password) {
-      alert("Please fill in all fields");
+      setTitle("Error");
+      setMessage("Please fill in all fields");
+      setOpen(true);
       return;
     }
     try {
-      const response = await axios.post("https://localhost:7292/api/Auth/register", {
-        fullName,
-        email,
-        password
-      })
+      const response = await axios.post(
+        "https://localhost:7292/api/Auth/register",
+        {
+          fullName,
+          email,
+          password,
+        }
+      );
       const { token, user } = response.data;
       localStorage.setItem("token", token);
       dispatch(setUser(user));
-      alert("Sign up successful!");
-    }
-    catch (error) {
+      handleOpen();
+      console.log(open)
+      setRedirectOnConfirm(true);
+      setTitle("Sign Up");
+      setMessage("Sign up successful!");
+    } catch (error) {
       console.log("ERROR: ", error);
     }
-    router.push("/");
   };
 
   return (
@@ -82,16 +90,13 @@ export default function SignUp() {
           placeholder="Password"
           className="border p-2 rounded"
         />
-        <button
-          type="submit"
-          className="btn-primary"
-        >
+        <button type="submit" className="btn-primary">
           Sign Up
         </button>
       </form>
 
       <p className="text-center text-gray-600 text-sm mt-5">
-        Already have an account?{" "}
+        Already have an account?
         <a
           href="/login"
           className="text-indigo-600 font-medium hover:underline"
@@ -101,12 +106,11 @@ export default function SignUp() {
       </p>
 
       <div className="mt-4">
-        <GoogleLogin
-          onSuccess={handleGoogleLogin}
-          onError={() => console.log("Google Login Failed")}
-        />
+        <GoogleAuthButton text="Login with Google" />
       </div>
-
+      {open && (
+        <AlertDialog title={title} message={message} onClose={handleClose} />
+      )}
     </div>
   );
 }
