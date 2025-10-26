@@ -33,12 +33,16 @@ export default function DoubleVisionGame({ onScoreChange, onGameOver, paused, ti
   const setLeaderboard = useLeaderboardStore((state) => state.setLeaderboard);
 
   console.log("Leaderboard:", leaderboardData?.data.leaderboards);
+  // useEffect(() => {
+  //   if (leaderboardData) {
+  //     console.log("Leaderboard at game over:", leaderboardData.data.leaderboards);
+  //     // או עדכני state/props כדי להציג את הלידרבורד במסך הסיום
+  //   }
+  // }, [leaderboardData]);
+
   useEffect(() => {
-    if (leaderboardData) {
-      console.log("Leaderboard at game over:", leaderboardData.data.leaderboards);
-      // או עדכני state/props כדי להציג את הלידרבורד במסך הסיום
-    }
-  }, [leaderboardData]);
+    setLeaderboard(gameId, []);
+  }, [gameId, setLeaderboard]);
 
   // Ref לשמירת הזמן המדויק
   const timeRef = useRef(time);
@@ -77,8 +81,8 @@ export default function DoubleVisionGame({ onScoreChange, onGameOver, paused, ti
   };
 
   // פונקציה לסיום משחק + שליחת הנתונים לשרת
-  const handleGameOver = () => {
-    submitProgressMutation.mutate({
+  const handleGameOver = async () => {
+    await submitProgressMutation.mutate({
       gameID: gameId,
       userID: user?.userId!, // חייב להיות מזהה משתמש
       score: parseInt(localStorage.getItem("totalScore") || "0"),
@@ -86,8 +90,13 @@ export default function DoubleVisionGame({ onScoreChange, onGameOver, paused, ti
       rounds: currentRound + 1,
     });
 
+    await refetchLeaderboard();
+
     if (leaderboardData?.data?.leaderboards) {
-      setLeaderboard(gameId, leaderboardData.data.leaderboards);
+      setLeaderboard(gameId, [
+        ...leaderboardData.data.leaderboards,
+        ...(useLeaderboardStore.getState().leaderboard || []),
+      ]);
     }
 
     onGameOver?.();
@@ -102,13 +111,6 @@ export default function DoubleVisionGame({ onScoreChange, onGameOver, paused, ti
     const correct = index === round.correctIndex;
     setSelectedIndex(index);
     setIsCorrect(correct);
-
-    // if (correct) {
-    //   correctSound.current?.play();
-    //   onScoreChange?.((prev) => prev + 10);
-    // } else {
-    //   wrongSound.current?.play();
-    // }
 
     if (correct) {
       if (correctSound.current) {

@@ -43,7 +43,6 @@ namespace EnglishGamesPlatform.Backend.Migrations
                 b.HasIndex("CorrectWordId");
                 b.HasIndex("SentenceId");
 
-<<<<<<< HEAD
                     b.Property<string>("Description")
                         .HasColumnType("longtext");
 
@@ -148,10 +147,10 @@ namespace EnglishGamesPlatform.Backend.Migrations
 
                     b.ToTable("Images");
                 });
-=======
-                b.ToTable("MissingWords");
-            });
->>>>>>> yael-bloch/feature/finall
+//=======
+//                b.ToTable("MissingWords");
+//            });
+//>>>>>>> yael-bloch/feature/finall
 
             modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.MemoryMatchSynonymsPair", b =>
             {
@@ -191,7 +190,7 @@ namespace EnglishGamesPlatform.Backend.Migrations
                     .OnDelete(DeleteBehavior.Cascade)
                     .IsRequired();
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("OppositeWordId"));
 
                     b.Property<int>("FirstWordId")
@@ -410,11 +409,11 @@ namespace EnglishGamesPlatform.Backend.Migrations
 
                     b.Navigation("Word");
                 });
-=======
-                b.Navigation("CorrectWord");
-                b.Navigation("Sentence");
-            });
->>>>>>> yael-bloch/feature/finall
+//=======
+//                b.Navigation("CorrectWord");
+//                b.Navigation("Sentence");
+//            });
+//>>>>>>> yael-bloch/feature/finall
 
             // --- Relations for MemoryMatchSynonymsPair ---
             modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.MemoryMatchSynonymsPair", b =>
@@ -428,7 +427,7 @@ namespace EnglishGamesPlatform.Backend.Migrations
                 b.Navigation("Word");
             });
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
             modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.OppositeWord", b =>
                 {
                     b.HasOne("EnglishGamesPlatform.Backend.Models.Entities.Word", "FirstWord")
@@ -539,9 +538,9 @@ namespace EnglishGamesPlatform.Backend.Migrations
                 {
                     b.Navigation("Images");
                 });
-=======
-            // --- שאר Relations/Navigation Properties ---
->>>>>>> yael-bloch/feature/finall
+//=======
+//            // --- שאר Relations/Navigation Properties ---
+//>>>>>>> yael-bloch/feature/finall
 #pragma warning restore 612, 618
         }
     }
