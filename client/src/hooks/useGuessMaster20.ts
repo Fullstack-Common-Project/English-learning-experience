@@ -29,8 +29,15 @@ export function useGuessMaster20() {
 
   const askMutation = useMutation<GuessMasterAskResponse, Error, GuessMasterAskRequest>({
     mutationFn: postGuessMaster20Ask,
-    onSuccess: () => {
-      qc.invalidateQueries({ queryKey: QK.data });
+    onSuccess: (res, _vars, _ctx) => {
+      // מעדכן את מטמון ["gm20","data"] לפי תשובת /ask – בלי invalidate/GET נוסף
+      qc.setQueryData<GuessMasterData>(["gm20", "data"], (prev) => ({
+        sessionId: res.sessionId,
+        title: prev?.title ?? "GuessMaster 20",
+        maxTurns: prev?.maxTurns ?? 20,
+        remainingTurns: res.remainingTurns,
+        suggestedQuestions: res.nextSuggestedQuestions ?? prev?.suggestedQuestions ?? [],
+      }));
     },
   });
 

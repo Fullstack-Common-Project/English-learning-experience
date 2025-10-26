@@ -11,7 +11,7 @@ import type {
   GuessMasterAskResponse,
 } from "@/types/gamesTypes/GuessMaster";
 
-const USE_MOCK = true;
+const USE_MOCK = false;
 
 type GuessTurn = {
   type: "question" | "guess";
@@ -19,6 +19,7 @@ type GuessTurn = {
   answer?: boolean | null;
   guessCorrect?: boolean | null;
 };
+
 
 export function useGuessMaster20Mock() {
   const qc = useQueryClient();
