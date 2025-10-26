@@ -31,7 +31,6 @@ export default function PicPickGame({ onScoreChange, onGameOver, paused, time }:
       setQuestions(items);
     }, [data]);
 
-
     const submitProgress = useSubmitProgress();
 
     const timeRef = useRef(time);
@@ -60,8 +59,6 @@ export default function PicPickGame({ onScoreChange, onGameOver, paused, time }:
         setScore(0);
         setQuestions([]);
         refetch();
-
-    console.log("Leaderboard:", leaderboardData?.data.leaderboards);
 }
 
     const handleAnswer = (index: number) => {
