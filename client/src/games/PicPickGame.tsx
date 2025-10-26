@@ -13,7 +13,7 @@ export default function PicPickGame({ onScoreChange, onGameOver, paused, time }:
     const [currentIndex, setCurrentIndex] = useState(0);
     const [completed, setCompleted] = useState(false);
     const [score, setScore] = useState(0);
-    const round = useRef(1);
+    const round = useRef(0);
     const [questions, setQuestions] = useState<PicPickItem[]>([]);
     const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
     const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
@@ -73,6 +73,7 @@ export default function PicPickGame({ onScoreChange, onGameOver, paused, time }:
 
         if (correct) {
             round.current += 1;
+            setScore(score+10);
             onScoreChange?.((prev) => prev + 10);
         }
 
