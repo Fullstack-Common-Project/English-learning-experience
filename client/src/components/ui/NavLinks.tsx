@@ -5,7 +5,6 @@ export default function NavLinks() {
     { href: "/", label: "Home" },
     { href: "/games", label: "Games" },
     { href: "/about", label: "About" },
-    { href: "/leaderboard", label: "Leaderboard" },
   ];
 
   return (
