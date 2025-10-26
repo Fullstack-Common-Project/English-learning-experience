@@ -15,3 +15,5 @@ export function useLeaderboard(
     staleTime: 1000 * 60 * 1,
   });
 }
+
+
