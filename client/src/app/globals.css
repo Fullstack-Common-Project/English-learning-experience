@@ -9,6 +9,7 @@
   body {
     @apply min-h-screen flex flex-col bg-slate-950 text-white font-sans antialiased;
     background-image:
+
       radial-gradient(1200px 600px at 80% -20%, rgba(99, 102, 241, .18), transparent 60%),
       radial-gradient(800px 400px at -10% 0%, rgba(14, 165, 233, .16), transparent 60%),
       linear-gradient(180deg, rgb(2 6 23), rgb(2 6 23 / 1) 40%, rgb(2 8 23));
@@ -29,7 +30,6 @@
 
 /* ===== מחלקות משותפות בלבד ===== */
 @layer components {
-
   /* עטיפת עמודים */
   .page-container {
     @apply container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-10;
@@ -66,6 +66,7 @@
 
   /* אזור האייקון */
   .game-card__icon-wrap {
+
     @apply mt-2 mb-4 inline-flex items-center justify-center rounded-full h-24 w-24 md:h-28 md:w-28 bg-amber-400/15 ring-1 ring-white/10 shadow-md;
   }
 
@@ -118,6 +119,7 @@
     .footer {
       @apply bg-gray-900 text-gray-300 py-4 w-full flex flex-col items-center relative;
     }
+
 
     .footer__container {
       @apply container mx-auto px-6 text-center relative;
@@ -186,6 +188,7 @@
 }
 
 @layer components {
+
 
   /* ===== Help Screen ===== */
   .help-screen {
@@ -490,6 +493,7 @@
   100% {
     transform: scale(1.2);
   }
+
 }
 
 /* .nl-container *:not(.nl-bar) {

@@ -18,6 +18,10 @@ namespace EnglishGamesPlatform.Backend.Data
         public DbSet<OppositeWord> OppositeWords { get; set; }
         public DbSet<TwinWord> TwinWords { get; set; }
         public DbSet<MemoryMatchSynonymsPair> MemoryMatchSynonymsPairs { get; set; }
+        public DbSet<Question> Questions { get; set; }
+        public DbSet<WordQuestionAnswerEntity> WordQuestionAnswers { get; set; }
+        public DbSet<GuessMasterSession> GuessMasterSessions { get; set; }
+
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -82,6 +86,24 @@ namespace EnglishGamesPlatform.Backend.Data
                 .WithMany()
                 .HasForeignKey(t => t.SynonymWordId)
                 .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<Question>()
+              .Property(q => q.Text)
+              .IsRequired()
+              .HasMaxLength(200);
+            modelBuilder.Entity<WordQuestionAnswerEntity>()
+              .HasOne(a => a.Word)
+              .WithMany()
+              .HasForeignKey(a => a.WordId)
+              .OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<WordQuestionAnswerEntity>()
+             .HasOne(a => a.Question)
+             .WithMany()
+             .HasForeignKey(a => a.QuestionId)
+             .OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<GuessMasterSession>()
+             .Property(s => s.PlayerName)
+             .HasMaxLength(100);
+
 
             base.OnModelCreating(modelBuilder);
 

@@ -1,4 +1,5 @@
-using EnglishGamesPlatform.Backend.Data;
+﻿using EnglishGamesPlatform.Backend.Data;
+
 using EnglishGamesPlatform.Backend.Extensions;
 using EnglishGamesPlatform.Backend.Repositories.Classes;
 using EnglishGamesPlatform.Backend.Repositories.Classes.Entities;
@@ -12,6 +13,8 @@ using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+const string ClientCors = "ClientCors";
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -59,6 +62,7 @@ builder.Services.AddScoped<IGeneralGameRepository, PictureHangmanRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, OppositeQuestRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, MiniWordleRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, LetterChaosRepository>();
+
 builder.Services.AddScoped<IGeneralGameRepository, TwinWordsGameRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, DoubleVisionRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, MemoryMatchSynonymsRepository>();
@@ -71,11 +75,16 @@ builder.Services.AddScoped<IImageRepository, ImageRepository>();
 builder.Services.AddScoped<ISentenceRepository, SentenceRepository>();
 builder.Services.AddScoped<IWordRepository, WordRepository>();
 builder.Services.AddScoped<IOppositeWordRepository, OppositeWordRepository>();
+
 builder.Services.AddScoped<ITwinWordRepository, TwinWordRepository>();
+builder.Services.AddScoped<IGeneralGameRepository, GuessMaster20Repository>();
+
 
 #endregion
 
+
 builder.Services.AddCustomServices();
+
 
 //builder.Services.AddAuthentication(options =>
 //{
@@ -92,6 +101,7 @@ builder.Services.AddCustomServices();
 
 var app = builder.Build();
 
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -104,9 +114,10 @@ app.UseCustomExceptionHandler();
 app.UseHttpsRedirection();
 app.UseCors("AllowAll");
 
+app.UseAuthentication();
+
 app.UseAuthorization();
 
-app.UseAuthentication();
 
 app.MapControllers();
 
