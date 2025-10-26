@@ -921,7 +921,7 @@ import { GameProps } from "@/components/common/GameLayout";
 import { motion } from "framer-motion";
 import { GameId } from "@/types";
 import { useGameData } from "@/hooks/useGameData";
-import { DoubleVisionItem } from "@/types/DoubleVision";
+import { DoubleVisionItem } from "@/types/gamesTypes/DoubleVision";
 import { useLeaderboard } from "@/hooks/useLeaderboard";
 import { useSubmitProgress } from "@/hooks/useSubmitProgress";
 import { useSelector } from "react-redux";

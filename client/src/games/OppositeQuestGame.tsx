@@ -5,7 +5,7 @@ import { GameProps } from "@/components/common/GameLayout";
 import { motion, AnimatePresence } from "framer-motion";
 import { GameId } from "@/types";
 import { useGameData } from "@/hooks/useGameData";
-import { OppositeQuestItemSingle } from "@/types/OppositeQuest";
+import { OppositeQuestItemSingle } from "@/types/gamesTypes/OppositeQuest";
 
 export default function OppositeQuestGame({ onScoreChange, onGameOver, paused }: GameProps) {
   const [items, setItems] = useState<OppositeQuestItemSingle[]>([]);
