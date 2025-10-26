@@ -5,4 +5,4 @@ export interface GrammarGuruItem {
 
 
 export interface GrammarGuruResponse
-  extends GameResponseBase<"grammarGuru", GrammarGuruItem[]> {}
+  extends GameResponseBase<9, GrammarGuruItem> {}

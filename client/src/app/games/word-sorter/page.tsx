@@ -2,16 +2,17 @@
 import React, { useState } from 'react';
 import GameLayout from '@/components/common/GameLayout';
 import SentenceShuffleGame from '@/games/SentenceShuffleGame';
+import WordSorterGame from '@/games/WordSorter/WordSorterGame';
 
-export default function SentenceShufflePage() {
+export default function WordSorterPage() {
 
   const handleGameOver = () => {
     console.log("🎮 המשחק הסתיים! זמן והניקוד מטופלים ב-GameLayout");
   };
 
   return (
-    <GameLayout gameTitle="🧩 Sentence Shuffle">
-        <SentenceShuffleGame onGameOver={handleGameOver} />
+    <GameLayout gameTitle="🗃️ Word Sorter-Category Challenge">
+        <WordSorterGame onGameOver={handleGameOver} />
     </GameLayout>
   );
 }

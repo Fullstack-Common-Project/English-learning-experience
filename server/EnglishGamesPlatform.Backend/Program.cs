@@ -76,6 +76,8 @@ builder.Services.AddScoped<IWordRepository, WordRepository>();
 builder.Services.AddScoped<IOppositeWordRepository, OppositeWordRepository>();
 builder.Services.AddScoped<ITwinWordRepository, TwinWordRepository>();
 
+builder.Services.AddScoped<IGeneralGameService, GeneralGameService>();
+builder.Services.AddScoped<IGeneralGameRepository, WordSorterRepository>();
 
 
 #endregion

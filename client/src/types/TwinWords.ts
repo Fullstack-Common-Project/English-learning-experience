@@ -4,4 +4,4 @@ export interface TwinWordsItem {
 }
 
 
-export interface TwinWordsResponse extends GameResponseBase<"twinwords", TwinWordsItem[]> {}
+export interface TwinWordsResponse extends GameResponseBase<10, TwinWordsItem> {}
