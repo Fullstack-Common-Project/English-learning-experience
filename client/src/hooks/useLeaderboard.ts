@@ -9,7 +9,7 @@ export function useLeaderboard(
 ) {
   return useQuery<LeaderboardResponse>({
     queryKey: QUERY_KEYS.leaderboard(gameId),
-    queryFn: () => fetchLeaderboard(gameId),
+    queryFn: async () => fetchLeaderboard(gameId),
     refetchInterval: options?.refetchInterval ?? 0,
     enabled: options?.enabled ?? true,
     staleTime: 1000 * 60 * 1,

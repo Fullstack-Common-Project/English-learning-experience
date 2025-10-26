@@ -1,22 +1,25 @@
 "use client";
-import { FC } from "react";
+import React, { FC } from "react";
 
 type HelpScreenProps = {
   onContinue?: () => void;
+  instructions?: string;
 };
 
-const HelpScreen: FC<HelpScreenProps> = ({ onContinue }) => {
+const HelpScreen: FC<HelpScreenProps> = ({ onContinue, instructions }) => {
   return (
     <div className="help-screen">
       <h2 className="help-screen__title">💡 How to play?</h2>
       <p className="help-screen__text">
-        Here you will add the explanation of the game:
-        What is the goal, how do you earn points, what actions can be performed.
+        {instructions ?? "Instructions not available for this game."}
       </p>
 
       {onContinue && (
-        <button onClick={onContinue} className="btn-primary help-screen__button">
-          Move the game
+        <button
+          onClick={onContinue}
+          className="btn-primary help-screen__button"
+        >
+          Move to the game
         </button>
       )}
     </div>

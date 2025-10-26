@@ -5,10 +5,11 @@ import { GameProps } from "@/components/common/GameLayout";
 import { motion, AnimatePresence } from "framer-motion";
 import { GameId } from "@/types";
 import { useGameData } from "@/hooks/useGameData";
-import { OppositeQuestItemSingle } from "@/types/OppositeQuest";
 import { useSubmitProgress } from "@/hooks/useSubmitProgress";
 import { useSelector } from "react-redux";
 import { useLeaderboard } from "@/hooks/useLeaderboard";
+import { OppositeQuestItemSingle } from "@/types/gamesTypes/OppositeQuest";
+
 
 export default function OppositeQuestGame({ onScoreChange, onGameOver, paused,time }: GameProps) {
   const gameId: GameId = 1;
