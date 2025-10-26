@@ -19,7 +19,7 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes.Games
 
         public async Task<GameInitialData?> GetData()
         {
-            var oppositeWords = await _oppositeWordRepository.GetAllOppositeWordsAsync();
+            var oppositeWords = await _oppositeWordRepository.GetRandomPairsOppositeWordsAsync(8);
 
             var pairs = oppositeWords.Select(o => new PairDTO
             {
