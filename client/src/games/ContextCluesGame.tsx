@@ -4,6 +4,8 @@ import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { GameProps } from "@/components/common/GameLayout";
 import { useGameData } from "@/hooks/useGameData";
+import { useSubmitProgress } from "@/hooks/useSubmitProgress";
+import { useSelector } from "react-redux";
 
 interface ContextCluesModel {
   id: number;
@@ -12,14 +14,27 @@ interface ContextCluesModel {
   correctIndex: number;
 }
 
-export default function ContextCluesGame({ onScoreChange, onGameOver, paused }: GameProps) {
+export default function ContextCluesGame({ onScoreChange, onGameOver, paused, time }: GameProps) {
   const gameId = 15;
   const { data, isLoading, isError, refetch } = useGameData(gameId);
+  const submitProgressMutation = useSubmitProgress();
+  const user = useSelector((state: any) => state.user.user);
+
   const [question, setQuestion] = useState<ContextCluesModel | null>(null);
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
+  const [mistakes, setMistakes] = useState(0);
+  const [correctCount, setCorrectCount] = useState(0);
   const hasFetchedRef = useRef(false);
 
-  // fetch הדאטה כמו MiniWordleGame
+  const MAX_MISTAKES = 3;
+  const MAX_CORRECT = 5;
+
+  // Ref לזמן המשחק
+  const timeRef = useRef(time);
+  useEffect(() => {
+    timeRef.current = time;
+  }, [time]);
+
   useEffect(() => {
     if (!data || hasFetchedRef.current) return;
     hasFetchedRef.current = true;
@@ -28,21 +43,45 @@ export default function ContextCluesGame({ onScoreChange, onGameOver, paused }: 
     if (fetchedQuestion) setQuestion(fetchedQuestion);
   }, [data]);
 
+  const handleGameOver = async () => {
+    submitProgressMutation.mutate({
+      gameID: gameId,
+      userID: user?.userId!,
+      time: timeRef.current ?? 0,
+      score: correctCount * 10 - mistakes * 5,
+      rounds: correctCount + mistakes,
+    });
+    onGameOver?.();
+  };
+
   const handleSelectOption = async (index: number) => {
     if (paused || selectedOption !== null || !question) return;
 
     setSelectedOption(index);
 
+    let newMistakes = mistakes;
+    let newCorrectCount = correctCount;
+
     if (index === question.correctIndex) {
       onScoreChange?.((prev) => prev + 10);
+      newCorrectCount += 1;
+      setCorrectCount(newCorrectCount);
     } else {
       onScoreChange?.((prev) => prev - 5);
+      newMistakes += 1;
+      setMistakes(newMistakes);
     }
 
     setTimeout(async () => {
       setSelectedOption(null);
+
+      if (newMistakes >= MAX_MISTAKES || newCorrectCount >= MAX_CORRECT) {
+        await handleGameOver();
+        return;
+      }
+
       const newData = await refetch();
-      const fetchedQuestion = newData?.data?.data.data;
+      const fetchedQuestion = newData?.data?.data?.data;
       if (fetchedQuestion) setQuestion(fetchedQuestion);
     }, 1000);
   };
@@ -60,14 +99,8 @@ export default function ContextCluesGame({ onScoreChange, onGameOver, paused }: 
       transition={{ duration: 0.5 }}
       className="panel text-center max-w-2xl mx-auto"
     >
-      <h3 className="game-card__title text-indigo-400 mb-4">
-        שאלה
-      </h3>
-
-      <p className="mb-6 text-lg text-slate-200">
-        {question.sentence.replace("___", "_____")}
-      </p>
-
+      <h3 className="game-card__title text-indigo-400 mb-4">שאלה</h3>
+      <p className="mb-6 text-lg text-slate-200">{question.sentence.replace("___", "_____")}</p>
       <div className="grid grid-cols-2 gap-4 mb-6">
         {question.options.map((option, index) => {
           const isCorrect = index === question.correctIndex;
@@ -101,4 +134,3 @@ export default function ContextCluesGame({ onScoreChange, onGameOver, paused }: 
     </motion.div>
   );
 }
-
