@@ -5,7 +5,7 @@ import { useDragAndDrop, DraggableItem } from "@/hooks/useDragAndDrop";
 import { GameProps } from "@/components/common/GameLayout";
 import { useGameData } from "@/hooks/useGameData";
 import { GameId } from "@/types";
-import { LetterChaosItemSingle } from "@/types/LetterChaos";
+import { LetterChaosItemSingle } from "@/types/gamesTypes/LetterChaos";
 
 const generateId = () => Math.floor(Math.random() * 10000).toString();
 

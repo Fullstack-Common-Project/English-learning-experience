@@ -1,3 +1,6 @@
+import { GameResponseBase } from "../index";
+
+
 export type GuessMasterData = {
   sessionId: string;
   title: string;
@@ -23,3 +26,5 @@ export type GuessMasterAskResponse = {
   gameOver: boolean;
   won?: boolean | null;
 };
+export interface GuessMasterResponse
+  extends GameResponseBase<14, GuessMasterData> {}

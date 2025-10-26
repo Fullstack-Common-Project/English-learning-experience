@@ -9,7 +9,7 @@ import type {
   GuessMasterData,
   GuessMasterAskRequest,
   GuessMasterAskResponse,
-} from "@/types/GuessMaster";
+} from "@/types/gamesTypes/GuessMaster";
 
 const USE_MOCK = true;
 
@@ -187,6 +187,14 @@ export default function GuessMaster20Game({ onScoreChange, onGameOver, paused }:
       onScoreChange?.(0);
     }
   }, [dataQuery.isSuccess, dataQuery.data, onScoreChange]);
+  useEffect(() => {
+    console.log("GM20 dataQuery state:", {
+      status: dataQuery.status,
+      isLoading: dataQuery.isLoading,
+      isError: dataQuery.isError,
+      data: dataQuery.data,
+    });
+  }, [dataQuery.status, dataQuery.isLoading, dataQuery.isError, dataQuery.data]);
 
   const loading = dataQuery.isLoading;
   const error = dataQuery.isError || !dataQuery.data;
@@ -273,19 +281,7 @@ export default function GuessMaster20Game({ onScoreChange, onGameOver, paused }:
     }
   }
 
-  async function onEndGame(score: number, elapsedSec: number, usedTurns: number) {
-    try {
-      await submitProgress({
-        gameID: 14,
-        userID: USE_MOCK ? "mockUser" : "realUser", // אם יש — לשים
-        score,
-        time: elapsedSec,
-        rounds: usedTurns,
-      });
-    } catch (e) {
-      console.error("submitProgress failed", e);
-    }
-  }
+
   async function submitGuess() {
     if (!guessWord.trim() || !sessionId || disabledUI) return;
 
