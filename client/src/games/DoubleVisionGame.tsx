@@ -8,6 +8,7 @@ import { DoubleVisionItem } from "@/types/gamesTypes/DoubleVision";
 import { useLeaderboard } from "@/hooks/useLeaderboard";
 import { useSubmitProgress } from "@/hooks/useSubmitProgress";
 import { useSelector } from "react-redux";
+import { useLeaderboardStore } from "@/store/UseLeaderboardStore";
 
 export default function DoubleVisionGame({ onScoreChange, onGameOver, paused, time }: GameProps) {
   const gameId: GameId = 12;
@@ -28,6 +29,8 @@ export default function DoubleVisionGame({ onScoreChange, onGameOver, paused, ti
   const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
   const [rounds, setRounds] = useState<DoubleVisionItem[]>([]);
   const hasFetchedRef = useRef(false);
+
+  const setLeaderboard = useLeaderboardStore((state) => state.setLeaderboard);
 
   console.log("Leaderboard:", leaderboardData?.data.leaderboards);
   useEffect(() => {
@@ -83,10 +86,10 @@ export default function DoubleVisionGame({ onScoreChange, onGameOver, paused, ti
       rounds: currentRound + 1,
     });
 
-    // if (leaderboardData?.data?.leaderboards) {
-    //   setLeaderboard(gameId, leaderboardData.data.leaderboards);
-    // }
-    
+    if (leaderboardData?.data?.leaderboards) {
+      setLeaderboard(gameId, leaderboardData.data.leaderboards);
+    }
+
     onGameOver?.();
     restartGame();
   };
