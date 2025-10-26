@@ -62,6 +62,7 @@ builder.Services.AddScoped<IGeneralGameRepository, LetterChaosRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, MemoryMatchSynonymsRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, MemoryMatchAntonymsRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, TwinWordsGameRepository>();
+builder.Services.AddScoped<IGeneralGameRepository, GrammarGuruRepository>();
 
 #endregion 
 
@@ -71,6 +72,8 @@ builder.Services.AddScoped<ISentenceRepository, SentenceRepository>();
 builder.Services.AddScoped<IWordRepository, WordRepository>();
 builder.Services.AddScoped<IOppositeWordRepository, OppositeWordRepository>();
 builder.Services.AddScoped<ITwinWordRepository, TwinWordRepository>();
+builder.Services.AddScoped<IFakeSentenceRepository, FakeSentenceRepository>();
+builder.Services.AddScoped<IGrammarQuestionRepository, GrammarQuestionRepository>();
 
 
 
