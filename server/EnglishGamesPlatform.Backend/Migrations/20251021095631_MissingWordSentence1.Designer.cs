@@ -4,6 +4,7 @@ using EnglishGamesPlatform.Backend.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EnglishGamesPlatform.Backend.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251021095631_MissingWordSentence1")]
+    partial class MissingWordSentence1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -22,28 +25,32 @@ namespace EnglishGamesPlatform.Backend.Migrations
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
 
-            // --- שאר הישויות קיימות כאן (Category, Game, GameResult, Image, ...) ---
+            modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.Category", b =>
+                {
+                    b.Property<int>("CategoryId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 
-            modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.MissingWordSentence", b =>
-            {
-                b.Property<int>("MissingWordSentenceId")
-                    .ValueGeneratedOnAdd()
-                    .HasColumnType("int");
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("CategoryId"));
 
-                MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("MissingWordSentenceId"));
+                    b.Property<string>("CategoryName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("varchar(100)");
 
-                b.Property<int>("CorrectWordId")
-                    .HasColumnType("int");
+                    b.HasKey("CategoryId");
 
-                b.Property<int>("SentenceId")
-                    .HasColumnType("int");
+                    b.ToTable("Categories");
+                });
 
-                b.HasKey("MissingWordSentenceId");
+            modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.Game", b =>
+                {
+                    b.Property<int>("GameId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 
-                b.HasIndex("CorrectWordId");
-                b.HasIndex("SentenceId");
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("GameId"));
 
-<<<<<<< HEAD
                     b.Property<string>("Description")
                         .HasColumnType("longtext");
 
@@ -95,38 +102,6 @@ namespace EnglishGamesPlatform.Backend.Migrations
                     b.ToTable("GameResults");
                 });
 
-            modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.GuessMasterSession", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("char(36)");
-
-                    b.Property<string>("CandidateWordIdsJson")
-                        .IsRequired()
-                        .HasColumnType("longtext");
-
-                    b.Property<int>("MaxTurns")
-                        .HasColumnType("int");
-
-                    b.Property<string>("PlayerName")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("varchar(100)");
-
-                    b.Property<int>("SecretWordId")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("StartedAtUtc")
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<int>("TurnsUsed")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("GuessMasterSessions");
-                });
-
             modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.Image", b =>
                 {
                     b.Property<int>("ImageId")
@@ -148,50 +123,36 @@ namespace EnglishGamesPlatform.Backend.Migrations
 
                     b.ToTable("Images");
                 });
-=======
-                b.ToTable("MissingWords");
-            });
->>>>>>> yael-bloch/feature/finall
 
-            modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.MemoryMatchSynonymsPair", b =>
-            {
-                b.Property<int>("Id")
-                    .ValueGeneratedOnAdd()
-                    .HasColumnType("int");
-
-                MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
-
-                b.Property<string>("Synonym")
-                    .IsRequired()
-                    .HasMaxLength(100)
-                    .HasColumnType("varchar(100)");
-
-                b.Property<int>("WordId")
-                    .HasColumnType("int");
-
-                b.HasKey("Id");
-                b.HasIndex("WordId")
-                    .IsUnique();
-
-                b.ToTable("MemoryMatchSynonymsPairs");
-            });
-
-            // --- Relations for MissingWordSentence ---
             modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.MissingWordSentence", b =>
-            {
-                b.HasOne("EnglishGamesPlatform.Backend.Models.Entities.Word", "CorrectWord")
-                    .WithMany()
-                    .HasForeignKey("CorrectWordId")
-                    .OnDelete(DeleteBehavior.Restrict)
-                    .IsRequired();
+                {
+                    b.Property<int>("MissingWordSentenceId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 
-                b.HasOne("EnglishGamesPlatform.Backend.Models.Entities.Sentence", "Sentence")
-                    .WithMany()
-                    .HasForeignKey("SentenceId")
-                    .OnDelete(DeleteBehavior.Cascade)
-                    .IsRequired();
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("MissingWordSentenceId"));
 
-<<<<<<< HEAD
+                    b.Property<int>("CorrectWordId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SentenceId")
+                        .HasColumnType("int");
+
+                    b.HasKey("MissingWordSentenceId");
+
+                    b.HasIndex("CorrectWordId");
+
+                    b.HasIndex("SentenceId");
+
+                    b.ToTable("MissingWords");
+                });
+
+            modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.OppositeWord", b =>
+                {
+                    b.Property<int>("OppositeWordId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("OppositeWordId"));
 
                     b.Property<int>("FirstWordId")
@@ -244,27 +205,6 @@ namespace EnglishGamesPlatform.Backend.Migrations
                     b.ToTable("Progress");
                 });
 
-            modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.Question", b =>
-                {
-                    b.Property<int>("QuestionId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("QuestionId"));
-
-                    b.Property<bool>("IsActive")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<string>("Text")
-                        .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("varchar(200)");
-
-                    b.HasKey("QuestionId");
-
-                    b.ToTable("Questions");
-                });
-
             modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.Sentence", b =>
                 {
                     b.Property<int>("SentenceId")
@@ -280,29 +220,6 @@ namespace EnglishGamesPlatform.Backend.Migrations
                     b.HasKey("SentenceId");
 
                     b.ToTable("Sentences");
-                });
-
-            modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.TwinWord", b =>
-                {
-                    b.Property<int>("TwinWordId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("TwinWordId"));
-
-                    b.Property<int>("BaseWordId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SynonymWordId")
-                        .HasColumnType("int");
-
-                    b.HasKey("TwinWordId");
-
-                    b.HasIndex("BaseWordId");
-
-                    b.HasIndex("SynonymWordId");
-
-                    b.ToTable("TwinWords");
                 });
 
             modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.User", b =>
@@ -355,32 +272,6 @@ namespace EnglishGamesPlatform.Backend.Migrations
                     b.ToTable("Words");
                 });
 
-            modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.WordQuestionAnswerEntity", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<bool>("AnswerYes")
-                        .HasColumnType("tinyint(1)");
-
-                    b.Property<int>("QuestionId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("WordId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("QuestionId");
-
-                    b.HasIndex("WordId");
-
-                    b.ToTable("WordQuestionAnswers");
-                });
-
             modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.GameResult", b =>
                 {
                     b.HasOne("EnglishGamesPlatform.Backend.Models.Entities.Game", "Game")
@@ -410,25 +301,26 @@ namespace EnglishGamesPlatform.Backend.Migrations
 
                     b.Navigation("Word");
                 });
-=======
-                b.Navigation("CorrectWord");
-                b.Navigation("Sentence");
-            });
->>>>>>> yael-bloch/feature/finall
 
-            // --- Relations for MemoryMatchSynonymsPair ---
-            modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.MemoryMatchSynonymsPair", b =>
-            {
-                b.HasOne("EnglishGamesPlatform.Backend.Models.Entities.Word", "Word")
-                    .WithOne()
-                    .HasForeignKey("EnglishGamesPlatform.Backend.Models.Entities.MemoryMatchSynonymsPair", "WordId")
-                    .OnDelete(DeleteBehavior.Cascade)
-                    .IsRequired();
+            modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.MissingWordSentence", b =>
+                {
+                    b.HasOne("EnglishGamesPlatform.Backend.Models.Entities.Word", "CorrectWord")
+                        .WithMany()
+                        .HasForeignKey("CorrectWordId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
-                b.Navigation("Word");
-            });
+                    b.HasOne("EnglishGamesPlatform.Backend.Models.Entities.Sentence", "Sentence")
+                        .WithMany()
+                        .HasForeignKey("SentenceId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-<<<<<<< HEAD
+                    b.Navigation("CorrectWord");
+
+                    b.Navigation("Sentence");
+                });
+
             modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.OppositeWord", b =>
                 {
                     b.HasOne("EnglishGamesPlatform.Backend.Models.Entities.Word", "FirstWord")
@@ -467,25 +359,6 @@ namespace EnglishGamesPlatform.Backend.Migrations
                     b.Navigation("User");
                 });
 
-            modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.TwinWord", b =>
-                {
-                    b.HasOne("EnglishGamesPlatform.Backend.Models.Entities.Word", "BaseWord")
-                        .WithMany()
-                        .HasForeignKey("BaseWordId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.HasOne("EnglishGamesPlatform.Backend.Models.Entities.Word", "SynonymWord")
-                        .WithMany()
-                        .HasForeignKey("SynonymWordId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
-                    b.Navigation("BaseWord");
-
-                    b.Navigation("SynonymWord");
-                });
-
             modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.Word", b =>
                 {
                     b.HasOne("EnglishGamesPlatform.Backend.Models.Entities.Category", "Category")
@@ -495,25 +368,6 @@ namespace EnglishGamesPlatform.Backend.Migrations
                         .IsRequired();
 
                     b.Navigation("Category");
-                });
-
-            modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.WordQuestionAnswerEntity", b =>
-                {
-                    b.HasOne("EnglishGamesPlatform.Backend.Models.Entities.Question", "Question")
-                        .WithMany()
-                        .HasForeignKey("QuestionId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("EnglishGamesPlatform.Backend.Models.Entities.Word", "Word")
-                        .WithMany()
-                        .HasForeignKey("WordId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Question");
-
-                    b.Navigation("Word");
                 });
 
             modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.Category", b =>
@@ -539,9 +393,6 @@ namespace EnglishGamesPlatform.Backend.Migrations
                 {
                     b.Navigation("Images");
                 });
-=======
-            // --- שאר Relations/Navigation Properties ---
->>>>>>> yael-bloch/feature/finall
 #pragma warning restore 612, 618
         }
     }

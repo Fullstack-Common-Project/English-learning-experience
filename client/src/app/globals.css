@@ -1,6 +1,6 @@
 /* Tailwind v4 */
 @import "tailwindcss";
-@reference "tailwindcss";
+
 
 /* Rubik + RTL */
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap');
@@ -16,11 +16,11 @@
     background-blend-mode: overlay;
   }
 
-  h1,
-  h2,
-  h3 {
-    @apply font-semibold text-slate-100;
-  }
+  h1,h2,h3 { @apply font-semibold text-slate-100; }
+
+
+  
+
 
   main {
     @apply flex-grow;
@@ -93,11 +93,14 @@
     @apply bg-slate-900/60 backdrop-blur-sm border border-white/5 rounded-2xl shadow-lg p-6 md:p-8;
   }
 
-  /* נביגציה */
-  .nav {
+  
+
+    /* פוטר */
+
+  
+.nav {
     @apply h-16 bg-slate-900/40 backdrop-blur-md border-b border-white/5;
   }
-
   .nav-inner {
     @apply container mx-auto px-4 flex items-center justify-between h-full;
   }
@@ -115,10 +118,12 @@
   }
 
   /* פוטר */
+
   @layer components {
     .footer {
       @apply bg-gray-900 text-gray-300 py-4 w-full flex flex-col items-center relative;
     }
+
 
 
     .footer__container {
@@ -136,6 +141,7 @@
     .footer__developers {
       @apply grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-y-1 gap-x-2 text-sm;
     }
+
 
     .footer__developers a {
       @apply hover:text-white transition;
