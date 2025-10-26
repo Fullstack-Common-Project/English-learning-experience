@@ -55,6 +55,5 @@ namespace EnglishGamesPlatform.Backend.Controllers
                 return Ok(new { res.Data!.Token, res.Data.User, res.Message });
             }
         }
-
     }
 }

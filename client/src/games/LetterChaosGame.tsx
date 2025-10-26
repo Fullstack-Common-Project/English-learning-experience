@@ -1,25 +1,39 @@
 "use client";
-import React, { useState, useMemo, useEffect } from "react";
+import React, { useState, useMemo, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useDragAndDrop, DraggableItem } from "@/hooks/useDragAndDrop";
 import { GameProps } from "@/components/common/GameLayout";
 import { useGameData } from "@/hooks/useGameData";
 import { GameId } from "@/types";
-import { LetterChaosItemSingle } from "@/types/LetterChaos";
+import { LetterChaosItemSingle } from "@/types/gamesTypes/LetterChaos";
+
+import { useSubmitProgress } from "@/hooks/useSubmitProgress";
+import { useSelector } from "react-redux";
 
 const generateId = () => Math.floor(Math.random() * 10000).toString();
 
-export default function LetterChaosGame({ onScoreChange, onGameOver, paused }: GameProps) {
+export default function LetterChaosGame({ onScoreChange, onGameOver, paused, time}: GameProps) {
   const gameId: GameId = 3;
   const { data, isLoading, isError, refetch } = useGameData(gameId);
   //להסיר..
   console.log(data)
+
+  const submitProgressMutation = useSubmitProgress();
+
+  const timeRef = useRef(time);
+  const user = useSelector((state: any) => state.user.user);
+
+  useEffect(() => {
+    timeRef.current = time;
+  }, [time]);
 
   const [words, setWords] = useState<LetterChaosItemSingle[]>([]);
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const [lastWrongWord, setLastWrongWord] = useState<string | null>(null);
   const [isRestarting, setIsRestarting] = useState(false);
+
+  const score = useRef(0);
 
   useEffect(() => {
     if (!data) return;
@@ -50,13 +64,23 @@ export default function LetterChaosGame({ onScoreChange, onGameOver, paused }: G
     const isCorrect = currentGuess === currentWord.correctWord;
     setStatus(isCorrect ? "success" : "error");
     setLastWrongWord(isCorrect ? null : currentWord.correctWord);
-    if (isCorrect) onScoreChange?.((prev) => prev + 10);
+    if (isCorrect) {
+      score.current += 10;
+      onScoreChange?.((prev) => prev + 10);
+    }
 
     setTimeout(() => {
       setStatus("idle");
       if (currentWordIndex + 1 < words.length) {
         setCurrentWordIndex((i) => i + 1);
       } else {
+        submitProgressMutation.mutate({
+          gameID: gameId,
+          userID: user?.userId!,
+          score: score.current,
+          time: timeRef.current ?? 0,
+          rounds: currentWordIndex + 1,
+        });
         onGameOver?.();
         restartGame()
       }

@@ -1,70 +1,168 @@
-"use-client";
-import { useState } from "react";
+"use client";
+import { useState, useEffect, useRef } from "react";
 import { GameProps } from "@/components/common/GameLayout";
 import { motion } from "framer-motion";
+import { GameId } from "@/types";
+import { useGameData } from "@/hooks/useGameData";
+import { DoubleVisionItem } from "@/types/gamesTypes/DoubleVision";
+import { useLeaderboard } from "@/hooks/useLeaderboard";
+import { useSubmitProgress } from "@/hooks/useSubmitProgress";
+import { useSelector } from "react-redux";
 
-interface DoubleVisionOption {
-    imageUrl: string;
-    label: string;
-}
+export default function DoubleVisionGame({ onScoreChange, onGameOver, paused, time }: GameProps) {
+  const gameId: GameId = 12;
 
-interface DoubleVisionData {
-    mainWord: string;
-    options: DoubleVisionOption[];
-    correctIndex: number;
-}
+  // Hooks לטעינת הנתונים
+  const { data, isLoading, isError, refetch } = useGameData(gameId, { staleTime: 0 });
+  const { data: leaderboardData, refetch: refetchLeaderboard } = useLeaderboard(gameId);
 
-const mockData: DoubleVisionData = {
-    mainWord: "apple",
-    options: [
-        { imageUrl: "/mock-data/Apple.jpeg", label: "Apple" },
-        { imageUrl: "/mock-data/Orange.jpeg", label: "Orange" },
-        { imageUrl: "/mock-data/Pear.jpeg", label: "Pear" },
-        { imageUrl: "/mock-data/Banana.jpeg", label: "Banana" },
-    ],
-    correctIndex: 0,
-};
+  // Hook לשליחת נתוני המשחק
+  const submitProgressMutation = useSubmitProgress();
 
+  // Redux - user
+  const user = useSelector((state: any) => state.user.user);
 
-export default function DoubleVisionGame({ onScoreChange, onGameOver, paused }: GameProps) {
+  // State למשחק
+  const [currentRound, setCurrentRound] = useState(0);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+  const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
+  const [rounds, setRounds] = useState<DoubleVisionItem[]>([]);
+  const hasFetchedRef = useRef(false);
 
-    const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
-    const [isCorrect, setIsCorrect] = useState<boolean | null>(null);
+  console.log("Leaderboard:", leaderboardData?.data.leaderboards);
+  useEffect(() => {
+    if (leaderboardData) {
+      console.log("Leaderboard at game over:", leaderboardData.data.leaderboards);
+      // או עדכני state/props כדי להציג את הלידרבורד במסך הסיום
+    }
+  }, [leaderboardData]);
 
-    const handleClick = (index: number) => {
-        if (paused || selectedIndex !== null) return;
-        setSelectedIndex(index);
-        const correct = index === mockData.correctIndex;
-        setIsCorrect(correct);
+  // Ref לשמירת הזמן המדויק
+  const timeRef = useRef(time);
+  useEffect(() => {
+    timeRef.current = time;
+  }, [time]);
 
-        if (correct) onScoreChange?.(10);
-        else onScoreChange?.(0);
+  const baseUrl = "https://english-platform-testpnoren.s3.us-east-1.amazonaws.com/";
 
-        setTimeout(() => {
-            onGameOver?.();
-            setSelectedIndex(null);
-            setIsCorrect(null);
-        }, 1000);
-    };
+  // ✅ Load data פעם אחת
+  useEffect(() => {
+    if (!data || hasFetchedRef.current) return;
+    hasFetchedRef.current = true;
 
-    return (
-        <div className="doublevision">
-            <h2 className="doublevision__word">{mockData.mainWord}</h2>
-            <div className="doublevision__grid">
-                {mockData.options.map((option, idx) => (
-                    <motion.img
-                        key={idx}
-                        src={option.imageUrl}
-                        alt={option.label}
-                        className={`doublevision__option ${selectedIndex === idx && isCorrect ? "correct" : ""
-                            } ${selectedIndex === idx && isCorrect === false ? "wrong" : ""}`}
-                        whileHover={{ scale: 1.1, rotate: 3 }}
-                        transition={{ type: "spring", stiffness: 400, damping: 15 }}
-                        onClick={() => handleClick(idx)}
-                    />
-                ))}
-            </div>
-        </div>
-    );
+    const items: DoubleVisionItem[] = data.data?.data?.items || [];
+    setRounds(items);
+  }, [data]);
 
+  // ✅ הגדרת הצלילים
+  const correctSound = useRef<HTMLAudioElement | null>(null);
+  const wrongSound = useRef<HTMLAudioElement | null>(null);
+
+  useEffect(() => {
+    correctSound.current = new Audio("/sounds/צליל הצלחה.mp3");
+    wrongSound.current = new Audio("/sounds/צליל שגיאה.mp3");
+  }, []);
+
+  // פונקציה לאתחול המשחק
+  const restartGame = async () => {
+    setCurrentRound(0);
+    setSelectedIndex(null);
+    setIsCorrect(null);
+    const newData = await refetch();
+    const items: DoubleVisionItem[] = newData?.data?.data?.items || [];
+    setRounds(items);
+  };
+
+  // פונקציה לסיום משחק + שליחת הנתונים לשרת
+  const handleGameOver = () => {
+    submitProgressMutation.mutate({
+      gameID: gameId,
+      userID: user?.userId!, // חייב להיות מזהה משתמש
+      score: parseInt(localStorage.getItem("totalScore") || "0"),
+      time: timeRef.current ?? 0,
+      rounds: currentRound + 1,
+    });
+
+    onGameOver?.();
+    restartGame();
+  };
+
+  // לחיצה על אפשרות במשחק
+  const handleClick = (index: number) => {
+    if (paused || selectedIndex !== null) return;
+
+    const round = rounds[currentRound];
+    const correct = index === round.correctIndex;
+    setSelectedIndex(index);
+    setIsCorrect(correct);
+
+    if (correct) {
+      correctSound.current?.play();
+      onScoreChange?.((prev) => prev + 10);
+    } else {
+      wrongSound.current?.play();
+    }
+
+    // שמירה קצרה של האנימציה לפני מעבר
+    setTimeout(() => {
+      setSelectedIndex(null);
+      setIsCorrect(null);
+
+      if (currentRound < rounds.length - 1) {
+        setCurrentRound((prev) => prev + 1);
+      } else {
+        handleGameOver(); // סוף המשחק
+      }
+    }, 800);
+  };
+
+  if (isLoading || !rounds.length) return <p>Loading game data...</p>;
+  if (isError) return <p>Error loading DoubleVision game 😔</p>;
+
+  const round = rounds[currentRound];
+  const progress = ((currentRound + 1) / rounds.length) * 100;
+
+  return (
+    <div className="doublevision">
+      <div
+        className="progress-bar"
+        style={{
+          width: "100%",
+          background: "#eee",
+          height: "10px",
+          borderRadius: "5px",
+          marginBottom: "15px",
+        }}
+      >
+        <div
+          className="progress-bar__fill"
+          style={{
+            width: `${progress}%`,
+            background: "#4caf50",
+            height: "100%",
+            borderRadius: "5px",
+            transition: "width 0.4s ease",
+          }}
+        />
+      </div>
+
+      <h2 className="doublevision__word">{round.mainWord}</h2>
+
+      <div className="doublevision__grid">
+        {round.options.map((option, idx) => (
+          <motion.img
+            key={option.label + idx}
+            src={baseUrl + option.imageUrl}
+            alt={option.label}
+            className={`doublevision__option ${selectedIndex === idx && isCorrect ? "correct" : ""
+              } ${selectedIndex === idx && isCorrect === false ? "wrong" : ""
+              }`}
+            whileHover={{ scale: 1.1, rotate: 3 }}
+            transition={{ type: "spring", stiffness: 400, damping: 15 }}
+            onClick={() => handleClick(idx)}
+          />
+        ))}
+      </div>
+    </div>
+  );
 }
