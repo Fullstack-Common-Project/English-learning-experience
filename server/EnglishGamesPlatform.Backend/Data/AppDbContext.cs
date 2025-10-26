@@ -6,7 +6,8 @@ namespace EnglishGamesPlatform.Backend.Data
     public class AppDbContext : DbContext
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
-
+        public DbSet<GrammarQuestion> GrammarQuestions { get; set; }
+        public DbSet<GrammarQuestionFakeSentence> GrammarQuestionFakeSentences { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Word> Words { get; set; }
         public DbSet<Image> Images { get; set; }
@@ -104,6 +105,17 @@ namespace EnglishGamesPlatform.Backend.Data
              .Property(s => s.PlayerName)
              .HasMaxLength(100);
 
+
+            modelBuilder.Entity<GrammarQuestion>()
+               .HasOne(q => q.CorrectSentence)
+               .WithMany()
+               .HasForeignKey(q => q.CorrectSentenceId)
+               .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<GrammarQuestionFakeSentence>()
+                .HasOne(fs => fs.GrammarQuestion)
+                .WithMany(q => q.FakeSentences)
+                .HasForeignKey(fs => fs.GrammarQuestionId);
 
             base.OnModelCreating(modelBuilder);
 
