@@ -1,4 +1,6 @@
 "use client";
+import { useLeaderboardStore } from "@/store/UseLeaderboardStore";
+import { useRouter } from "next/navigation";
 
 type GameOverModalProps = {
   score: number;
@@ -9,6 +11,14 @@ type GameOverModalProps = {
 export default function GameOverModal({ score, time, onRestart }: GameOverModalProps) {
   const minutes = Math.floor(time / 60);
   const seconds = Math.floor(time % 60);
+  const router = useRouter();
+
+  const gameId = useLeaderboardStore((state) => state.gameId);
+
+  const goToLeaderboard = () => {
+    if (!gameId) return;
+    router.push(`/leaderboard/${gameId}`);
+  };
 
   return (
     <div className="gameover-modal">
@@ -21,10 +31,17 @@ export default function GameOverModal({ score, time, onRestart }: GameOverModalP
           Finish time: {minutes}:{seconds < 10 ? "0" + seconds : seconds}
         </p>
 
-        <button onClick={onRestart} className="btn-primary gameover-modal__button">
-          Restart
-        </button>
+        <div className="gameover-modal__buttons">
+          <button onClick={goToLeaderboard} className="btn-primary gameover-modal__button">
+              View Leaderboard
+          </button>
+          <button onClick={onRestart} className="btn-primary gameover-modal__button">
+            Restart
+          </button>
+
+        </div>
       </div>
     </div>
   );
 }
+

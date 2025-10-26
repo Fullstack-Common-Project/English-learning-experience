@@ -1,4 +1,5 @@
-import { GameResponseBase } from "./index";
+import { GameResponseBase } from "..";
+
 export interface MemorySynonymsItem {
   // empty item shape by request
 }

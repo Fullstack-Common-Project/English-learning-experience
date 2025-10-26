@@ -7,6 +7,7 @@ import { GameId } from "@/types";
 import { useSubmitProgress } from "@/hooks/useSubmitProgress";
 import { useSelector } from "react-redux";
 import { useLeaderboard } from "@/hooks/useLeaderboard";
+import { useLeaderboardStore } from "@/store/UseLeaderboardStore";
 
 interface MiniWordleModel {
     targetWord: string;
@@ -24,6 +25,9 @@ export default function MiniWordleGame({
     const { data, isLoading, isError, refetch } = useGameData(gameId);
     const submitProgressMutation = useSubmitProgress();
     const { data: leaderboardData } = useLeaderboard(gameId);
+    const setLeaderboard = useLeaderboardStore((state) => state.setLeaderboard);
+
+
 
     const [miniWordleModel, setMiniWordleModel] = useState<MiniWordleModel | null>(null);
     const [loadingWord, setLoadingWord] = useState(false);
@@ -91,8 +95,9 @@ export default function MiniWordleGame({
             time: timeRef.current ?? 0,
             rounds: round.current,
         });
-
-        console.log("Leaderboard:", leaderboardData?.data.leaderboards);
+        if (leaderboardData?.data?.leaderboards) {
+            setLeaderboard(gameId, leaderboardData.data.leaderboards);
+        }
         onGameOver?.();
     };
 
