@@ -23,6 +23,10 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes.Entities
                .Take(count) 
                .ToListAsync();
         }
-     
+        public async Task<List<OppositeWord>> GetAllOppositeWordsAsync()
+        {
+            return await _appDbContext.OppositeWords.Include(o => o.FirstWord).Include(o => o.SecondWord).ToListAsync();
+        }
+
     }
 }

@@ -1,4 +1,5 @@
-import { GameResponseBase } from "./index";
+import { GameResponseBase } from "..";
+
 export interface ContextCluesItem {
   data: {
   id: number;
