@@ -1,6 +1,7 @@
 using AutoMapper;
 using EnglishGamesPlatform.Backend.Models.DTOs;
 using EnglishGamesPlatform.Backend.Models.DTOs.Entities_DTOs;
+
 using EnglishGamesPlatform.Backend.Models.Entities;
 using EnglishGamesPlatform.Backend.Repositories.Interfaces;
 using EnglishGamesPlatform.Backend.Services.Interfaces;
@@ -27,6 +28,7 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
             _gameResultRepository = gameResultRepository;
             _mapper = mapper;
         }
+
 
 
 
@@ -66,6 +68,7 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
                 IsSuccess = true,
                 StatusCode = HttpStatusCode.OK,
                 Message = "Add Game Result Successfully.",
+
                 Data = new FinalGameStatus()
                 {
                     IsLeadingPlayer = true,
@@ -79,6 +82,7 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
             try
             {
                 string? gameName = await GetGameNameByIdAsync(gameId);
+
 
                 if (gameName == null)
                 {
@@ -134,6 +138,7 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
             {
                 StatusCode = HttpStatusCode.OK,
                 IsSuccess = true,
+
                 Message = $"Successfully retrieved the list of the 10 top players for game {gameId}.",
                 Data = topResults
             };
@@ -151,6 +156,7 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
             return await _gameResultRepository.AddGameResultAsync(gameResult);
         }
 
+
         private async Task<IEnumerable<GameResult>> GetTopGameResultsByGameIdAsync(int gameId, int topCount)
         {
             return await _gameResultRepository.GetTopGameResultsByGameIdAsync(gameId, topCount);
@@ -158,6 +164,7 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
 
         private async Task<int> GetRankByUserId(int gameId, int userId, int topCount)
         {
+
             List<GameResult> gameResults = (await GetTopGameResultsByGameIdAsync(gameId, topCount)).ToList();
 
             int index = gameResults.FindIndex(gameResult => gameResult.UserId == userId);

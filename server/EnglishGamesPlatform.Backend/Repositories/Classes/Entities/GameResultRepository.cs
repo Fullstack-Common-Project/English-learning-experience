@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EnglishGamesPlatform.Backend.Repositories.Classes.Entities
 {
-    public class GameResultRepository: IGameResultRepository
+    public class GameResultRepository : IGameResultRepository
     {
         private readonly AppDbContext _appDbContext;
 
@@ -24,19 +24,27 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes.Entities
 
         public async Task<LeaderboardData> GetTop10ByGameAsync(int gameId)
         {
-            var topResults= await _appDbContext.GameResults
-            .Where(p => p.GameId == gameId)
-            .Include(p => p.User)
-            .OrderByDescending(p => p.Score)
-            .ThenBy(p => p.Time)
-            .Take(10)
-            .ToListAsync();
+            var results = await _appDbContext.GameResults
+                .Where(p => p.GameId == gameId)
+                .Include(p => p.User)  
+                .ToListAsync();        
+
+            var topResults = results
+                .GroupBy(r => r.UserId)  
+                .Select(g => g
+                    .OrderByDescending(r => r.Score)
+                    .ThenBy(r => r.Time)
+                    .First())            
+                .OrderByDescending(r => r.Score)
+                .ThenBy(r => r.Time)
+                .Take(10)
+                .ToList();
 
             var leaderboardEntries = topResults
                .Select((r, index) => new LeaderboardEntry
                {
-                   Rank = index + 1,         
-                   UserName = r.User.FullName, 
+                   Rank = index + 1,
+                   UserName = r.User.FullName,
                    Score = r.Score,
                    Time = r.Time
                })
@@ -61,7 +69,5 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes.Entities
 
             return gameResults;
         }
-
-
     }
 }

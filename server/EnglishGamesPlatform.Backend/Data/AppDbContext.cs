@@ -6,7 +6,8 @@ namespace EnglishGamesPlatform.Backend.Data
     public class AppDbContext : DbContext
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
-
+        public DbSet<GrammarQuestion> GrammarQuestions { get; set; }
+        public DbSet<GrammarQuestionFakeSentence> GrammarQuestionFakeSentences { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Word> Words { get; set; }
         public DbSet<Image> Images { get; set; }
@@ -16,8 +17,17 @@ namespace EnglishGamesPlatform.Backend.Data
         public DbSet<Sentence> Sentences { get; set; }
         public DbSet<Progress> Progress { get; set; }
         public DbSet<OppositeWord> OppositeWords { get; set; }
+
+        public DbSet<MissingWordSentence> MissingWords { get; set; }
+
         public DbSet<TwinWord> TwinWords { get; set; }
         public DbSet<MemoryMatchSynonymsPair> MemoryMatchSynonymsPairs { get; set; }
+        public DbSet<Question> Questions { get; set; }
+        public DbSet<WordQuestionAnswerEntity> WordQuestionAnswers { get; set; }
+        public DbSet<GuessMasterSession> GuessMasterSessions { get; set; }
+
+
+        public DbSet<ImageSentence> ImageSentences { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -64,6 +74,18 @@ namespace EnglishGamesPlatform.Backend.Data
                 .WithMany()
                 .HasForeignKey(o => o.SecondWordId)
                 .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<MissingWordSentence>()
+               .HasOne(mws => mws.Sentence)       
+               .WithMany()                        
+               .HasForeignKey(mws => mws.SentenceId)
+               .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<MissingWordSentence>()
+                .HasOne(mws => mws.CorrectWord)   
+                .WithMany()                        
+                .HasForeignKey(mws => mws.CorrectWordId)
+                .OnDelete(DeleteBehavior.Restrict);
+
 
             modelBuilder.Entity<MemoryMatchSynonymsPair>()
                .HasOne(p => p.Word)
@@ -82,6 +104,30 @@ namespace EnglishGamesPlatform.Backend.Data
                 .WithMany()
                 .HasForeignKey(t => t.SynonymWordId)
                 .OnDelete(DeleteBehavior.Restrict);
+            modelBuilder.Entity<Question>()
+              .Property(q => q.Text)
+              .IsRequired()
+              .HasMaxLength(200);
+            modelBuilder.Entity<WordQuestionAnswerEntity>()
+              .HasOne(a => a.Word)
+              .WithMany()
+              .HasForeignKey(a => a.WordId)
+              .OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<WordQuestionAnswerEntity>()
+             .HasOne(a => a.Question)
+             .WithMany()
+             .HasForeignKey(a => a.QuestionId)
+             .OnDelete(DeleteBehavior.Cascade);
+            modelBuilder.Entity<GuessMasterSession>()
+             .Property(s => s.PlayerName)
+             .HasMaxLength(100);
+
+
+            modelBuilder.Entity<GrammarQuestion>()
+               .HasOne(q => q.CorrectSentence)
+               .WithMany()
+               .HasForeignKey(q => q.CorrectSentenceId)
+               .OnDelete(DeleteBehavior.Restrict);
 
             base.OnModelCreating(modelBuilder);
 

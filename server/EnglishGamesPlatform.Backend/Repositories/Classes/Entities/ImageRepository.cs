@@ -23,6 +23,7 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes
         public async Task<List<Image>> GetRandomImagesAsync(int count)
         {
             return await _appDbContext.Images
+
                 .Include(i => i.Word)
                 .OrderBy(w => EF.Functions.Random())
                 .Take(count)
@@ -40,6 +41,15 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes
                 .Include(i => i.Word)
                 .OrderBy(w => EF.Functions.Random())
                 .FirstOrDefaultAsync();
+        }
+
+        public async Task<List<Image>> GetAllImagesWithSentenceAsync()
+        {
+            return await _appDbContext.ImageSentences
+                .Include(isn => isn.Image)      
+                .Select(isn => isn.Image)        
+                .Distinct()                      
+                .ToListAsync();
         }
     }
 }

@@ -1,6 +1,6 @@
 /* Tailwind v4 */
 @import "tailwindcss";
-@reference "tailwindcss";
+
 
 /* Rubik + RTL */
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700;900&display=swap');
@@ -9,17 +9,18 @@
   body {
     @apply min-h-screen flex flex-col bg-slate-950 text-white font-sans antialiased;
     background-image:
+
       radial-gradient(1200px 600px at 80% -20%, rgba(99, 102, 241, .18), transparent 60%),
       radial-gradient(800px 400px at -10% 0%, rgba(14, 165, 233, .16), transparent 60%),
       linear-gradient(180deg, rgb(2 6 23), rgb(2 6 23 / 1) 40%, rgb(2 8 23));
     background-blend-mode: overlay;
   }
 
-  h1,
-  h2,
-  h3 {
-    @apply font-semibold text-slate-100;
-  }
+  h1,h2,h3 { @apply font-semibold text-slate-100; }
+
+
+  
+
 
   main {
     @apply flex-grow;
@@ -29,7 +30,6 @@
 
 /* ===== מחלקות משותפות בלבד ===== */
 @layer components {
-
   /* עטיפת עמודים */
   .page-container {
     @apply container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-10;
@@ -66,6 +66,7 @@
 
   /* אזור האייקון */
   .game-card__icon-wrap {
+
     @apply mt-2 mb-4 inline-flex items-center justify-center rounded-full h-24 w-24 md:h-28 md:w-28 bg-amber-400/15 ring-1 ring-white/10 shadow-md;
   }
 
@@ -86,17 +87,22 @@
   .btn-secondary {
     @apply inline-flex items-center justify-center rounded-xl px-5 py-3 text-base font-medium text-slate-100 bg-white/10 hover:bg-white/15 border border-white/10 transition;
   }
-
+  .btn{
+    @apply cursor-pointer
+    }
   /* פנלים למסכי משחק (שאלות/תוצאות/HowTo) */
   .panel {
     @apply bg-slate-900/60 backdrop-blur-sm border border-white/5 rounded-2xl shadow-lg p-6 md:p-8;
   }
 
-  /* נביגציה */
-  .nav {
+  
+
+    /* פוטר */
+
+  
+.nav {
     @apply h-16 bg-slate-900/40 backdrop-blur-md border-b border-white/5;
   }
-
   .nav-inner {
     @apply container mx-auto px-4 flex items-center justify-between h-full;
   }
@@ -114,10 +120,13 @@
   }
 
   /* פוטר */
+
   @layer components {
     .footer {
       @apply bg-gray-900 text-gray-300 py-4 w-full flex flex-col items-center relative;
     }
+
+
 
     .footer__container {
       @apply container mx-auto px-6 text-center relative;
@@ -134,6 +143,7 @@
     .footer__developers {
       @apply grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-y-1 gap-x-2 text-sm;
     }
+
 
     .footer__developers a {
       @apply hover:text-white transition;
@@ -186,6 +196,7 @@
 }
 
 @layer components {
+
 
   /* ===== Help Screen ===== */
   .help-screen {
@@ -388,6 +399,70 @@
   box-shadow: 0 0 20px #f87171;
 }
 
+/* ===== TwinWords Game ===== */
+.twinwords {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.twinwords__title {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.twinwords__word {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.twinwords__options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.twinwords__option {
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+  font-size: 1rem;
+  color: #222; /* ✅ טקסט כהה וברור */
+  transition: 0.2s;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.twinwords__option:hover {
+  background: #eaeaea;
+}
+
+/* תשובה נכונה */
+.twinwords__option--correct {
+  background-color: #2ecc71; /* ירוק חזק */
+  border-color: #27ae60;
+  color: #fff; /* ✅ טקסט לבן כדי לבלוט */
+}
+
+/* תשובה שגויה */
+.twinwords__option--wrong {
+  background-color: #e74c3c; /* אדום חזק */
+  border-color: #c0392b;
+  color: #fff; /* ✅ טקסט לבן */
+}
+
+.twinwords__feedback {
+  margin-top: 1rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+
+
+
+
 @keyframes shake {
   0% {
     transform: translateX(0);
@@ -426,4 +501,120 @@
   100% {
     transform: scale(1.2);
   }
+
+}
+
+/* .nl-container *:not(.nl-bar) {
+  display: none !important;
+} */
+/* ===== Letter Chaos Game ===== */
+@layer components {
+
+  /* לוח הניחוש */
+  .letter-chaos__board {
+    @apply flex justify-center gap-4 mb-6;
+  }
+
+  /* אותיות בלוח */
+  .letter-chaos__letter {
+    @apply w-20 h-20 flex items-center justify-center text-3xl font-bold rounded-lg border-2 cursor-pointer transition-all duration-300 select-none;
+  }
+
+  .letter-chaos__letter--idle {
+    @apply bg-white text-slate-900 border-slate-700;
+  }
+
+  .letter-chaos__letter--success {
+    @apply bg-emerald-100 text-emerald-800 border-emerald-500;
+  }
+
+  .letter-chaos__letter--error {
+    @apply bg-red-100 text-red-800 border-red-500;
+  }
+
+  /* מגירת אותיות */
+  .letter-chaos__drawer {
+    @apply flex flex-wrap justify-center gap-3 bg-slate-800/30 p-4 rounded-xl mb-6;
+  }
+
+  .letter-chaos__drawer-letter {
+    @apply w-14 h-14 flex items-center justify-center text-xl font-bold bg-white text-indigo-700 border-2 border-indigo-500 rounded-lg cursor-pointer transition-transform duration-200;
+  }
+
+  .letter-chaos__drawer-letter--dragged {
+    @apply scale-125 border-dashed;
+  }
+
+  /* כפתור Submit */
+  .letter-chaos__submit {
+    @apply px-6 py-3 bg-indigo-600 text-white font-semibold rounded-xl shadow-md hover:bg-indigo-500 active:scale-95 transition;
+  }
+
+  .letter-chaos__submit:disabled {
+    @apply bg-gray-600 cursor-not-allowed;
+  }
+
+  /* כותרת המשחק */
+  .letter-chaos__title {
+    @apply text-3xl font-bold text-indigo-400 mb-6 text-center;
+  }
+
+  /* טקסט סיום המשחק */
+  .letter-chaos__completed {
+    @apply text-xl font-bold text-emerald-500 text-center mt-6;
+  }
+
+  /* אנימציה pop */
+  @keyframes letter-pop {
+    0% { transform: scale(0.5); opacity: 0; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  .letter-chaos__letter,
+  .letter-chaos__drawer-letter {
+    animation: letter-pop 0.3s ease forwards;
+  }
+}
+
+/* ===== PicPick Game ===== */
+
+.picpick__grid {
+  @apply grid md:grid-cols-2 gap-3;
+}
+
+.picpick__image_container {
+  @apply flex justify-center items-center h-[400px];
+}
+
+.picpick__image {
+  @apply w-full max-w-[400px] aspect-square object-cover rounded-2xl mb-4;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.picpick__option {
+  @apply cursor-pointer transition-transform transition-shadow rounded-2xl duration-300 ease-in-out;
+}
+
+.picpick__option:hover {
+  transform: scale(1.05);
+}
+
+.picpick__option.correct {
+  animation: highlight 0.6s forwards;
+}
+
+.picpick__option.wrong {
+  animation: shake 0.5s;
+}
+
+@keyframes fadeIn { 
+  from { opacity: 0; } 
+  to { opacity: 1; } 
+}
+
+@keyframes highlight {
+  0% { background-color: transparent; }
+  50% { background-color: #34d399; } 
+  100% { background-color: transparent; }
 }

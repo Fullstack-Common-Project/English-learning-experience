@@ -4,7 +4,7 @@ import clsx from "clsx";
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: "primary" | "secondary";
-  muted?: boolean; // אם true, לא ישמע צליל
+  muted?: boolean; 
   children: ReactNode;
 };
 

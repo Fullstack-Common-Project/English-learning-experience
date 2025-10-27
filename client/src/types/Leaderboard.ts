@@ -1,12 +1,14 @@
 import { GameId } from "./index";
 export interface LeaderboardEntry {
   rank: number;
-  playerName: string;
+  userName: string;
   score: number;
   time: number;
 }
 
 export interface LeaderboardResponse {
-  gameId: GameId;
-  leaderboard: LeaderboardEntry[];
+  data: {
+    gameId: GameId;
+    leaderboards: LeaderboardEntry[];
+  }
 }

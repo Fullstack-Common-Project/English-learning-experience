@@ -4,7 +4,9 @@ import MiniWordle from "./mini-wordle/MiniWordle";
 import { GameProps } from "@/components/common/GameLayout";
 import { useGameData } from "@/hooks/useGameData";
 import { GameId } from "@/types";
-import { useRouter } from "next/navigation";
+import { useSubmitProgress } from "@/hooks/useSubmitProgress";
+import { useSelector } from "react-redux";
+import Button from "@/components/ui/Button";
 
 interface MiniWordleModel {
     targetWord: string;
@@ -12,76 +14,112 @@ interface MiniWordleModel {
     id: number | null;
 }
 
-export default function MiniWordleGame({ onScoreChange, onGameOver, paused }: GameProps) {
+export default function MiniWordleGame({
+    onScoreChange,
+    onGameOver,
+    paused,
+    time,
+}: GameProps) {
     const gameId: GameId = 6;
     const { data, isLoading, isError, refetch } = useGameData(gameId);
+    const submitProgressMutation = useSubmitProgress();
     const [miniWordleModel, setMiniWordleModel] = useState<MiniWordleModel | null>(null);
+    const [loadingWord, setLoadingWord] = useState(false);
     const hasFetchedRef = useRef(false);
-    // const router = useRouter();
-
-
+    const score = useRef(0);
+    const round = useRef(1);
+    const timeRef = useRef(time);
+    const user = useSelector((state: any) => state.user.user);
 
     useEffect(() => {
-        if (!data || hasFetchedRef.current) return;
-        hasFetchedRef.current = true;
+        timeRef.current = time;
+    }, [time]);
 
-        const wordData = data.data?.data;
-        if (wordData) {
-            setMiniWordleModel({
-                targetWord: wordData.targetWord,
-                wordLength: wordData.wordLength,
-                id: wordData.id ?? null
-            });
-        }
-    }, [data]);
+    const setWordFromData = (wordData: any) => {
+        if (!wordData) return;
+        setMiniWordleModel({
+            targetWord: wordData.targetWord,
+            wordLength: wordData.wordLength,
+            id: wordData.id ?? null,
+        });
+    };
 
-    //     useEffect(() => {
-    //     const token = typeof window !== "undefined" ? localStorage.getItem("token") : null;
-    //     if (!token) {
-    //         router.push("/login"); // מפנה לעמוד התחברות
-    //         return;
-    //     }
+    useEffect(() => {
+        const fetchNewWord = async () => {
+            try {
+                setLoadingWord(true);
+                const response = await refetch();
+                setWordFromData(response?.data?.data?.data);
+            } catch (err) {
+                console.error("Error loading word:", err);
+            } finally {
+                setLoadingWord(false);
+            }
+        };
 
-    //     if (!data || hasFetchedRef.current) return;
-    //     hasFetchedRef.current = true;
+        fetchNewWord();
+    }, [refetch]);
 
-    //     const wordData = data.data?.data;
-    //     if (wordData) {
-    //         setMiniWordleModel({
-    //             targetWord: wordData.targetWord,
-    //             wordLength: wordData.wordLength,
-    //             id: wordData.id ?? null
-    //         });
-    //     }
-    // }, [data, router]);
-
-
-
-    const handleGameOver = async () => {
-        onGameOver?.();
-        const newData = await refetch();
-        const wordData = newData?.data?.data?.data;
-
-        if (wordData) {
-            setMiniWordleModel({
-                targetWord: wordData.targetWord,
-                wordLength: wordData.wordLength,
-                id: wordData.id ?? null
-            });
+    const loadNewWord = async () => {
+        try {
+            setLoadingWord(true);
+            hasFetchedRef.current = false;
+            const newData = await refetch();
+            setWordFromData(newData?.data?.data?.data);
+        } catch (err) {
+            console.error("Error loading new word:", err);
+        } finally {
+            setLoadingWord(false);
         }
     };
 
-    if (isLoading) return <p>Loading...</p>;
+    const handleScoreChange = (roundScore: number) => {
+        onScoreChange?.((prev) => {
+            const newScore = prev + roundScore;
+            score.current = newScore;
+            return newScore;
+        });
+    };
+
+    const handleGameOver = () => {
+        onGameOver?.();
+        submitProgressMutation.mutate({
+            gameID: gameId,
+            userID: user?.userId!,
+            score: score.current,
+            time: timeRef.current ?? 0,
+            rounds: round.current,
+        });
+
+    };
+
+    const handleWin = async () => {
+        round.current += 1;
+        await loadNewWord();
+    };
+
+    if (isLoading || loadingWord) return <p>Loading...</p>;
     if (isError) return <p>Failed to load data.</p>;
     if (!miniWordleModel) return <p>No data available.</p>;
 
     return (
-        <MiniWordle
-            wordLength={miniWordleModel.wordLength}
-            targetWord={miniWordleModel.targetWord}
-            paused={paused}
-            onScoreChange={onScoreChange}
-            onGameOver={handleGameOver}
-        />
+        <>
+            <Button
+                onClick={() => handleGameOver()}
+             
+            >
+                End Game
+            </Button>
+
+            <MiniWordle
+                wordLength={miniWordleModel.wordLength}
+                targetWord={miniWordleModel.targetWord}
+                paused={paused}
+                onScoreChange={handleScoreChange}
+                onGameOver={handleGameOver}
+                onWin={handleWin}
+            /></>
+
     );
 }
+
