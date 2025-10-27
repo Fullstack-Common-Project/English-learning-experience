@@ -18,7 +18,6 @@ export default function Button({
   const baseClasses = "btn";
 
 
-
   const clickSound = new Audio("/audio/click.mp3");
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
@@ -28,6 +27,7 @@ export default function Button({
 
   return (
     <button {...props} onClick={handleClick} className={clsx(baseClasses ,className)}>
+
       {children}
     </button>
   );

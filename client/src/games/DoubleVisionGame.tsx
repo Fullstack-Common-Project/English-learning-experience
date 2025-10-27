@@ -8,6 +8,7 @@ import { DoubleVisionItem } from "@/types/gamesTypes/DoubleVision";
 import { useLeaderboard } from "@/hooks/useLeaderboard";
 import { useSubmitProgress } from "@/hooks/useSubmitProgress";
 import { useSelector } from "react-redux";
+import { useLeaderboardStore } from "@/store/UseLeaderboardStore";
 
 export default function DoubleVisionGame({ onScoreChange, onGameOver, paused, time }: GameProps) {
   const gameId: GameId = 12;
@@ -29,13 +30,19 @@ export default function DoubleVisionGame({ onScoreChange, onGameOver, paused, ti
   const [rounds, setRounds] = useState<DoubleVisionItem[]>([]);
   const hasFetchedRef = useRef(false);
 
+  const setLeaderboard = useLeaderboardStore((state) => state.setLeaderboard);
+
   console.log("Leaderboard:", leaderboardData?.data.leaderboards);
+  // useEffect(() => {
+  //   if (leaderboardData) {
+  //     console.log("Leaderboard at game over:", leaderboardData.data.leaderboards);
+  //     // או עדכני state/props כדי להציג את הלידרבורד במסך הסיום
+  //   }
+  // }, [leaderboardData]);
+
   useEffect(() => {
-    if (leaderboardData) {
-      console.log("Leaderboard at game over:", leaderboardData.data.leaderboards);
-      // או עדכני state/props כדי להציג את הלידרבורד במסך הסיום
-    }
-  }, [leaderboardData]);
+    setLeaderboard(gameId, []);
+  }, [gameId, setLeaderboard]);
 
   // Ref לשמירת הזמן המדויק
   const timeRef = useRef(time);
@@ -74,14 +81,23 @@ export default function DoubleVisionGame({ onScoreChange, onGameOver, paused, ti
   };
 
   // פונקציה לסיום משחק + שליחת הנתונים לשרת
-  const handleGameOver = () => {
-    submitProgressMutation.mutate({
+  const handleGameOver = async () => {
+    await submitProgressMutation.mutate({
       gameID: gameId,
       userID: user?.userId!, // חייב להיות מזהה משתמש
       score: parseInt(localStorage.getItem("totalScore") || "0"),
       time: timeRef.current ?? 0,
       rounds: currentRound + 1,
     });
+
+    await refetchLeaderboard();
+
+    if (leaderboardData?.data?.leaderboards) {
+      setLeaderboard(gameId, [
+        ...leaderboardData.data.leaderboards,
+        ...(useLeaderboardStore.getState().leaderboard || []),
+      ]);
+    }
 
     onGameOver?.();
     restartGame();
@@ -97,10 +113,18 @@ export default function DoubleVisionGame({ onScoreChange, onGameOver, paused, ti
     setIsCorrect(correct);
 
     if (correct) {
-      correctSound.current?.play();
+      if (correctSound.current) {
+        correctSound.current.pause();
+        correctSound.current.currentTime = 0;
+        correctSound.current.play();
+      }
       onScoreChange?.((prev) => prev + 10);
     } else {
-      wrongSound.current?.play();
+      if (wrongSound.current) {
+        wrongSound.current.pause();
+        wrongSound.current.currentTime = 0;
+        wrongSound.current.play();
+      }
     }
 
     // שמירה קצרה של האנימציה לפני מעבר

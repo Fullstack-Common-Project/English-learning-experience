@@ -27,6 +27,7 @@ namespace EnglishGamesPlatform.Backend.Data
         public DbSet<GuessMasterSession> GuessMasterSessions { get; set; }
 
 
+        public DbSet<ImageSentence> ImageSentences { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -127,11 +128,6 @@ namespace EnglishGamesPlatform.Backend.Data
                .WithMany()
                .HasForeignKey(q => q.CorrectSentenceId)
                .OnDelete(DeleteBehavior.Restrict);
-
-            modelBuilder.Entity<GrammarQuestionFakeSentence>()
-                .HasOne(fs => fs.GrammarQuestion)
-                .WithMany(q => q.FakeSentences)
-                .HasForeignKey(fs => fs.GrammarQuestionId);
 
             base.OnModelCreating(modelBuilder);
 

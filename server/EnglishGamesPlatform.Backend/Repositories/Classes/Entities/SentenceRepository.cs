@@ -17,7 +17,6 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes
         {
             return await _appDbContext.Sentences.FindAsync(id);
         }
-
         public async Task<List<Sentence>> GetRandomSentencesAsync(int count)
         {
             return await _appDbContext.Sentences
@@ -26,6 +25,25 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes
                 .Take(count)
                 .ToListAsync();
         }
+        public async Task<List<Sentence>> GetAllAsync()
+        {
+            return await _appDbContext.Sentences.ToListAsync();
+        }
+        public async Task<List<Sentence>> GetRandomWrongSentencesAsync(int excludeSentenceId, int count)
+        {
+            return await _appDbContext.Sentences
+                .Where(s => s.SentenceId != excludeSentenceId)
+                .OrderBy(s => EF.Functions.Random())
+                .Take(count)
+                .ToListAsync();
+        }
+        public async Task<Sentence?> GetCorrectSentenceByImageIdAsync(int imageId)
+        {
+            var imageSentence = await _appDbContext.ImageSentences
+                .Include(isn => isn.CorrectSentence)
+                .FirstOrDefaultAsync(isn => isn.ImageId == imageId);
 
+            return imageSentence?.CorrectSentence;
+        }
     }
 }

@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import { useEffect, useRef } from "react";
 
 const KEYBOARD_LAYOUT = [
     ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"],
@@ -16,6 +17,12 @@ interface KeyboardProps {
 }
 
 export default function Keyboard({ onType, onDelete, onSubmit, keyboardColors, disabled = false }: KeyboardProps) {
+    const correctSound = useRef<HTMLAudioElement | null>(null);
+
+    useEffect(() => {
+        correctSound.current = new Audio("/audio/click.mp3");
+    }, []);
+
     return (
         <div className="flex flex-col items-center gap-1.5 mt-6">
             {KEYBOARD_LAYOUT.map((row, i) => (
@@ -28,6 +35,7 @@ export default function Keyboard({ onType, onDelete, onSubmit, keyboardColors, d
                             <motion.button
                                 key={key}
                                 onClick={() => {
+                                    correctSound.current?.play();
                                     if (disabled) return;
                                     if (key === "ENTER") onSubmit();
                                     else if (key === "⌫") onDelete();
