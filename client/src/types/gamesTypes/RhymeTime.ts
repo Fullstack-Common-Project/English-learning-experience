@@ -1,4 +1,4 @@
-import { GameResponseBase } from "./index";
+import { GameResponseBase } from "../index";
 export interface RhymeTimeItem {
   // empty item shape by request
 }

@@ -152,15 +152,16 @@ export default function GameLayout({ children, gameTitle }: GameLayoutProps) {
           </div>
 
           <div className="game-content">
-  {React.isValidElement(children) &&
-    React.cloneElement(children as React.ReactElement<GameProps>, {
-      onScoreChange: handleScoreChange,
-      onGameOver: handleGameOver,
-      paused: paused || countdownActive,
-      time, // <-- מוסיפים כאן את הזמן
-    })}
-</div>
-
+            {React.isValidElement(children) &&
+              React.cloneElement(children as React.ReactElement<GameProps>, {
+                onScoreChange: handleScoreChange,
+                onGameOver: handleGameOver,
+                paused: paused || countdownActive,
+                time,
+                score,
+                setScore,
+              })}
+          </div>
         </div>
       )}
 

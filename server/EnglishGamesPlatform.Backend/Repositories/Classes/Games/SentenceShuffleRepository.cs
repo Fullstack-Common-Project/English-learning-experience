@@ -8,7 +8,7 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes.Games
     {
         public string GameName => "Sentence Shuffle";
         private readonly ISentenceRepository _sentenceRepository;
-        private readonly int count=5;
+        private readonly int count=3;
 
         public SentenceShuffleRepository(ISentenceRepository sentenceRepository)
         {

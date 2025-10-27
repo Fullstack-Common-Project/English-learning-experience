@@ -64,8 +64,6 @@ builder.Services.AddScoped<IGeneralGameRepository, SentenceShuffleRepository>();
 
 builder.Services.AddScoped<IGeneralGameRepository, MemoryMatchSynonymsRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, MemoryMatchAntonymsRepository>();
-builder.Services.AddScoped<IGeneralGameRepository, TwinWordsGameRepository>();
-
 #endregion 
 
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
