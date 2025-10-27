@@ -6,4 +6,6 @@ export interface MemorySynonymsItem {
 
 
 export interface MemorySynonymsResponse
-  extends GameResponseBase<8, MemorySynonymsItem> {}
+  extends GameResponseBase<8, MemorySynonymsItem> {
+    pairs: MemorySynonymsResponse | undefined;
+}
