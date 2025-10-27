@@ -8,7 +8,6 @@ import { DoubleVisionItem } from "@/types/gamesTypes/DoubleVision";
 import { useLeaderboard } from "@/hooks/useLeaderboard";
 import { useSubmitProgress } from "@/hooks/useSubmitProgress";
 import { useSelector } from "react-redux";
-import { useLeaderboardStore } from "@/store/UseLeaderboardStore";
 
 export default function DoubleVisionGame({ onScoreChange, onGameOver, paused, time }: GameProps) {
   const gameId: GameId = 12;
@@ -30,7 +29,7 @@ export default function DoubleVisionGame({ onScoreChange, onGameOver, paused, ti
   const [rounds, setRounds] = useState<DoubleVisionItem[]>([]);
   const hasFetchedRef = useRef(false);
 
-  const setLeaderboard = useLeaderboardStore((state) => state.setLeaderboard);
+  // const setLeaderboard = useLeaderboardStore((state) => state.setLeaderboard);
 
   console.log("Leaderboard:", leaderboardData?.data.leaderboards);
   // useEffect(() => {
@@ -40,9 +39,9 @@ export default function DoubleVisionGame({ onScoreChange, onGameOver, paused, ti
   //   }
   // }, [leaderboardData]);
 
-  useEffect(() => {
-    setLeaderboard(gameId, []);
-  }, [gameId, setLeaderboard]);
+  // useEffect(() => {
+  //   setLeaderboard(gameId, []);
+  // }, [gameId, setLeaderboard]);
 
   // Ref לשמירת הזמן המדויק
   const timeRef = useRef(time);
@@ -90,14 +89,14 @@ export default function DoubleVisionGame({ onScoreChange, onGameOver, paused, ti
       rounds: currentRound + 1,
     });
 
-    await refetchLeaderboard();
+    // await refetchLeaderboard();
 
-    if (leaderboardData?.data?.leaderboards) {
-      setLeaderboard(gameId, [
-        ...leaderboardData.data.leaderboards,
-        ...(useLeaderboardStore.getState().leaderboard || []),
-      ]);
-    }
+    // if (leaderboardData?.data?.leaderboards) {
+    //   setLeaderboard(gameId, [
+    //     ...leaderboardData.data.leaderboards,
+    //     ...(useLeaderboardStore.getState().leaderboard || []),
+    //   ]);
+    // }
 
     onGameOver?.();
     restartGame();
