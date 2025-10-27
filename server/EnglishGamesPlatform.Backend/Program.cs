@@ -66,12 +66,13 @@ builder.Services.AddScoped<IGeneralGameRepository, LetterChaosRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, TwinWordsGameRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, DoubleVisionRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, MemoryMatchSynonymsRepository>();
+builder.Services.AddScoped<IGeneralGameRepository, PicPickRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, MemoryMatchAntonymsRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, GrammarGuruRepository>();
 
 
 #endregion 
-
+builder.Services.AddScoped<IGeneralGameRepository,ContextCluesRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IImageRepository, ImageRepository>();
 builder.Services.AddScoped<ISentenceRepository, SentenceRepository>();

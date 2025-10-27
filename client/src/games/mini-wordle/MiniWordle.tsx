@@ -57,6 +57,15 @@ export default function MiniWordle({
     const [shake, setShake] = useState(false);
     const [revealingRow, setRevealingRow] = useState(-1);
     const [completed, setCompleted] = useState(false);
+    const correctSound = useRef<HTMLAudioElement | null>(null);
+    const wrongSound = useRef<HTMLAudioElement | null>(null);
+    const gameOverSound = useRef<HTMLAudioElement | null>(null);
+
+    useEffect(() => {
+        correctSound.current = new Audio("/sounds/צליל הצלחה.mp3");
+        wrongSound.current = new Audio("/sounds/צליל שגיאה.mp3");
+        gameOverSound.current = new Audio("/audio/wrong.mp3");
+    }, []);
 
     const targetWordRef = useRef(targetWord);
     const boardRef = useRef(board);
@@ -108,6 +117,66 @@ export default function MiniWordle({
         setCurrentCol(currentColRef.current - 1);
     }, [paused, completed]);
 
+    // const onSubmit = useCallback(() => {
+    //     if (paused || completed || revealingRowRef.current !== -1) return;
+    //     if (currentColRef.current < wordLength) {
+    //         setShake(true);
+    //         setTimeout(() => setShake(false), 500);
+    //         return;
+    //     }
+
+    //     const guess = boardRef.current[currentRowRef.current];
+    //     const rowColorResult = getRowColors(guess, targetWordRef.current);
+    //     setRevealingRow(currentRowRef.current);
+
+    //     let roundScore = 0;
+    //     rowColorResult.forEach(c => {
+    //         if (c === "correct") roundScore += 2;
+    //         else if (c === "present") roundScore += 1;
+    //     });
+
+    //     rowColorResult.forEach((color, idx) => {
+    //         setTimeout(() => {
+    //             setRowColors(prev => {
+    //                 const updated = prev.map(r => [...r]);
+    //                 updated[currentRowRef.current][idx] = color;
+    //                 return updated;
+    //             });
+    //         }, idx * 200);
+    //     });
+
+    //     setTimeout(() => {
+    //         const newKeyboardColors = { ...keyboardColorsRef.current };
+    //         guess.forEach((letter, idx) => {
+    //             const c = rowColorResult[idx];
+    //             if (!newKeyboardColors[letter] || c === "correct" || (c === "present" && newKeyboardColors[letter] !== "correct")) {
+    //                 newKeyboardColors[letter] = c;
+    //             }
+    //         });
+    //         setKeyboardColors(newKeyboardColors);
+
+    //         onScoreChange?.(roundScore);
+    //         if (guess.join("") === targetWordRef.current.toUpperCase()) {
+    //             correctSound.current?.play();
+    //             setTimeout(() => {
+    //                 setCompleted(true);
+    //                 onWin?.();
+    //             }, 3000);
+    //         }
+    //         else if (currentRowRef.current + 1 >= maxGuesses) {
+    //             gameOverSound.current?.play();
+    //             alert(`Game Over! The word was: ${targetWordRef.current}`);
+    //             setCompleted(true);
+    //             onGameOver?.();
+    //         } else {
+    //             wrongSound.current?.play();
+    //             setCurrentRow(currentRowRef.current + 1);
+    //             setCurrentCol(0);
+    //         }
+
+    //         setRevealingRow(-1);
+    //     }, wordLength * 220 + 300);
+    // }, [paused, completed, wordLength, onScoreChange, onGameOver, onWin]);
     const onSubmit = useCallback(() => {
         if (paused || completed || revealingRowRef.current !== -1) return;
         if (currentColRef.current < wordLength) {
@@ -118,14 +187,20 @@ export default function MiniWordle({
 
         const guess = boardRef.current[currentRowRef.current];
         const rowColorResult = getRowColors(guess, targetWordRef.current);
-        setRevealingRow(currentRowRef.current);
 
+        // חישוב ניקוד **מיידי**
         let roundScore = 0;
         rowColorResult.forEach(c => {
             if (c === "correct") roundScore += 2;
             else if (c === "present") roundScore += 1;
         });
 
+        // שליחת הניקוד מיידית
+        onScoreChange?.(roundScore);
+
+        setRevealingRow(currentRowRef.current);
+
+        // עדכון לוחות צבעים ו־keyboard אחרי האנימציה
         rowColorResult.forEach((color, idx) => {
             setTimeout(() => {
                 setRowColors(prev => {
@@ -146,15 +221,20 @@ export default function MiniWordle({
             });
             setKeyboardColors(newKeyboardColors);
 
-            onScoreChange?.(roundScore);
-
             if (guess.join("") === targetWordRef.current.toUpperCase()) {
-                onWin?.();
-            } else if (currentRowRef.current + 1 >= maxGuesses) {
+                correctSound.current?.play();
+                setTimeout(() => {
+                    setCompleted(true);
+                    onWin?.();
+                }, 3000);
+            }
+            else if (currentRowRef.current + 1 >= maxGuesses) {
+                gameOverSound.current?.play();
                 alert(`Game Over! The word was: ${targetWordRef.current}`);
                 setCompleted(true);
                 onGameOver?.();
             } else {
+                wrongSound.current?.play();
                 setCurrentRow(currentRowRef.current + 1);
                 setCurrentCol(0);
             }
@@ -162,6 +242,7 @@ export default function MiniWordle({
             setRevealingRow(-1);
         }, wordLength * 220 + 300);
     }, [paused, completed, wordLength, onScoreChange, onGameOver, onWin]);
+
 
     useEffect(() => {
         const handleKey = (e: KeyboardEvent) => {

@@ -6,7 +6,6 @@ import { useGameData } from "@/hooks/useGameData";
 import { GameId } from "@/types";
 import { useSubmitProgress } from "@/hooks/useSubmitProgress";
 import { useSelector } from "react-redux";
-import { useLeaderboard } from "@/hooks/useLeaderboard";
 
 interface MiniWordleModel {
     targetWord: string;
@@ -23,8 +22,6 @@ export default function MiniWordleGame({
     const gameId: GameId = 6;
     const { data, isLoading, isError, refetch } = useGameData(gameId);
     const submitProgressMutation = useSubmitProgress();
-    const { data: leaderboardData } = useLeaderboard(gameId);
-
     const [miniWordleModel, setMiniWordleModel] = useState<MiniWordleModel | null>(null);
     const [loadingWord, setLoadingWord] = useState(false);
     const hasFetchedRef = useRef(false);
@@ -44,6 +41,7 @@ export default function MiniWordleGame({
             wordLength: wordData.wordLength,
             id: wordData.id ?? null,
         });
+        console.log("Loaded word:", wordData.targetWord);
     };
 
     useEffect(() => {
@@ -84,6 +82,7 @@ export default function MiniWordleGame({
     };
 
     const handleGameOver = () => {
+        onGameOver?.();
         submitProgressMutation.mutate({
             gameID: gameId,
             userID: user?.userId!,
@@ -92,8 +91,6 @@ export default function MiniWordleGame({
             rounds: round.current,
         });
 
-        console.log("Leaderboard:", leaderboardData?.data.leaderboards);
-        onGameOver?.();
     };
 
     const handleWin = async () => {

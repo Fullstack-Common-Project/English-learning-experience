@@ -95,7 +95,9 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
 
             if (_repositories.TryGetValue(gameName, out var repository))
             {
+
                 GameInitialData? gameInitialData = await repository.GetData();
+
 
                 return new()
                 {
