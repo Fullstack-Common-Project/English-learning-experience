@@ -82,6 +82,8 @@ builder.Services.AddScoped<ITwinWordRepository, TwinWordRepository>();
 builder.Services.AddScoped<IFakeSentenceRepository, FakeSentenceRepository>();
 builder.Services.AddScoped<IGrammarQuestionRepository, GrammarQuestionRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, GuessMaster20Repository>();
+builder.Services.AddScoped<IGeneralGameRepository, WordSorterRepository>();
+
 
 
 #endregion
