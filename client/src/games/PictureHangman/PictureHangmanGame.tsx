@@ -1,6 +1,6 @@
 "use client";
 import { GameProps } from "@/components/common/GameLayout";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { BASE_IMAGE_URL } from "@/lib/constants";
 import { useGameData } from "@/hooks/useGameData";
@@ -9,9 +9,18 @@ import MaskedImage from "./MaskedImage";
 import Keyboard from "./Keyboard";
 import MistakesList from "./MistakesList";
 import GameResult from "./GameResult";
+import { useSubmitProgress } from "@/hooks/useSubmitProgress";
+import { useSelector } from "react-redux";
 
-export default function PictureHangmanGame({ onScoreChange, onGameOver, paused }: GameProps) {
+export default function PictureHangmanGame({ onScoreChange, onGameOver, paused, time }: GameProps) {
     const { data, isLoading } = useGameData(2);
+    const submitProgressMatution = useSubmitProgress();
+    const user = useSelector((state: any) => state.user.user);
+    const timeRef = useRef(time);
+
+    useEffect(() => {
+        timeRef.current = time;
+    }, [time]);
 
     const TOTAL_PIECES = 100;
     const TOTAL_MISTAKES = 10;
@@ -31,8 +40,6 @@ export default function PictureHangmanGame({ onScoreChange, onGameOver, paused }
     const [showGameResult, setShowGameResult] = useState(false);
     const [isWinGame, setIsWinGame] = useState(false);
     const [finalScore, setFinalScore] = useState(0);
-
-
 
     // Get the current word and image for this round (if data is loaded)
     const pairs = data?.data?.data?.pairs ?? [];
@@ -116,11 +123,21 @@ export default function PictureHangmanGame({ onScoreChange, onGameOver, paused }
                 hiddenIndices.splice(hiddenIndices.indexOf(randomIndex), 1);
             }
             setRevealedPieces(newPieces);
+            // Lose
             if (newMistakesTotal >= TOTAL_MISTAKES) {
                 setShowFullImage(true);
                 setFinalScore(finalScore); // ניקוד נוכחי
                 setIsWinGame(false); // כישלון
                 setShowGameResult(true); // להראות פופאפ
+
+                // Send result to the server
+                submitProgressMatution.mutate({
+                    gameID: 2,
+                    userID: user?.userId!,
+                    score: finalScore,
+                    time: timeRef.current ?? 0,
+                    rounds: pairs.length
+                });
 
                 setTimeout(() => onGameOver?.(), 6000);
             }
@@ -147,6 +164,15 @@ export default function PictureHangmanGame({ onScoreChange, onGameOver, paused }
             setIsWinGame(true); // ניצחון
             setShowGameResult(true); // להראות פופאפ
             setShowFullImage(true);
+
+            // Send result to the server
+            submitProgressMatution.mutate({
+                gameID: 2,
+                userID: user?.userId!,
+                score: final,
+                time: timeRef.current ?? 0,
+                rounds: pairs.length
+            });
 
             setTimeout(() => {
                 onGameOver?.();
