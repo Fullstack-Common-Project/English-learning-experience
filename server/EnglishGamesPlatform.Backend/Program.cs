@@ -66,6 +66,7 @@ builder.Services.AddScoped<IGeneralGameRepository, LetterChaosRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, TwinWordsGameRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, DoubleVisionRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, MemoryMatchSynonymsRepository>();
+builder.Services.AddScoped<IGeneralGameRepository, PicPickRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, MemoryMatchAntonymsRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, GrammarGuruRepository>();
 
