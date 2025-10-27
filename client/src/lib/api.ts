@@ -6,6 +6,7 @@ import type {
   SubmitProgressResponse,
 } from "../types";
 import type { GameResponseMap } from "../types";
+import { GuessMasterAskRequest, GuessMasterAskResponse } from "@/types/gamesTypes/GuessMaster";
 
 async function handleResponse<T>(res: Response): Promise<T> {
   const text = await res.text();
@@ -45,14 +46,30 @@ export async function submitProgress(
   return handleResponse<SubmitProgressResponse>(res);
 }
 
-export async function fetchPlatformGames() {
-  const res = await fetch(`${API_BASE}/Game/GetAll`, {
-    headers:{ "Content-Type": "application/json" }
+export async function postGuessMasterTurn(
+  gameId: GameId,
+  body: GuessMasterAskRequest
+): Promise<GuessMasterAskResponse> {
+  const res = await fetch(`${API_BASE}/${gameId}/progress`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+
+    body: JSON.stringify(body),
   });
-  const result = await res.json();
-  console.log("Fetched platform games:", result);
-  if (!res.ok) throw new Error(
-    `Failed to fetch games ${result?.message || result.statusText}`
-  );
-  return result.data; 
+  if (!res.ok) throw new Error("failed to submit GM20 turn");
+  return await res.json();
 }
+
+
+  export async function fetchPlatformGames() {
+    const res = await fetch(`${API_BASE}/Game/GetAll`, {
+      headers: { "Content-Type": "application/json" }
+    });
+    const result = await res.json();
+    console.log("Fetched platform games:", result);
+    if (!res.ok) throw new Error(
+      `Failed to fetch games ${result?.message || result.statusText}`
+    );
+    return result.data;
+
+  }
