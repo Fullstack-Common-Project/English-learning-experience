@@ -31,30 +31,32 @@ export default function Keyboard({ onType, onDelete, onSubmit, keyboardColors, d
                         const color = keyboardColors[key] || "default";
                         const isSpecial = key === "ENTER" || key === "⌫";
 
-                        return (
+                        return (                       
                             <motion.button
                                 key={key}
                                 onClick={() => {
+                                    if (disabled || color === "absent") return; 
                                     correctSound.current?.play();
-                                    if (disabled) return;
                                     if (key === "ENTER") onSubmit();
                                     else if (key === "⌫") onDelete();
                                     else onType(key);
                                 }}
                                 whileTap={{ scale: 0.9 }}
                                 whileHover={{ scale: 1.05 }}
+                                disabled={disabled || color === "absent"} 
                                 className={`rounded-xl font-bold transition ${isSpecial ? "px-3 sm:px-4 text-xs sm:text-sm" : "w-8 sm:w-10"
                                     } h-10 sm:h-12 flex items-center justify-center ${color === "correct"
                                         ? "bg-emerald-600 text-white"
                                         : color === "present"
                                             ? "bg-amber-500 text-white"
                                             : color === "absent"
-                                                ? "bg-slate-700/50 text-slate-400"
+                                                ? "bg-slate-700/50 text-slate-400 cursor-not-allowed opacity-50" 
                                                 : "bg-slate-800/60 text-white hover:bg-slate-700/60 border border-white/10"
                                     }`}
                             >
                                 {key}
                             </motion.button>
+
                         );
                     })}
                 </div>
