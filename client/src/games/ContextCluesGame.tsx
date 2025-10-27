@@ -6,7 +6,8 @@ import { GameProps } from "@/components/common/GameLayout";
 import { useGameData } from "@/hooks/useGameData";
 import { useSubmitProgress } from "@/hooks/useSubmitProgress";
 import { useSelector } from "react-redux";
-
+import Button from "@/components/ui/Button";
+import { clsx } from "clsx";
 interface ContextCluesModel {
   id: number;
   sentence: string;
@@ -29,7 +30,6 @@ export default function ContextCluesGame({ onScoreChange, onGameOver, paused, ti
   const MAX_MISTAKES = 3;
   const MAX_CORRECT = 5;
 
-  // Ref לזמן המשחק
   const timeRef = useRef(time);
   useEffect(() => {
     timeRef.current = time;
@@ -86,9 +86,15 @@ export default function ContextCluesGame({ onScoreChange, onGameOver, paused, ti
     }, 1000);
   };
 
-  if (isLoading) return <p>טוען נתונים מהשרת...</p>;
-  if (isError) return <p>שגיאה בטעינת הנתונים</p>;
-  if (!question) return <p>אין נתונים להצגה</p>;
+  if (isLoading) return <p>loading data from server..</p>;
+  if (isError) return <p>error </p>;
+  if (!question) return <p>there isnt show</p>;
+
+  const MAX_ROUNDS = MAX_CORRECT + MAX_MISTAKES;
+const progressPercent = Math.min(
+  ((correctCount + mistakes) / Math.max(MAX_CORRECT, MAX_MISTAKES)) * 100,
+  100
+);
 
   return (
     <motion.div
@@ -99,8 +105,25 @@ export default function ContextCluesGame({ onScoreChange, onGameOver, paused, ti
       transition={{ duration: 0.5 }}
       className="panel text-center max-w-2xl mx-auto"
     >
+      {/* פס התקדמות */}
+      <div className="mb-6">
+        <div className="flex justify-between text-sm text-slate-300 mb-1">
+          <span>✅ {correctCount} correct</span>
+          <span>❌ {mistakes} error</span>
+        </div>
+        <div className="w-full bg-slate-700 h-3 rounded-xl overflow-hidden">
+          <motion.div
+            initial={{ width: 0 }}
+            animate={{ width: `${progressPercent}%` }}
+            transition={{ duration: 0.5 }}
+            className="h-3 bg-indigo-500"
+          />
+        </div>
+      </div>
+
       <h3 className="game-card__title text-indigo-400 mb-4">שאלה</h3>
       <p className="mb-6 text-lg text-slate-200">{question.sentence.replace("___", "_____")}</p>
+
       <div className="grid grid-cols-2 gap-4 mb-6">
         {question.options.map((option, index) => {
           const isCorrect = index === question.correctIndex;
@@ -120,14 +143,14 @@ export default function ContextCluesGame({ onScoreChange, onGameOver, paused, ti
           }
 
           return (
-            <button
+            <Button
               key={index}
               onClick={() => handleSelectOption(index)}
               disabled={paused || selectedOption !== null}
               className={buttonClass}
             >
               {option}
-            </button>
+            </Button>
           );
         })}
       </div>

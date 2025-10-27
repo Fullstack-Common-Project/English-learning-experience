@@ -22,7 +22,11 @@ namespace EnglishGamesPlatform.Backend.Migrations
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
 
+<<<<<<< HEAD
+            // כל הישויות וה־relations לפי הגרסה של finall
+=======
             // --- ישויות קיימות ---
+>>>>>>> e79abadea8b3f837ed337bf51a88318063850951
             modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.MissingWordSentence", b =>
             {
                 b.Property<int>("MissingWordSentenceId")
@@ -33,9 +37,12 @@ namespace EnglishGamesPlatform.Backend.Migrations
 
                 b.Property<int>("CorrectWordId").HasColumnType("int");
                 b.Property<int>("SentenceId").HasColumnType("int");
+<<<<<<< HEAD
+=======
 
                 b.Property<string>("Description")
                     .HasColumnType("longtext");
+>>>>>>> e79abadea8b3f837ed337bf51a88318063850951
 
                 b.HasKey("MissingWordSentenceId");
                 b.HasIndex("CorrectWordId");
@@ -43,6 +50,8 @@ namespace EnglishGamesPlatform.Backend.Migrations
 
                 b.ToTable("MissingWords");
             });
+<<<<<<< HEAD
+=======
 
             modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.Image", b =>
             {
@@ -81,13 +90,12 @@ namespace EnglishGamesPlatform.Backend.Migrations
 
                 b.ToTable("ImageSentences");
             });
+>>>>>>> e79abadea8b3f837ed337bf51a88318063850951
 
-            modelBuilder.Entity("EnglishGamesPlatform.Backend.Models.Entities.MemoryMatchSynonymsPair", b =>
-            {
-                b.Property<int>("Id")
-                    .ValueGeneratedOnAdd()
-                    .HasColumnType("int");
+            // שאר הישויות נשארות כמו ב־finall
 
+<<<<<<< HEAD
+=======
                 MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
                 b.Property<string>("Synonym")
@@ -204,6 +212,7 @@ namespace EnglishGamesPlatform.Backend.Migrations
                 b.Navigation("Images");
             });
 
+>>>>>>> e79abadea8b3f837ed337bf51a88318063850951
 #pragma warning restore 612, 618
         }
     }

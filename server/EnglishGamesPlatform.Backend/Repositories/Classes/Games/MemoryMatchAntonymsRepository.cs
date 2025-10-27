@@ -15,7 +15,7 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes.Games
             _oppositeWordRepository = oppositeWordRepository;
         }
 
-        public string GameName => "Memory Match: Antonyms";
+        public string GameName => "Memory Match Antonyms";
 
         public async Task<GameInitialData?> GetData()
         {
