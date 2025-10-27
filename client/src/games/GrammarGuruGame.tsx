@@ -20,6 +20,7 @@ export default function GrammarGuruGame({ onScoreChange, onGameOver, paused, tim
   const hasFetchedRef = useRef(false);
   const {user} = useSelector((state: any) => state.user.user);
   const submitProgressMutation = useSubmitProgress();
+  const progress=((currentIndex)/questions.length)*100;
 
   const timeRef = useRef(time);
   useEffect(() => {
@@ -83,7 +84,29 @@ const handleRestart=()=>{
   if (completed) return <p className="text-xl font-semibold text-green-600">All questions completed!</p>;
 
   return (
+    
     <div className="text-center">
+     <div
+        className="progress-bar"
+        style={{
+          width: "100%",
+          background: "#eee",
+          height: "10px",
+          borderRadius: "5px",
+          marginBottom: "15px",
+        }}
+      >
+        <div
+          className="progress-bar__fill"
+          style={{
+            width: `${progress}%`,
+            background: "#4caf50",
+            height: "100%",
+            borderRadius: "5px",
+            transition: "width 0.4s ease",
+          }}
+        />
+      </div>
       <h3 className="text-xl font-semibold mb-4 text-blue-400">
         Question {currentIndex + 1} of {questions.length}
       </h3>
