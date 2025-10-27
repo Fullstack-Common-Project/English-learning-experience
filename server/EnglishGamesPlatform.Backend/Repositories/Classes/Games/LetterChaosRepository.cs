@@ -20,24 +20,29 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes.Games
         {
             var letterChaosWords = new List<ModelLetterChaos>();
             int id = 1;
+            var lengthsPattern = new[] { 3, 3, 4, 4, 5, 5 };
 
-            var words = await _wordRepository.GetRandomWordsAsync(5);
-
-            foreach (var word in words)
+            foreach (var length in lengthsPattern)
             {
-                letterChaosWords.Add(new ModelLetterChaos
+                var wordList = await _wordRepository.GetRandomWordsAsync(1, minLength: length, maxLength: length);
+
+                if (wordList.Count > 0)
                 {
-                    Id = id,
-                    CorrectWord = word.WordText,
-                    Scrambled = ShuffleWord(word.WordText)
-                });
-                id++;
+                    var word = wordList[0];
+                    letterChaosWords.Add(new ModelLetterChaos
+                    {
+                        Id = id,
+                        CorrectWord = word.WordText.ToLower(),
+                        Scrambled = ShuffleWord(word.WordText.ToLower())
+                    });
+                    id++;
+                }
             }
 
-             return new LetterChaosData
-             {
+            return new LetterChaosData
+            {
                 Words = letterChaosWords
-             };
+            };
         }
 
         private string ShuffleWord(string word)
