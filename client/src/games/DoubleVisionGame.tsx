@@ -29,19 +29,7 @@ export default function DoubleVisionGame({ onScoreChange, onGameOver, paused, ti
   const [rounds, setRounds] = useState<DoubleVisionItem[]>([]);
   const hasFetchedRef = useRef(false);
 
-  // const setLeaderboard = useLeaderboardStore((state) => state.setLeaderboard);
-
   console.log("Leaderboard:", leaderboardData?.data.leaderboards);
-  // useEffect(() => {
-  //   if (leaderboardData) {
-  //     console.log("Leaderboard at game over:", leaderboardData.data.leaderboards);
-  //     // או עדכני state/props כדי להציג את הלידרבורד במסך הסיום
-  //   }
-  // }, [leaderboardData]);
-
-  // useEffect(() => {
-  //   setLeaderboard(gameId, []);
-  // }, [gameId, setLeaderboard]);
 
   // Ref לשמירת הזמן המדויק
   const timeRef = useRef(time);
@@ -51,7 +39,7 @@ export default function DoubleVisionGame({ onScoreChange, onGameOver, paused, ti
 
   const baseUrl = "https://english-platform-testpnoren.s3.us-east-1.amazonaws.com/";
 
-  // ✅ Load data פעם אחת
+  //  Load data פעם אחת
   useEffect(() => {
     if (!data || hasFetchedRef.current) return;
     hasFetchedRef.current = true;
@@ -60,7 +48,7 @@ export default function DoubleVisionGame({ onScoreChange, onGameOver, paused, ti
     setRounds(items);
   }, [data]);
 
-  // ✅ הגדרת הצלילים
+  //  הגדרת הצלילים
   const correctSound = useRef<HTMLAudioElement | null>(null);
   const wrongSound = useRef<HTMLAudioElement | null>(null);
 
@@ -90,14 +78,6 @@ export default function DoubleVisionGame({ onScoreChange, onGameOver, paused, ti
     });
 
     await refetchLeaderboard();
-
-    // if (leaderboardData?.data?.leaderboards) {
-    //   setLeaderboard(gameId, [
-    //     ...leaderboardData.data.leaderboards,
-    //     ...(useLeaderboardStore.getState().leaderboard || []),
-    //   ]);
-    // }
-
     onGameOver?.();
     restartGame();
   };
