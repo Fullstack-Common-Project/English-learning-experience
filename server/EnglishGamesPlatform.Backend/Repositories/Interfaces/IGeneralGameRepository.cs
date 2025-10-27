@@ -6,7 +6,6 @@ namespace EnglishGamesPlatform.Backend.Repositories.Interfaces
     public interface IGeneralGameRepository
     {
         string GameName { get; }
-
         Task<GameInitialData?> GetData();
     }
 }

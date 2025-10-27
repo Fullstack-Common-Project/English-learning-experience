@@ -1,11 +1,10 @@
-import { GameResponseBase } from "./index";
+import { GameResponseBase } from "..";
 
 export interface MiniWordleItem {
   data: {
     targetWord: string;
     wordLength: number;
     id: number | null;}
-
 }
 
 

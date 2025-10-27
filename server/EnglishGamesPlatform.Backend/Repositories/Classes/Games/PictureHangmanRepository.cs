@@ -12,7 +12,11 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes.Games
 
         private readonly IImageRepository _imageRepository;
 
+
+
+
         public PictureHangmanRepository(IImageRepository imageRepository)
+
         {
             _imageRepository = imageRepository;
         }
@@ -60,7 +64,7 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes.Games
 
             return string.Join(' ', words);
         }
-
         #endregion
+
     }
 }
