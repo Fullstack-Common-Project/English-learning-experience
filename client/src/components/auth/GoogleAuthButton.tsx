@@ -31,7 +31,7 @@ export default function GoogleAuthButton({ text }: GoogleAuthButtonProps) {
     try {
       const idToken = credentialResponse.credential;
       const res = await axios.post(
-        "http://localhost:5075/api/Auth/google-login",
+        "https://localhost:7292/api/Auth/google-login",
         { idToken }
       );
 
