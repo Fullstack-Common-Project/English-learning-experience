@@ -1,6 +1,8 @@
 ﻿using EnglishGamesPlatform.Backend.Data;
 
 using EnglishGamesPlatform.Backend.Extensions;
+using EnglishGamesPlatform.Backend.Mapping;
+using EnglishGamesPlatform.Backend.Models.DTOs.Entities_DTOs;
 using EnglishGamesPlatform.Backend.Repositories.Classes;
 using EnglishGamesPlatform.Backend.Repositories.Classes.Entities;
 using EnglishGamesPlatform.Backend.Repositories.Classes.Games;
@@ -35,7 +37,7 @@ builder.Services.AddSwaggerGen();
 
 #region AutoMapper
 
-builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 #endregion
 
