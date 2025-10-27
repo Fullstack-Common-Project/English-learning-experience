@@ -14,14 +14,22 @@ interface TileProps {
     colorKey: keyof typeof colors;
     isRevealing?: boolean;
     revealDelay?: number;
+    isWinning?: boolean;
+    winDelay?: number;
 }
 
-export default function Tile({ letter, colorKey, isRevealing = false, revealDelay = 0 }: TileProps) {
+export default function Tile({ letter, colorKey, isRevealing = false, revealDelay = 0, isWinning = false, winDelay = 0 }: TileProps) {
     return (
         <motion.div
             className={`w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-xl font-bold text-2xl border-2 ${colors[colorKey]}`}
-            initial={{ rotateX: 0 }}
-            animate={isRevealing ? { rotateX: [0, 90, 0], transition: { delay: revealDelay, duration: 0.4 } } : { rotateX: 0 }}
+            initial={{ rotateX: 0, scale: 1 }}
+            animate={isRevealing
+                ? { rotateX: [0, 90, 0], transition: { delay: revealDelay, duration: 0.4 } }
+                : isWinning
+                    ? { rotate: [0, 15, -15, 0], scale: [1, 1.3, 1.1, 1.2, 1], y: [0, -10, 0, -6, 0] }
+                    : { rotateX: 0 }
+            }
+            transition={{ duration: 0.8, delay: winDelay }}
             style={{ transformStyle: "preserve-3d", backfaceVisibility: "hidden" }}
         >
             {letter}
