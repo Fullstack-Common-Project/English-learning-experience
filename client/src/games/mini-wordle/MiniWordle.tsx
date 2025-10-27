@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect, useRef, useCallback } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Board from "./Board";
 import Keyboard from "@/components/ui/Keyboard";
 
@@ -14,22 +15,23 @@ interface MiniWordleProps {
 }
 
 const getRowColors = (guess: string[], solution: string) => {
-    const colors: string[] = Array(guess.length).fill("absent");
+    const colors = Array(guess.length).fill("absent");
     const solutionLetters = solution.toUpperCase().split("");
 
-    guess.forEach((letter, idx) => {
-        if (solutionLetters[idx] === letter) {
-            colors[idx] = "correct";
-            solutionLetters[idx] = "";
+    guess.forEach((l, i) => {
+        if (solutionLetters[i] === l) {
+            colors[i] = "correct";
+            solutionLetters[i] = "";
         }
     });
 
-    guess.forEach((letter, idx) => {
-        if (colors[idx] === "correct") return;
-        const foundIdx = solutionLetters.indexOf(letter);
-        if (foundIdx !== -1) {
-            colors[idx] = "present";
-            solutionLetters[foundIdx] = "";
+    guess.forEach((l, i) => {
+        if (colors[i] !== "correct") {
+            const idx = solutionLetters.indexOf(l);
+            if (idx !== -1) {
+                colors[i] = "present";
+                solutionLetters[idx] = "";
+            }
         }
     });
 
@@ -43,20 +45,19 @@ export default function MiniWordle({
     paused = false,
     onScoreChange,
     onGameOver,
-    onWin,
+    onWin
 }: MiniWordleProps) {
-    const [board, setBoard] = useState<string[][]>(
-        Array.from({ length: maxGuesses }, () => Array(wordLength).fill(""))
-    );
-    const [rowColors, setRowColors] = useState<string[][]>(
-        Array.from({ length: maxGuesses }, () => Array(wordLength).fill("empty"))
-    );
+    const [board, setBoard] = useState(Array.from({ length: maxGuesses }, () => Array(wordLength).fill("")));
+    const [rowColors, setRowColors] = useState(Array.from({ length: maxGuesses }, () => Array(wordLength).fill("empty")));
     const [currentRow, setCurrentRow] = useState(0);
     const [currentCol, setCurrentCol] = useState(0);
-    const [keyboardColors, setKeyboardColors] = useState<Record<string, string>>({});
     const [shake, setShake] = useState(false);
     const [revealingRow, setRevealingRow] = useState(-1);
     const [completed, setCompleted] = useState(false);
+    const [keyboardColors, setKeyboardColors] = useState<Record<string, string>>({});
+    const [winningRow, setWinningRow] = useState<number | undefined>(undefined);
+    const [gameOverMessage, setGameOverMessage] = useState<string | null>(null);
+
     const correctSound = useRef<HTMLAudioElement | null>(null);
     const wrongSound = useRef<HTMLAudioElement | null>(null);
     const gameOverSound = useRef<HTMLAudioElement | null>(null);
@@ -67,36 +68,17 @@ export default function MiniWordle({
         gameOverSound.current = new Audio("/audio/wrong.mp3");
     }, []);
 
-    const targetWordRef = useRef(targetWord);
     const boardRef = useRef(board);
     const currentRowRef = useRef(currentRow);
     const currentColRef = useRef(currentCol);
-    const keyboardColorsRef = useRef(keyboardColors);
     const revealingRowRef = useRef(revealingRow);
+    const keyboardColorsRef = useRef(keyboardColors);
 
-    const updateRef = <T,>(ref: React.RefObject<T>, value: T) => {
-        ref.current = value;
-    };
-
-    useEffect(() => updateRef(boardRef, board), [board]);
-    useEffect(() => updateRef(currentRowRef, currentRow), [currentRow]);
-    useEffect(() => updateRef(currentColRef, currentCol), [currentCol]);
-    useEffect(() => updateRef(keyboardColorsRef, keyboardColors), [keyboardColors]);
-    useEffect(() => updateRef(revealingRowRef, revealingRow), [revealingRow]);
-
-    const resetBoard = (newLength: number) => {
-        setBoard(Array.from({ length: maxGuesses }, () => Array(newLength).fill("")));
-        setRowColors(Array.from({ length: maxGuesses }, () => Array(newLength).fill("empty")));
-        setCurrentRow(0);
-        setCurrentCol(0);
-        setKeyboardColors({});
-        setCompleted(false);
-    };
-
-    useEffect(() => {
-        targetWordRef.current = targetWord;
-        resetBoard(targetWord.length);
-    }, [targetWord]);
+    useEffect(() => { boardRef.current = board; }, [board]);
+    useEffect(() => { currentRowRef.current = currentRow; }, [currentRow]);
+    useEffect(() => { currentColRef.current = currentCol; }, [currentCol]);
+    useEffect(() => { revealingRowRef.current = revealingRow; }, [revealingRow]);
+    useEffect(() => { keyboardColorsRef.current = keyboardColors; }, [keyboardColors]);
 
     const onType = useCallback((letter: string) => {
         if (paused || completed || revealingRowRef.current !== -1) return;
@@ -117,66 +99,6 @@ export default function MiniWordle({
         setCurrentCol(currentColRef.current - 1);
     }, [paused, completed]);
 
-    // const onSubmit = useCallback(() => {
-    //     if (paused || completed || revealingRowRef.current !== -1) return;
-    //     if (currentColRef.current < wordLength) {
-    //         setShake(true);
-    //         setTimeout(() => setShake(false), 500);
-    //         return;
-    //     }
-
-    //     const guess = boardRef.current[currentRowRef.current];
-    //     const rowColorResult = getRowColors(guess, targetWordRef.current);
-    //     setRevealingRow(currentRowRef.current);
-
-    //     let roundScore = 0;
-    //     rowColorResult.forEach(c => {
-    //         if (c === "correct") roundScore += 2;
-    //         else if (c === "present") roundScore += 1;
-    //     });
-
-    //     rowColorResult.forEach((color, idx) => {
-    //         setTimeout(() => {
-    //             setRowColors(prev => {
-    //                 const updated = prev.map(r => [...r]);
-    //                 updated[currentRowRef.current][idx] = color;
-    //                 return updated;
-    //             });
-    //         }, idx * 200);
-    //     });
-
-    //     setTimeout(() => {
-    //         const newKeyboardColors = { ...keyboardColorsRef.current };
-    //         guess.forEach((letter, idx) => {
-    //             const c = rowColorResult[idx];
-    //             if (!newKeyboardColors[letter] || c === "correct" || (c === "present" && newKeyboardColors[letter] !== "correct")) {
-    //                 newKeyboardColors[letter] = c;
-    //             }
-    //         });
-    //         setKeyboardColors(newKeyboardColors);
-
-    //         onScoreChange?.(roundScore);
-    //         if (guess.join("") === targetWordRef.current.toUpperCase()) {
-    //             correctSound.current?.play();
-    //             setTimeout(() => {
-    //                 setCompleted(true);
-    //                 onWin?.();
-    //             }, 3000);
-    //         }
-    //         else if (currentRowRef.current + 1 >= maxGuesses) {
-    //             gameOverSound.current?.play();
-    //             alert(`Game Over! The word was: ${targetWordRef.current}`);
-    //             setCompleted(true);
-    //             onGameOver?.();
-    //         } else {
-    //             wrongSound.current?.play();
-    //             setCurrentRow(currentRowRef.current + 1);
-    //             setCurrentCol(0);
-    //         }
-
-    //         setRevealingRow(-1);
-    //     }, wordLength * 220 + 300);
-    // }, [paused, completed, wordLength, onScoreChange, onGameOver, onWin]);
     const onSubmit = useCallback(() => {
         if (paused || completed || revealingRowRef.current !== -1) return;
         if (currentColRef.current < wordLength) {
@@ -186,63 +108,61 @@ export default function MiniWordle({
         }
 
         const guess = boardRef.current[currentRowRef.current];
-        const rowColorResult = getRowColors(guess, targetWordRef.current);
+        const rowColorResult = getRowColors(guess, targetWord.toUpperCase());
 
-        // חישוב ניקוד **מיידי**
         let roundScore = 0;
         rowColorResult.forEach(c => {
             if (c === "correct") roundScore += 2;
             else if (c === "present") roundScore += 1;
         });
-
-        // שליחת הניקוד מיידית
         onScoreChange?.(roundScore);
 
         setRevealingRow(currentRowRef.current);
-
-        // עדכון לוחות צבעים ו־keyboard אחרי האנימציה
-        rowColorResult.forEach((color, idx) => {
+        rowColorResult.forEach((c, i) => {
             setTimeout(() => {
                 setRowColors(prev => {
-                    const updated = prev.map(r => [...r]);
-                    updated[currentRowRef.current][idx] = color;
-                    return updated;
+                    const copy = prev.map(r => [...r]);
+                    copy[currentRowRef.current][i] = c;
+                    return copy;
                 });
-            }, idx * 200);
+            }, i * 200);
         });
 
         setTimeout(() => {
             const newKeyboardColors = { ...keyboardColorsRef.current };
-            guess.forEach((letter, idx) => {
-                const c = rowColorResult[idx];
-                if (!newKeyboardColors[letter] || c === "correct" || (c === "present" && newKeyboardColors[letter] !== "correct")) {
-                    newKeyboardColors[letter] = c;
+            guess.forEach((l, i) => {
+                const c = rowColorResult[i];
+                if (!newKeyboardColors[l] || c === "correct" || (c === "present" && newKeyboardColors[l] !== "correct")) {
+                    newKeyboardColors[l] = c;
                 }
             });
             setKeyboardColors(newKeyboardColors);
 
-            if (guess.join("") === targetWordRef.current.toUpperCase()) {
-                correctSound.current?.play();
+            if (guess.join("") === targetWord.toUpperCase()) {
+                setWinningRow(currentRowRef.current);
+                correctSound.current?.play().catch(e => console.warn("Audio play failed:", e));
+
                 setTimeout(() => {
                     setCompleted(true);
                     onWin?.();
-                }, 3000);
-            }
-            else if (currentRowRef.current + 1 >= maxGuesses) {
-                gameOverSound.current?.play();
-                alert(`Game Over! The word was: ${targetWordRef.current}`);
-                setCompleted(true);
-                onGameOver?.();
+                }, 2000);
+            } else if (currentRowRef.current + 1 >= maxGuesses) {
+                setGameOverMessage(`Game Over! The word was: ${targetWord}`);
+                gameOverSound.current?.play().catch(e => console.warn("Audio play failed:", e));
+                setTimeout(() => {
+                    setCompleted(true);
+                    onGameOver?.();
+                }, 4000);
             } else {
-                wrongSound.current?.play();
+                wrongSound.current?.play().catch(e => console.warn("Audio play failed:", e));
+
                 setCurrentRow(currentRowRef.current + 1);
                 setCurrentCol(0);
             }
 
             setRevealingRow(-1);
         }, wordLength * 220 + 300);
-    }, [paused, completed, wordLength, onScoreChange, onGameOver, onWin]);
-
+    }, [paused, completed, wordLength, onScoreChange, onGameOver, onWin, targetWord, maxGuesses]);
 
     useEffect(() => {
         const handleKey = (e: KeyboardEvent) => {
@@ -251,12 +171,13 @@ export default function MiniWordle({
             else if (key === "BACKSPACE") onDelete();
             else if (/^[A-Z]$/.test(key)) onType(key);
         };
+
         window.addEventListener("keydown", handleKey);
         return () => window.removeEventListener("keydown", handleKey);
     }, [onType, onDelete, onSubmit]);
 
     return (
-        <div className="mini-wordle flex flex-col items-center mt-6">
+        <div className="flex flex-col items-center mt-6 relative">
             <p className="text-lg font-medium mb-2">
                 Guess {currentRow + 1} of {maxGuesses}
             </p>
@@ -267,7 +188,23 @@ export default function MiniWordle({
                 currentRow={currentRow}
                 shake={shake}
                 revealingRow={revealingRow}
+                winningRow={winningRow}
             />
+
+            <AnimatePresence>
+                {gameOverMessage && (
+                    <motion.div
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.5 }}
+                        className="bg-red-500 text-white px-6 py-3 rounded shadow-lg font-bold mt-4"
+                    >
+                        {gameOverMessage}
+                    </motion.div>
+                )}
+            </AnimatePresence>
+
             <Keyboard
                 onType={onType}
                 onDelete={onDelete}
@@ -278,4 +215,3 @@ export default function MiniWordle({
         </div>
     );
 }
-

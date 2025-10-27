@@ -6,6 +6,7 @@ import { useGameData } from "@/hooks/useGameData";
 import { GameId } from "@/types";
 import { useSubmitProgress } from "@/hooks/useSubmitProgress";
 import { useSelector } from "react-redux";
+import Button from "@/components/ui/Button";
 
 interface MiniWordleModel {
     targetWord: string;
@@ -41,7 +42,6 @@ export default function MiniWordleGame({
             wordLength: wordData.wordLength,
             id: wordData.id ?? null,
         });
-        console.log("Loaded word:", wordData.targetWord);
     };
 
     useEffect(() => {
@@ -103,13 +103,23 @@ export default function MiniWordleGame({
     if (!miniWordleModel) return <p>No data available.</p>;
 
     return (
-        <MiniWordle
-            wordLength={miniWordleModel.wordLength}
-            targetWord={miniWordleModel.targetWord}
-            paused={paused}
-            onScoreChange={handleScoreChange}
-            onGameOver={handleGameOver}
-            onWin={handleWin}
-        />
+        <>
+            <Button
+                onClick={() => handleGameOver()}
+             
+            >
+                End Game
+            </Button>
+
+            <MiniWordle
+                wordLength={miniWordleModel.wordLength}
+                targetWord={miniWordleModel.targetWord}
+                paused={paused}
+                onScoreChange={handleScoreChange}
+                onGameOver={handleGameOver}
+                onWin={handleWin}
+            /></>
+
     );
 }
+
