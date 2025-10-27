@@ -6,5 +6,6 @@ namespace EnglishGamesPlatform.Backend.Repositories.Interfaces
     {
         Task<Sentence?> GetByIdAsync(int id);
         Task<List<Sentence>> GetRandomSentencesAsync(int count);
+        Task<List<Sentence>> GetAllAsync();
     }
 }

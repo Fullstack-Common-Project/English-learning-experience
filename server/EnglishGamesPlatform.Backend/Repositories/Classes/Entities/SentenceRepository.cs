@@ -25,6 +25,10 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes
                 .Take(count)
                 .ToListAsync();
         }
+        public async Task<List<Sentence>> GetAllAsync()
+        {
+            return await _appDbContext.Sentences.ToListAsync();
+        }
 
     }
 }

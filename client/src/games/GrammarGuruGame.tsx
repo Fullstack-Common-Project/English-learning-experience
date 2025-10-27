@@ -10,23 +10,23 @@ import { GrammarGuruData } from "@/types/gamesTypes/GrammarGuru";
 
 export default function GrammarGuruGame({ onScoreChange, onGameOver, paused, time }: GameProps) {
   const gameId: GameId = 9;
-  const { data, isSuccess, isLoading, isError } = useGameData(gameId);
+  const { data, isSuccess, isLoading, isError,refetch} = useGameData(gameId);
   const [questions, setQuestions] = useState<GrammarGuruData[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selected, setSelected] = useState<number | null>(null);
   const [completed, setCompleted] = useState(false);
   const [feedback, setFeedback] = useState<string | null>(null);
+  const [score,setScore]=useState(0);
   const hasFetchedRef = useRef(false);
-
-  const user = useSelector((state: any) => state.user.user);
+  const {user} = useSelector((state: any) => state.user.user);
   const submitProgressMutation = useSubmitProgress();
 
-  // Ref לזמן
   const timeRef = useRef(time);
   useEffect(() => {
     timeRef.current = time;
   }, [time]);
-
+  const winSound = new Audio("/sounds/צליל הצלחה.mp3");
+  const failSound = new Audio("/sounds/צליל שגיאה.mp3");
   useEffect(() => {
     if (hasFetchedRef.current) return;
 
@@ -43,12 +43,21 @@ export default function GrammarGuruGame({ onScoreChange, onGameOver, paused, tim
     setSelected(index);
     const isCorrect = index === questions[currentIndex].correctIndex;
     setFeedback(isCorrect ? "✔" : "✖");
-
+    isCorrect?winSound.play().catch(() => {}):failSound.play().catch(() => {});
     if (isCorrect) {
       onScoreChange?.((prev) => prev + 10);
+      setScore(score+10);
     }
   };
-
+const handleRestart=()=>{
+    hasFetchedRef.current = false;
+    setQuestions([]);
+    setCurrentIndex(0);
+    setSelected(null);
+    setCompleted(false);
+    setFeedback(null);
+    refetch();
+}
   const handleNext = () => {
     if (currentIndex + 1 < questions.length) {
       setCurrentIndex(currentIndex + 1);
@@ -57,12 +66,11 @@ export default function GrammarGuruGame({ onScoreChange, onGameOver, paused, tim
     } else {
       setCompleted(true);
       onGameOver?.();
-
-      // כאן שולחים את ההתקדמות לשרת
+      handleRestart()
       submitProgressMutation.mutate({
         gameID: gameId,
         userID: user?.userId!,
-        score: 0, // כאן אפשר לשים את המשתנה שמחשב את הניקוד שלך
+        score: score,
         time: timeRef.current ?? 0,
         rounds: questions.length,
       });
@@ -135,7 +143,7 @@ export default function GrammarGuruGame({ onScoreChange, onGameOver, paused, tim
       {selected !== null && (
         <Button
           onClick={handleNext}
-          className="btn px-6 py-3 rounded-xl shadow text-white bg-green-500 hover:bg-green-600"
+          className="px-6 py-3 rounded-xl shadow text-white bg-green-500 hover:bg-green-600"
         >
           Next
         </Button>
