@@ -82,6 +82,7 @@ builder.Services.AddScoped<IWordRepository, WordRepository>();
 builder.Services.AddScoped<IOppositeWordRepository, OppositeWordRepository>();
 builder.Services.AddScoped<ITwinWordRepository, TwinWordRepository>();
 builder.Services.AddScoped<IFakeSentenceRepository, FakeSentenceRepository>();
+builder.Services.AddScoped<IGeneralGameRepository, RhymeTimeRepository>();
 builder.Services.AddScoped<IGrammarQuestionRepository, GrammarQuestionRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, GuessMaster20Repository>();
 
