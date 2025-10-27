@@ -7,6 +7,8 @@ import { TwinWordsSingleQuestion } from "@/types/gamesTypes/TwinWords";
 import { useSelector } from "react-redux";
 import { useSubmitProgress } from "@/hooks/useSubmitProgress";
 import { useLeaderboard } from "@/hooks/useLeaderboard";
+import Button from "@/components/ui/Button";
+import clsx from "clsx";
 
 export default function TwinWordsGame({ onScoreChange, onGameOver, paused, time }: GameProps) {
 
@@ -25,15 +27,18 @@ export default function TwinWordsGame({ onScoreChange, onGameOver, paused, time 
   const { refetch: refetchLeaderboard } = useLeaderboard(gameId, {
     refetchInterval: 5000,
   });
+  const items: TwinWordsSingleQuestion[] = Array.isArray(data?.data?.data?.items)
+    ? (data!.data.data.items as TwinWordsSingleQuestion[])
+    : [];
+  const currentQuestion = items[currentIndex];
+  const progress = ((currentIndex) / items.length) * 100;
+
+
 
   useEffect(() => {
     refetch();
   }, []);
 
-  const items: TwinWordsSingleQuestion[] = Array.isArray(data?.data?.data?.items)
-    ? (data!.data.data.items as TwinWordsSingleQuestion[])
-    : [];
-  const currentQuestion = items[currentIndex];
 
   const handleSelect = (index: number) => {
     if (!currentQuestion || paused || isWaiting || completed) return;
@@ -108,14 +113,18 @@ export default function TwinWordsGame({ onScoreChange, onGameOver, paused, time 
   const renderOptionButton = (option: string, index: number) => {
     const bgClass = getButtonClass(index);
     return (
-      <button
+      <Button
         key={index}
         onClick={() => handleSelect(index)}
         disabled={paused || isWaiting}
-        className={`px-4 py-2 rounded text-white transition-all duration-150 transform ${bgClass} disabled:opacity-50`}
+        className={clsx(
+          "px-4 py-2 rounded text-white transition-all duration-150 transform disabled:opacity-50",
+          getButtonClass(index) // מוסיף את הירוק/אדום/הבהוב
+        )}
       >
         {option}
-      </button>
+      </Button>
+
     );
   };
 
@@ -134,22 +143,46 @@ export default function TwinWordsGame({ onScoreChange, onGameOver, paused, time 
 
 
   return (
-    <div className="twinwords">
-      <h3 className="twinwords__title">
-        Word {currentIndex + 1} of {items.length}
-      </h3>
+    <>
 
-      <h2 className="twinwords__word">{currentQuestion.word}</h2>
-
-      <div className="twinwords__options grid md:grid-cols-2 gap-3">
-        {currentQuestion.options.map(renderOptionButton)}
+      <div
+        className="progress-bar"
+        style={{
+          width: "100%",
+          background: "#eee",
+          height: "10px",
+          borderRadius: "5px",
+          marginBottom: "15px",
+        }}
+      >
+        <div
+          className="progress-bar__fill"
+          style={{
+            width: `${progress}%`,
+            background: "#4caf50",
+            height: "100%",
+            borderRadius: "5px",
+            transition: "width 0.4s ease",
+          }}
+        />
       </div>
+      <div className="twinwords">
+        <h3 className="twinwords__title">
+          Word {currentIndex + 1} of {items.length}
+        </h3>
 
-      {feedback && (
-        <p className="twinwords__feedback text-center mt-2 text-xl font-bold">
-          {feedback === "correct" ? "✅ Correct!" : "❌ Wrong!"}
-        </p>
-      )}
-    </div>
+        <h2 className="twinwords__word">{currentQuestion.word}</h2>
+
+        <div className="twinwords__options grid md:grid-cols-2 gap-3">
+          {currentQuestion.options.map(renderOptionButton)}
+        </div>
+
+        {feedback && (
+          <p className="twinwords__feedback text-center mt-2 text-xl font-bold">
+            {feedback === "correct" ? "✅ Correct!" : "❌ Wrong!"}
+          </p>
+        )}
+      </div>
+    </>
   );
 }
