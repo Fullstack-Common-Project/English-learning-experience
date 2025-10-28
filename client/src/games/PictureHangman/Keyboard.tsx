@@ -1,6 +1,5 @@
 "use client";
 import { motion } from "framer-motion";
-import { useEffect, useRef } from "react";
 
 const KEYBOARD_LAYOUT = [
     ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"],
@@ -14,49 +13,45 @@ interface KeyboardProps {
     onSubmit: () => void;
     keyboardColors: Record<string, string>;
     disabled?: boolean;
+    usedLetters?: string[]; // ✅ אותיות שנלחצו בסיבוב (להדגשה/ניפוי קליקים)
 }
 
-export default function Keyboard({ onType, onDelete, onSubmit, keyboardColors, disabled = false }: KeyboardProps) {
-    const correctSound = useRef<HTMLAudioElement | null>(null);
-
-    useEffect(() => {
-        correctSound.current = new Audio("/audio/click.mp3");
-    }, []);
-
+export default function Keyboard({ onType, onDelete, onSubmit, keyboardColors, disabled = false, usedLetters = [] }: KeyboardProps) {
     return (
         <div className="flex flex-col items-center gap-1.5 mt-6">
             {KEYBOARD_LAYOUT.map((row, i) => (
                 <div key={i} className="flex gap-1.5">
                     {row.map((key) => {
-                        const color = keyboardColors[key] || "default";
+                        const color = keyboardColors[key] || keyboardColors[key.toUpperCase()] || "default";
                         const isSpecial = key === "ENTER" || key === "⌫";
 
-                        return (                       
+                        // האם אות זו כבר נלחצה בסיבוב הנוכחי?
+                        const isUsed = usedLetters.includes(key);
+
+                        return (
                             <motion.button
                                 key={key}
                                 onClick={() => {
-                                    if (disabled || color === "absent") return; 
-                                    correctSound.current?.play();
+                                    if (disabled) return;
+                                    if (isUsed) return;
                                     if (key === "ENTER") onSubmit();
                                     else if (key === "⌫") onDelete();
                                     else onType(key);
                                 }}
                                 whileTap={{ scale: 0.9 }}
                                 whileHover={{ scale: 1.05 }}
-                                disabled={disabled || color === "absent"} 
                                 className={`rounded-xl font-bold transition ${isSpecial ? "px-3 sm:px-4 text-xs sm:text-sm" : "w-8 sm:w-10"
                                     } h-10 sm:h-12 flex items-center justify-center ${color === "correct"
                                         ? "bg-emerald-600 text-white"
                                         : color === "present"
                                             ? "bg-amber-500 text-white"
                                             : color === "absent"
-                                                ? "bg-slate-700/50 text-slate-400 cursor-not-allowed opacity-50" 
+                                                ? "bg-slate-700/50 text-slate-400"
                                                 : "bg-slate-800/60 text-white hover:bg-slate-700/60 border border-white/10"
-                                    }`}
+                                    } ${isUsed ? "opacity-50 pointer-events-none" : ""}`}
                             >
                                 {key}
                             </motion.button>
-
                         );
                     })}
                 </div>

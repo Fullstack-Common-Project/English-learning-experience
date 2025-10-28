@@ -17,7 +17,7 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes.Games
             _context = context;
         }
 
-        public string GameName => "Memory Match: Synonyms";
+        public string GameName => "Memory Match Synonyms";
 
         public async Task<GameInitialData?> GetData()
         {

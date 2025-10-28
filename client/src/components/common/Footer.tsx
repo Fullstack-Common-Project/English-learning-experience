@@ -9,7 +9,7 @@ export default function Footer() {
     { name: "Michal Segal", url: "/games/picpick" },
     { name: "Shifra Strul", url: "/games/grammer-guru" },
     { name: "Tamar Vurzel", url: "/games/opposite-quest" },
-    { name: "Sara Kahana", url: "/games/twinwords" },
+    { name: "Sara Kahana", url: "/games/twin-words" },
     { name: "Hadar Gerashi", url: "/games/mini-wordle" },
     { name: "Dvora Etinger", url: "/games/memory-match-synonyms" },
     { name: "Rivki Merchavi", url: "/games/memory-match-antonyms" },
