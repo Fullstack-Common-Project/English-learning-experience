@@ -1,7 +1,7 @@
 import { GameId } from "./index";
 export interface LeaderboardEntry {
   rank: number;
-  playerName: string;
+  userName: string;
   score: number;
   time: number;
 }

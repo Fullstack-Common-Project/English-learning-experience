@@ -4,25 +4,35 @@ import { GameProps } from "@/components/common/GameLayout";
 import { mockPairs } from "@/types/MemoryAntonymsMockData";
 import { GameId } from "@/types/index";
 import { useGameData } from "@/hooks/useGameData";
+import { useSubmitProgress } from "@/hooks/useSubmitProgress";
+import { useSelector } from "react-redux";
+import { useLeaderboard } from "@/hooks/useLeaderboard";
 
 export interface CardItem {
   id: string;
   pairId: number;
   text: string;
+  flipped?: boolean;
+  matched?: boolean;
 }
-
 export default function MemoryAntonymsGame({
   onScoreChange,
   onGameOver,
   paused,
+  time,
 }: GameProps) {
+
   const gameId: GameId = 11;
+  const { data: leaderboardData } = useLeaderboard(gameId);
+  const user = useSelector((state: any) => state.user.user);
+  const submitProgressMutation = useSubmitProgress();
   const { data, isLoading, isError, refetch } = useGameData(gameId);
   const [cards, setCards] = useState<CardItem[]>([]);
   const [flippedCards, setFlippedCards] = useState<CardItem[]>([]);
   const [matchedCount, setMatchedCount] = useState(0);
   const [score, setScore] = useState(0);
   const [completed, setCompleted] = useState(false);
+  console.log("Leaderboard:", leaderboardData?.data.leaderboards);
 
   // יוצרים את הקלפים על פי המילים (16 קלפים)
   useEffect(() => {
@@ -50,7 +60,11 @@ export default function MemoryAntonymsGame({
     setCards(shuffleArray(allCards));
   }, [data]);
   
-
+  const timeRef = useRef(time);
+  useEffect(() => {
+    timeRef.current = time;
+  }, [time]);
+  
   const shuffleArray = (arr: any[]) => [...arr].sort(() => Math.random() - 0.5);
 
   const handleCardClick = (card: CardItem) => {
@@ -98,8 +112,17 @@ export default function MemoryAntonymsGame({
     if (matchedCount === 8) {
       setCompleted(true);
       onGameOver?.();
+  
+      submitProgressMutation.mutate({
+        gameID: gameId,
+        userID: user?.userId!,
+        score: score,
+        time: timeRef.current ?? 0,
+        rounds: matchedCount,
+      });
     }
   }, [matchedCount]);
+  
 
   return (
     <div className="page-container">

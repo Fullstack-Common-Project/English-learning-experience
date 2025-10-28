@@ -6,7 +6,7 @@ import { useGameData } from "@/hooks/useGameData";
 import { GameId } from "@/types";
 import { useSubmitProgress } from "@/hooks/useSubmitProgress";
 import { useSelector } from "react-redux";
-import { useLeaderboard } from "@/hooks/useLeaderboard";
+import Button from "@/components/ui/Button";
 
 interface MiniWordleModel {
     targetWord: string;
@@ -23,8 +23,6 @@ export default function MiniWordleGame({
     const gameId: GameId = 6;
     const { data, isLoading, isError, refetch } = useGameData(gameId);
     const submitProgressMutation = useSubmitProgress();
-    const { data: leaderboardData } = useLeaderboard(gameId);
-
     const [miniWordleModel, setMiniWordleModel] = useState<MiniWordleModel | null>(null);
     const [loadingWord, setLoadingWord] = useState(false);
     const hasFetchedRef = useRef(false);
@@ -84,6 +82,7 @@ export default function MiniWordleGame({
     };
 
     const handleGameOver = () => {
+        onGameOver?.();
         submitProgressMutation.mutate({
             gameID: gameId,
             userID: user?.userId!,
@@ -92,8 +91,6 @@ export default function MiniWordleGame({
             rounds: round.current,
         });
 
-        console.log("Leaderboard:", leaderboardData?.data.leaderboards);
-        onGameOver?.();
     };
 
     const handleWin = async () => {
@@ -106,13 +103,23 @@ export default function MiniWordleGame({
     if (!miniWordleModel) return <p>No data available.</p>;
 
     return (
-        <MiniWordle
-            wordLength={miniWordleModel.wordLength}
-            targetWord={miniWordleModel.targetWord}
-            paused={paused}
-            onScoreChange={handleScoreChange}
-            onGameOver={handleGameOver}
-            onWin={handleWin}
-        />
+        <>
+            <Button
+                onClick={() => handleGameOver()}
+             
+            >
+                End Game
+            </Button>
+
+            <MiniWordle
+                wordLength={miniWordleModel.wordLength}
+                targetWord={miniWordleModel.targetWord}
+                paused={paused}
+                onScoreChange={handleScoreChange}
+                onGameOver={handleGameOver}
+                onWin={handleWin}
+            /></>
+
     );
 }
+

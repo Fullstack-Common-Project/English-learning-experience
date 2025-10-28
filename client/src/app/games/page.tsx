@@ -123,7 +123,7 @@ export default function HomePage() {
             <h2 className="text-2xl font-bold mb-6 text-center">
               {game.name} {game.emoji}
             </h2>
-            <Link href={game.path}>
+            <Link href={game.path} onClick={() => {  localStorage.setItem("gameId", String(game.id));}}>
               <motion.button
                 whileTap={{ scale: 0.95 }}
                 className="w-full py-3 rounded-xl bg-white text-gray-900 font-bold shadow hover:bg-gray-100 transition"

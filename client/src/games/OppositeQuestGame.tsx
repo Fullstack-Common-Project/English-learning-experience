@@ -5,9 +5,15 @@ import { GameProps } from "@/components/common/GameLayout";
 import { motion, AnimatePresence } from "framer-motion";
 import { GameId } from "@/types";
 import { useGameData } from "@/hooks/useGameData";
+import { useSubmitProgress } from "@/hooks/useSubmitProgress";
+import { useSelector } from "react-redux";
+import { useLeaderboard } from "@/hooks/useLeaderboard";
 import { OppositeQuestItemSingle } from "@/types/gamesTypes/OppositeQuest";
 
-export default function OppositeQuestGame({ onScoreChange, onGameOver, paused }: GameProps) {
+
+export default function OppositeQuestGame({ onScoreChange, onGameOver, paused,time }: GameProps) {
+  const gameId: GameId = 1;
+
   const [items, setItems] = useState<OppositeQuestItemSingle[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [score, setScore] = useState(0);
@@ -16,10 +22,15 @@ export default function OppositeQuestGame({ onScoreChange, onGameOver, paused }:
   const [feedback, setFeedback] = useState<"correct" | "wrong" | null>(null);
   const [isWaiting, setIsWaiting] = useState(false);
 
-  const gameId: GameId = 1;
+  const user = useSelector((state: any) => state.user.user);
+  const submitProgressMutation = useSubmitProgress();
+  // const { data: leaderboardData } = useLeaderboard(gameId);
+  const { data: leaderboardData, refetch: refetchLeaderboard } = useLeaderboard(gameId, {
+    refetchInterval: 5000, // כל 5 שניות
+  });
+  
   const { data, isLoading, isError, refetch } = useGameData(gameId); 
 
-  // פונקציה לאתחול / התחלת משחק חדש
   const restartGame = async () => {
     setCompleted(false);
     setCurrentIndex(0);
@@ -28,7 +39,7 @@ export default function OppositeQuestGame({ onScoreChange, onGameOver, paused }:
     setHighlightIndex(null);
     setIsWaiting(false);
 
-    const newData = await refetch(); // קריאה חדשה לשרת
+    const newData = await refetch(); 
     if (!newData?.data) return;
 
     const newItems: OppositeQuestItemSingle[] = Array.isArray(newData.data.data.data.items)
@@ -39,7 +50,7 @@ export default function OppositeQuestGame({ onScoreChange, onGameOver, paused }:
 
   useEffect(() => {
     restartGame();
-  }, []);
+  }, []);//??
 
   const currentItem = items[currentIndex];
 
@@ -71,9 +82,28 @@ export default function OppositeQuestGame({ onScoreChange, onGameOver, paused }:
     if (next < items.length) {
       setCurrentIndex(next);
     } else {
-      setCompleted(true);
-      onGameOver?.();
+     endGame();
     }
+  };
+  useEffect(() => {
+    if (completed) {
+      submitProgressMutation.mutate({
+        gameID: gameId,
+        userID: user?.userId!,
+        score: score,
+        time: time ?? 0,
+        rounds: items.length,
+      });
+    }
+  }, [completed,score]); 
+  
+  const endGame = async () => {
+    setCompleted(true);
+    onGameOver?.();
+    await refetchLeaderboard();
+  console.log("Leaderboard:", leaderboardData?.data.leaderboards);
+
+
   };
 
   if (isLoading) return <p className="text-center mt-10">Loading...</p>;

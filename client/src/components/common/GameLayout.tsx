@@ -19,6 +19,8 @@ export type GameProps = {
   onGameOver?: () => void;
   paused?: boolean;
   time?: number;
+  score?: number;
+  setScore?: React.Dispatch<React.SetStateAction<number>>;
 };
 
 type GameLayoutProps = {
@@ -39,7 +41,7 @@ export default function GameLayout({ children, gameTitle }: GameLayoutProps) {
   const pathname = usePathname();
   const gameNameFromUrl = pathname?.split("/").pop()?.toLowerCase() ?? "";
 
-  // שולף את הנתונים של המשחק מ־React Query
+
   const gameData = useMemo(() => {
     const allData: Game[] = queryClient
       .getQueriesData<Game>({})
@@ -132,9 +134,8 @@ export default function GameLayout({ children, gameTitle }: GameLayoutProps) {
           )}
 
           <div
-            className={`game-hud ${
-              paused || countdownActive ? "disabled" : ""
-            }`}
+            className={`game-hud ${paused || countdownActive ? "disabled" : ""
+              }`}
           >
             <div className="hud-timer">
               {Math.floor(time / 60)}:

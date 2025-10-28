@@ -30,6 +30,7 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
 
 
 
+
         public async Task<Response<FinalGameStatus>> GetFinalGameStatusAndAddGameResultAsync(GameResultDTO gameResultDTO)
         {
             if (gameResultDTO == null)
@@ -41,6 +42,7 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
                     Message = "Invalid Game Result Data.",
                 };
             }
+
 
             GameResult gameResult = await AddGameResultAsync(_mapper.Map<GameResult>(gameResultDTO));
 
@@ -54,6 +56,7 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
                     StatusCode = HttpStatusCode.OK,
                     Message = "Add Game Result Successfully.",
 
+
                     Data = new ()
                     {
                         IsLeadingPlayer = false,
@@ -66,6 +69,7 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
                 IsSuccess = true,
                 StatusCode = HttpStatusCode.OK,
                 Message = "Add Game Result Successfully.",
+
                 Data = new FinalGameStatus()
                 {
                     IsLeadingPlayer = true,
@@ -90,13 +94,16 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
 
             if (_repositories.TryGetValue(gameName, out var repository))
             {
+
                 GameInitialData? gameInitialData = await repository.GetData();
+
 
                 return new()
                 {
                     StatusCode = HttpStatusCode.OK,
                     IsSuccess = true,
                     Message = $"Get Initial Data For Game ID: {gameId} Successfully,",
+
                     Data = new GameData()
                     {
                         GameId = gameId,
@@ -123,6 +130,7 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
             {
                 StatusCode = HttpStatusCode.OK,
                 IsSuccess = true,
+
                 Message = $"Successfully retrieved the list of the 10 top players for game {gameId}.",
                 Data = topResults
             };
@@ -140,6 +148,7 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
             return await _gameResultRepository.AddGameResultAsync(gameResult);
         }
 
+
         private async Task<IEnumerable<GameResult>> GetTopGameResultsByGameIdAsync(int gameId, int topCount)
         {
             return await _gameResultRepository.GetTopGameResultsByGameIdAsync(gameId, topCount);
@@ -147,6 +156,7 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
 
         private async Task<int> GetRankByUserId(int gameId, int userId, int topCount)
         {
+
             List<GameResult> gameResults = (await GetTopGameResultsByGameIdAsync(gameId, topCount)).ToList();
 
             int index = gameResults.FindIndex(gameResult => gameResult.UserId == userId);

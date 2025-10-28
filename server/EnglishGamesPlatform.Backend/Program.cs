@@ -1,4 +1,5 @@
-using EnglishGamesPlatform.Backend.Data;
+﻿using EnglishGamesPlatform.Backend.Data;
+
 using EnglishGamesPlatform.Backend.Extensions;
 using EnglishGamesPlatform.Backend.Repositories.Classes;
 using EnglishGamesPlatform.Backend.Repositories.Classes.Entities;
@@ -12,6 +13,8 @@ using Microsoft.AspNetCore.Authentication.Google;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+const string ClientCors = "ClientCors";
 
 // Add services to the container.
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
@@ -62,16 +65,24 @@ builder.Services.AddScoped<IGeneralGameRepository, TwinWordsGameRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, SentenceShuffleRepository>();
 #endregion
 
+builder.Services.AddScoped<IGeneralGameRepository, DoubleVisionRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, MemoryMatchSynonymsRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, MemoryMatchAntonymsRepository>();
-#endregion 
+builder.Services.AddScoped<IGeneralGameRepository, PicPickRepository>();
+builder.Services.AddScoped<IGeneralGameRepository, GrammarGuruRepository>();
 
+
+#endregion 
+builder.Services.AddScoped<IGeneralGameRepository,ContextCluesRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IImageRepository, ImageRepository>();
 builder.Services.AddScoped<ISentenceRepository, SentenceRepository>();
 builder.Services.AddScoped<IWordRepository, WordRepository>();
 builder.Services.AddScoped<IOppositeWordRepository, OppositeWordRepository>();
 builder.Services.AddScoped<ITwinWordRepository, TwinWordRepository>();
+builder.Services.AddScoped<IFakeSentenceRepository, FakeSentenceRepository>();
+builder.Services.AddScoped<IGrammarQuestionRepository, GrammarQuestionRepository>();
+builder.Services.AddScoped<IGeneralGameRepository, GuessMaster20Repository>();
 
 
 
@@ -93,6 +104,7 @@ builder.Services.AddAuthentication(options =>
 
 var app = builder.Build();
 
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
@@ -105,9 +117,10 @@ app.UseCustomExceptionHandler();
 app.UseHttpsRedirection();
 app.UseCors("AllowAll");
 
+app.UseAuthentication();
+
 app.UseAuthorization();
 
-app.UseAuthentication();
 
 app.MapControllers();
 
