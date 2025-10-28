@@ -1,7 +1,6 @@
 import { GameResponseBase } from "..";
 
 export interface SentenceShuffleItem {
-  id: number | string;
   words: string[];
   correctSentence: string;
 }

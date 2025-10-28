@@ -4,7 +4,7 @@ import { GameProps } from "@/components/common/GameLayout";
 import { motion, AnimatePresence } from "framer-motion";
 import { GameId } from "@/types";
 import { useGameData } from "@/hooks/useGameData";
-import { TwinWordsItem, TwinWordsSingleQuestion } from "@/types/TwinWords";
+import { TwinWordsItem, TwinWordsSingleQuestion } from "@/types/gamesTypes/TwinWords";
 
 export default function TwinWordsGame({ onScoreChange, onGameOver, paused }: GameProps) {
   const gameId: GameId = 10;
@@ -23,9 +23,9 @@ export default function TwinWordsGame({ onScoreChange, onGameOver, paused }: Gam
     refetch();
   }, []);
 
-   const items: TwinWordsSingleQuestion[] = Array.isArray(data?.data?.data.items)
-    ? data.data.data.items
-    : [];
+   const items: TwinWordsSingleQuestion[] = Array.isArray(data!.data.data.items)
+     ? data!.data.data.items
+     : [];
 
 
   const currentQuestion = items[currentIndex];
