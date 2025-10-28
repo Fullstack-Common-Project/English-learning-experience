@@ -1,6 +1,8 @@
 ﻿using EnglishGamesPlatform.Backend.Data;
 
 using EnglishGamesPlatform.Backend.Extensions;
+using EnglishGamesPlatform.Backend.Mapping;
+using EnglishGamesPlatform.Backend.Models.DTOs.Entities_DTOs;
 using EnglishGamesPlatform.Backend.Repositories.Classes;
 using EnglishGamesPlatform.Backend.Repositories.Classes.Entities;
 using EnglishGamesPlatform.Backend.Repositories.Classes.Games;
@@ -35,7 +37,7 @@ builder.Services.AddSwaggerGen();
 
 #region AutoMapper
 
-builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 #endregion
 
@@ -67,8 +69,10 @@ builder.Services.AddScoped<IGeneralGameRepository, SentenceShuffleRepository>();
 
 builder.Services.AddScoped<IGeneralGameRepository, DoubleVisionRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, MemoryMatchSynonymsRepository>();
-builder.Services.AddScoped<IGeneralGameRepository, MemoryMatchAntonymsRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, PicPickRepository>();
+builder.Services.AddScoped<IGeneralGameRepository,PhraseCrazeRepository>();
+
+builder.Services.AddScoped<IGeneralGameRepository, MemoryMatchAntonymsRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, GrammarGuruRepository>();
 
 
@@ -76,13 +80,18 @@ builder.Services.AddScoped<IGeneralGameRepository, GrammarGuruRepository>();
 builder.Services.AddScoped<IGeneralGameRepository,ContextCluesRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IImageRepository, ImageRepository>();
+
 builder.Services.AddScoped<ISentenceRepository, SentenceRepository>();
 builder.Services.AddScoped<IWordRepository, WordRepository>();
 builder.Services.AddScoped<IOppositeWordRepository, OppositeWordRepository>();
 builder.Services.AddScoped<ITwinWordRepository, TwinWordRepository>();
+
 builder.Services.AddScoped<IFakeSentenceRepository, FakeSentenceRepository>();
+builder.Services.AddScoped<IGeneralGameRepository, RhymeTimeRepository>();
 builder.Services.AddScoped<IGrammarQuestionRepository, GrammarQuestionRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, GuessMaster20Repository>();
+builder.Services.AddScoped<IGeneralGameRepository, WordSorterRepository>();
+
 
 
 

@@ -5,6 +5,12 @@ import type { GameProps } from "@/components/common/GameLayout";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { useGuessMaster20 as useGuessMaster20Real } from "@/hooks/useGuessMaster20";
 import { submitProgress } from "@/lib/api";
+// + imports חדשים
+import { postGuessMaster20RefreshSuggestions } from "@/lib/api.gm20";
+
+import { useSubmitProgress } from "@/hooks/useSubmitProgress"; // לפי ההוראות
+import { useSelector } from "react-redux";
+
 import type {
   GuessMasterData,
   GuessMasterAskRequest,
@@ -19,6 +25,17 @@ type GuessTurn = {
   answer?: boolean | null;
   guessCorrect?: boolean | null;
 };
+// הוסיפי למעלה איפה שיש שאר ה-imports (אם את לא רוצה קובץ api נפרד, אפשר inline)
+async function refreshSuggestions(sessionId: string, exclude: string[]): Promise<string[]> {
+  const res = await fetch("/api/v1/games/guessmaster-20/suggestions/refresh", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ sessionId, exclude }),
+  });
+  if (!res.ok) throw new Error("Failed to refresh suggestions");
+  const data = await res.json() as { sessionId: string; suggestedQuestions: string[] };
+  return data.suggestedQuestions ?? [];
+}
 
 
 export function useGuessMaster20Mock() {
@@ -164,7 +181,7 @@ export function useGuessMaster20Mock() {
   return { dataQuery, askMutation };
 }
 
-export default function GuessMaster20Game({ onScoreChange, onGameOver, paused }: GameProps) {
+export default function GuessMaster20Game({ onScoreChange, onGameOver, paused, time }: GameProps) {
   const qc = useQueryClient();
   const { dataQuery, askMutation } = USE_MOCK ? useGuessMaster20Mock() : useGuessMaster20Real();
 
@@ -173,6 +190,20 @@ export default function GuessMaster20Game({ onScoreChange, onGameOver, paused }:
   const [selectedIdx, setSelectedIdx] = useState<number | null>(null);
   const [selectedAnswer, setSelectedAnswer] = useState<boolean | null | undefined>(undefined);
   const [ended, setEnded] = useState(false);
+  // מזהה המשתמש ל־userID
+  const user = useSelector((state: any) => state.user.user);
+
+  // הקריאה ללוגיקת progress
+  const submitProgressMutation = useSubmitProgress();
+
+  // timeRef כדי לקרוא זמן עדכני בסוף המשחק
+  const timeRef = useRef(time);
+  useEffect(() => {
+    timeRef.current = time;
+  }, [time]);
+
+  // קבוע לזיהוי המשחק (כמו אצלך – 14)
+  const GAME_ID = 14;
 
   const [remaining, setRemaining] = useState<number>(20);
 
@@ -201,6 +232,7 @@ export default function GuessMaster20Game({ onScoreChange, onGameOver, paused }:
   const error = dataQuery.isError || !dataQuery.data;
   const sessionId = dataQuery.data?.sessionId ?? "";
   const suggested = dataQuery.data?.suggestedQuestions ?? [];
+
   const dataKey = ["gm20", "data", USE_MOCK ? "mock" : "real"] as const;
 
   const disabledUI = paused || loading || askMutation.isPending || ended;
@@ -268,7 +300,18 @@ export default function GuessMaster20Game({ onScoreChange, onGameOver, paused }:
       setSelectedAnswer(res.yesNoAnswer ?? null);
 
       if (res.gameOver) {
-        const score = (res.won ? 100 : 0) + Math.max(0, res.remainingTurns) * (res.won ? 5 : 0);
+        const won = !!res.won;
+        const score = (won ? 100 : 0) + Math.max(0, res.remainingTurns) * (won ? 5 : 0);
+
+        // שליחת progress ללידרבורד
+        submitProgressMutation.mutate({
+          gameID: GAME_ID,
+          userID: user?.userId,                                  // אם אין user, ישלח undefined (תטפלי בשרת/הוק)
+          score,
+          time: timeRef.current ?? 0,                             // הזמן שעבר (מגיעה מה־prop time ששלחת לקומפוננטה)
+          rounds: Math.max(0, (dataQuery.data?.maxTurns ?? 20) - res.remainingTurns),
+        });
+
         setEnded(true);
         onScoreChange?.(score);
         onGameOver?.();
@@ -278,6 +321,7 @@ export default function GuessMaster20Game({ onScoreChange, onGameOver, paused }:
           setSelectedAnswer(undefined);
         }, 300);
       }
+
     } catch {
     }
   }
@@ -381,6 +425,30 @@ export default function GuessMaster20Game({ onScoreChange, onGameOver, paused }:
                   {q}
                 </button>
               ))}
+
+
+              <button
+                type="button"
+                className="btn-secondary text-sm px-3 py-1"
+                disabled={disabledUI || !sessionId}
+                onClick={async () => {
+                  try {
+                    const next = await postGuessMaster20RefreshSuggestions(sessionId, suggested.slice(0, 4));
+
+                    // אם את עובדת עם React Query – עדכני את הקאש;
+                    // אחרת, עדכני סטייט מקומי של suggestedQuestions.
+                    qc.setQueryData<GuessMasterData>(["gm20", "data"], (prev) =>
+                      prev ? { ...prev, suggestedQuestions: next } : prev
+                    );
+                  } catch (err) {
+                    console.error(err);
+                    alert("Failed to refresh suggestions");
+                  }
+                }}
+                title="Get 4 different questions"
+              >
+                ↻ Replace questions
+              </button>
             </div>
           )}
 

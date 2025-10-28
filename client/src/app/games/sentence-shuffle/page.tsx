@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 import GameLayout from '@/components/common/GameLayout';
-import SentenceShuffleGame from '@/games/sentenceShuffle/sentenceShuffleGame';
+import SentenceShuffleGame from '@/games/sentenceShuffle/SentenceShuffleGame';
 
 export default function SentenceShufflePage() {
 
