@@ -15,7 +15,7 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes.Games
             _twinWordRepository = twinWordRepository;
             _wordRepository = wordRepository;
         }
-        public string GameName => "TwinWords";
+        public string GameName => "Twin words";
         public async Task<GameInitialData> GetData()
         {
             var pairs = await _twinWordRepository.GetRandomPairsTwinWordsAsync();

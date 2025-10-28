@@ -17,6 +17,29 @@ const URLS = {
 
 console.log("[GM20] URLs:", URLS);
 
+export async function postGuessMaster20RefreshSuggestions(
+  sessionId: string,
+  exclude: string[]
+): Promise<string[]> {
+  const res = await fetch(
+    `${BASE}/api/v1/games/guessmaster-20/suggestions/refresh`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ sessionId, exclude }),
+    }
+  );
+  if (!res.ok) {
+    const text = await res.text();
+    throw new Error(`Refresh failed (${res.status}): ${text}`);
+  }
+  const data = (await res.json()) as {
+    sessionId: string;
+    suggestedQuestions: string[];
+  };
+  return data.suggestedQuestions ?? [];
+}
+
 function unwrap<T>(json: any): T {
   return (json?.data?.data ?? json?.data ?? json) as T;
 }

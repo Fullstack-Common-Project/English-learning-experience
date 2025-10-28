@@ -31,13 +31,13 @@ export default function DoubleVisionGame({ onScoreChange, onGameOver, paused, ti
 
   console.log("Leaderboard:", leaderboardData?.data.leaderboards);
 
-  // Ref לשמירת הזמן המדויק
-  const timeRef = useRef(time);
-  useEffect(() => {
-    timeRef.current = time;
-  }, [time]);
+//   // Ref לשמירת הזמן המדויק
+//   const timeRef = useRef(time);
+//   useEffect(() => {
+//     timeRef.current = time;
+//   }, [time]);
 
-  const baseUrl = "https://english-platform-testpnoren.s3.us-east-1.amazonaws.com/";
+//   const baseUrl = "https://english-platform-testpnoren.s3.us-east-1.amazonaws.com/";
 
   //  Load data פעם אחת
   useEffect(() => {

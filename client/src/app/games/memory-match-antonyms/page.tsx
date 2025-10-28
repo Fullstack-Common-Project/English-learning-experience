@@ -11,7 +11,7 @@ export default function MiniWordlePage() {
   };
 
   return (
-    <GameLayout gameTitle="memory-antonyms">
+    <GameLayout gameTitle="Antonyms Match">
         <MemoryAntonymsGame onGameOver={handleGameOver} />
     </GameLayout>
   );
