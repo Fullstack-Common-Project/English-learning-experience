@@ -26,8 +26,8 @@ export default function GrammarGuruGame({ onScoreChange, onGameOver, paused, tim
   useEffect(() => {
     timeRef.current = time;
   }, [time]);
-  const winSound = new Audio("/sounds/צליל הצלחה.mp3");
-  const failSound = new Audio("/sounds/צליל שגיאה.mp3");
+  const winSound = new Audio("/sounds/good.mp3");
+  const failSound = new Audio("/sounds/bad.mp3");
   useEffect(() => {
     if (hasFetchedRef.current) return;
 
@@ -166,7 +166,7 @@ const handleRestart=()=>{
       {selected !== null && (
         <Button
           onClick={handleNext}
-          className="px-6 py-3 rounded-xl shadow text-white bg-green-500 hover:bg-green-600"
+          className= "bg-indigo-600 hover:bg-indigo-500 text-white"
         >
           Next
         </Button>
