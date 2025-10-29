@@ -35,8 +35,8 @@ export default function LetterChaosGame({ onScoreChange, onGameOver, paused, tim
   const clickSound = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    correctSound.current = new Audio("/sounds/צליל הצלחה.mp3");
-    wrongSound.current = new Audio("/sounds/צליל שגיאה.mp3");
+    correctSound.current = new Audio("/sounds/success.mp3");
+    wrongSound.current = new Audio("/sounds/error.mp3");
     clickSound.current = new Audio("/audio/click.mp3");
   }, []);
 

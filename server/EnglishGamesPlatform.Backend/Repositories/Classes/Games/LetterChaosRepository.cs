@@ -5,7 +5,7 @@ using EnglishGamesPlatform.Backend.Repositories.Interfaces;
 
 namespace EnglishGamesPlatform.Backend.Repositories.Classes.Games
 {
-    public class LetterChaosRepository: IGeneralGameRepository
+    public class LetterChaosRepository : IGeneralGameRepository
     {
         public string GameName => "Letter Chaos";
 
@@ -19,26 +19,17 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes.Games
         public async Task<GameInitialData> GetData()
         {
             var letterChaosWords = new List<ModelLetterChaos>();
-            int id = 1;
-            var lengthsPattern = new[] { 3, 3, 4, 4, 5, 5 };
-
-            /*            foreach (var length in lengthsPattern)
-            */
-                 
             var wordList = await _wordRepository.GetRandomWordsAsync(5, 3, 5);
-            for (int i = 0; i < 5; i++)
+
+            for (int i = 0; i < wordList.Count; i++)
             {
-                if (wordList.Count > 0)
+                var word = wordList[i];
+                letterChaosWords.Add(new ModelLetterChaos
                 {
-                    var word = wordList[i];
-                    letterChaosWords.Add(new ModelLetterChaos
-                    {
-                        Id = id,
-                        CorrectWord = word.WordText.ToLower(),
-                        Scrambled = ShuffleWord(word.WordText.ToLower())
-                    });
-                    id++;
-                }
+                    Id = i + 1,
+                    CorrectWord = word.WordText.ToLower(),
+                    Scrambled = ShuffleWord(word.WordText.ToLower())
+                });
             }
 
             return new LetterChaosData
