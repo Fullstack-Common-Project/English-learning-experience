@@ -22,13 +22,15 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes.Games
             int id = 1;
             var lengthsPattern = new[] { 3, 3, 4, 4, 5, 5 };
 
-            foreach (var length in lengthsPattern)
+            /*            foreach (var length in lengthsPattern)
+            */
+                 
+            var wordList = await _wordRepository.GetRandomWordsAsync(5, 3, 5);
+            for (int i = 0; i < 5; i++)
             {
-                var wordList = await _wordRepository.GetRandomWordsAsync(1, minLength: length, maxLength: length);
-
                 if (wordList.Count > 0)
                 {
-                    var word = wordList[0];
+                    var word = wordList[i];
                     letterChaosWords.Add(new ModelLetterChaos
                     {
                         Id = id,
@@ -47,7 +49,7 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes.Games
 
         private string ShuffleWord(string word)
         {
-            if (string.IsNullOrEmpty(word) || word.Length < 2)
+            if (string.IsNullOrEmpty(word))
                 return word;
 
             var scrambled = new string(word.ToCharArray()
