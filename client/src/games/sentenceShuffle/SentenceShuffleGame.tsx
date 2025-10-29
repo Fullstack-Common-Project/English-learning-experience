@@ -9,13 +9,13 @@ import { GameId } from "@/types";
 import { SentenceShuffleItem } from "@/types/gamesTypes/SentenceShuffle";
 import { SentenceSlots, WordBank, GameButtons, FeedbackMessage } from "./index";
 
-
 const generateId = () => Math.floor(Math.random() * 1000000).toString();
 
 export default function SentenceShuffleGame({
   onScoreChange,
   onGameOver,
   paused,
+  score,
   time,
 }: GameProps) {
   const gameId: GameId = 4;
@@ -29,23 +29,10 @@ export default function SentenceShuffleGame({
   const [feedback, setFeedback] = useState<string | null>(null);
   const [isReloading, setIsReloading] = useState(false);
   const [gameFinished, setGameFinished] = useState(false);
-
-  const totalScoreRef = useRef(0);
   const roundStartRef = useRef<number | null>(null);
 
-  useEffect(() => {
-    if (data && isSuccess) {
-      setRounds(data.data.data.rounds);
-      setIndex(0);
-      setStatus("idle");
-      setFeedback(null);
-      setGameFinished(false);
-      totalScoreRef.current = 0;
-      roundStartRef.current = null;
-    }
-  }, [data, isSuccess]);
-
   const currentRound = rounds[index];
+
   const initialWords = useMemo(() => {
     if (!currentRound?.words) return [];
     return currentRound.words.map((w) => ({ id: generateId(), value: w }));
@@ -96,78 +83,81 @@ export default function SentenceShuffleGame({
     return accuracyPoints + timeBonus + fullBonus;
   };
 
-const handleCheck = () => {
-  if (isSubmitDisabled) return;
+  const handleCheck = () => {
+    if (isSubmitDisabled) return;
 
-  const correctWords = currentRound.correctSentence.split(" ");
-  const guessWords = currentGuess.split(" ");
-  const correctPositions = guessWords.filter(
-    (w, i) => w === correctWords[i]
-  ).length;
-  const isCorrect = currentGuess === currentRound.correctSentence;
+    const correctWords = currentRound.correctSentence.split(" ");
+    const guessWords = currentGuess.split(" ");
+    const correctPositions = guessWords.filter(
+      (w, i) => w === correctWords[i]
+    ).length;
+    const isCorrect = currentGuess === currentRound.correctSentence;
 
-  const elapsed = roundStartRef.current
-    ? Date.now() - roundStartRef.current
-    : 0;
-  const roundScore = computeRoundScore(
-    elapsed,
-    correctPositions,
-    correctWords.length
-  );
+    const elapsed = roundStartRef.current
+      ? Date.now() - roundStartRef.current
+      : 0;
+    const roundScore = computeRoundScore(
+      elapsed,
+      correctPositions,
+      correctWords.length
+    );
+    onScoreChange?.((prev) => prev + roundScore);
 
-  totalScoreRef.current += roundScore;
-  onScoreChange?.((prev) => prev + roundScore);
+    setStatus(isCorrect ? "success" : "error");
+    setFeedback(
+      isCorrect
+        ? `Perfect! +${roundScore} pts`
+        : `${correctPositions} words in correct position. +${roundScore} pts`
+    );
 
-  setStatus(isCorrect ? "success" : "error");
-  setFeedback(
-    isCorrect
-      ? `Perfect! +${roundScore} pts`
-      : `${correctPositions} words in correct position. +${roundScore} pts`
-  );
-
-  // מחקנו את ה-setTimeout, המעבר לסיבוב הבא יתבצע רק ב-handleNext
-};
-
-
-const handleNext = async () => {
-  setFeedback(null);
-  setStatus("idle");
-
-  if (index + 1 < rounds.length) {
-    setIndex((i) => i + 1);
-    return;
-  }
-
-  // הגענו לסוף הסבבים שהובאו
-  setGameFinished(true);
-  submitProgressMutation.mutate({
-    gameID: gameId,
-    userID: user?.userId!,
-    score: totalScoreRef.current,
-    time: typeof time === "number" ? time : 0,
-    rounds: index + 1,
-  });
-  onGameOver?.();
-
-  // כאן אפשר להביא סבבים חדשים כאשר המשתמש ילחץ שוב על Next
-  setIsReloading(true);
-  try {
-    const newData = await refetch();
-    const newRounds = newData?.data?.data?.data.rounds || [];
-    if (newRounds.length) {
-      setRounds(newRounds);
-      setIndex(0);
-      setGameFinished(false);
-      totalScoreRef.current = 0;
-      onScoreChange?.(() => 0);
+    if (index + 1 >= rounds.length) {
+      setGameFinished(true);
     }
-  } finally {
-    setIsReloading(false);
-  }
-};
+  };
 
+  const handleNext = () => {
+    setFeedback(null);
+    setStatus("idle");
 
+    if (index + 1 < rounds.length) {
+      setIndex((i) => i + 1);
+    }
+  };
 
+  useEffect(() => {
+    if (!gameFinished) return;
+
+    const timer = setTimeout(async () => {
+      submitProgressMutation.mutate({
+        gameID: gameId,
+        userID: user?.userId!,
+        score: score!,
+        time: typeof time === "number" ? time : 0,
+        rounds: index + 1,
+      });
+      onGameOver?.();
+    }, 2000); 
+    return () => clearTimeout(timer);
+  }, [gameFinished]);
+
+  useEffect(() => {
+    loadNewRounds();
+  }, []);
+
+  const loadNewRounds = async () => {
+    setIsReloading(true);
+    try {
+      const newData = await refetch();
+      const newRounds = newData?.data?.data?.data.rounds || [];
+      if (newRounds.length) {
+        setRounds(newRounds);
+        setIndex(0);
+        setGameFinished(false);
+      }
+    } finally {
+      setIsReloading(false);
+    }
+  };
 
   if (isLoading || isReloading)
     return <p className="text-center mt-10">Loading...</p>;
@@ -197,7 +187,7 @@ const handleNext = async () => {
       />
 
       <p className="mb-3 text-lg text-slate-900">
-        Your sentence: <strong>{currentGuess || "(empty)"}</strong>
+        Your sentence: <strong>{currentGuess}</strong>
       </p>
 
       <FeedbackMessage feedback={feedback} status={status} />
@@ -205,9 +195,6 @@ const handleNext = async () => {
       <GameButtons
         status={status}
         isSubmitDisabled={isSubmitDisabled}
-        gameFinished={gameFinished}
-        index={index}
-        rounds={rounds}
         handleCheck={handleCheck}
         handleNext={handleNext}
       />

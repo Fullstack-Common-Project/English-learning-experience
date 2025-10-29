@@ -3,9 +3,6 @@ import React from "react";
 interface GameButtonsProps {
   status: "idle" | "success" | "error";
   isSubmitDisabled: boolean;
-  gameFinished: boolean;
-  index: number;
-  rounds: any[];
   handleCheck: () => void;
   handleNext: () => void;
 }
@@ -13,9 +10,6 @@ interface GameButtonsProps {
 export default function GameButtons({
   status,
   isSubmitDisabled,
-  gameFinished,
-  index,
-  rounds,
   handleCheck,
   handleNext,
 }: GameButtonsProps) {
@@ -28,7 +22,7 @@ export default function GameButtons({
 
   return (
     <div className="space-y-3 mt-4">
-      {status === "idle" && !gameFinished && (
+      {status === "idle" && (
         <button
           className={`w-full py-3 rounded-lg text-white font-bold transition-colors duration-300 ${buttonClass}`}
           disabled={isSubmitDisabled}
@@ -38,16 +32,12 @@ export default function GameButtons({
         </button>
       )}
 
-      {(status === "success" || status === "error" || gameFinished) && (
+      {(status === "success" || status === "error") && (
         <button
           className="w-full py-3 rounded-lg bg-indigo-600 text-white font-semibold hover:bg-indigo-700"
           onClick={handleNext}
         >
-          {index + 1 < rounds.length
-            ? "Next Round"
-            : gameFinished
-            ? "Start New Game"
-            : "Next"}
+          Next Round
         </button>
       )}
     </div>

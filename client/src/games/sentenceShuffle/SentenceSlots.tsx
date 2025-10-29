@@ -22,7 +22,10 @@ export default function SentenceSlots({
             key={slot?.id ?? `slot-${i}`}
             layout
             transition={{ type: "spring", stiffness: 500, damping: 30 }}
-            className={`min-w-[90px] px-3 py-2 rounded-lg border-2 text-lg font-semibold flex items-center justify-center text-center
+            className={`
+              min-w-[90px] min-h-[42px] px-4 py-2 
+              rounded-xl border-2 text-base font-medium 
+              flex items-center justify-center text-center select-none
               ${
                 status === "success"
                   ? "bg-emerald-100 border-emerald-500 text-emerald-800"
@@ -30,13 +33,14 @@ export default function SentenceSlots({
                   ? "bg-red-100 border-red-500 text-red-800"
                   : slot
                   ? "bg-white border-slate-500 text-slate-800 cursor-pointer"
-                  : "bg-gray-200 border-gray-300 text-gray-500"
-              }`}
+                  : "bg-gray-100 border-gray-300 text-gray-400"
+              }
+            `}
             onDrop={(e) => handleDrop(e, i)}
             onDragOver={(e) => e.preventDefault()}
             onClick={() => slot && handleDeselectItem(slot, i)}
           >
-            {slot?.value}
+            {slot?.value || ""}
           </motion.div>
         ))}
       </div>
