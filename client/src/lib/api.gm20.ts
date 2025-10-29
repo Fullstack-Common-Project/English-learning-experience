@@ -5,17 +5,40 @@ import type {
   GuessMasterAskResponse,
 } from "@/types/gamesTypes/GuessMaster";
 
-const BASE = process.env.NEXT_PUBLIC_BACKEND_URL ?? "https://localhost:7292";
+const BASE = process.env.NEXT_PUBLIC_BACKEND_URL ?? "http://localhost:5075";
 const GAME_ID = 14;
 
 const URLS = {
-  data:        `${BASE}/api/v1/GeneralGame/${GAME_ID}/data`,
+  data: `${BASE}/api/v1/GeneralGame/${GAME_ID}/data`,
   leaderboard: `${BASE}/api/v1/GeneralGame/${GAME_ID}/leaderboard`,
-  progress:    `${BASE}/api/v1/GeneralGame/${GAME_ID}/progress`,
-  ask:         `${BASE}/api/v1/games/guessmaster-20/ask`,
+  progress: `${BASE}/api/v1/GeneralGame/${GAME_ID}/progress`,
+  ask: `${BASE}/api/v1/games/guessmaster-20/ask`,
 };
 
 console.log("[GM20] URLs:", URLS);
+
+export async function postGuessMaster20RefreshSuggestions(
+  sessionId: string,
+  exclude: string[]
+): Promise<string[]> {
+  const res = await fetch(
+    `${BASE}/api/v1/games/guessmaster-20/suggestions/refresh`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ sessionId, exclude }),
+    }
+  );
+  if (!res.ok) {
+    const text = await res.text();
+    throw new Error(`Refresh failed (${res.status}): ${text}`);
+  }
+  const data = (await res.json()) as {
+    sessionId: string;
+    suggestedQuestions: string[];
+  };
+  return data.suggestedQuestions ?? [];
+}
 
 function unwrap<T>(json: any): T {
   return (json?.data?.data ?? json?.data ?? json) as T;

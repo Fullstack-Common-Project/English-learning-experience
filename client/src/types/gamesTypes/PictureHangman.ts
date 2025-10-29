@@ -1,6 +1,13 @@
-import { GameResponseBase } from "./index";
+import { GameResponseBase } from "..";
+
+export interface ImageWordPair {
+  targetWord: string;
+  imageUrl: string
+}
 export interface PictureHangmanItem {
-  // empty item shape by request
+  data: {
+    pairs: ImageWordPair[];
+  };
 }
 
 

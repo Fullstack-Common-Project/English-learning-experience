@@ -1,6 +1,8 @@
 ﻿using EnglishGamesPlatform.Backend.Data;
 
 using EnglishGamesPlatform.Backend.Extensions;
+using EnglishGamesPlatform.Backend.Mapping;
+using EnglishGamesPlatform.Backend.Models.DTOs.Entities_DTOs;
 using EnglishGamesPlatform.Backend.Repositories.Classes;
 using EnglishGamesPlatform.Backend.Repositories.Classes.Entities;
 using EnglishGamesPlatform.Backend.Repositories.Classes.Games;
@@ -35,7 +37,7 @@ builder.Services.AddSwaggerGen();
 
 #region AutoMapper
 
-builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 #endregion
 
@@ -56,17 +58,20 @@ builder.Services.AddScoped<IGameResultRepository, GameResultRepository>();
 #endregion
 
 #region General Game
-
 builder.Services.AddScoped<IGeneralGameService, GeneralGameService>();
 builder.Services.AddScoped<IGeneralGameRepository, PictureHangmanRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, OppositeQuestRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, MiniWordleRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, LetterChaosRepository>();
-
 builder.Services.AddScoped<IGeneralGameRepository, TwinWordsGameRepository>();
+builder.Services.AddScoped<IGeneralGameRepository, SentenceShuffleRepository>();
+#endregion
+
 builder.Services.AddScoped<IGeneralGameRepository, DoubleVisionRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, MemoryMatchSynonymsRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, PicPickRepository>();
+builder.Services.AddScoped<IGeneralGameRepository,PhraseCrazeRepository>();
+
 builder.Services.AddScoped<IGeneralGameRepository, MemoryMatchAntonymsRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, GrammarGuruRepository>();
 
@@ -75,33 +80,36 @@ builder.Services.AddScoped<IGeneralGameRepository, GrammarGuruRepository>();
 builder.Services.AddScoped<IGeneralGameRepository,ContextCluesRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IImageRepository, ImageRepository>();
+
 builder.Services.AddScoped<ISentenceRepository, SentenceRepository>();
 builder.Services.AddScoped<IWordRepository, WordRepository>();
 builder.Services.AddScoped<IOppositeWordRepository, OppositeWordRepository>();
 builder.Services.AddScoped<ITwinWordRepository, TwinWordRepository>();
+
 builder.Services.AddScoped<IFakeSentenceRepository, FakeSentenceRepository>();
+builder.Services.AddScoped<IGeneralGameRepository, RhymeTimeRepository>();
 builder.Services.AddScoped<IGrammarQuestionRepository, GrammarQuestionRepository>();
 builder.Services.AddScoped<IGeneralGameRepository, GuessMaster20Repository>();
+builder.Services.AddScoped<IGeneralGameRepository, WordSorterRepository>();
 
 
-#endregion
+
 
 
 builder.Services.AddCustomServices();
 
-
-//builder.Services.AddAuthentication(options =>
-//{
-//    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
-//    options.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;
-//})
-//.AddCookie()
-//.AddGoogle(options =>
-//{
-//    options.ClientId = builder.Configuration["Authentication:Google:ClientId"]!;
-//    options.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"]!;
-//    options.CallbackPath = "/signin-google";
-//});
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = GoogleDefaults.AuthenticationScheme;
+})
+.AddCookie()
+.AddGoogle(options =>
+{
+    options.ClientId = builder.Configuration["Authentication:Google:ClientId"]!;
+    options.ClientSecret = builder.Configuration["Authentication:Google:ClientSecret"]!;
+    options.CallbackPath = "/signin-google";
+});
 
 var app = builder.Build();
 
