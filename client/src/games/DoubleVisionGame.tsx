@@ -44,7 +44,7 @@ export default function DoubleVisionGame({ onScoreChange, onGameOver, paused, ti
     if (!data || hasFetchedRef.current) return;
     hasFetchedRef.current = true;
 
-    const items: DoubleVisionItem[] = data.data?.data?.items || [];
+    const items: DoubleVisionItem[] = data.data?.items || [];
     setRounds(items);
   }, [data]);
 

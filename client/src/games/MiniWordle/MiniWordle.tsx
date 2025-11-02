@@ -81,8 +81,8 @@ export default function MiniWordle({
 
     useEffect(() => {
         gameRef.current.sounds = {
-            correct: new Audio("/sounds/צליל הצלחה.mp3"),
-            wrong: new Audio("/sounds/צליל שגיאה.mp3"),
+            correct: new Audio("/sounds/excellent.mp3"),
+            wrong: new Audio("/sounds/error.mp3"),
             gameOver: new Audio("/audio/wrong.mp3"),
         };
     }, []);
