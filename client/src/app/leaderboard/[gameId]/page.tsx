@@ -5,6 +5,7 @@ import Leaderboard from "@/components/leaderboard/Leaderboard";
 import { useParams } from "next/navigation";
 import { GameResponseMap } from "@/types";
 import { GameId } from "@/types";
+import Spinner from '../../../components/ui/Spinner.jsx'
 
 export default function AboutSection() {
     const params = useParams();
@@ -23,7 +24,7 @@ export default function AboutSection() {
 
     const { data: leaderboardData, isLoading } = useLeaderboard(gameId);
 
-    if (isLoading || !leaderboardData) return <p>Loading...</p>;
+    if (isLoading || !leaderboardData) return <Spinner/>;
 
     return (
         <div className="mt-4 mb-4">
