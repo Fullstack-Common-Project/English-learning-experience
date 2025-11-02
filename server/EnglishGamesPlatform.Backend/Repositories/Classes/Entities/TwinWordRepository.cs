@@ -20,7 +20,7 @@ namespace EnglishGamesPlatform.Backend.Repositories.Classes.Entities
             return await _context.TwinWords
                 .Include(t => t.BaseWord)
                 .Include(t => t.SynonymWord)
-                .OrderBy(x => Guid.NewGuid())
+                .OrderBy(x => EF.Functions.Random())
                 .Take(count)
                 .ToListAsync();
         }

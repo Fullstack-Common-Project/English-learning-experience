@@ -1,7 +1,6 @@
 using AutoMapper;
 using EnglishGamesPlatform.Backend.Models.DTOs;
 using EnglishGamesPlatform.Backend.Models.DTOs.Entities_DTOs;
-
 using EnglishGamesPlatform.Backend.Models.Entities;
 using EnglishGamesPlatform.Backend.Repositories.Interfaces;
 using EnglishGamesPlatform.Backend.Services.Interfaces;
@@ -44,8 +43,8 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
                 };
             }
 
-
-            GameResult gameResult = await AddGameResultAsync(_mapper.Map<GameResult>(gameResultDTO));
+            GameResult gameResultMapper = _mapper.Map<GameResult>(gameResultDTO);
+            GameResult gameResult = await AddGameResultAsync(gameResultMapper);
 
             int index = await GetRankByUserId(gameResultDTO.GameID, gameResultDTO.UserID, 10);
 
@@ -56,8 +55,6 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
                     IsSuccess = true,
                     StatusCode = HttpStatusCode.OK,
                     Message = "Add Game Result Successfully.",
-
-
                     Data = new ()
                     {
                         IsLeadingPlayer = false,
@@ -81,44 +78,53 @@ namespace EnglishGamesPlatform.Backend.Services.Classes
 
         public async Task<Response<GameData>> GetGameDataAsync(int gameId)
         {
-            string? gameName = await GetGameNameByIdAsync(gameId);
-
-            if (gameName == null)
+            try
             {
-                return new()
+                string? gameName = await GetGameNameByIdAsync(gameId);
+
+
+                if (gameName == null)
                 {
-                    IsSuccess = false,
-                    StatusCode = HttpStatusCode.NotFound,
-                    Message = $"Game ID: {gameId} Not Found",
-                };
-            }
-
-            if (_repositories.TryGetValue(gameName, out var repository))
-            {
-
-                GameInitialData? gameInitialData = await repository.GetData();
-
-
-                return new()
-                {
-                    StatusCode = HttpStatusCode.OK,
-                    IsSuccess = true,
-                    Message = $"Get Initial Data For Game ID: {gameId} Successfully,",
-
-                    Data = new GameData()
+                    return new()
                     {
-                        GameId = gameId,
-                        Data = gameInitialData
-                    }
-                };
-            }
-            else
-            {
-                return new()
+                        IsSuccess = false,
+                        StatusCode = HttpStatusCode.NotFound,
+                        Message = $"Game ID: {gameId} Not Found",
+                    };
+                }
+
+                if (_repositories.TryGetValue(gameName, out var repository))
                 {
-                    StatusCode = HttpStatusCode.InternalServerError,
+                    GameInitialData? gameInitialData = await repository.GetData();
+
+                    return new()
+                    {
+                        StatusCode = HttpStatusCode.OK,
+                        IsSuccess = true,
+                        Message = $"Get Initial Data For Game ID: {gameId} Successfully,",
+                        Data = new GameData()
+                        {
+                            GameId = gameId,
+                            Data = gameInitialData
+                        }
+                    };
+                }
+                else
+                {
+                    return new()
+                    {
+                        StatusCode = HttpStatusCode.InternalServerError,
+                        IsSuccess = false,
+                        Message = $"Error Dependencies Injection - Repository",
+                    };
+                }
+            } catch (Exception ex)
+            {
+                return new Response<GameData>()
+                {
                     IsSuccess = false,
-                    Message = $"Error Dependencies Injection - Repository",
+                    StatusCode = HttpStatusCode.InternalServerError,
+                    Message = $"Internal Server Error: {ex.Message}"
                 };
             }
         }

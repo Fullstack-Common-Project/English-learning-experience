@@ -29,18 +29,9 @@ export default function DoubleVisionGame({ onScoreChange, onGameOver, paused, ti
   const [rounds, setRounds] = useState<DoubleVisionItem[]>([]);
   const hasFetchedRef = useRef(false);
 
-
   console.log("Leaderboard:", leaderboardData?.data.leaderboards);
-  // useEffect(() => {
-  //   if (leaderboardData) {
-  //     console.log("Leaderboard at game over:", leaderboardData.data.leaderboards);
-  //     // או עדכני state/props כדי להציג את הלידרבורד במסך הסיום
-  //   }
-  // }, [leaderboardData]);
 
-
-
-  // Ref לשמירת הזמן המדויק
+  //   // Ref לשמירת הזמן המדויק
   const timeRef = useRef(time);
   useEffect(() => {
     timeRef.current = time;
@@ -48,7 +39,7 @@ export default function DoubleVisionGame({ onScoreChange, onGameOver, paused, ti
 
   const baseUrl = "https://english-platform-testpnoren.s3.us-east-1.amazonaws.com/";
 
-  // ✅ Load data פעם אחת
+  //  Load data פעם אחת
   useEffect(() => {
     if (!data || hasFetchedRef.current) return;
     hasFetchedRef.current = true;
@@ -57,13 +48,13 @@ export default function DoubleVisionGame({ onScoreChange, onGameOver, paused, ti
     setRounds(items);
   }, [data]);
 
-  // ✅ הגדרת הצלילים
+  //  הגדרת הצלילים
   const correctSound = useRef<HTMLAudioElement | null>(null);
   const wrongSound = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
-    correctSound.current = new Audio("/sounds/צליל הצלחה.mp3");
-    wrongSound.current = new Audio("/sounds/צליל שגיאה.mp3");
+    correctSound.current = new Audio("/sounds/good.mp3");
+    wrongSound.current = new Audio("/sounds/error.mp3");
   }, []);
 
   // פונקציה לאתחול המשחק
@@ -87,14 +78,6 @@ export default function DoubleVisionGame({ onScoreChange, onGameOver, paused, ti
     });
 
     await refetchLeaderboard();
-
-    // if (leaderboardData?.data?.leaderboards) {
-    //   setLeaderboard(gameId, [
-    //     ...leaderboardData.data.leaderboards,
-    //     ...(useLeaderboardStore.getState().leaderboard || []),
-    //   ]);
-    // }
-
     onGameOver?.();
     restartGame();
   };
@@ -172,7 +155,7 @@ export default function DoubleVisionGame({ onScoreChange, onGameOver, paused, ti
         {round.options.map((option, idx) => (
           <motion.img
             key={option.label + idx}
-            src={baseUrl + option.imageUrl}
+            src={`${baseUrl}${option.imageUrl.replace(/^\/+/, '')}`}
             alt={option.label}
             className={`doublevision__option ${selectedIndex === idx && isCorrect ? "correct" : ""
               } ${selectedIndex === idx && isCorrect === false ? "wrong" : ""

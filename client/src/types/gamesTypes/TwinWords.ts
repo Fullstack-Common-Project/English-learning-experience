@@ -1,4 +1,4 @@
-import { GameResponseBase } from "./index";
+import { GameResponseBase } from "..";
 export interface TwinWordsItem {
   id: any;
   data: {
@@ -12,4 +12,6 @@ export interface TwinWordsSingleQuestion {
   options: string[];
   correctIndex: number;
 }
-export interface TwinWordsResponse extends GameResponseBase<10, TwinWordsItem> { }
+export interface TwinWordsResponse extends GameResponseBase<10, TwinWordsItem> {
+  data: any;
+}
