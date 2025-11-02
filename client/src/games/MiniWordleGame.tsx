@@ -94,7 +94,6 @@ export default function MiniWordleGame({
         <>
             <Button
                 onClick={() => handleGameOver()}
-
             >
                 End Game
             </Button>
